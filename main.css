@@ -12,7 +12,7 @@ html[data-theme="light"] {
 html[data-theme="dark"] {
   --font-color: whitesmoke;
   --font-color-hover: black;
-  --body-bg-color: rgb(10, 11, 15);
+  --body-bg-color: rgb(10, 11, 15, 0.9);
   --body-bg-color-hover: white;
   --border-color: white;
   --border-color-hover: rgb(10, 11, 15);
@@ -22,8 +22,8 @@ html[data-theme="dark"] {
 * {
   font-family: "Roboto Slab", serif;
   line-height: 1.5;
-  letter-spacing: 0.5px;
-  word-spacing: 1.5px;
+  letter-spacing: 0.4px;
+  word-spacing: 1.6px;
 }
 ::-webkit-scrollbar {
   width: 8px;
@@ -41,6 +41,7 @@ html,
 body {
   background-color: var(--body-bg-color);
   color: var(--font-color);
+  scroll-behavior: smooth;
 }
 a {
   text-decoration: none;
@@ -48,18 +49,18 @@ a {
 a:hover {
   color: var(--font-color-hover);
 }
-span {
+.link-underline {
   display: inline-block;
   border-bottom: 1px dotted var(--border-color);
   padding: 0px 3px;
-  transition: 0.2s;
+  transition: 0.25s;
 }
-span:hover {
+.link-underline:hover {
   color: var(--font-color-hover);
   border-bottom: 1px dotted var(--border-color-hover);
   background-color: var(--body-bg-color-hover);
 }
-/* Gloabl Ends */
+/* Global Ends */
 /* Navbar */
 .navbar {
   color: var(--font-color) !important;
@@ -88,6 +89,7 @@ span:hover {
   text-decoration: none !important;
   border: none !important;
   background-color: transparent !important;
+  cursor: pointer;
 }
 #waving-hand:hover {
   text-decoration: none !important;
@@ -141,12 +143,6 @@ span:hover {
 .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='blue' stroke-width='1.5' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
 }
-#about,
-#work_c,
-#project_c {
-  padding-top: 60px;
-  margin-top: -60px;
-}
 .active {
   color: var(--font-color) !important;
 }
@@ -198,18 +194,27 @@ footer {
 }
 /* Footer Ends */
 /* Homepage */
-.wrapper {
+#about {
+  padding-top: 32px;
   margin-top: 32px !important;
-  padding-top: 16px !important;
+}
+#work,
+#projects {
+  padding-top: 63px;
+  margin-top: -63px;
+}
+.wrapper {
+  margin-bottom: 32px !important;
+  /* padding-top: 16px !important; */
 }
 @media only screen and (max-width: 771px) {
   #about,
-  #work_c {
+  #work {
     margin: 0px !important;
     padding: 16px 4px !important;
     border-bottom: 1px dotted var(--border-color);
   }
-  #projects_c {
+  #projects {
     margin: 0px !important;
     padding: 16px 4px !important;
   }
@@ -224,35 +229,38 @@ footer {
   #workleft {
     border-right: unset !important;
   }
+  #workbottom {
+    border-top: unset !important;
+  }
 }
 #whatidoright .btn:hover {
   cursor: text;
 }
-#projects_c .card {
+#projects .card {
   background: none;
-  transition: 0.3s;
+  transition: 0.15s;
 }
-#projects_c .card:hover {
+#projects .card:hover {
   color: whitesmoke;
   background: #0275d8;
 }
-#projects_c .card:hover a {
+#projects .card:hover a {
   border-bottom: 1px dotted white;
   color: whitesmoke;
 }
-#projects_c .card:hover > .project-title {
+#projects .card:hover > .project-title {
   border-bottom: 1px solid whitesmoke;
 }
-#projects_c .project-title {
+#projects .project-title {
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 3px;
 }
-#projects_c .project-link > a {
+#projects .project-link > a {
   border-bottom: 1px dotted #0275d8;
   padding-bottom: 1px;
   transform: 1s;
 }
-#projects_c .project-link > a:hover {
+#projects .project-link > a:hover {
   font-weight: bold;
   border-bottom: 1px solid white;
   color: white;
