@@ -1,71 +1,119 @@
 /* Global */
 html[data-theme="light"] {
-  --font-color: rgb(10, 11, 15);
-  --font-color-hover: white;
-  --body-bg-color: whitesmoke;
-  --body-bg-color-hover: black;
-  --border-color: rgb(10, 11, 15);
-  --border-color-hover: whitesmoke;
-  --border-nav-color: rgba(0, 0, 0, 0.2);
-  --button-bg-color-hover: rgba(0, 0, 0, 0.2);
+  --scrollbar-color: #0055ff;
+  --scrollbar-track-color: #f5f5f5;
+  --font-color: #121212;
+  --font-color-hover: #f5f5f5;
+  --anchor-font-color: #0055ff;
+  --body-bg-color: #f5f5f5;
+  --body-bg-color-hover: #121212;
+  --card-font-color: #f5f5f5;
+  --card-font-color-hover: #f5f5f5;
+  --card-bg-color: #f5f5f5;
+  --card-bg-color-hover: #0055ff;
+  --card-border-color: #0055ff;
+  --card-border-color-hover: #0055ff;
+  --border-color: #121212;
+  --border-color-hover: #f5f5f5;
+  --border-nav-color: #121212;
+  --button-bg-color-hover: #121212;
+  --text-shadow-color: #0055ff;
+  --box-shadow-color: #0055ff;
+  --box-shadow-color-hover: #121212;
+  --font-weight: bold;
+  --font-weight-hover: 500;
 }
 html[data-theme="dark"] {
-  --font-color: whitesmoke;
-  --font-color-hover: black;
-  --body-bg-color: rgb(10, 11, 15, 0.9);
-  --body-bg-color-hover: white;
-  --border-color: white;
-  --border-color-hover: rgb(10, 11, 15);
-  --border-nav-color: rgba(255, 255, 255, 0.2);
-  --button-bg-color-hover: rgba(255, 255, 255, 0.8);
+  --scrollbar-color: #0088ff;
+  --scrollbar-track-color: #121212;
+  --font-color: #f5f5f5;
+  --font-color-hover: #121212;
+  --anchor-font-color: #009aff;
+  --body-bg-color: #121212;
+  --body-bg-color-hover: #f5f5f5;
+  --card-font-color: #121212;
+  --card-font-color-hover: #121212;
+  --card-bg-color: #f5f5f5;
+  --card-bg-color-hover: #009aff;
+  --card-border-color: #009aff;
+  --card-border-color-hover: #009aff;
+  --border-color: #f5f5f5;
+  --border-color-hover: #121212;
+  --border-nav-color: #f5f5f5;
+  --button-bg-color-hover: #f5f5f5;
+  --text-shadow-color: #009aff;
+  --box-shadow-color: #009aff;
+  --box-shadow-color-hover: #f5f5f5;
+  --font-weight: 400;
+  --font-weight-hover: bold;
 }
 * {
-  font-family: "Roboto Slab", serif;
-  line-height: 1.5;
-  letter-spacing: 0.4px;
-  word-spacing: 1.6px;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0px;
+  word-spacing: 1px;
 }
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background-color: var(--scrollbar-track-color);
 }
 ::-webkit-scrollbar-thumb {
-  background: #0275d8;
+  background-color: var(--scrollbar-color);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0275d8;
+  background-color: var(--scrollbar-color);
 }
 html,
 body {
   background-color: var(--body-bg-color);
   color: var(--font-color);
   scroll-behavior: smooth;
+  font-weight: var(--font-weight);
 }
 a {
+  color: var(--anchor-font-color);
   text-decoration: none;
 }
 a:hover {
   color: var(--font-color-hover);
 }
 .link-underline {
+  font-weight: bold;
   display: inline-block;
-  border-bottom: 1px dotted var(--border-color);
-  padding: 0px 3px;
+  padding: 0px 0px;
   transition: 0.25s;
 }
 .link-underline:hover {
+  padding: 0px 4px;
+  border-radius: 4px;
+  font-weight: var(--font-weight-hover);
   color: var(--font-color-hover);
-  border-bottom: 1px dotted var(--border-color-hover);
   background-color: var(--body-bg-color-hover);
+}
+.conditional-breakline {
+  display: none;
+}
+@media only screen and (max-width: 600px) {
+  * {
+    line-height: unset;
+    letter-spacing: unset;
+    word-spacing: unset;
+  }
+  .conditional-breakline {
+    content: " ";
+    display: block;
+    height: 8px;
+    line-height: 2px;
+  }
 }
 /* Global Ends */
 /* Navbar */
 .navbar {
   color: var(--font-color) !important;
   background-color: var(--body-bg-color) !important;
-  border-bottom: 0.1px solid var(--border-nav-color);
+  border-bottom: 0.1px dashed var(--border-nav-color);
 }
 .navbar-brand {
   color: var(--font-color) !important;
@@ -82,6 +130,7 @@ a:hover {
 }
 #theme-nav-brand:hover,
 #theme-nav-item:hover {
+  cursor: pointer;
   background-color: var(--button-bg-color-hover) !important;
   border-radius: 50px;
 }
@@ -101,7 +150,7 @@ a:hover {
   0%,
   100% {
     transform-origin: bottom right;
-    transform: rotate(-5deg);
+    transform: scale(1.1) rotate(-5deg);
   }
   50% {
     transform-origin: bottom right;
@@ -164,39 +213,49 @@ a:hover {
 /* Navbar Ends */
 /* Footer */
 footer {
-  border-top: 0.1px solid var(--border-nav-color);
+  border-top: 0.1px dashed var(--border-nav-color);
 }
 .social a {
-  color: #0275d8;
+  color: var(--anchor-font-color);
   font-size: 24px;
   padding: 4px 16px 4px 0px;
-  transition: 0.5s;
+  transition: 0.25s;
+  text-shadow: 0px 0px 2px var(--text-shadow-color);
 }
 .social a:hover {
   color: var(--font-color);
+  text-shadow: 0px 0px 3px var(--font-color);
 }
 #gototop {
   padding: 8px 0px 0px;
   font-size: 16px;
   margin-right: 2px;
-  transition: 0.5s;
+  transition: 0.25s;
 }
 #gototop a {
-  padding: 0px 8px 4px;
-  color: #0275d8;
-  border: 1px solid #0275d8;
+  font-weight: 600;
+  padding: 0px 9px 4px;
+  color: var(--anchor-font-color);
+  border: 1px solid var(--anchor-font-color);
   border-radius: 50px;
-  transition: 0.5s;
+  transition: 0.25s;
+  box-shadow: 0px 0px 10px -2px var(--box-shadow-color);
 }
 #gototop a:hover {
+  cursor: pointer;
   color: var(--font-color);
   border: 1px solid var(--border-color);
+  box-shadow: 0px 0px 10px -2px var(--box-shadow-color-hover);
 }
 /* Footer Ends */
 /* Homepage */
 #about {
   padding-top: 32px;
   margin-top: 32px !important;
+}
+#name > span {
+  font-family: "Roboto Slab", serif !important;
+  font-weight: bold;
 }
 #work,
 #projects {
@@ -205,14 +264,13 @@ footer {
 }
 .wrapper {
   margin-bottom: 32px !important;
-  /* padding-top: 16px !important; */
 }
 @media only screen and (max-width: 771px) {
   #about,
   #work {
     margin: 0px !important;
     padding: 16px 4px !important;
-    border-bottom: 1px dotted var(--border-color);
+    border-bottom: 1px dashed var(--border-color);
   }
   #projects {
     margin: 0px !important;
@@ -223,7 +281,7 @@ footer {
   text-decoration: none !important;
 }
 #workleft {
-  border-right: 1px dotted var(--border-color);
+  border-right: 1px dashed var(--border-color);
 }
 @media only screen and (max-width: 771px) {
   #workleft {
@@ -238,30 +296,34 @@ footer {
 }
 #projects .card {
   background: none;
+  font-weight: var(--font-weight);
+  padding: 14px;
   transition: 0.15s;
+  border: 0.5px solid var(--card-border-color);
+  box-shadow: 0px 0px 16px -5px var(--box-shadow-color);
 }
 #projects .card:hover {
-  color: whitesmoke;
-  background: #0275d8;
+  font-weight: var(--font-weight-hover);
+  background-color: var(--card-bg-color-hover);
+  color: var(--card-font-color-hover) !important;
 }
 #projects .card:hover a {
-  border-bottom: 1px dotted white;
-  color: whitesmoke;
-}
-#projects .card:hover > .project-title {
-  border-bottom: 1px solid whitesmoke;
+  color: var(--card-font-color-hover) !important;
+  text-shadow: 0px 0px 10px #f5f5f5;
 }
 #projects .project-title {
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 3px;
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+#projects .card:hover > .project-title {
+  border-bottom: 1px dashed var(--border-color-hover);
 }
 #projects .project-link > a {
-  border-bottom: 1px dotted #0275d8;
   padding-bottom: 1px;
-  transform: 1s;
 }
 #projects .project-link > a:hover {
-  font-weight: bold;
-  border-bottom: 1px solid white;
-  color: white;
+  color: var(--font-color-hover);
+  border-bottom: 1px dashed var(--border-color-hover);
+  text-shadow: unset;
 }

@@ -15,3 +15,8 @@ function changeTheme() {
         document.getElementsByTagName("html")[0].setAttribute("data-theme", "dark");
     }
 };
+
+function goTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
