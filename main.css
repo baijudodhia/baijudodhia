@@ -1,8 +1,15 @@
+html {
+    --color_f5f5f5: #f5f5f5;
+    --color_121212: #121212;
+    --font-weight_400: 400;
+    --font-weight_bold: bold;
+}
 html[data-theme="light"] {
     --color-light_0055ff-dark_009aff: #0055ff;
     --color-light_f5f5f5-dark_121212: #f5f5f5;
     --color-light_ffffff-dark_000000: #ffffff;
     --color-light_f5f5f5-dark_121212-reverse: #121212;
+    --color-light_0055ff-dark_009aff-gradient: linear-gradient(to bottom right, #0072ff, #00c6ff);
     --font-weight: bold;
     --font-weight-hover: 500;
 }
@@ -11,6 +18,7 @@ html[data-theme="dark"] {
     --color-light_f5f5f5-dark_121212: #121212;
     --color-light_ffffff-dark_000000: #000000;
     --color-light_f5f5f5-dark_121212-reverse: #f5f5f5;
+    --color-light_0055ff-dark_009aff-gradient: linear-gradient(to bottom right, #0072ff, #00c6ff);
     --font-weight: 400;
     --font-weight-hover: bold;
 }
@@ -210,12 +218,12 @@ footer {
     #what-i-do,
     #projects {
         margin: 0 !important;
-        padding: 16px 4px !important;
+        padding: 24px 8px !important;
         border-bottom: 1px dashed var(--color-light_f5f5f5-dark_121212-reverse);
     }
     #online-certificates {
         margin: 0 !important;
-        padding: 16px 4px !important;
+        padding: 24px 8px !important;
     }
 }
 #about #name {
@@ -232,12 +240,16 @@ footer {
 #work-experience .work-experience-img-container > img {
     width: 100%;
     height: 100%;
-    max-height: 80px;
+    max-height: 100px;
     background-color: #f5f5f5;
     border-radius: 5px;
-    padding: 8px 4px;
+    padding: 12px 8px;
+    margin: 8px 0px 12px;
     box-shadow: 0px 0px 16px -5px var(--color-light_ffffff-dark_000000);
 }
+/* #work-experience .card:hover .work-experience-img-container > img {
+    box-shadow: 0px 0px 16px -5px var(--color_121212);
+} */
 #work-experience .work-experience-title,
 #work-experience .work-experience-date,
 #work-experience .work-experience-company,
@@ -248,8 +260,8 @@ footer {
     flex-direction: row;
     align-items: top;
     justify-content: left;
-    margin-top: 1px;
-    margin-bottom: 1px;
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 #work-experience .work-experience-title > div:first-child,
 #work-experience .work-experience-date > div:first-child,
@@ -262,18 +274,23 @@ footer {
 }
 #work-experience .work-experience-description {
     border-top: 0.5px dashed var(--color-light_f5f5f5-dark_121212-reverse);
-    padding-top: 8px;
-    padding-bottom: 4px;
-    margin-top: 6px;
+    padding-top: 16px;
+    padding-bottom: 0px;
+    margin-top: 16px;
 }
-#work-experience .card:hover .work-experience-description {
-    border-top: 0.5px dashed var(--color-light_f5f5f5-dark_121212);
+/* #work-experience .card:hover .work-experience-description {
+    border-top: 0.5px dashed var(--color_121212);
 }
 #work-experience .card:hover .work-experience-certificate-link {
     color: var(--color-light_f5f5f5-dark_121212) !important;
 }
 #work-experience .card:hover .work-experience-certificate-link:hover {
     color: var(--color-light_f5f5f5-dark_121212-reverse) !important;
+} */
+@media only screen and (max-width: 991px) {
+    #work-experience .work-experience-description {
+        margin-top: 12px;
+    }
 }
 #skills .skills-item {
     margin-bottom: 8px;
@@ -299,39 +316,47 @@ footer {
     padding: 0px 4px;
     margin: 0px 6px 4px 0px;
 }
-#work-experience .card,
+#work-experience .card {
+    padding: 20px 16px !important;
+}
 #projects .card {
+    padding: 16px !important;
+}
+#work-experience .card,
+#projects .card,
+#online-certificates .card {
     background-color: transparent;
     font-weight: var(--font-weight);
-    padding: 14px;
     transition: 0.15s;
-    border: 1px solid var(--color-light_0055ff-dark_009aff);
-    border-radius: 5px;
+    /* border: 1px solid var(--color-light_0055ff-dark_009aff); */
+    border-radius: 0px;
     box-shadow: 0 0 12px -6px var(--color-light_0055ff-dark_009aff);
-    /* border: 1px solid transparent;
+    border: 1px solid transparent;
     border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
-    border-image-slice: 1; */
+    border-image-slice: 1;
 }
 #work-experience .card:hover,
-#projects .card:hover {
-    color: var(--color-light_f5f5f5-dark_121212) !important;
-    font-weight: var(--font-weight-hover);
-    background-color: var(--color-light_0055ff-dark_009aff);
+#projects .card:hover,
+#online-certificates .card:hover {
+    /* color: var(--color_121212) !important;
+    font-weight: var(--font-weight_bold);
+    background-image: var(--color-light_0055ff-dark_009aff-gradient);
+    border-radius: 0px;
     border: 1px solid var(--color-light_0055ff-dark_009aff);
-    border-radius: 5px;
-    box-shadow: 0 0 12px -5px var(--color-light_0055ff-dark_009aff);
+    box-shadow: 0 0 12px -5px var(--color-light_0055ff-dark_009aff); */
+    transform: scale(1.01);
 }
-#projects .card:hover a {
-    color: var(--color-light_f5f5f5-dark_121212) !important;
-}
+/* #projects .card:hover a {
+    color: var(--color_121212) !important;
+} */
 #projects .project-title {
     border-bottom: 1px dashed var(--color-light_f5f5f5-dark_121212-reverse);
-    padding-bottom: 4px;
-    margin-bottom: 8px;
+    padding-bottom: 8px !important;
+    margin-bottom: 8px !important;
 }
-#projects .card:hover > .project-title {
-    border-bottom: 1px dashed var(--color-light_f5f5f5-dark_121212);
-}
+/* #projects .card:hover > .project-title {
+    border-bottom: 1px dashed var(--color_121212);
+} */
 #projects .project-link {
     display: flex;
     flex-direction: row;
@@ -343,64 +368,46 @@ footer {
     border-bottom: 1px dashed transparent;
 }
 #projects .project-link > a:hover {
-    color: var(--color-light_f5f5f5-dark_121212);
-    border-bottom: 1px dashed var(--color-light_f5f5f5-dark_121212);
+    color: var(--color-light_f5f5f5-dark_121212-reverse) !important;
+    border-bottom: 1px dashed var(--color-light_f5f5f5-dark_121212-reverse);
     text-shadow: unset;
 }
 #projects .project-link-code {
-    padding-left: 2px;
+    padding-left: 4px;
 }
 #projects .project-link-live {
-    padding-right: 2px;
+    padding-right: 4px;
 }
-#online-certificates .online-certificates-item {
-    background-color: transparent;
-    font-weight: var(--font-weight);
-    padding: 6px 10px;
-    transition: 0.15s;
-    border: 1px solid var(--color-light_0055ff-dark_009aff);
-    border-radius: 5px;
-    box-shadow: 0 0 10px -5px var(--color-light_0055ff-dark_009aff);
-}
-#online-certificates .online-certificates-item:hover {
-    color: var(--color-light_f5f5f5-dark_121212) !important;
-    font-weight: var(--font-weight-hover);
-    background-color: var(--color-light_0055ff-dark_009aff);
-    border: 1px solid var(--color-light_0055ff-dark_009aff);
-    border-radius: 5px;
-    box-shadow: 0 0 10px -5px var(--color-light_0055ff-dark_009aff);
+#online-certificates .card {
+    padding: 12px;
 }
 #online-certificates .online-certificates-item:hover a {
-    color: var(--color-light_f5f5f5-dark_121212) !important;
-    font-weight: var(--font-weight);
-}
-#online-certificates .online-certificates-item:hover a:hover {
-    color: var(--color-light_f5f5f5-dark_121212-reverse) !important;
-    font-weight: var(--font-weight);
+    /* color: var(--color-light_f5f5f5-dark_121212-reverse) !important;
+    font-weight: var(--font-weight); */
+    cursor: pointer;
 }
 #online-certificates .online-certificates-title {
-    padding-bottom: 2px;
-    margin-bottom: 2px;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
     border-bottom: 0.5px dashed var(--color-light_f5f5f5-dark_121212-reverse);
 }
-#online-certificates .online-certificates-item:hover .online-certificates-title {
-    padding-bottom: 2px;
-    border-bottom: 0.5px dashed var(--color-light_f5f5f5-dark_121212);
-}
+/* #online-certificates .online-certificates-item:hover .online-certificates-title {
+    border-bottom: 0.5px dashed var(--color_121212);
+} */
 #online-certificates .online-certificates-details-item {
     display: flex;
     flex-direction: row;
     align-items: top;
     justify-content: left;
     padding-left: 0px;
-    margin: 2px 0px;
+    margin: 4px 0px;
 }
 #online-certificates .online-certificates-details-item > div:first-child {
     width: 30px;
     text-align: center;
 }
 #online-certificates .online-certificates-details-item-link-placeholder {
-    padding-right: 2px;
+    padding-right: 4px;
 }
 *,
 ::after,
