@@ -270,6 +270,7 @@ footer {
 #work-experience .work-experience-certificate-link > div:first-child,
 #work-experience .work-experience-type > div:first-child {
     width: 30px;
+    min-width: 30px;
     text-align: center;
 }
 #work-experience .work-experience-description {
@@ -513,7 +514,6 @@ button:not(:disabled) {
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
     display: flex;
-    flex: 1 0 100%;
     flex-wrap: wrap;
     margin-top: calc(var(--bs-gutter-y) * -1);
     margin-right: calc(var(--bs-gutter-x) / -2);
