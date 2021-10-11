@@ -278,7 +278,7 @@ footer {
     padding-bottom: 0px;
     margin-top: 16px;
 }
-/* #work-experience .card:hover .work-experience-description {
+#work-experience .card:hover .work-experience-description {
     border-top: 0.5px dashed var(--color_121212);
 }
 #work-experience .card:hover .work-experience-certificate-link {
@@ -286,7 +286,7 @@ footer {
 }
 #work-experience .card:hover .work-experience-certificate-link:hover {
     color: var(--color-light_f5f5f5-dark_121212-reverse) !important;
-} */
+}
 @media only screen and (max-width: 991px) {
     #work-experience .work-experience-description {
         margin-top: 12px;
@@ -328,35 +328,35 @@ footer {
     background-color: transparent;
     font-weight: var(--font-weight);
     transition: 0.15s;
-    /* border: 1px solid var(--color-light_0055ff-dark_009aff); */
-    border-radius: 0px;
+    border: 1px solid var(--color-light_0055ff-dark_009aff);
+    border-radius: 8px;
     box-shadow: 0 0 12px -6px var(--color-light_0055ff-dark_009aff);
-    border: 1px solid transparent;
+    /* border: 1px solid transparent;
     border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
-    border-image-slice: 1;
+    border-image-slice: 1; */
 }
 #work-experience .card:hover,
 #projects .card:hover,
 #online-certificates .card:hover {
-    /* color: var(--color_121212) !important;
+    color: var(--color_121212) !important;
     font-weight: var(--font-weight_bold);
+    border: none;
     background-image: var(--color-light_0055ff-dark_009aff-gradient);
-    border-radius: 0px;
-    border: 1px solid var(--color-light_0055ff-dark_009aff);
-    box-shadow: 0 0 12px -5px var(--color-light_0055ff-dark_009aff); */
+    /* border: 1px solid var(--color-light_0055ff-dark_009aff); */
+    /* box-shadow: 0 0 12px -5px var(--color-light_0055ff-dark_009aff); */
     transform: scale(1.01);
 }
-/* #projects .card:hover a {
+#projects .card:hover a {
     color: var(--color_121212) !important;
-} */
+}
 #projects .project-title {
     border-bottom: 1px dashed var(--color-light_f5f5f5-dark_121212-reverse);
     padding-bottom: 8px !important;
     margin-bottom: 8px !important;
 }
-/* #projects .card:hover > .project-title {
+#projects .card:hover > .project-title {
     border-bottom: 1px dashed var(--color_121212);
-} */
+}
 #projects .project-link {
     display: flex;
     flex-direction: row;
@@ -382,8 +382,8 @@ footer {
     padding: 12px;
 }
 #online-certificates .online-certificates-item:hover a {
-    /* color: var(--color-light_f5f5f5-dark_121212-reverse) !important;
-    font-weight: var(--font-weight); */
+    color: var(--color-light_f5f5f5-dark_121212-reverse) !important;
+    font-weight: var(--font-weight);
     cursor: pointer;
 }
 #online-certificates .online-certificates-title {
@@ -391,9 +391,9 @@ footer {
     margin-bottom: 8px;
     border-bottom: 0.5px dashed var(--color-light_f5f5f5-dark_121212-reverse);
 }
-/* #online-certificates .online-certificates-item:hover .online-certificates-title {
+#online-certificates .online-certificates-item:hover .online-certificates-title {
     border-bottom: 0.5px dashed var(--color_121212);
-} */
+}
 #online-certificates .online-certificates-details-item {
     display: flex;
     flex-direction: row;
