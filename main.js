@@ -69,6 +69,6 @@ async function onLoad() {
   document.getElementById("loading").style.display = "none";
 }
 const fetchOnLoad = async (lang) => {
-  let data = await fetch(`http://localhost:5500/assets/lang/${lang}.lang.json`);
+  let data = await fetch(`/assets/lang/${lang}.lang.json`);
   return await data.json();
 };
