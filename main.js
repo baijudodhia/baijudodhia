@@ -59,6 +59,10 @@ async function onLoad() {
   if (["en", "hi", "gu", "sa"].includes(lang)) {
     changeLanguage(lang);
     data = await fetchOnLoad(lang);
+  } else {
+    lang = "en";
+    localStorage.setItem("lang", "en");
+    data = await fetchOnLoad(lang);
   }
   setDefaultTheme();
   document.getElementById("name-span").innerHTML = data.name;
