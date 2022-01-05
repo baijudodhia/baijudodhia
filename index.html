@@ -1,107 +1,885 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-    <head>
-        <!-- Others -->
-        <link rel="stylesheet" href="./main.css" />
-        <meta charset="utf-8" />
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-97DE9W3FTW"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag("js", new Date());
-            gtag("config", "G-97DE9W3FTW");
-        </script>
+<head>
+    <!-- Others -->
+    <link rel="stylesheet" href="./main.css" />
+    <meta charset="utf-8" />
 
-        <!-- Microsoft Clarity -->
-        <script type="text/javascript">
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "6kqvmd0sos");
-        </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-97DE9W3FTW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-97DE9W3FTW");
+    </script>
 
-        <!-- Meta tags -->
-        <title>Baiju Dodhia | Software Developer</title>
-        <meta name="keywords" content="baiju dodhia, software developer, technology, startups, entrepreneur" />
-        <meta name="description" content="Software Developer in JavaScript, Python and Web Development with great flexibility of learning and adapting to any programming language or technology." />
-        <meta name="language" content="EN" />
-        <meta name="robots" content="INDEX, FOLLOW" />
-        <meta name="author" content="Baiju Dodhia" />
-        <meta name="designer" content="Baiju Dodhia" />
-        <meta name="copyright" content="Baiju Dodhia" />
-        <meta name="owner" content="Baiju Dodhia" />
-        <meta name="geo.region" content="IN" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "6kqvmd0sos");
+    </script>
 
-        <!-- Open Graph -->
-        <meta name="og:locality" content="Mumbai" />
-        <meta name="og:region" content="IN" />
-        <meta name="og:title" content="Baiju Dodhia" />
+    <!-- Meta tags -->
+    <title>Baiju Dodhia | Software Developer</title>
+    <meta name="keywords" content="baiju dodhia, software developer, technology, startups, entrepreneur" />
+    <meta name="description"
+        content="Software Developer in JavaScript, Python and Web Development with great flexibility of learning and adapting to any programming language or technology." />
+    <meta name="language" content="EN" />
+    <meta name="robots" content="INDEX, FOLLOW" />
+    <meta name="author" content="Baiju Dodhia" />
+    <meta name="designer" content="Baiju Dodhia" />
+    <meta name="copyright" content="Baiju Dodhia" />
+    <meta name="owner" content="Baiju Dodhia" />
+    <meta name="geo.region" content="IN" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-        <!-- Facebook -->
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Baiju Dodhia" />
-        <meta property="og:title" content="Baiju Dodhia" />
-        <meta property="og:description" content="Baiju Dodhia, Software Developer" />
-        <meta property="og:image" content="/assets/favicon.png" />
-        <meta property="og:url" content="http://baijudodhia.github.com/" />
+    <!-- Open Graph -->
+    <meta name="og:locality" content="Mumbai" />
+    <meta name="og:region" content="IN" />
+    <meta name="og:title" content="Baiju Dodhia" />
 
-        <!-- Twitter -->
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:site" content="" />
-        <meta property="twitter:title" content="Baiju Dodhia" />
-        <meta property="twitter:description" content="Baiju Dodhia, Software Developer" />
-        <meta property="twitter:image" content="./assets/favicon.png" />
-        <meta property="twitter:url" content="" />
+    <!-- Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Baiju Dodhia" />
+    <meta property="og:title" content="Baiju Dodhia" />
+    <meta property="og:description" content="Baiju Dodhia, Software Developer" />
+    <meta property="og:image" content="/assets/favicon.png" />
+    <meta property="og:url" content="http://baijudodhia.github.com/" />
 
-        <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:site" content="" />
+    <meta property="twitter:title" content="Baiju Dodhia" />
+    <meta property="twitter:description" content="Baiju Dodhia, Software Developer" />
+    <meta property="twitter:image" content="./assets/favicon.png" />
+    <meta property="twitter:url" content="" />
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Slab&display=swap" rel="stylesheet" />
-    </head>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
 
-    <body style="margin-top: 58px !important">
-        <!-- Navigation -->
-        <nav class="navbar fixed-top" style="background-color: transparent; backdrop-filter: blur(10px); color: whitesmoke !important">
-            <div class="container" style="max-width: 1050px">
-                <div class="navbar-brand">
-                    <a rel="noopener" class="navbar-brand-title" href="/">hey!</a>
-                    <div id="waving-hand">👋</div>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Slab&display=swap" rel="stylesheet" />
+</head>
+
+<body style="margin-top: 58px !important" onload="javascript:onLoad();">
+    <!-- Initial Loading Screen -->
+    <div id="loading">
+        <i class="fa fa-spinner" aria-hidden="true"></i>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar fixed-top"
+        style="background-color: transparent; backdrop-filter: blur(10px); color: whitesmoke !important">
+        <div class="container" style="max-width: 1050px">
+            <div class="navbar-brand">
+                <a rel="noopener" class="navbar-brand-title" href="/">hey!</a>
+                <div id="waving-hand">👋</div>
+            </div>
+            <div class="navbar-options">
+                <div id="lang-dropdown">
+                    <button type="button" id="lang-dropdown-toggler">
+                        <i class="fa fa-language" aria-hidden="true"></i>
+                    </button>
+                    <div id="lang-dropdown-menu">
+                        <div class="lang-dropdown-menu-item" value="en"
+                            onclick="javascript:changeLanguageOnButton('en')">
+                            English
+                        </div>
+                        <div class="lang-dropdown-menu-item" value="hi"
+                            onclick="javascript:changeLanguageOnButton('hi')">
+                            हिन्दी
+                        </div>
+                        <div class="lang-dropdown-menu-item" value="gu"
+                            onclick="javascript:changeLanguageOnButton('gu')">
+                            ગુજરાતી
+                        </div>
+                        <div class="lang-dropdown-menu-item" value="sa">
+                            संस्कृतम्(soon)
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <input type="submit" name="theme" id="theme-nav-brand" value="🌕" theme-value="dark" onclick="changeTheme();" />
+                <input type="submit" name="theme" id="theme-nav-brand" value="🌕" theme-value="dark"
+                    onclick="changeTheme();" />
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="max-width: 1050px">
+        <!-- About -->
+        <div class="wrapper px-1" id="about">
+            <h2 class="mt-2 mb-3">
+                <a rel="noopener" href="https://www.google.com/search?q=%22Baiju+Dodhia%22+OR+%22baijudodhia%22"
+                    target="_blank" id="name">
+                    <span class="link-underline" id="name-span">Baiju Dodhia</span>
+                </a>,<br class="conditional-breakline" />
+                <span id="profile-span">Software Engineer</span>
+            </h2>
+            <p>
+                Undergrad Student of Information Technology at
+                <a rel="noopener" href="https://kjsce.somaiya.edu/en" target="_blank"><span
+                        class="link-underline">KJSCE</span></a>
+            </p>
+            <p>I'm a motivated student with entrepreneurial mindset and excellent leadership and teamwork abilities
+                demonstrated with being part of various student committees over 3 year.</p>
+            <p>I have strong project based knowledge of various technical skills including programming languages and
+                software tools.</p>
+
+            <div class="social d-flex">
+                <a class="link-underline pr-2" rel="noopener" target="_blank"
+                    href="https://www.linkedin.com/in/baijudodhia">
+                    <i aria-hidden="true" class="fa fa-linkedin-square" title="Connect with me on LinkedIn"></i>
+                    <span class="social-icon-placeholder">LinkedIn</span>
+                </a>
+                <a class="link-underline pl-2" rel="noopener" target="_blank" href="https://github.com/baijudodhia">
+                    <i aria-hidden="true" class="fa fa-github-square" title="Check out projects on GitHub"></i>
+                    <span class="social-icon-placeholder">GitHub</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Work -->
+        <div class="wrapper px-1" id="what-i-do">
+            <div class="d-flex flex-row mt-2 mb-3">
+                <h3 class="my-auto mr-auto">What I do?</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-6 py-2" id="what-i-do-left">
+                    <div class="card h-100" style="background: transparent; border: none">
+                        <div class="d-flex flex-column h-100" id="whatidoleft">
+                            <div class="p mb-3">I work primarily in JavaScript, Python and Web Development with great
+                                flexibility of learning and adapting to any programming language or technology.</div>
+                            <div class="p">Apart from coding and technology, pretty much involved in exploring and
+                                learning about better design techniques, digital marketing, entrepreneurship and
+                                startups, business and project management etc.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 py-2" id="what-i-do-right">
+                    <div class="card h-100" style="background: transparent; border: none">
+                        <div class="d-flex flex-column h-100" id="whatidoright">
+                            <div class="p">
+                                I have been a part of a lot of student communities related to tech, startups and
+                                entreprenuership such as
+                                <a rel="noopener" href="https://www.bloomboxkjsce.com/" target="_blank">
+                                    <span class="link-underline">BloomBox, E-Cell KJSCE</span>
+                                </a>
+                                ,&nbsp;<br />
+                                <a rel="noopener" href="http://www.redshift-racing.in/" target="_blank">
+                                    <span class="link-underline">RedShift Racing India</span>
+                                </a>
+                                ,&nbsp;<br />
+                                <a rel="noopener" href="https://www.csikjsce.org/" target="_blank">
+                                    <span class="link-underline">CSI KJSCE</span>
+                                </a>
+                                ,&nbsp;<br />
+                                <a rel="noopener" href="https://www.hultprize.org/" target="_blank">
+                                    <span class="link-underline">Hult Prize Somaiya</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
+        </div>
 
-        <div class="container" style="max-width: 1050px">
-            <!-- About -->
-            <div class="wrapper px-1" id="about">
-                <h2 class="mt-2 mb-3">
-                    <a rel="noopener" href="https://www.google.com/search?q=%22Baiju+Dodhia%22+OR+%22baijudodhia%22" target="_blank" id="name"><span class="link-underline">Baiju Dodhia</span></a
-                    >&nbsp;,<br class="conditional-breakline" />
-                    Software Developer
-                </h2>
-                <p>
-                    Undergrad Student of Information Technology at
-                    <a rel="noopener" href="https://kjsce.somaiya.edu/en" target="_blank"><span class="link-underline">KJSCE</span></a>
-                </p>
-                <p>I'm a motivated student with entrepreneurial mindset and excellent leadership and teamwork abilities demonstrated with being part of various student committees over 3 year.</p>
-                <p>I have strong project based knowledge of various technical skills including programming languages and software tools.</p>
+        <!-- Experience -->
+        <div class="wrapper px-1" id="work-experience">
+            <div class="d-flex flex-row mt-2 mb-4">
+                <h3 class="my-auto mr-auto">Work Experience</h3>
+            </div>
+            <div class="card d-flex flex-column h-100 w-100 mt-4 mb-3 p-2">
+                <div class="row mx-auto">
+                    <div class="col-md-2 d-flex px-2 py-1 justify-content-center align-items-center">
+                        <div
+                            class="work-experience-img-container d-flex justify-content-center align-items-center w-100 h-100">
+                            <img src="./assets/img/svg/fogr.svg" alt="FoGR Tech." />
+                        </div>
+                    </div>
+                    <div class="col-md-10 d-flex px-2 flex-column">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="work-experience-title">
+                                    <div>
+                                        <i aria-hidden="true" class="fa fa-briefcase" title="Job Title"></i>
+                                    </div>
+                                    <div>
+                                        <span>Backend Intern</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="work-experience-date">
+                                    <div>
+                                        <i aria-hidden="true" class="fa fa-calendar-check-o"
+                                            title="Duration of Internship"></i>
+                                    </div>
+                                    <div>
+                                        <span>Sept 2020 - Nov 2020</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="work-experience-company">
+                                    <div>
+                                        <i aria-hidden="true" class="fa fa-building-o" title="Company"></i>
+                                    </div>
+                                    <div>
+                                        <span>FoGR Tech.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="work-experience-location">
+                                    <div>
+                                        <i aria-hidden="true" class="fa fa-map-marker" title="Location"></i>
+                                    </div>
+                                    <div>
+                                        <span>Hyderabad, TS (Remote)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="work-experience-type">
+                                    <div>
+                                        <i aria-hidden="true" class="fa fa-tasks" title="Type of Work"></i>
+                                    </div>
+                                    <div>
+                                        <span>Web/Mobile App Development</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-experience-description">
+                        Worked on 2 applications -<br />
+                        <ul class="mb-0">
+                            <li>Food Delivery App: Built backend for Android/iOS application using Angular Ionic
+                                Framework for integration with UI, Firebase for Realtime Database and User
+                                Authentication.</li>
+                            <li>Delivery Package Returning App: Developed 3 integrated web applications (customer, admin
+                                and delivery agent) using Angular for UI, Node.js for backend and REST API, PubNub for
+                                real-time notifications, Stripe for Payments and MongoDB Atlas for Cloud-based Document
+                                Database.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card d-flex flex-column h-100 w-100 mt-4 mb-3 p-2">
+                <div class="row mx-auto">
+                    <div class="col-md-2 d-flex px-2 py-1 justify-content-center align-items-center">
+                        <div
+                            class="work-experience-img-container d-flex justify-content-center align-items-center w-100 h-100">
+                            <img src="./assets/img/svg/kjsce.svg" alt="K. J. Somaiya College of Engineering" />
+                        </div>
+                    </div>
+                    <div class="col-md-10 d-flex px-2 flex-column">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="work-experience-title">
+                                    <div>
+                                        <i aria-hidden="true" class="fa fa-briefcase" title="Job Title"></i>
+                                    </div>
+                                    <div>
+                                        <span>Software Development Intern</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="work-experience-date">
+                                    <div>
+                                        <i aria-hidden="true" class="fa fa-calendar-check-o"
+                                            title="Duration of Internship"></i>
+                                    </div>
+                                    <div>
+                                        <span>April 2020 - June 2020</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="work-experience-company">
+                                    <div>
+                                        <i aria-hidden="true" class="fa fa-building-o" title="Company"></i>
+                                    </div>
+                                    <div>
+                                        <span>K. J. Somaiya College of Engineering</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="work-experience-location">
+                                    <div>
+                                        <i aria-hidden="true" class="fa fa-map-marker" title="Location"></i>
+                                    </div>
+                                    <div>
+                                        <span>Mumbai, MH</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="work-experience-type">
+                                    <div>
+                                        <i aria-hidden="true" class="fa fa-tasks" title="Type of Work"></i>
+                                    </div>
+                                    <div>
+                                        <span>Browser Extension</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-experience-description">
+                        Worked on development of Browser Extension -<br />
+                        <ul class="mb-0">
+                            <li>Worked on development of Chromium-browser based extension for Gmail for extracting
+                                information and generating summary from email threads using Node.js and Gmail.js</li>
+                            <li>Achieved 100% results for extracting information like email ids and website URLs
+                                mentioned in the email thread.</li>
+                            <li>Generated a 3 point extractive summary of email thread using cosine similarity measures.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card d-flex flex-column h-100 w-100 mt-4 mb-3 p-2">
+                <div class="row mx-auto">
+                    <div class="col-md-2 d-flex px-2 py-1 justify-content-center align-items-center">
+                        <div
+                            class="work-experience-img-container d-flex justify-content-center align-items-center w-100 h-100">
+                            <img src="./assets/img/svg/kjsce.svg" alt="K. J. Somaiya College of Engineering" />
+                        </div>
+                    </div>
+                    <div class="col-md-10 d-flex px-2 flex-column">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="work-experience-title">
+                                    <div>
+                                        <i aria-hidden="true" class="fa fa-briefcase" title="Job Title"></i>
+                                    </div>
+                                    <div>
+                                        <span>Software Development Intern</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="work-experience-date">
+                                    <div>
+                                        <i aria-hidden="true" class="fa fa-calendar-check-o"
+                                            title="Duration of Internship"></i>
+                                    </div>
+                                    <div>
+                                        <span>Nov 2018 - April 2019</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="work-experience-company">
+                                    <div>
+                                        <i aria-hidden="true" class="fa fa-building-o" title="Company"></i>
+                                    </div>
+                                    <div>
+                                        <span>K. J. Somaiya College of Engineering</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="work-experience-location">
+                                    <div>
+                                        <i aria-hidden="true" class="fa fa-map-marker" title="Location"></i>
+                                    </div>
+                                    <div>
+                                        <span>Mumbai, MH</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="work-experience-type">
+                                    <div>
+                                        <i aria-hidden="true" class="fa fa-tasks" title="Type of Work"></i>
+                                    </div>
+                                    <div>
+                                        <span>Desktop Application Development</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-experience-description">
+                        Worked on MS Excel VBA -<br />
+                        <ul class="mb-0">
+                            <li>Created a Fullstack Desktop Application for Proctor System with features such as Add,
+                                Remove, Modify, View and Search the Excel database of students and faculty using Visual
+                                Basic for Applications and Microsoft Excel.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                <div class="social d-flex">
-                    <a class="link-underline pr-2" rel="noopener" target="_blank" href="https://www.linkedin.com/in/baijudodhia">
+        <!-- Skills -->
+        <div class="wrapper px-1" id="skills">
+            <div class="d-flex flex-row mt-2 mb-3">
+                <h3 class="my-auto mr-auto">Skills</h3>
+            </div>
+            <div class="skills-item" id="skills-programming-languages">
+                <div class="skills-title">
+                    <u>Programming Languages</u>: <br class="skills-conditional-breakline" />
+                    <span> JavaScript, Python, Java, HTML/CSS.</span>
+                </div>
+            </div>
+            <div class="skills-item" id="skills-frameworks-and-libraries">
+                <div class="skills-title">
+                    <u>Frameworks &amp; Libraries</u>:<br class="skills-conditional-breakline" />
+                    <span>Bootstrap, Material, React, Angular, Node.js, Django, Flask.</span>
+                </div>
+            </div>
+            <div class="skills-item" id="skills-databases">
+                <div class="skills-title">
+                    <u>Databases</u>:<br class="skills-conditional-breakline" />
+                    <span>SQL, MongoDB (&plus;Atlas), Firebase.</span>
+                </div>
+            </div>
+            <div class="skills-item" id="skills-tools">
+                <div class="skills-title">
+                    <u>Tools</u>:<br class="skills-conditional-breakline" />
+                    <span>Git, VS Code, Android Studio.</span>
+                </div>
+            </div>
+            <div class="skills-item" id="skills-cloud-technologies">
+                <div class="skills-title">
+                    <u>Cloud Technologies</u>: <br class="skills-conditional-breakline" />
+                    <span>AWS (Amazon Web Services), Heroku, GCP (Google Cloud Platform).</span>
+                </div>
+            </div>
+            <div class="skills-item" id="skills-platforms">
+                <div class="skills-title">
+                    <u>Platforms</u>: <br class="skills-conditional-breakline" />
+                    <span>Web, Mobile, Desktop.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="wrapper px-1" id="projects">
+            <div class="d-flex flex-row my-2">
+                <h3 class="my-auto mr-auto">Projects</h3>
+                <div class="mt-2 mb-1">
+                    <a class="link-underline" target="_blank" rel="noopener"
+                        href="https://github.com/baijudodhia?tab=repositories">
+                        <span>view all</span>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 d-flex">
+                    <div class="d-flex flex-column">
+                        <div class="d-flex flex-grow-1">
+                            <div class="row">
+                                <div class="col-md-12" style="margin: 12px 0px">
+                                    <div class="card d-flex flex-column mx-auto h-100 w-100">
+                                        <div class="project-title mb-1">photoml-firebase-mlkit</div>
+                                        <div class="project-description h-100">Android Image Gallery app with Machine
+                                            Learning features such as Facial Recognition, OCR, Barcode and Label
+                                            Detection. Built in Android Studio using Java, Glide and Firebase ML-Kit.
+                                        </div>
+                                        <div class="project-link mt-2 w-100">
+                                            <a target="_blank" rel="noopener"
+                                                href="https://github.com/baijudodhia/photoml-firebase-mlkit">
+                                                <i aria-hidden="true" class="fa fa-code"
+                                                    title="Check out code on GitHub"></i>
+                                                <span class="project-link-code">code</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-grow-1">
+                            <div class="row h-100">
+                                <div class="col-md-6" style="margin: 12px 0px">
+                                    <div class="card d-flex flex-column mx-auto h-100 w-100">
+                                        <div class="project-title mb-1">redshiftracing</div>
+                                        <div class="project-description h-100">Static website for RedShift Racing India,
+                                            KJSCE. Built using HTML, CSS, JS and Bootstrap.</div>
+                                        <div class="project-link mt-2">
+                                            <a target="_blank" rel="noopener"
+                                                href="https://github.com/baijudodhia/redshiftracing">
+                                                <i aria-hidden="true" class="fa fa-code"
+                                                    title="Check out code on GitHub"></i>
+                                                <span class="project-link-code">code</span>
+                                            </a>
+                                            <a target="_blank" rel="noopener"
+                                                href="https://baijudodhia.github.io/redshiftracing/">
+                                                <span class="project-link-live">live</span>
+                                                <i aria-hidden="true" class="fa fa-external-link-square"
+                                                    title="Check out code on GitHub"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" style="margin: 12px 0px">
+                                    <div class="card d-flex flex-column mx-auto h-100 w-100">
+                                        <div class="project-title mb-1">dashboard-ng</div>
+                                        <div class="project-description h-100">Startup Dashboard Application displaying
+                                            and visualising data about startups built using Angular.</div>
+                                        <div class="project-link mt-2">
+                                            <a target="_blank" rel="noopener"
+                                                href="https://github.com/baijudodhia/dashboard-ng">
+                                                <i aria-hidden="true" class="fa fa-code"
+                                                    title="Check out code on GitHub"></i>
+                                                <span class="project-link-code">code</span>
+                                            </a>
+                                            <a target="_blank" rel="noopener"
+                                                href="https://baijudodhia.github.io/dashboard-ng/">
+                                                <span class="project-link-live">live</span>
+                                                <i aria-hidden="true" class="fa fa-external-link-square"
+                                                    title="Check out code on GitHub"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex">
+                    <div class="d-flex flex-column justify-content-between">
+                        <div class="d-flex flex-grow-1">
+                            <div class="row">
+                                <div class="col-md-6" style="margin: 12px 0px">
+                                    <div class="card d-flex flex-column mx-auto h-100 w-100">
+                                        <div class="project-title mb-1">designs</div>
+                                        <div class="project-description h-100">Multiple frontend website templates such
+                                            as Blog, Online Store, Travel etc. built using HTML, CSS and JS.</div>
+                                        <div class="project-link mt-2">
+                                            <a target="_blank" rel="noopener"
+                                                href="https://github.com/baijudodhia/designs" target="_blank">
+                                                <i aria-hidden="true" class="fa fa-code"
+                                                    title="Check out code on GitHub"></i>
+                                                <span class="project-link-code">code</span>
+                                            </a>
+                                            <a target="_blank" rel="noopener"
+                                                href="https://baijudodhia.github.io/designs/">
+                                                <span class="project-link-live">live</span>
+                                                <i aria-hidden="true" class="fa fa-external-link-square"
+                                                    title="Check out code on GitHub"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" style="margin: 12px 0px">
+                                    <div class="card d-flex flex-column mx-auto h-100 w-100">
+                                        <div class="project-title mb-1">twitter-django</div>
+                                        <div class="project-description h-100">Twitter clone website built using Twitter
+                                            API in Django providing functionality for searching tweets and trends using
+                                            location.</div>
+                                        <div class="project-link mt-2">
+                                            <a target="_blank" rel="noopener"
+                                                href="https://github.com/baijudodhia/twitter-django" target="_blank">
+                                                <i aria-hidden="true" class="fa fa-code"
+                                                    title="Check out code on GitHub"></i>
+                                                <span class="project-link-code">code</span>
+                                            </a>
+                                            <a target="_blank" rel="noopener" href="https://twitterdj.herokuapp.com/">
+                                                <span class="project-link-live">live</span>
+                                                <i aria-hidden="true" class="fa fa-external-link-square"
+                                                    title="Check out code on GitHub"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-grow-1">
+                            <div class="row">
+                                <div class="col-md-12" style="margin: 12px 0px">
+                                    <div class="card d-flex flex-column mx-auto h-100 w-100">
+                                        <div class="project-title mb-1">img-geometric-transformation</div>
+                                        <div class="project-description h-100">A python script to perform Geometric
+                                            Transformation on Image File such as Perspective change, Zoom In/Out,
+                                            Translate, Scale, Shear, Rotate and Flip.</div>
+                                        <div class="project-link mt-2">
+                                            <a target="_blank" rel="noopener"
+                                                href="https://github.com/baijudodhia/img-geometric-transformation">
+                                                <i aria-hidden="true" class="fa fa-code"
+                                                    title="Check out code on GitHub"></i>
+                                                <span class="project-link-code">code</span>
+                                            </a>
+                                            <a target="_blank" rel="noopener"
+                                                href="https://colab.research.google.com/drive/1xt1oV4b_egSAQjk9HbDGl9bes_j8NR8Z?usp=sharing">
+                                                <span class="project-link-live">live</span>
+                                                <i aria-hidden="true" class="fa fa-external-link-square"
+                                                    title="Check out code on GitHub"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Online Certifications -->
+        <div class="wrapper px-1" id="online-certificates">
+            <div class="d-flex flex-row mt-2 mb-3">
+                <h3 class="my-auto mr-auto">Online Certifications</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-4 my-2 px-2">
+                    <div class="online-certificates-item card">
+                        <div class="online-certificates-title">Python for Everyone Specialization</div>
+                        <div class="online-certificates-details">
+                            <span class="online-certificates-details-item">
+                                <div>
+                                    <i aria-hidden="true" class="fa fa-building-o" title="Company"></i>
+                                </div>
+                                <div>
+                                    <span>University of Michigen</span>
+                                </div>
+                            </span>
+                            <span class="online-certificates-details-item">
+                                <div>
+                                    <i aria-hidden="true" class="fa fa-calendar-check-o"
+                                        title="Certificate Issue Date"></i>
+                                </div>
+                                <div>
+                                    <span>Sept 2020</span>
+                                </div>
+                            </span>
+                            <span class="online-certificates-details-item">
+                                <div>
+                                    <i aria-hidden="true" class="fa fa-certificate"
+                                        title="Course Completion Certificate"></i>
+                                </div>
+                                <a class="link-underline" target="_blank" rel="noopener"
+                                    href="https://www.coursera.org/account/accomplishments/specialization/BJN5ZQLN2PXC">
+                                    <span class="online-certificates-details-item-link-placeholder">Certificate</span>
+                                    <i aria-hidden="true" class="fa fa-external-link-square"
+                                        title="Check out code on GitHub"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 my-2 px-2">
+                    <div class="online-certificates-item card">
+                        <div class="online-certificates-title">AI for Everyone</div>
+                        <div class="online-certificates-details">
+                            <span class="online-certificates-details-item">
+                                <div>
+                                    <i aria-hidden="true" class="fa fa-building-o" title="Company"></i>
+                                </div>
+                                <div>
+                                    <span>deeplearning.ai</span>
+                                </div>
+                            </span>
+                            <span class="online-certificates-details-item">
+                                <div>
+                                    <i aria-hidden="true" class="fa fa-calendar-check-o"
+                                        title="Certificate Issue Date"></i>
+                                </div>
+                                <div>
+                                    <span>Aug 2020</span>
+                                </div>
+                            </span>
+                            <span class="online-certificates-details-item">
+                                <div>
+                                    <i aria-hidden="true" class="fa fa-certificate"
+                                        title="Course Completion Certificate"></i>
+                                </div>
+                                <a class="link-underline" target="_blank" rel="noopener"
+                                    href="https://www.coursera.org/account/accomplishments/verify/L4DMNKR5VKEZ">
+                                    <span class="online-certificates-details-item-link-placeholder">Certificate</span>
+                                    <i aria-hidden="true" class="fa fa-external-link-square"
+                                        title="Check out code on GitHub"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 my-2 px-2">
+                    <div class="online-certificates-item card">
+                        <div class="online-certificates-title">AWS Fundamentals Specialization</div>
+                        <div class="online-certificates-details">
+                            <span class="online-certificates-details-item">
+                                <div>
+                                    <i aria-hidden="true" class="fa fa-building-o" title="Company"></i>
+                                </div>
+                                <div>
+                                    <span>Amazon Web Services (AWS)</span>
+                                </div>
+                            </span>
+                            <span class="online-certificates-details-item">
+                                <div>
+                                    <i aria-hidden="true" class="fa fa-calendar-check-o"
+                                        title="Certificate Issue Date"></i>
+                                </div>
+                                <div>
+                                    <span>Aug 2020</span>
+                                </div>
+                            </span>
+                            <span class="online-certificates-details-item">
+                                <div>
+                                    <i aria-hidden="true" class="fa fa-certificate"
+                                        title="Course Completion Certificate"></i>
+                                </div>
+                                <a class="link-underline" target="_blank" rel="noopener"
+                                    href="https://www.coursera.org/account/accomplishments/specialization/3XXHQPZ2MZ3R">
+                                    <span class="online-certificates-details-item-link-placeholder">Certificate</span>
+                                    <i aria-hidden="true" class="fa fa-external-link-square"
+                                        title="Check out code on GitHub"></i>
+                                </a>
+                                </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 my-2 px-2">
+                    <div class="online-certificates-item card">
+                        <div class="online-certificates-title">Java Programming Masterclass</div>
+                        <div class="online-certificates-details">
+                            <span class="online-certificates-details-item">
+                                <div>
+                                    <i aria-hidden="true" class="fa fa-building-o" title="Company"></i>
+                                </div>
+                                <div>
+                                    <span>Udemy</span>
+                                </div>
+                            </span>
+                            <span class="online-certificates-details-item">
+                                <div>
+                                    <i aria-hidden="true" class="fa fa-calendar-check-o"
+                                        title="Certificate Issue Date"></i>
+                                </div>
+                                <div>
+                                    <span>Aug 2020</span>
+                                </div>
+                            </span>
+                            <span class="online-certificates-details-item">
+                                <div>
+                                    <i aria-hidden="true" class="fa fa-certificate"
+                                        title="Course Completion Certificate"></i>
+                                </div>
+                                <a class="link-underline" target="_blank" rel="noopener"
+                                    href="https://www.udemy.com/certificate/UC-53d1ce83-15dd-48bd-8939-28b61e67774f/">
+                                    <span class="online-certificates-details-item-link-placeholder">Certificate</span>
+                                    <i aria-hidden="true" class="fa fa-external-link-square"
+                                        title="Check out code on GitHub"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 my-2 px-2">
+                    <div class="online-certificates-item card">
+                        <div class="online-certificates-title">Introduction to Cloud Computing</div>
+                        <div class="online-certificates-details">
+                            <span class="online-certificates-details-item">
+                                <div>
+                                    <i aria-hidden="true" class="fa fa-building-o" title="Company"></i>
+                                </div>
+                                <div>
+                                    <span>IBM</span>
+                                </div>
+                            </span>
+                            <span class="online-certificates-details-item">
+                                <div>
+                                    <i aria-hidden="true" class="fa fa-calendar-check-o"
+                                        title="Certificate Issue Date"></i>
+                                </div>
+                                <div>
+                                    <span>July 2020</span>
+                                </div>
+                            </span>
+                            <span class="online-certificates-details-item">
+                                <div>
+                                    <i aria-hidden="true" class="fa fa-certificate"
+                                        title="Course Completion Certificate"></i>
+                                </div>
+                                <a class="link-underline" target="_blank" rel="noopener"
+                                    href="https://www.coursera.org/account/accomplishments/verify/FUSRTHFFMGGY">
+                                    <span class="online-certificates-details-item-link-placeholder">Certificate</span>
+                                    <i aria-hidden="true" class="fa fa-external-link-square"
+                                        title="Check out code on GitHub"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 my-2 px-2">
+                    <div class="online-certificates-item card">
+                        <div class="online-certificates-title">Marketing in a Digital World</div>
+                        <div class="online-certificates-details">
+                            <span class="online-certificates-details-item">
+                                <div>
+                                    <i aria-hidden="true" class="fa fa-building-o" title="Company"></i>
+                                </div>
+                                <div>
+                                    <span>University of Illinois</span>
+                                </div>
+                            </span>
+                            <span class="online-certificates-details-item">
+                                <div>
+                                    <i aria-hidden="true" class="fa fa-calendar-check-o"
+                                        title="Certificate Issue Date"></i>
+                                </div>
+                                <div>
+                                    <span>July 2020</span>
+                                </div>
+                            </span>
+                            <span class="online-certificates-details-item">
+                                <div>
+                                    <i aria-hidden="true" class="fa fa-certificate"
+                                        title="Internship Completion Certificate"></i>
+                                </div>
+                                <a class="link-underline" target="_blank" rel="noopener"
+                                    href="https://www.coursera.org/account/accomplishments/verify/846JB3TDQBG3">
+                                    <span class="online-certificates-details-item-link-placeholder">Certificate</span>
+                                    <i aria-hidden="true" class="fa fa-external-link-square"
+                                        title="Check out code on GitHub"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Connect -->
+    <div class="container" style="max-width: 1050px">
+        <footer class="pt-3 pb-4 px-1" id="connect">
+            <div class="mb-2">Get in touch with me.</div>
+            <div class="d-flex justify-content-between align-items-center" style="align-items: center !important">
+                <div class="d-flex social align-items-center">
+                    <a class="link-underline pr-2" rel="noopener" target="_blank"
+                        href="https://www.linkedin.com/in/baijudodhia">
                         <i aria-hidden="true" class="fa fa-linkedin-square" title="Connect with me on LinkedIn"></i>
                         <span class="social-icon-placeholder">LinkedIn</span>
                     </a>
@@ -110,683 +888,20 @@
                         <span class="social-icon-placeholder">GitHub</span>
                     </a>
                 </div>
-            </div>
-
-            <!-- Work -->
-            <div class="wrapper px-1" id="what-i-do">
-                <div class="d-flex flex-row mt-2 mb-3">
-                    <h3 class="my-auto mr-auto">What I do?</h3>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 py-2" id="what-i-do-left">
-                        <div class="card h-100" style="background: transparent; border: none">
-                            <div class="d-flex flex-column h-100" id="whatidoleft">
-                                <div class="p mb-3">I work primarily in JavaScript, Python and Web Development with great flexibility of learning and adapting to any programming language or technology.</div>
-                                <div class="p">Apart from coding and technology, pretty much involved in exploring and learning about better design techniques, digital marketing, entrepreneurship and startups, business and project management etc.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 py-2" id="what-i-do-right">
-                        <div class="card h-100" style="background: transparent; border: none">
-                            <div class="d-flex flex-column h-100" id="whatidoright">
-                                <div class="p">
-                                    I have been a part of a lot of student communities related to tech, startups and entreprenuership such as
-                                    <a rel="noopener" href="https://www.bloomboxkjsce.com/" target="_blank">
-                                        <span class="link-underline">BloomBox, E-Cell KJSCE</span>
-                                    </a>
-                                    ,&nbsp;<br />
-                                    <a rel="noopener" href="http://www.redshift-racing.in/" target="_blank">
-                                        <span class="link-underline">RedShift Racing India</span>
-                                    </a>
-                                    ,&nbsp;<br />
-                                    <a rel="noopener" href="https://www.csikjsce.org/" target="_blank">
-                                        <span class="link-underline">CSI KJSCE</span>
-                                    </a>
-                                    ,&nbsp;<br />
-                                    <a rel="noopener" href="https://www.hultprize.org/" target="_blank">
-                                        <span class="link-underline">Hult Prize Somaiya</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div id="gototop">
+                    <a rel="noopener" onclick="goTop();">↑</a>
                 </div>
             </div>
+        </footer>
+    </div>
 
-            <!-- Experience -->
-            <div class="wrapper px-1" id="work-experience">
-                <div class="d-flex flex-row mt-2 mb-4">
-                    <h3 class="my-auto mr-auto">Work Experience</h3>
-                </div>
-                <div class="card d-flex flex-column h-100 w-100 mt-4 mb-3 p-2">
-                    <div class="row mx-auto">
-                        <div class="col-md-2 d-flex px-2 py-1 justify-content-center align-items-center">
-                            <div class="work-experience-img-container d-flex justify-content-center align-items-center w-100 h-100">
-                                <img src="./assets/img/svg/fogr.svg" alt="FoGR Tech." />
-                            </div>
-                        </div>
-                        <div class="col-md-10 d-flex px-2 flex-column">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="work-experience-title">
-                                        <div>
-                                            <i aria-hidden="true" class="fa fa-briefcase" title="Job Title"></i>
-                                        </div>
-                                        <div>
-                                            <span>Backend Intern</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="work-experience-date">
-                                        <div>
-                                            <i aria-hidden="true" class="fa fa-calendar-check-o" title="Duration of Internship"></i>
-                                        </div>
-                                        <div>
-                                            <span>Sept 2020 - Nov 2020</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="work-experience-company">
-                                        <div>
-                                            <i aria-hidden="true" class="fa fa-building-o" title="Company"></i>
-                                        </div>
-                                        <div>
-                                            <span>FoGR Tech.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="work-experience-location">
-                                        <div>
-                                            <i aria-hidden="true" class="fa fa-map-marker" title="Location"></i>
-                                        </div>
-                                        <div>
-                                            <span>Hyderabad, TS (Remote)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="work-experience-type">
-                                        <div>
-                                            <i aria-hidden="true" class="fa fa-tasks" title="Type of Work"></i>
-                                        </div>
-                                        <div>
-                                            <span>Web/Mobile App Development</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-experience-description">
-                            Worked on 2 applications -<br />
-                            <ul class="mb-0">
-                                <li>Food Delivery App: Built backend for Android/iOS application using Angular Ionic Framework for integration with UI, Firebase for Realtime Database and User Authentication.</li>
-                                <li>Delivery Package Returning App: Developed 3 integrated web applications (customer, admin and delivery agent) using Angular for UI, Node.js for backend and REST API, PubNub for real-time notifications, Stripe for Payments and MongoDB Atlas for Cloud-based Document Database.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="card d-flex flex-column h-100 w-100 mt-4 mb-3 p-2">
-                    <div class="row mx-auto">
-                        <div class="col-md-2 d-flex px-2 py-1 justify-content-center align-items-center">
-                            <div class="work-experience-img-container d-flex justify-content-center align-items-center w-100 h-100">
-                                <img src="./assets/img/svg/kjsce.svg" alt="K. J. Somaiya College of Engineering" />
-                            </div>
-                        </div>
-                        <div class="col-md-10 d-flex px-2 flex-column">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="work-experience-title">
-                                        <div>
-                                            <i aria-hidden="true" class="fa fa-briefcase" title="Job Title"></i>
-                                        </div>
-                                        <div>
-                                            <span>Software Development Intern</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="work-experience-date">
-                                        <div>
-                                            <i aria-hidden="true" class="fa fa-calendar-check-o" title="Duration of Internship"></i>
-                                        </div>
-                                        <div>
-                                            <span>April 2020 - June 2020</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="work-experience-company">
-                                        <div>
-                                            <i aria-hidden="true" class="fa fa-building-o" title="Company"></i>
-                                        </div>
-                                        <div>
-                                            <span>K. J. Somaiya College of Engineering</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="work-experience-location">
-                                        <div>
-                                            <i aria-hidden="true" class="fa fa-map-marker" title="Location"></i>
-                                        </div>
-                                        <div>
-                                            <span>Mumbai, MH</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="work-experience-type">
-                                        <div>
-                                            <i aria-hidden="true" class="fa fa-tasks" title="Type of Work"></i>
-                                        </div>
-                                        <div>
-                                            <span>Browser Extension</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-experience-description">
-                            Worked on development of Browser Extension -<br />
-                            <ul class="mb-0">
-                                <li>Worked on development of Chromium-browser based extension for Gmail for extracting information and generating summary from email threads using Node.js and Gmail.js</li>
-                                <li>Achieved 100% results for extracting information like email ids and website URLs mentioned in the email thread.</li>
-                                <li>Generated a 3 point extractive summary of email thread using cosine similarity measures.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="card d-flex flex-column h-100 w-100 mt-4 mb-3 p-2">
-                    <div class="row mx-auto">
-                        <div class="col-md-2 d-flex px-2 py-1 justify-content-center align-items-center">
-                            <div class="work-experience-img-container d-flex justify-content-center align-items-center w-100 h-100">
-                                <img src="./assets/img/svg/kjsce.svg" alt="K. J. Somaiya College of Engineering" />
-                            </div>
-                        </div>
-                        <div class="col-md-10 d-flex px-2 flex-column">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="work-experience-title">
-                                        <div>
-                                            <i aria-hidden="true" class="fa fa-briefcase" title="Job Title"></i>
-                                        </div>
-                                        <div>
-                                            <span>Software Development Intern</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="work-experience-date">
-                                        <div>
-                                            <i aria-hidden="true" class="fa fa-calendar-check-o" title="Duration of Internship"></i>
-                                        </div>
-                                        <div>
-                                            <span>Nov 2018 - April 2019</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="work-experience-company">
-                                        <div>
-                                            <i aria-hidden="true" class="fa fa-building-o" title="Company"></i>
-                                        </div>
-                                        <div>
-                                            <span>K. J. Somaiya College of Engineering</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="work-experience-location">
-                                        <div>
-                                            <i aria-hidden="true" class="fa fa-map-marker" title="Location"></i>
-                                        </div>
-                                        <div>
-                                            <span>Mumbai, MH</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="work-experience-type">
-                                        <div>
-                                            <i aria-hidden="true" class="fa fa-tasks" title="Type of Work"></i>
-                                        </div>
-                                        <div>
-                                            <span>Desktop Application Development</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-experience-description">
-                            Worked on MS Excel VBA -<br />
-                            <ul class="mb-0">
-                                <li>Created a Fullstack Desktop Application for Proctor System with features such as Add, Remove, Modify, View and Search the Excel database of students and faculty using Visual Basic for Applications and Microsoft Excel.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Don't save the website state -->
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
+    <script src="./main.js"></script>
+</body>
 
-            <!-- Skills -->
-            <div class="wrapper px-1" id="skills">
-                <div class="d-flex flex-row mt-2 mb-3">
-                    <h3 class="my-auto mr-auto">Skills</h3>
-                </div>
-                <div class="skills-item" id="skills-programming-languages">
-                    <div class="skills-title">
-                        <u>Programming Languages</u>: <br class="skills-conditional-breakline" />
-                        <span> JavaScript, Python, Java, HTML/CSS.</span>
-                    </div>
-                </div>
-                <div class="skills-item" id="skills-frameworks-and-libraries">
-                    <div class="skills-title">
-                        <u>Frameworks &amp; Libraries</u>:<br class="skills-conditional-breakline" />
-                        <span>Bootstrap, Material, React, Angular, Node.js, Django, Flask.</span>
-                    </div>
-                </div>
-                <div class="skills-item" id="skills-databases">
-                    <div class="skills-title">
-                        <u>Databases</u>:<br class="skills-conditional-breakline" />
-                        <span>SQL, MongoDB (&plus;Atlas), Firebase.</span>
-                    </div>
-                </div>
-                <div class="skills-item" id="skills-tools">
-                    <div class="skills-title">
-                        <u>Tools</u>:<br class="skills-conditional-breakline" />
-                        <span>Git, VS Code, Android Studio.</span>
-                    </div>
-                </div>
-                <div class="skills-item" id="skills-cloud-technologies">
-                    <div class="skills-title">
-                        <u>Cloud Technologies</u>: <br class="skills-conditional-breakline" />
-                        <span>AWS (Amazon Web Services), Heroku, GCP (Google Cloud Platform).</span>
-                    </div>
-                </div>
-                <div class="skills-item" id="skills-platforms">
-                    <div class="skills-title">
-                        <u>Platforms</u>: <br class="skills-conditional-breakline" />
-                        <span>Web, Mobile, Desktop.</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projects -->
-            <div class="wrapper px-1" id="projects">
-                <div class="d-flex flex-row my-2">
-                    <h3 class="my-auto mr-auto">Projects</h3>
-                    <div class="mt-2 mb-1">
-                        <a class="link-underline" target="_blank" rel="noopener" href="https://github.com/baijudodhia?tab=repositories">
-                            <span>view all</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 d-flex">
-                        <div class="d-flex flex-column">
-                            <div class="d-flex flex-grow-1">
-                                <div class="row">
-                                    <div class="col-md-12" style="margin: 12px 0px">
-                                        <div class="card d-flex flex-column mx-auto h-100 w-100">
-                                            <div class="project-title mb-1">photoml-firebase-mlkit</div>
-                                            <div class="project-description h-100">Android Image Gallery app with Machine Learning features such as Facial Recognition, OCR, Barcode and Label Detection. Built in Android Studio using Java, Glide and Firebase ML-Kit.</div>
-                                            <div class="project-link mt-2 w-100">
-                                                <a target="_blank" rel="noopener" href="https://github.com/baijudodhia/photoml-firebase-mlkit">
-                                                    <i aria-hidden="true" class="fa fa-code" title="Check out code on GitHub"></i>
-                                                    <span class="project-link-code">code</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex flex-grow-1">
-                                <div class="row h-100">
-                                    <div class="col-md-6" style="margin: 12px 0px">
-                                        <div class="card d-flex flex-column mx-auto h-100 w-100">
-                                            <div class="project-title mb-1">redshiftracing</div>
-                                            <div class="project-description h-100">Static website for RedShift Racing India, KJSCE. Built using HTML, CSS, JS and Bootstrap.</div>
-                                            <div class="project-link mt-2">
-                                                <a target="_blank" rel="noopener" href="https://github.com/baijudodhia/redshiftracing">
-                                                    <i aria-hidden="true" class="fa fa-code" title="Check out code on GitHub"></i>
-                                                    <span class="project-link-code">code</span>
-                                                </a>
-                                                <a target="_blank" rel="noopener" href="https://baijudodhia.github.io/redshiftracing/">
-                                                    <span class="project-link-live">live</span>
-                                                    <i aria-hidden="true" class="fa fa-external-link-square" title="Check out code on GitHub"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6" style="margin: 12px 0px">
-                                        <div class="card d-flex flex-column mx-auto h-100 w-100">
-                                            <div class="project-title mb-1">dashboard-ng</div>
-                                            <div class="project-description h-100">Startup Dashboard Application displaying and visualising data about startups built using Angular.</div>
-                                            <div class="project-link mt-2">
-                                                <a target="_blank" rel="noopener" href="https://github.com/baijudodhia/dashboard-ng">
-                                                    <i aria-hidden="true" class="fa fa-code" title="Check out code on GitHub"></i>
-                                                    <span class="project-link-code">code</span>
-                                                </a>
-                                                <a target="_blank" rel="noopener" href="https://baijudodhia.github.io/dashboard-ng/">
-                                                    <span class="project-link-live">live</span>
-                                                    <i aria-hidden="true" class="fa fa-external-link-square" title="Check out code on GitHub"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 d-flex">
-                        <div class="d-flex flex-column justify-content-between">
-                            <div class="d-flex flex-grow-1">
-                                <div class="row">
-                                    <div class="col-md-6" style="margin: 12px 0px">
-                                        <div class="card d-flex flex-column mx-auto h-100 w-100">
-                                            <div class="project-title mb-1">designs</div>
-                                            <div class="project-description h-100">Multiple frontend website templates such as Blog, Online Store, Travel etc. built using HTML, CSS and JS.</div>
-                                            <div class="project-link mt-2">
-                                                <a target="_blank" rel="noopener" href="https://github.com/baijudodhia/designs" target="_blank">
-                                                    <i aria-hidden="true" class="fa fa-code" title="Check out code on GitHub"></i>
-                                                    <span class="project-link-code">code</span>
-                                                </a>
-                                                <a target="_blank" rel="noopener" href="https://baijudodhia.github.io/designs/">
-                                                    <span class="project-link-live">live</span>
-                                                    <i aria-hidden="true" class="fa fa-external-link-square" title="Check out code on GitHub"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6" style="margin: 12px 0px">
-                                        <div class="card d-flex flex-column mx-auto h-100 w-100">
-                                            <div class="project-title mb-1">twitter-django</div>
-                                            <div class="project-description h-100">Twitter clone website built using Twitter API in Django providing functionality for searching tweets and trends using location.</div>
-                                            <div class="project-link mt-2">
-                                                <a target="_blank" rel="noopener" href="https://github.com/baijudodhia/twitter-django" target="_blank">
-                                                    <i aria-hidden="true" class="fa fa-code" title="Check out code on GitHub"></i>
-                                                    <span class="project-link-code">code</span>
-                                                </a>
-                                                <a target="_blank" rel="noopener" href="https://twitterdj.herokuapp.com/">
-                                                    <span class="project-link-live">live</span>
-                                                    <i aria-hidden="true" class="fa fa-external-link-square" title="Check out code on GitHub"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex flex-grow-1">
-                                <div class="row">
-                                    <div class="col-md-12" style="margin: 12px 0px">
-                                        <div class="card d-flex flex-column mx-auto h-100 w-100">
-                                            <div class="project-title mb-1">img-geometric-transformation</div>
-                                            <div class="project-description h-100">A python script to perform Geometric Transformation on Image File such as Perspective change, Zoom In/Out, Translate, Scale, Shear, Rotate and Flip.</div>
-                                            <div class="project-link mt-2">
-                                                <a target="_blank" rel="noopener" href="https://github.com/baijudodhia/img-geometric-transformation">
-                                                    <i aria-hidden="true" class="fa fa-code" title="Check out code on GitHub"></i>
-                                                    <span class="project-link-code">code</span>
-                                                </a>
-                                                <a target="_blank" rel="noopener" href="https://colab.research.google.com/drive/1xt1oV4b_egSAQjk9HbDGl9bes_j8NR8Z?usp=sharing">
-                                                    <span class="project-link-live">live</span>
-                                                    <i aria-hidden="true" class="fa fa-external-link-square" title="Check out code on GitHub"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Online Certifications -->
-            <div class="wrapper px-1" id="online-certificates">
-                <div class="d-flex flex-row mt-2 mb-3">
-                    <h3 class="my-auto mr-auto">Online Certifications</h3>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 my-2 px-2">
-                        <div class="online-certificates-item card">
-                            <div class="online-certificates-title">Python for Everyone Specialization</div>
-                            <div class="online-certificates-details">
-                                <span class="online-certificates-details-item">
-                                    <div>
-                                        <i aria-hidden="true" class="fa fa-building-o" title="Company"></i>
-                                    </div>
-                                    <div>
-                                        <span>University of Michigen</span>
-                                    </div>
-                                </span>
-                                <span class="online-certificates-details-item">
-                                    <div>
-                                        <i aria-hidden="true" class="fa fa-calendar-check-o" title="Certificate Issue Date"></i>
-                                    </div>
-                                    <div>
-                                        <span>Sept 2020</span>
-                                    </div>
-                                </span>
-                                <span class="online-certificates-details-item">
-                                    <div>
-                                        <i aria-hidden="true" class="fa fa-certificate" title="Course Completion Certificate"></i>
-                                    </div>
-                                    <a class="link-underline" target="_blank" rel="noopener" href="https://www.coursera.org/account/accomplishments/specialization/BJN5ZQLN2PXC">
-                                        <span class="online-certificates-details-item-link-placeholder">Certificate</span>
-                                        <i aria-hidden="true" class="fa fa-external-link-square" title="Check out code on GitHub"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 my-2 px-2">
-                        <div class="online-certificates-item card">
-                            <div class="online-certificates-title">AI for Everyone</div>
-                            <div class="online-certificates-details">
-                                <span class="online-certificates-details-item">
-                                    <div>
-                                        <i aria-hidden="true" class="fa fa-building-o" title="Company"></i>
-                                    </div>
-                                    <div>
-                                        <span>deeplearning.ai</span>
-                                    </div>
-                                </span>
-                                <span class="online-certificates-details-item">
-                                    <div>
-                                        <i aria-hidden="true" class="fa fa-calendar-check-o" title="Certificate Issue Date"></i>
-                                    </div>
-                                    <div>
-                                        <span>Aug 2020</span>
-                                    </div>
-                                </span>
-                                <span class="online-certificates-details-item">
-                                    <div>
-                                        <i aria-hidden="true" class="fa fa-certificate" title="Course Completion Certificate"></i>
-                                    </div>
-                                    <a class="link-underline" target="_blank" rel="noopener" href="https://www.coursera.org/account/accomplishments/verify/L4DMNKR5VKEZ">
-                                        <span class="online-certificates-details-item-link-placeholder">Certificate</span>
-                                        <i aria-hidden="true" class="fa fa-external-link-square" title="Check out code on GitHub"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 my-2 px-2">
-                        <div class="online-certificates-item card">
-                            <div class="online-certificates-title">AWS Fundamentals Specialization</div>
-                            <div class="online-certificates-details">
-                                <span class="online-certificates-details-item">
-                                    <div>
-                                        <i aria-hidden="true" class="fa fa-building-o" title="Company"></i>
-                                    </div>
-                                    <div>
-                                        <span>Amazon Web Services (AWS)</span>
-                                    </div>
-                                </span>
-                                <span class="online-certificates-details-item">
-                                    <div>
-                                        <i aria-hidden="true" class="fa fa-calendar-check-o" title="Certificate Issue Date"></i>
-                                    </div>
-                                    <div>
-                                        <span>Aug 2020</span>
-                                    </div>
-                                </span>
-                                <span class="online-certificates-details-item">
-                                    <div>
-                                        <i aria-hidden="true" class="fa fa-certificate" title="Course Completion Certificate"></i>
-                                    </div>
-                                    <a class="link-underline" target="_blank" rel="noopener" href="https://www.coursera.org/account/accomplishments/specialization/3XXHQPZ2MZ3R">
-                                        <span class="online-certificates-details-item-link-placeholder">Certificate</span>
-                                        <i aria-hidden="true" class="fa fa-external-link-square" title="Check out code on GitHub"></i>
-                                    </a>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 my-2 px-2">
-                        <div class="online-certificates-item card">
-                            <div class="online-certificates-title">Java Programming Masterclass</div>
-                            <div class="online-certificates-details">
-                                <span class="online-certificates-details-item">
-                                    <div>
-                                        <i aria-hidden="true" class="fa fa-building-o" title="Company"></i>
-                                    </div>
-                                    <div>
-                                        <span>Udemy</span>
-                                    </div>
-                                </span>
-                                <span class="online-certificates-details-item">
-                                    <div>
-                                        <i aria-hidden="true" class="fa fa-calendar-check-o" title="Certificate Issue Date"></i>
-                                    </div>
-                                    <div>
-                                        <span>Aug 2020</span>
-                                    </div>
-                                </span>
-                                <span class="online-certificates-details-item">
-                                    <div>
-                                        <i aria-hidden="true" class="fa fa-certificate" title="Course Completion Certificate"></i>
-                                    </div>
-                                    <a class="link-underline" target="_blank" rel="noopener" href="https://www.udemy.com/certificate/UC-53d1ce83-15dd-48bd-8939-28b61e67774f/">
-                                        <span class="online-certificates-details-item-link-placeholder">Certificate</span>
-                                        <i aria-hidden="true" class="fa fa-external-link-square" title="Check out code on GitHub"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 my-2 px-2">
-                        <div class="online-certificates-item card">
-                            <div class="online-certificates-title">Introduction to Cloud Computing</div>
-                            <div class="online-certificates-details">
-                                <span class="online-certificates-details-item">
-                                    <div>
-                                        <i aria-hidden="true" class="fa fa-building-o" title="Company"></i>
-                                    </div>
-                                    <div>
-                                        <span>IBM</span>
-                                    </div>
-                                </span>
-                                <span class="online-certificates-details-item">
-                                    <div>
-                                        <i aria-hidden="true" class="fa fa-calendar-check-o" title="Certificate Issue Date"></i>
-                                    </div>
-                                    <div>
-                                        <span>July 2020</span>
-                                    </div>
-                                </span>
-                                <span class="online-certificates-details-item">
-                                    <div>
-                                        <i aria-hidden="true" class="fa fa-certificate" title="Course Completion Certificate"></i>
-                                    </div>
-                                    <a class="link-underline" target="_blank" rel="noopener" href="https://www.coursera.org/account/accomplishments/verify/FUSRTHFFMGGY">
-                                        <span class="online-certificates-details-item-link-placeholder">Certificate</span>
-                                        <i aria-hidden="true" class="fa fa-external-link-square" title="Check out code on GitHub"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 my-2 px-2">
-                        <div class="online-certificates-item card">
-                            <div class="online-certificates-title">Marketing in a Digital World</div>
-                            <div class="online-certificates-details">
-                                <span class="online-certificates-details-item">
-                                    <div>
-                                        <i aria-hidden="true" class="fa fa-building-o" title="Company"></i>
-                                    </div>
-                                    <div>
-                                        <span>University of Illinois</span>
-                                    </div>
-                                </span>
-                                <span class="online-certificates-details-item">
-                                    <div>
-                                        <i aria-hidden="true" class="fa fa-calendar-check-o" title="Certificate Issue Date"></i>
-                                    </div>
-                                    <div>
-                                        <span>July 2020</span>
-                                    </div>
-                                </span>
-                                <span class="online-certificates-details-item">
-                                    <div>
-                                        <i aria-hidden="true" class="fa fa-certificate" title="Internship Completion Certificate"></i>
-                                    </div>
-                                    <a class="link-underline" target="_blank" rel="noopener" href="https://www.coursera.org/account/accomplishments/verify/846JB3TDQBG3">
-                                        <span class="online-certificates-details-item-link-placeholder">Certificate</span>
-                                        <i aria-hidden="true" class="fa fa-external-link-square" title="Check out code on GitHub"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Connect -->
-        <div class="container" style="max-width: 1050px">
-            <footer class="pt-3 pb-4 px-1" id="connect">
-                <div class="mb-2">Get in touch with me.</div>
-                <div class="d-flex justify-content-between align-items-center" style="align-items: center !important">
-                    <div class="d-flex social align-items-center">
-                        <a class="link-underline pr-2" rel="noopener" target="_blank" href="https://www.linkedin.com/in/baijudodhia">
-                            <i aria-hidden="true" class="fa fa-linkedin-square" title="Connect with me on LinkedIn"></i>
-                            <span class="social-icon-placeholder">LinkedIn</span>
-                        </a>
-                        <a class="link-underline pl-2" rel="noopener" target="_blank" href="https://github.com/baijudodhia">
-                            <i aria-hidden="true" class="fa fa-github-square" title="Check out projects on GitHub"></i>
-                            <span class="social-icon-placeholder">GitHub</span>
-                        </a>
-                    </div>
-                    <div id="gototop">
-                        <a rel="noopener" onclick="goTop();">↑</a>
-                    </div>
-                </div>
-            </footer>
-        </div>
-
-        <!-- Don't save the website state -->
-        <script>
-            if (window.history.replaceState) {
-                window.history.replaceState(null, null, window.location.href);
-            }
-        </script>
-        <script src="./main.js"></script>
-    </body>
 </html>
