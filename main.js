@@ -15,13 +15,13 @@ function setDefaultTheme() {
   if (localStorage.getItem("theme") !== null) {
     let theme = localStorage.getItem("theme");
     if (theme === "dark") {
-      document.getElementById("theme-nav-brand").setAttribute("theme-value", "light");
-      document.getElementById("theme-nav-brand").value = "🌑";
-      document.getElementsByTagName("html")[0].setAttribute("data-theme", "light");
-    } else {
       document.getElementById("theme-nav-brand").setAttribute("theme-value", "dark");
       document.getElementById("theme-nav-brand").value = "🌕";
       document.getElementsByTagName("html")[0].setAttribute("data-theme", "dark");
+    } else {
+      document.getElementById("theme-nav-brand").setAttribute("theme-value", "light");
+      document.getElementById("theme-nav-brand").value = "🌑";
+      document.getElementsByTagName("html")[0].setAttribute("data-theme", "light");
     }
   } else {
     localStorage.setItem("theme", "dark");
@@ -60,7 +60,6 @@ async function onLoad() {
     changeLanguage(lang);
     data = await fetchOnLoad(lang);
   }
-  console.log(data);
   setDefaultTheme();
   document.getElementById("name-span").innerHTML = data.name;
   document.getElementById("profile-span").innerHTML = data.profile;
