@@ -40,7 +40,8 @@ function goTop() {
 
 function changeLanguageOnButton(lang) {
   changeLanguage(lang);
-  window.location.reload();
+  // window.location.reload();
+  onLoad();
 }
 
 function changeLanguage(lang) {
