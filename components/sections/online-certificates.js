@@ -49,7 +49,7 @@ OnlineCertificatesTemplate.innerHTML = `
             align-items: stretch;
             justify-content: center;
             align-content: space-between;
-            row-gap: 10px;
+            row-gap: 15px;
             border: 1.5px solid var(--color-light_0055ff-dark_009aff);
             background-color: var(--color-light_f5f5f5-dark_121212);
             border-radius: 10px;
@@ -86,7 +86,7 @@ OnlineCertificatesTemplate.innerHTML = `
             justify-content: center;
             align-items: flex-start;
             align-content: center;
-            row-gap: 10px;
+            row-gap: 15px;
         }
         .online-certificates-link-container {
             display: flex;

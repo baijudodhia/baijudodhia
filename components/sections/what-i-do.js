@@ -25,7 +25,7 @@ WhatIDoTemplate.innerHTML = `
                 align-content: center;
                 flex-direction: column;
                 align-items: stretch;
-                row-gap: 10px;
+                row-gap: 15px;
             }
         }
         .what-i-do-left {
@@ -36,7 +36,7 @@ WhatIDoTemplate.innerHTML = `
             align-content: center;
             justify-content: center;
             align-items: stretch;
-            row-gap: 10px;
+            row-gap: 15px;
         }
         .what-i-do-divider {
             display: block;

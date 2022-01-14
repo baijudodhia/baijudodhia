@@ -8,7 +8,7 @@ AboutTemplate.innerHTML = `
             align-content: center;
             justify-content: center;
             align-items: flex-start;
-            row-gap: 10px;
+            row-gap: 15px;
         }
         #about > h2 {
             margin: 0px;
