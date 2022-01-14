@@ -97,7 +97,9 @@ ProjectsTemplate.innerHTML = `
             link="https://github.com/baijudodhia?tab=repositories"
         ></app-link>
         </div>
-        <div id="projects-container"></div>
+        <div id="projects-container">
+            <div class="section-loader"></div>
+        </div>
     </div>
     <template id="projects-template">
         <div class="project-item">

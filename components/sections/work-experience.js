@@ -157,7 +157,9 @@ WorkExperienceTemplate.innerHTML = `
     </style>
     <div id="work-experience">
         <h3>Work Experience</h3>
-        <div id="work-experience-container"></div>
+        <div id="work-experience-container">
+            <div class="section-loader"></div>
+        </div>
     </div>
     <template id="work-experience-template">
         <div class="work-experience-item">
@@ -255,7 +257,7 @@ class AppWorkExperience extends HTMLElement {
         // called when one of attributes listed above is modified
         if (name === "language" && oldValue !== newValue && newValue !== null && newValue !== undefined && newValue !== "") {
             this.fetchWorkExperienceData(newValue);
-        }
+        };
     }
 
     adoptedCallback() {

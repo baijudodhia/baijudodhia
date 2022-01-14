@@ -129,6 +129,27 @@ main {
   height: 0px;
   background-color: transparent;
 }
+.section-loader {
+  display: block;
+  text-align: center;
+  align-self: center;
+  border-top: 3px solid var(--color-light_0055ff-dark_009aff);
+  border-right: 3px solid var(--color-light_0055ff-dark_009aff);
+  border-bottom: 3px solid var(--color-light_0055ff-dark_009aff);
+  border-left: 3px solid transparent;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 /* Navbar */
 #navbar {

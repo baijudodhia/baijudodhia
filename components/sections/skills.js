@@ -29,7 +29,9 @@ SkillsTemplate.innerHTML = `
     </style>
     <div id="skills">
         <h3>Skills</h3>
-        <div id="skills-container"></div>
+        <div id="skills-container">
+            <div class="section-loader"></div>
+        </div>
     </div>
     <template id="skills-template">
         <div class="skills-item" id="skills-platforms">

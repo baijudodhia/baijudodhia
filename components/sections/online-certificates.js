@@ -96,7 +96,9 @@ OnlineCertificatesTemplate.innerHTML = `
         <div class="online-certificates-header">
             <h3>Online Certifications</h3>
         </div>
-        <div id="online-certificates-container"></div>
+        <div id="online-certificates-container">
+            <div class="section-loader"></div>
+        </div>
     </div>
     <template id="online-certificates-template">
         <div class="online-certificates-item">
