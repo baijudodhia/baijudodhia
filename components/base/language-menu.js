@@ -23,15 +23,15 @@ LanguageMenuTemplate.innerHTML = `
             align-self: flex-end;
             width: 0;
             height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-bottom: 10px solid var(--color-light_f5f5f5-dark_121212);
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 15px solid var(--color-light_f5f5f5-dark_121212);
             margin-right: 15px;
             z-index: 1;
         }
         .language-menu-item-container {
             align-self: stretch;
-            padding: 10px;
+            padding: 15px;
             background-color: var(--color-light_f5f5f5-dark_121212);
             color: var(--color-light_f5f5f5-dark_121212-reverse);
             display: flex;
@@ -54,6 +54,7 @@ LanguageMenuTemplate.innerHTML = `
         >
             English
         </div>
+        <hr class="dashed-divider" />
         <div
             class="language-menu-item"
             value="hi"
@@ -61,6 +62,7 @@ LanguageMenuTemplate.innerHTML = `
         >
             हिन्दी
         </div>
+        <hr class="dashed-divider" />
         <div
             class="language-menu-item"
             value="gu"
@@ -68,6 +70,7 @@ LanguageMenuTemplate.innerHTML = `
         >
             ગુજરાતી
         </div>
+        <hr class="dashed-divider" />
         <div value="sa" class="language-menu-item">
             संस्कृतम् (soon)
         </div>

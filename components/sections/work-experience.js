@@ -80,8 +80,8 @@ WorkExperienceTemplate.innerHTML = `
             .work-experience-organisation-logo-container {
                 width: unset;
                 align-self: stretch;
-                height: 80px;
-                padding: 10px;
+                height: 100px;
+                padding: 15px;
             }
         }
         .work-experience-organisation-logo {
@@ -94,20 +94,20 @@ WorkExperienceTemplate.innerHTML = `
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(3, 1fr);
             grid-row-gap: 5px;
-            grid-column-gap: 20px;
+            grid-column-gap: 15px;
         }
-        @media only screen and (max-width: 700px) {
+        @media only screen and (max-width: 781px) {
             .work-experience-details {
                 align-self: stretch;
                 display: grid;
                 grid-template-columns: repeat(1, 1fr);
                 grid-template-rows: repeat(6, 1fr);
                 grid-row-gap: 5px;
-                grid-column-gap: 20px;
+                grid-column-gap: 15px;
             }
         }
         .work-experience-details app-label-with-icon::part(lwi) {
-            min-width: 300px;
+            min-width: 340px;
         }
         .work-experience-divider {
             align-self: stretch;

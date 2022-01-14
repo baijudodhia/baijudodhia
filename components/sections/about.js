@@ -13,6 +13,12 @@ AboutTemplate.innerHTML = `
         #about > h2 {
             margin: 0px;
         }
+        #about > h2 > * {
+            font-size: 28px !important;
+        }
+        #about > h2 > app-link::part(link_title) {
+            font-size: 28px !important;
+        }
     </style>
     <div id="about">
         <h2>

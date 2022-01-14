@@ -16,7 +16,7 @@ ProjectsTemplate.innerHTML = `
             justify-content: space-between;
             align-content: center;
             flex-direction: row;
-            column-gap: 10px;
+            column-gap: 15px;
         }
         #projects-container {
             display: grid;
@@ -25,7 +25,7 @@ ProjectsTemplate.innerHTML = `
             grid-row-gap: 15px;
             grid-column-gap: 15px;
         }
-        @media only screen and (max-width: 840px) {
+        @media only screen and (max-width: 950px) {
             #projects-container {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
@@ -34,7 +34,7 @@ ProjectsTemplate.innerHTML = `
                 grid-column-gap: 15px;
             }
         }
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 650px) {
             #projects-container {
                 display: grid;
                 grid-template-columns: repeat(1, 1fr);
@@ -53,7 +53,7 @@ ProjectsTemplate.innerHTML = `
             border: 1.5px solid var(--color-light_0055ff-dark_009aff);
             background-color: var(--color-light_f5f5f5-dark_121212);
             border-radius: 10px;
-            padding: 10px;
+            padding: 15px;
             transition: 0.2s linear;
         }
         .project-item:hover {
