@@ -98,7 +98,7 @@ WorkExperienceTemplate.innerHTML = `
             grid-row-gap: 5px;
             grid-column-gap: 15px;
         }
-        @media only screen and (max-width: 781px) {
+        @media only screen and (max-width: 650px) {
             .work-experience-details {
                 align-self: stretch;
                 display: grid;
@@ -109,7 +109,12 @@ WorkExperienceTemplate.innerHTML = `
             }
         }
         .work-experience-details app-label-with-icon::part(lwi) {
-            min-width: 340px;
+            min-width: 300px;
+        }
+        @media only screen and (max-width: 781px) {
+            .work-experience-details app-label-with-icon::part(lwi) {
+                min-width: fit-content;
+            }
         }
         .work-experience-divider {
             align-self: stretch;
