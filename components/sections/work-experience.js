@@ -30,11 +30,13 @@ WorkExperienceTemplate.innerHTML = `
             border-radius: 10px;
             padding: 15px;
             transition: 0.2s linear;
+            box-shadow: 0px 0px 10px -4px var(--color-light_0055ff-dark_009aff);
         }
         .work-experience-item:hover {
             font-weight: var(--font-weight-hover);
             color: var(--color-light_f5f5f5-dark_121212);
             background-color: var(--color-light_0055ff-dark_009aff);
+            box-shadow: 0px 0px 10px -4px var(--color-light_121212-dark_000000);
         }
         .work-experience-item:hover .work-experience-divider {
             border-top: 1.5px dashed var(--color-light_f5f5f5-dark_121212);
@@ -157,9 +159,6 @@ WorkExperienceTemplate.innerHTML = `
     </style>
     <div id="work-experience">
         <h3>Work Experience</h3>
-        <div id="work-experience-container">
-            <div class="section-loader"></div>
-        </div>
     </div>
     <template id="work-experience-template">
         <div class="work-experience-item">
@@ -256,6 +255,7 @@ class AppWorkExperience extends HTMLElement {
     attributeChangedCallback(name, oldValue, newValue) {
         // called when one of attributes listed above is modified
         if (name === "language" && oldValue !== newValue && newValue !== null && newValue !== undefined && newValue !== "") {
+            this.addSectionLoader();
             this.fetchWorkExperienceData(newValue);
         };
     }
@@ -274,7 +274,8 @@ class AppWorkExperience extends HTMLElement {
 
     loadWorkExperience(data) {
         if ('content' in document.createElement('template')) {
-            let workExperienceContainer = this.shadowRoot.querySelector('#work-experience-container');
+            let workExperienceContainer = document.createElement('div');
+            workExperienceContainer.setAttribute('id', 'work-experience-container');
             workExperienceContainer.innerHTML = '';
             let workExperienceTemplate = this.shadowRoot.querySelector('#work-experience-template');
             for (var key in data) {
@@ -293,7 +294,22 @@ class AppWorkExperience extends HTMLElement {
                     workExperienceContainer.appendChild(clone);
                 }
             }
+            this.removeSectionLoader();
+            this.shadowRoot.querySelector('#work-experience').append(workExperienceContainer);
         }
+    }
+
+    addSectionLoader() {
+        // Section Loader
+        const sectionLoader = document.createElement('div');
+        sectionLoader.setAttribute('class', 'section-loader');
+
+        const workExperience = this.shadowRoot.querySelector('#work-experience');
+        workExperience.append(sectionLoader);
+    }
+
+    removeSectionLoader() {
+        this.shadowRoot.querySelector('.section-loader').remove();
     }
 }
 

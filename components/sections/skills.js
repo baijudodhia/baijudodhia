@@ -2,6 +2,14 @@ const SkillsTemplate = document.createElement('template');
 SkillsTemplate.innerHTML = `
     <link href='../../main.css' rel='stylesheet'>
     <style>
+        #skills {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: center;
+            align-content: center;
+            row-gap: 15px;
+        }
         #skills .skills-item {
             margin-bottom: 8px;
         }
@@ -29,9 +37,6 @@ SkillsTemplate.innerHTML = `
     </style>
     <div id="skills">
         <h3>Skills</h3>
-        <div id="skills-container">
-            <div class="section-loader"></div>
-        </div>
     </div>
     <template id="skills-template">
         <div class="skills-item" id="skills-platforms">
@@ -71,6 +76,7 @@ class AppSkills extends HTMLElement {
     attributeChangedCallback(name, oldValue, newValue) {
         // called when one of attributes listed above is modified
         if (name === "language" && oldValue !== newValue && newValue !== null && newValue !== undefined && newValue !== "") {
+            this.addSectionLoader();
             this.fetchSkillsData(newValue);
         }
     }
@@ -89,7 +95,8 @@ class AppSkills extends HTMLElement {
 
     loadSkills(data) {
         if ('content' in document.createElement('template')) {
-            let skillsContainer = this.shadowRoot.querySelector('#skills-container');
+            let skillsContainer = document.createElement('div');
+            skillsContainer.setAttribute('id', 'skills-container');
             skillsContainer.innerHTML = '';
             let skillsTemplate = this.shadowRoot.querySelector('#skills-template');
             for (var key in data) {
@@ -101,7 +108,21 @@ class AppSkills extends HTMLElement {
                     skillsContainer.appendChild(clone);
                 }
             }
+            this.removeSectionLoader();
+            this.shadowRoot.querySelector('#skills').append(skillsContainer);
         }
+    }
+
+    addSectionLoader() {
+        const sectionLoader = document.createElement('div');
+        sectionLoader.setAttribute('class', 'section-loader');
+
+        const skills = this.shadowRoot.querySelector('#skills');
+        skills.append(sectionLoader);
+    }
+
+    removeSectionLoader() {
+        this.shadowRoot.querySelector('.section-loader').remove();
     }
 }
 

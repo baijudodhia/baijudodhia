@@ -46,11 +46,13 @@ OnlineCertificatesTemplate.innerHTML = `
             border-radius: 10px;
             padding: 15px;
             transition: 0.2s linear;
+            box-shadow: 0px 0px 10px -4px var(--color-light_0055ff-dark_009aff);
         }
         .online-certificates-item:hover {
             color: var(--color-light_f5f5f5-dark_121212);
             font-weight: var(--font-weight-hover);
             background-color: var(--color-light_0055ff-dark_009aff);
+            box-shadow: 0px 0px 10px -4px var(--color-light_121212-dark_000000);
         }
         .online-certificates-item:hover .online-certificates-divider {
             border-top: 1.5px dashed var(--color-light_f5f5f5-dark_121212);
@@ -95,9 +97,6 @@ OnlineCertificatesTemplate.innerHTML = `
     <div id="online-certificates">
         <div class="online-certificates-header">
             <h3>Online Certifications</h3>
-        </div>
-        <div id="online-certificates-container">
-            <div class="section-loader"></div>
         </div>
     </div>
     <template id="online-certificates-template">
@@ -161,6 +160,7 @@ class AppOnlineCertificates extends HTMLElement {
     attributeChangedCallback(name, oldValue, newValue) {
         // called when one of attributes listed above is modified
         if (name === "language" && oldValue !== newValue && newValue !== null && newValue !== undefined && newValue !== "") {
+            this.addSectionLoader();
             this.fetchOnlineCertificatesData(newValue);
         }
     }
@@ -179,7 +179,8 @@ class AppOnlineCertificates extends HTMLElement {
 
     loadOnlineCertifications(data) {
         if ('content' in document.createElement('template')) {
-            let onlineCertificatesContainer = this.shadowRoot.querySelector('#online-certificates-container');
+            let onlineCertificatesContainer = document.createElement('div');
+            onlineCertificatesContainer.setAttribute('id', 'online-certificates-container');
             onlineCertificatesContainer.innerHTML = '';
             let onlineCertificatesTemplate = this.shadowRoot.querySelector('#online-certificates-template');
             for (var key in data) {
@@ -193,7 +194,21 @@ class AppOnlineCertificates extends HTMLElement {
                     onlineCertificatesContainer.appendChild(clone);
                 }
             }
+            this.removeSectionLoader();
+            this.shadowRoot.querySelector('#online-certificates').append(onlineCertificatesContainer);
         }
+    }
+
+    addSectionLoader() {
+        const sectionLoader = document.createElement('div');
+        sectionLoader.setAttribute('class', 'section-loader');
+
+        const onlineCertificates = this.shadowRoot.querySelector('#online-certificates');
+        onlineCertificates.append(sectionLoader);
+    }
+
+    removeSectionLoader() {
+        this.shadowRoot.querySelector('.section-loader').remove();
     }
 }
 

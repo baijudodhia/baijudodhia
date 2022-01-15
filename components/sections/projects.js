@@ -55,11 +55,13 @@ ProjectsTemplate.innerHTML = `
             border-radius: 10px;
             padding: 15px;
             transition: 0.2s linear;
+            box-shadow: 0px 0px 10px -4px var(--color-light_0055ff-dark_009aff);
         }
         .project-item:hover {
             color: var(--color-light_f5f5f5-dark_121212);
             font-weight: var(--font-weight-hover);
             background-color: var(--color-light_0055ff-dark_009aff);
+            box-shadow: 0px 0px 10px -4px var(--color-light_121212-dark_000000);
         }
         .project-item:hover .project-divider {
             border-top: 1.5px dashed var(--color-light_f5f5f5-dark_121212);
@@ -96,9 +98,6 @@ ProjectsTemplate.innerHTML = `
             title="view all"
             link="https://github.com/baijudodhia?tab=repositories"
         ></app-link>
-        </div>
-        <div id="projects-container">
-            <div class="section-loader"></div>
         </div>
     </div>
     <template id="projects-template">
@@ -156,6 +155,7 @@ class AppProjects extends HTMLElement {
     attributeChangedCallback(name, oldValue, newValue) {
         // called when one of attributes listed above is modified
         if (name === "language" && oldValue !== newValue && newValue !== null && newValue !== undefined && newValue !== "") {
+            this.addSectionLoader();
             this.fetchProjectsData(newValue);
         }
     }
@@ -174,7 +174,8 @@ class AppProjects extends HTMLElement {
 
     loadProjects(data) {
         if ('content' in document.createElement('template')) {
-            let projectsContainer = this.shadowRoot.querySelector('#projects-container');
+            let projectsContainer = document.createElement('div');
+            projectsContainer.setAttribute('id', 'projects-container');
             projectsContainer.innerHTML = '';
             let projectsTemplate = this.shadowRoot.querySelector('#projects-template');
             for (var key in data) {
@@ -196,7 +197,22 @@ class AppProjects extends HTMLElement {
                     projectsContainer.appendChild(clone);
                 }
             }
+            this.removeSectionLoader();
+            this.shadowRoot.querySelector('#projects').append(projectsContainer);
         }
+    }
+
+    addSectionLoader() {
+        // Section Loader
+        const sectionLoader = document.createElement('div');
+        sectionLoader.setAttribute('class', 'section-loader');
+
+        const onlineCertificates = this.shadowRoot.querySelector('#projects');
+        onlineCertificates.append(sectionLoader);
+    }
+
+    removeSectionLoader() {
+        this.shadowRoot.querySelector('.section-loader').remove();
     }
 }
 
