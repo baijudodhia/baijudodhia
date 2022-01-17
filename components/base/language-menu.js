@@ -50,7 +50,7 @@ LanguageMenuTemplate.innerHTML = `
         <div
             class="language-menu-item"
             value="en"
-            onclick="javascript:changeLanguageOnButton('en')"
+            onclick="javascript:changeLanguage('navbar_language_menu','en')"
         >
             English
         </div>
@@ -58,7 +58,7 @@ LanguageMenuTemplate.innerHTML = `
         <div
             class="language-menu-item"
             value="hi"
-            onclick="javascript:changeLanguageOnButton('hi')"
+            onclick="javascript:changeLanguage('navbar_language_menu','hi')"
         >
             हिन्दी
         </div>
@@ -66,14 +66,17 @@ LanguageMenuTemplate.innerHTML = `
         <div
             class="language-menu-item"
             value="gu"
-            onclick="javascript:changeLanguageOnButton('gu')"
+            onclick="javascript:changeLanguage('navbar_language_menu','gu')"
         >
             ગુજરાતી
         </div>
         <hr class="dashed-divider" />
-        <div value="sa" class="language-menu-item">
-            संस्कृतम् (soon)
-        </div>
+        <div
+            class="language-menu-item"
+            value="sa"
+            onclick="javascript:changeLanguage('navbar_language_menu','sa')"
+        >
+            संस्कृतम्
         </div>
     </div>
 `;

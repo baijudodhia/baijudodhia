@@ -9,6 +9,7 @@
     <script src="./components/base/social-links.js"></script>
     <script src="./components/base/label-with-icon.js"></script>
     <script src="./components/base/language-menu.js"></script>
+    <script src="./components/base/language-changer.js"></script>
     <script src="./components/sections/about.js"></script>
     <script src="./components/sections/projects.js"></script>
     <script src="./components/sections/online-certificates.js"></script>
@@ -19,23 +20,33 @@
     <meta charset="utf-8" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-97DE9W3FTW"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-97DE9W3FTW"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
-        gtag("config", "G-97DE9W3FTW");
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-97DE9W3FTW");
     </script>
 
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
-        (function (c, l, a, r, i, t, y) {
-            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "6kqvmd0sos");
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "6kqvmd0sos");
     </script>
 
     <!-- Meta tags -->
@@ -132,12 +143,7 @@
           <div id="waving-hand">👋</div>
         </div>
         <div class="navbar-menu">
-          <div class="language-container">
-            <button type="button" class="language-button">
-              <i class="fa fa-language" aria-hidden="true"></i>
-            </button>
-            <app-language-menu class="language-menu"></app-language-menu>
-          </div>
+          <app-language-changer></app-language-changer>
           <input
             type="submit"
             name="theme"
@@ -160,188 +166,26 @@
 
       <!-- What I Do ? -->
       <app-what-i-do></app-what-i-do>
-      <!-- <div id="what-i-do">
-        <h3>What I Do ?</h3>
-        <div id="what-i-do-container">
-          <div class="what-i-do-left">
-            <div>
-              I work primarily in JavaScript, Python and Web Development with
-              great flexibility of learning and adapting to any programming
-              language or technology.
-            </div>
-            <div>
-              Apart from coding and technology, pretty much involved in
-              exploring and learning about better design techniques, digital
-              marketing, entrepreneurship and startups, business and project
-              management etc.
-            </div>
-          </div>
-          <div class="what-i-do-right">
-            <span>
-              I have been a part of a lot of student communities related to
-              tech, startups and entreprenuership such as
-            </span>
-            <app-link
-              title="BloomBox, E-Cell KJSCE"
-              link="https://www.bloomboxkjsce.com/"
-            ></app-link>
-            ,&nbsp;<br />
-            <app-link
-              title="RedShift Racing India"
-              link="http://www.redshift-racing.in/"
-            ></app-link>
-            ,&nbsp;<br />
-            <app-link
-              title="CSI KJSCE"
-              link="https://www.csikjsce.org/"
-            ></app-link>
-            ,&nbsp;<br />
-            <app-link
-              title="Hult Prize Somaiya"
-              link="https://www.hultprize.org/"
-            ></app-link>
-          </div>
-        </div>
-      </div> -->
-
       <hr class="dashed-divider" />
 
       <!-- Work Experience -->
       <app-work-experience language></app-work-experience>
-      <!-- <div id="work-experience">
-        <h3>Work Experience</h3>
-        <div id="work-experience-container"></div>
-      </div>
-      <template id="work-experience-template">
-        <div class="work-experience-item">
-          <div class="work-experience-header">
-            <div class="work-experience-organisation-logo-container">
-              <img class="work-experience-organisation-logo" src="" alt="" />
-            </div>
-            <div class="work-experience-details">
-              <app-label-with-icon
-                class="work-experience-profile"
-                icon="fa fa-briefcase"
-                icon_title="Work Profile"
-                label=""
-              ></app-label-with-icon>
-              <app-label-with-icon
-                class="work-experience-date"
-                icon="fa fa-calendar-check-o"
-                icon_title="Work Duration"
-                label=""
-              ></app-label-with-icon>
-              <app-label-with-icon
-                class="work-experience-organisation"
-                icon="fa fa-building-o"
-                icon_title="Work Organisation"
-                label=""
-              ></app-label-with-icon>
-              <app-label-with-icon
-                class="work-experience-location"
-                icon="fa fa-map-marker"
-                icon_title="Work Location"
-                label=""
-              ></app-label-with-icon>
-              <app-label-with-icon
-                class="work-experience-type"
-                icon="fa fa-tasks"
-                icon_title="Work Type"
-                label=""
-              ></app-label-with-icon>
-              <app-label-with-icon
-                class="work-experience-industry"
-                icon="fa fa-industry"
-                icon_title="Work Industry"
-                label=""
-              ></app-label-with-icon>
-            </div>
-          </div>
-          <div class="work-experience-divider"></div>
-          <details>
-            <summary>
-              <div class="summary-header">
-                <div class="summary-header-title">Description</div>
-                <div class="summary-header-arrow-down">
-                  <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="summary-header-arrow-up">
-                  <i class="fas fa-chevron-up"></i>
-                </div>
-              </div>
-            </summary>
-            <div class="work-experience-description"></div>
-          </details>
-        </div>
-      </template> -->
-
       <hr class="dashed-divider" />
 
       <!-- Skills -->
-      <app-skills></app-skills>
-      <!-- <div id="skills">
-        <h3>Skills</h3>
-        <div id="skills-container"></div>
-      </div>
-      <template id="skills-template">
-        <div class="skills-item" id="skills-platforms">
-          <div class="skills-title">
-            <u id="skill-type"></u>:
-            <br class="skills-conditional-breakline" />
-            <span id="skill-list"></span>
-          </div>
-        </div>
-      </template> -->
-
+      <app-skills language></app-skills>
       <hr class="dashed-divider" />
 
       <!-- Projects -->
       <app-projects language></app-projects>
-      <!-- <div id="projects">
-        <div class="projects-header">
-          <h3>Projects</h3>
-          <app-link
-            title="view all"
-            link="https://github.com/baijudodhia?tab=repositories"
-          ></app-link>
-        </div>
-        <div id="projects-container"></div>
-      </div>
-      <template id="projects-template">
-        <div class="project-item">
-          <div class="project-title"></div>
-          <hr class="project-divider" />
-          <div class="project-description"></div>
-          <div class="project-links">
-            <app-link
-              class="app-link-code"
-              icon="fa fa-code"
-              icon-title="Check out code on GitHub"
-              title="code"
-              link=""
-              hover-effect="underline"
-            ></app-link>
-            <app-link
-              class="app-link-live"
-              icon="fa fa-external-link-square"
-              icon-direction="right"
-              icon-title="Check out the live demo"
-              title="live"
-              link=""
-              hover-effect="underline"
-            ></app-link>
-          </div>
-        </div>
-      </template> -->
-
       <hr class="dashed-divider" />
 
       <!-- Online Certifications -->
       <app-online-certificates language></app-online-certificates>
-      
+      <hr class="dashed-divider" />
+
       <!-- Recent Blog Posts -->
       <app-blog-posts language></app-blog-posts>
-
     </main>
 
     <!-- Connect -->
@@ -352,7 +196,9 @@
         <div class="footer-links">
           <app-social-links></app-social-links>
           <div id="gototop">
-            <a rel="noopener" onclick="goTop();">↑</a>
+            <a rel="noopener" onclick="goTop();">
+              <i class="fas fa-arrow-up"></i>
+            </a>
           </div>
         </div>
       </div>
