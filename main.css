@@ -213,7 +213,11 @@ main {
 }
 
 .language-container {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 .language-button {
   color: var(--color-light_f5f5f5-dark_121212-reverse);

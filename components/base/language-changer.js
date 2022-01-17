@@ -32,11 +32,15 @@ class AppLanguageChanger extends HTMLElement {
     static get observedAttributes() {
         return [
             /* Attributes to observe. */
+            "language"
         ];
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
         // called when one of attributes listed above is modified
+        if (name === "language") {
+            this.shadowRoot.querySelector("app-language-menu").setAttribute("language", newValue);
+        }
     }
 
     adoptedCallback() {

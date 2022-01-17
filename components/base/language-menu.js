@@ -48,14 +48,16 @@ LanguageMenuTemplate.innerHTML = `
         <div class="language-menu-triangle-up"></div>
         <div class="language-menu-item-container">
         <div
+            id="language-en"
             class="language-menu-item"
             value="en"
             onclick="javascript:changeLanguage('navbar_language_menu','en')"
-        >
+            >
             English
         </div>
         <hr class="dashed-divider" />
         <div
+            id="language-hi"
             class="language-menu-item"
             value="hi"
             onclick="javascript:changeLanguage('navbar_language_menu','hi')"
@@ -64,6 +66,7 @@ LanguageMenuTemplate.innerHTML = `
         </div>
         <hr class="dashed-divider" />
         <div
+            id="language-gu"
             class="language-menu-item"
             value="gu"
             onclick="javascript:changeLanguage('navbar_language_menu','gu')"
@@ -72,6 +75,7 @@ LanguageMenuTemplate.innerHTML = `
         </div>
         <hr class="dashed-divider" />
         <div
+            id="language-sa"
             class="language-menu-item"
             value="sa"
             onclick="javascript:changeLanguage('navbar_language_menu','sa')"
@@ -101,11 +105,17 @@ class AppLanguageMenu extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return [""];
+        return ["language"];
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
         // called when one of attributes listed above is modified
+        if(name === "language") {
+            if(oldValue !== null) {
+                this.shadowRoot.querySelector(`#language-${oldValue}`).classList.remove("active");
+            }
+            this.shadowRoot.querySelector(`#language-${newValue}`).classList.add("active");
+        }
     }
 
     adoptedCallback() {
