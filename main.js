@@ -112,7 +112,7 @@ const setDefaultLanguage = () => {
   changeLanguage(type = "default", lang);
 }
 
-async function onLoad() {
+window.onload = async () => {
   /*
   1. Set Default Theme
   2. Set Default Language
