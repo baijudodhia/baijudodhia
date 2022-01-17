@@ -27,7 +27,7 @@ AboutTemplate.innerHTML = `
                 title="Baiju Dodhia"
                 link="https://www.google.com/search?q=%22Baiju+Dodhia%22+OR+%22baijudodhia%22"
             ></app-link>
-            ,
+            ,&nbsp;
             <br class="conditional-breakline" />
             <span class="about-profile">Software Engineer</span>
         </h2>
@@ -92,7 +92,6 @@ class AppAbout extends HTMLElement {
         const response = await fetch(`/data/about/${language}.about.json`);
         const data = await response.json();
         this.shadowRoot.querySelector('.about-name').setAttribute('title', data['name']);
-        this.shadowRoot.querySelector('.about-profile').innerText = data['profile'];
     }
 }
 
