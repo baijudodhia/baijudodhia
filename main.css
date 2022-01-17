@@ -275,25 +275,25 @@ app-language-menu {
     transform: rotate(10deg);
   }
 }
-#theme-nav-brand {
+#theme-changer {
   width: 40px;
   font-size: 18px;
   border: none !important;
   background-color: transparent !important;
   transition: 0.1s;
 }
-#theme-nav-brand:hover {
+#theme-changer:hover {
   cursor: pointer;
 }
-#theme-nav-brand:focus {
+#theme-changer:focus {
   background-color: transparent !important;
 }
-#theme-nav-brand:active {
+#theme-changer:active {
   background-color: transparent !important;
   transform: scale(0.85);
 }
 @media only screen and (max-width: 991px) {
-  #theme-nav-brand {
+  #theme-changer {
     width: 40px;
     padding: 0;
   }

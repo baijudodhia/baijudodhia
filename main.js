@@ -1,35 +1,61 @@
+const setLightTheme = () => {
+  document.querySelector("app-theme-changer").setAttribute("theme", "light");
+  document.querySelector("app-theme-changer").setAttribute("value", "🌑");
+  document.getElementsByTagName("html")[0].setAttribute("data-theme", "light");
+}
+
+const setDarkTheme = () => {
+  document.querySelector("app-theme-changer").setAttribute("theme", "dark");
+  document.querySelector("app-theme-changer").setAttribute("value", "🌕");
+  document.getElementsByTagName("html")[0].setAttribute("data-theme", "dark");
+}
+
 const changeTheme = () => {
-  var theme = document.getElementById("theme-nav-brand").getAttribute("theme-value");
+  var theme = document.querySelector("app-theme-changer").getAttribute("theme");
   if (theme === "dark") {
-    document.getElementById("theme-nav-brand").setAttribute("theme-value", "light");
-    document.getElementById("theme-nav-brand").value = "🌑";
-    document.getElementsByTagName("html")[0].setAttribute("data-theme", "light");
     localStorage.setItem("theme", "light");
+    setLightTheme();
   } else {
-    document.getElementById("theme-nav-brand").setAttribute("theme-value", "dark");
-    document.getElementById("theme-nav-brand").value = "🌕";
-    document.getElementsByTagName("html")[0].setAttribute("data-theme", "dark");
     localStorage.setItem("theme", "dark");
+    setDarkTheme();
   }
 }
 
+// Watch for change in theme at OS level
+// window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+//   const isThemeDark = event.matches;
+//   if (isThemeDark) {
+//     localStorage.setItem("theme", "dark");
+//     setDarkTheme();
+//   } else {
+//     localStorage.setItem("theme", "light");
+//     setLightTheme();
+//   };
+// });
+
 const setDefaultTheme = () => {
+  // Check if user already visited the website & changed the theme
   if (localStorage.getItem("theme") !== null) {
     let theme = localStorage.getItem("theme");
     if (theme === "dark") {
-      document.getElementById("theme-nav-brand").setAttribute("theme-value", "dark");
-      document.getElementById("theme-nav-brand").value = "🌕";
-      document.getElementsByTagName("html")[0].setAttribute("data-theme", "dark");
+      setDarkTheme();
     } else {
-      document.getElementById("theme-nav-brand").setAttribute("theme-value", "light");
-      document.getElementById("theme-nav-brand").value = "🌑";
-      document.getElementsByTagName("html")[0].setAttribute("data-theme", "light");
+      setLightTheme();
     }
-  } else {
+  } else if (window.matchMedia) {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      // Check if user's system supports dark mode & set default theme accordingly
+      // Currently using dark mode
+      localStorage.setItem("theme", "dark");
+      setDarkTheme();
+    } else {
+      // Currently using light mode
+      localStorage.setItem("theme", "light");
+      setLightTheme();
+    }
+  } else { // If nothing found set by default before then set "Dark as new default";
     localStorage.setItem("theme", "dark");
-    document.getElementById("theme-nav-brand").setAttribute("theme-value", "dark");
-    document.getElementById("theme-nav-brand").value = "🌕";
-    document.getElementsByTagName("html")[0].setAttribute("data-theme", "dark");
+    setLightTheme();
   }
 }
 
@@ -39,6 +65,9 @@ function goTop() {
 }
 
 const changeLanguage = async (type, lang) => {
+  const appLanguageChanger = document.querySelector("app-language-changer");
+  appLanguageChanger.setAttribute("language", lang);
+
   const appAbout = document.querySelector("app-about");
   appAbout.setAttribute("language", lang);
 
@@ -68,8 +97,8 @@ const changeLanguage = async (type, lang) => {
 const setDefaultLanguage = () => {
   // Check if lang value is already stored in LocalStorage indicating user has already visited the website and changed the language.
   let lang = "en";
-  
-  if(localStorage.getItem("lang") !== null) {
+
+  if (localStorage.getItem("lang") !== null) {
     lang = localStorage.getItem("lang");
   };
 
@@ -78,7 +107,7 @@ const setDefaultLanguage = () => {
     // Inalid - Retrieve data for this language.
     lang = "en";
   }
-  
+
   // Fetch data for set language and modify the respective content.
   changeLanguage(type = "default", lang);
 }
@@ -88,8 +117,8 @@ async function onLoad() {
   1. Set Default Theme
   2. Set Default Language
   */
- await setDefaultTheme();
- await setDefaultLanguage();
+  await setDefaultTheme();
+  await setDefaultLanguage();
 
- document.getElementById("loading").style.display = "none";
+  document.getElementById("loading").style.display = "none";
 }

@@ -10,6 +10,7 @@
     <script src="./components/base/label-with-icon.js"></script>
     <script src="./components/base/language-menu.js"></script>
     <script src="./components/base/language-changer.js"></script>
+    <script src="./components/base/theme-changer.js"></script>
     <script src="./components/sections/about.js"></script>
     <script src="./components/sections/projects.js"></script>
     <script src="./components/sections/online-certificates.js"></script>
@@ -144,14 +145,7 @@
         </div>
         <div class="navbar-menu">
           <app-language-changer></app-language-changer>
-          <input
-            type="submit"
-            name="theme"
-            id="theme-nav-brand"
-            value="🌕"
-            theme-value="dark"
-            onclick="changeTheme();"
-          />
+          <app-theme-changer theme value></app-theme-changer>
         </div>
       </nav>
       <hr class="dashed-divider" />
