@@ -22,16 +22,16 @@ const changeTheme = () => {
 }
 
 // Watch for change in theme at OS level
-// window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-//   const isThemeDark = event.matches;
-//   if (isThemeDark) {
-//     localStorage.setItem("theme", "dark");
-//     setDarkTheme();
-//   } else {
-//     localStorage.setItem("theme", "light");
-//     setLightTheme();
-//   };
-// });
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+  const isThemeDark = event.matches;
+  if (isThemeDark) {
+    localStorage.setItem("theme", "dark");
+    setDarkTheme();
+  } else {
+    localStorage.setItem("theme", "light");
+    setLightTheme();
+  };
+});
 
 const setDefaultTheme = () => {
   // Check if user already visited the website & changed the theme
@@ -121,4 +121,19 @@ window.onload = async () => {
   await setDefaultLanguage();
 
   document.getElementById("loading").style.display = "none";
+}
+
+const searchRedirect = (referrer, engine, query) => {
+  let url;
+  const params = new URLSearchParams({ "q": query });
+  if (engine === "google") {
+    url = new URL("https://www.google.com/search?") + params;
+  } else if (engine === "bing") {
+    url = new URL("https://www.bing.com/search?") + params;
+  } else if (engine === "duckduckgo") {
+    url = new URL("https://duckduckgo.com/?") + params;
+  } else if (engine === "brave") {
+    url = new URL("https://search.brave.com/search?") + params;
+  }
+  window.open(url, '_blank');
 }

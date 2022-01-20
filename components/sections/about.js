@@ -13,21 +13,25 @@ AboutTemplate.innerHTML = `
         #about > h2 {
             margin: 0px;
         }
-        #about > h2 > * {
+        #about > h2 * {
             font-size: 28px !important;
         }
-        #about > h2 > app-link::part(link_title) {
+        #about > h2 app-link::part(link_title) {
             font-size: 28px !important;
+        }
+        .about-name-container {
+            display: inline-flex;
+            align-items: center;
+            column-gap: 10px;
         }
     </style>
     <div id="about">
         <h2>
-            <app-link
-                class="about-name"
-                title="Baiju Dodhia"
-                link="https://www.google.com/search?q=%22Baiju+Dodhia%22+OR+%22baijudodhia%22"
-            ></app-link>
-            ,&nbsp;
+            <div class="about-name-container">
+                <div class="about-name" title="Baiju Dodhia">Baiju Dodhia</div>
+                <app-search-engine></app-search-engine>
+                ,
+            </div>
             <br class="conditional-breakline" />
             <span class="about-profile">Software Engineer</span>
         </h2>
@@ -57,6 +61,11 @@ class AppAbout extends HTMLElement {
         // element created
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(AboutTemplate.content.cloneNode(true));
+
+        const link = document.createElement("link");
+        link.setAttribute("href", "../../assets/icons/all.css");
+        link.setAttribute("rel", "stylesheet");
+        this.shadowRoot.prepend(link);
     }
 
     connectedCallback() {
@@ -92,6 +101,7 @@ class AppAbout extends HTMLElement {
         const response = await fetch(`/data/about/${language}.about.json`);
         const data = await response.json();
         this.shadowRoot.querySelector('.about-name').setAttribute('title', data['name']);
+        this.shadowRoot.querySelector('.about-name').innerHTML = data['name'];
     }
 }
 
