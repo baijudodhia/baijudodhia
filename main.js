@@ -21,7 +21,7 @@ const changeTheme = () => {
   }
 }
 
-// Watch for change in theme at OS level
+// Watch for change in theme at OS level followed by browser level.
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
   const isThemeDark = event.matches;
   if (isThemeDark) {
@@ -53,7 +53,8 @@ const setDefaultTheme = () => {
       localStorage.setItem("theme", "light");
       setLightTheme();
     }
-  } else { // If nothing found set by default before then set "Dark as new default";
+  } else { 
+    // If nothing found set by default before then set "Dark as new default";
     localStorage.setItem("theme", "dark");
     setLightTheme();
   }
