@@ -283,6 +283,7 @@ class AppWorkExperience extends HTMLElement {
             workExperienceContainer.setAttribute('id', 'work-experience-container');
             workExperienceContainer.innerHTML = '';
             let workExperienceTemplate = this.shadowRoot.querySelector('#work-experience-template');
+            let firstItemOpenFlag = true;
             for (var key in data) {
                 if (data.hasOwnProperty(key)) {
                     const val = data[key];
@@ -296,6 +297,10 @@ class AppWorkExperience extends HTMLElement {
                     clone.querySelector(".work-experience-type").setAttribute('label', val['workType']);
                     clone.querySelector(".work-experience-industry").setAttribute('label', val['workIndustry']);
                     clone.querySelector(".work-experience-description").innerHTML = val['workDescription'];
+                    if(firstItemOpenFlag) {
+                        clone.querySelector("details").setAttribute('open','');
+                        firstItemOpenFlag = false;
+                    }
                     workExperienceContainer.appendChild(clone);
                 }
             }
