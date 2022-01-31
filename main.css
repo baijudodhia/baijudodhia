@@ -323,7 +323,7 @@ app-search-engine-menu {
     transform: rotate(10deg);
   }
 }
-#theme-changer {
+/* #theme-changer {
   width: 40px;
   font-size: 18px;
   border: none !important;
@@ -345,7 +345,7 @@ app-search-engine-menu {
     width: 40px;
     padding: 0;
   }
-}
+} */
 
 /* About */
 /* #about {
