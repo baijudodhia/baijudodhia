@@ -42,8 +42,8 @@ ThemeChangerTemplate.innerHTML = `
             bottom: -5px;
             height: 1.5rem;
             width: 1.5rem;
-            transform: translateX(-50%) rotate(-30deg);
-            transition: 0.25s;
+            transform: translateX(-50%);
+            transition: 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
             background-position: center !important;
             background-repeat: no-repeat !important;
             background-size: 70% !important;
@@ -53,12 +53,12 @@ ThemeChangerTemplate.innerHTML = `
         }
         #theme-changer:checked + .theme-changer-slider {
             background-color: #009aff;
-            transition: 0.5s;
         }
         #theme-changer:checked + .theme-changer-slider:before {
             left: 100%;
+            transition: 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
             background-size: 65% !important;
-            transform: translateX(-50%) rotate(0deg);
+            transform: translateX(-50%);
             background: #fff url("/assets/img/theme-changer/dark.png");
             box-shadow: 0px 0px 10px -3px #f5f5f5;
         }
