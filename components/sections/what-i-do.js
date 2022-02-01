@@ -66,15 +66,15 @@ WhatIDoTemplate.innerHTML = `
                     Apart from coding and technology, pretty much involved in
                     exploring and learning about better design techniques, digital
                     marketing, entrepreneurship and startups, business and project
-                    management etc.
+                    management.
                 </div>
             </div>
             <div class="what-i-do-divider"></div>
             <div class="what-i-do-right">
                 <span>
-                    I have been a part of a lot of student communities related to
-                    tech, startups and entreprenuership such as
+                    I have been a part of a lot of student communities related to tech, startups and entrepreneurship during my undergraduate years such as
                 </span>
+                <br />
                 <app-link
                     title="BloomBox, E-Cell KJSCE"
                     link="https://www.bloomboxkjsce.com/"

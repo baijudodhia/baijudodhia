@@ -10,13 +10,14 @@ AboutTemplate.innerHTML = `
             align-items: flex-start;
             row-gap: 15px;
         }
+        #about > h1,
         #about > h2 {
             margin: 0px;
         }
-        #about > h2 * {
+        #about > h1 * {
             font-size: 28px !important;
         }
-        #about > h2 app-link::part(link_title) {
+        #about > h1 app-link::part(link_title) {
             font-size: 28px !important;
         }
         .about-name-container {
@@ -26,32 +27,25 @@ AboutTemplate.innerHTML = `
         }
     </style>
     <div id="about">
-        <h2>
+        <h1>
             <div class="about-name-container">
                 <div class="about-name" title="Baiju Dodhia">Baiju Dodhia</div>
                 <app-search-engine></app-search-engine>
-                ,
             </div>
-            <br class="conditional-breakline" />
-            <span class="about-profile">Software Engineer</span>
-        </h2>
+        </h1>
         <div>
-        Undergrad Student of Information Technology at
-        <app-link
-            title="KJSCE"
-            link="https://kjsce.somaiya.edu/en"
-        ></app-link>
+            Software Engineer with entrepreneurial mindset having strong project-based knowledge of various technical skills including programming languages and software tools.
         </div>
-        <div>
-            I'm a motivated student with entrepreneurial mindset and excellent
-            leadership and teamwork abilities demonstrated with being part of
-            various student committees over 3 year.
-        </div>
-        <div>
-            I have strong project based knowledge of various technical skills
-            including programming languages and software tools.
+        <div class="about-profile">
+            Currently working as Associate Frontend Engineer at
+            <app-link
+                title="Think360"
+                link="https://www.think360.ai/"
+            ></app-link>
         </div>
         <app-social-links></app-social-links>
+        <!-- What I Do ? -->
+        <app-what-i-do></app-what-i-do>
     </div>
 `;
 
