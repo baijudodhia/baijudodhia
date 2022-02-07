@@ -1,221 +1,192 @@
 {
-    "workExperience": {
-        "1": {
-            "organisationLogo": "./assets/img/org-logo/think360.svg",
-            "profileTitle": "Associate Frontend Developer",
-            "fromDate": "July 2021",
-            "toDate": "(current)",
-            "organisationName": "Think Analytics",
-            "workLocation": "Mumbai, MH",
-            "workIndustry": "FinTech",
-            "workType": "Web App Development",
-            "workDescription": "Working on development of web application in Financial Services domain. Primarily focused on design & frontend development of those applications."
-        },
-        "2": {
-            "profileTitle": "Backend Intern",
-            "fromDate": "Sept 2020",
-            "toDate": "Nov 2020",
-            "organisationLogo": "./assets/img/org-logo/fogr.svg",
-            "organisationName": "FoGR Tech.",
-            "workLocation": "Bhagyanagar (Hyderabad), TS [WFH]",
-            "workIndustry": "E-Commerce",
-            "workType": "Web/Mobile App Development",
-            "workDescription": "<div>Worked on 2 applications - </div><ul><li>Food Delivery App: Built backend for Android/iOS application using Angular Ionic Framework for integration with UI, Firebase for Realtime Database and User Authentication.</li><li>Delivery Package Returning App: Developed 3 integrated web applications (customer, admin and delivery agent) using Angular for UI, Node.js for backend and REST API, PubNub for real-time notifications, Stripe for Payments and MongoDB Atlas for Cloud-based Document Database.</li></ul>"
-        },
-        "3": {
-            "profileTitle": "Software Development Intern",
-            "fromDate": "April 2020",
-            "toDate": "June 2020",
-            "organisationLogo": "./assets/img/org-logo/kjsce.svg",
-            "organisationName": "KJSCE",
-            "workLocation": "Mumbai, MH",
-            "workIndustry": "Productivity Tools",
-            "workType": "Browser Extension Development",
-            "workDescription": "<div>Worked on development of Browser Extension -</div><ul><li>Worked on development of Chromium-browser based extension for Gmail for extracting information and generating summary from email threads using Node.js and Gmail.js</li><li>Achieved 100% results for extracting information like email ids and website URLs mentioned in the email thread.</li><li>Generated a 3 point extractive summary of email thread using cosine similarity measures.</li></ul>"
-        },
-        "4": {
-            "profileTitle": "Software Development Intern",
-            "fromDate": "Nov 2018",
-            "toDate": "April 2019",
-            "organisationLogo": "./assets/img/org-logo/kjsce.svg",
-            "organisationName": "KJSCE",
-            "workLocation": "Mumbai, MH",
-            "workIndustry": "Education",
-            "workType": "Desktop App Development",
-            "workDescription": "<div>Worked on MS Excel VBA -</div><ul><li>Created a Fullstack Desktop Application for Proctor System with features such as Add, Remove, Modify, View and Search the Excel database of students and faculty using Visual Basic for Applications and Microsoft Excel.</li></ul>"
-        }
-    },
-    "skills": {
-        "1": {
-            "skillType": "Programming Languages",
-            "skillList": [
-                "Javascript",
-                "Python",
-                "Java",
-                "HTML/CSS"
-            ]
-        },
-        "2": {
-            "skillType": "Frameworks & Libraries",
-            "skillList": [
-                "Bootstrap",
-                "Material",
-                "React",
-                "Angular",
-                "Node.js",
-                "Django",
-                "Flask"
-            ]
-        },
-        "3": {
-            "skillType": "Databases",
-            "skillList": [
-                "SQL",
-                "MongoDB (+Atlas)",
-                "Firebase"
-            ]
-        },
-        "4": {
-            "skillType": "Tools",
-            "skillList": [
-                "Git",
-                "VS Code",
-                "Android Studio"
-            ]
-        },
-        "5": {
-            "skillType": "Cloud Technologies",
-            "skillList": [
-                "AWS (Amazon Web Services)",
-                "Heroku",
-                "GCP (Google Cloud Platform)"
-            ]
-        },
-        "6": {
-            "skillType": "Platforms",
-            "skillList": [
-                "Web",
-                "Mobile",
-                "Desktop"
-            ]
-        }
-    },
-    "projects": {
-        "1": {
-            "title": "photoml",
-            "description": "Android Image Gallery app with Machine Learning features such as Facial Recognition, OCR, Barcode and Label Detection. Built in Android Studio using Java, Glide and Firebase ML-Kit.",
-            "code": {
-                "linkExists": true,
-                "codeLink": "https://github.com/baijudodhia/photoml"
-            },
-            "hosted": {
-                "linkExists": false,
-                "hostedLink": ""
-            }
-        },
-        "2": {
-            "title": "redshiftracing",
-            "description": "Static website for RedShift Racing India, KJSCE. Built using HTML, CSS, JS and Bootstrap.",
-            "code": {
-                "linkExists": true,
-                "codeLink": "https://github.com/baijudodhia/redshiftracing"
-            },
-            "hosted": {
-                "linkExists": true,
-                "hostedLink": "https://baijudodhia.github.io/redshiftracing/"
-            }
-        },
-        "3": {
-            "title": "dashboard-ng",
-            "description": "Startup Dashboard Application displaying and visualising data about startups built using Angular.",
-            "code": {
-                "linkExists": true,
-                "codeLink": "https://github.com/baijudodhia/dashboard-ng"
-            },
-            "hosted": {
-                "linkExists": true,
-                "hostedLink": "https://baijudodhia.github.io/dashboard-ng/"
-            }
-        },
-        "4": {
-            "title": "designs",
-            "description": "Multiple frontend website templates such as Blog, Online Store, Travel etc. built using only HTML, CSS and JS.",
-            "code": {
-                "linkExists": true,
-                "codeLink": "https://github.com/baijudodhia/designs"
-            },
-            "hosted": {
-                "linkExists": true,
-                "hostedLink": "https://baijudodhia.github.io/designs/"
-            }
-        },
-        "5": {
-            "title": "twitter-django",
-            "description": "Twitter clone website built using Twitter API in Django providing functionality for searching tweets and trends using location.",
-            "code": {
-                "linkExists": true,
-                "codeLink": "https://github.com/baijudodhia/twitter-django"
-            },
-            "hosted": {
-                "linkExists": true,
-                "hostedLink": "https://twitterdj.herokuapp.com/"
-            }
-        },
-        "6": {
-            "title": "img-geometric-transformation",
-            "description": "A python script to perform Geometric Transformation on Image File such as Perspective change, Zoom In/Out, Translate, Scale, Shear, Rotate and Flip.",
-            "code": {
-                "linkExists": true,
-                "codeLink": "https://github.com/baijudodhia/img-geometric-transformation"
-            },
-            "hosted": {
-                "linkExists": true,
-                "hostedLink": "https://colab.research.google.com/drive/1xt1oV4b_egSAQjk9HbDGl9bes_j8NR8Z?usp=sharing"
-            }
-        }
-    },
-    "certifications": {
-        "1": {
-            "title": "Python for Everyone Specialization",
-            "organisation": "University of Michigen",
-            "platform": "Coursera",
-            "completitionDate": "Sept 2020",
-            "certificateLink": "https://www.coursera.org/account/accomplishments/specialization/BJN5ZQLN2PXC"
-        },
-        "2": {
-            "title": "AI for Everyone",
-            "organisation": "deeplearning.ai",
-            "platform": "Coursera",
-            "completitionDate": "Sept 2020",
-            "certificateLink": "https://www.coursera.org/account/accomplishments/verify/L4DMNKR5VKEZ"
-        },
-        "3": {
-            "title": "AWS Fundamentals Specialization",
-            "organisation": "Amazon Web Services (AWS)",
-            "platform": "Coursera",
-            "completitionDate": "Sept 2020",
-            "certificateLink": "https://www.coursera.org/account/accomplishments/specialization/3XXHQPZ2MZ3R"
-        },
-        "4": {
-            "title": "Java Programming Masterclass",
-            "organisation": "Udemy",
-            "platform": "Udemy",
-            "completitionDate": "Sept 2020",
-            "certificateLink": "https://www.udemy.com/certificate/UC-53d1ce83-15dd-48bd-8939-28b61e67774f/"
-        },
-        "5": {
-            "title": "Introduction to Cloud Computing",
-            "organisation": "IBM",
-            "platform": "Coursera",
-            "completitionDate": "Sept 2020",
-            "certificateLink": "https://www.coursera.org/account/accomplishments/verify/FUSRTHFFMGGY"
-        },
-        "6": {
-            "title": "Marketing in a Digital World",
-            "organisation": "University of Illinois",
-            "platform": "Coursera",
-            "completitionDate": "Sept 2020",
-            "certificateLink": "https://www.coursera.org/account/accomplishments/verify/846JB3TDQBG3"
-        }
-    }
+	"workExperience": {
+		"1": {
+			"organisationLogo": "./assets/img/org-logo/think360.svg",
+			"profileTitle": "Associate Frontend Developer",
+			"fromDate": "July 2021",
+			"toDate": "(current)",
+			"organisationName": "Think Analytics",
+			"workLocation": "Mumbai, MH",
+			"workIndustry": "FinTech",
+			"workType": "Web App Development",
+			"workDescription": "Working on development of web application in Financial Services domain. Primarily focused on design & frontend development of those applications."
+		},
+		"2": {
+			"profileTitle": "Backend Intern",
+			"fromDate": "Sept 2020",
+			"toDate": "Nov 2020",
+			"organisationLogo": "./assets/img/org-logo/fogr.svg",
+			"organisationName": "FoGR Tech.",
+			"workLocation": "Bhagyanagar (Hyderabad), TS [WFH]",
+			"workIndustry": "E-Commerce",
+			"workType": "Web/Mobile App Development",
+			"workDescription": "<div>Worked on 2 applications - </div><ul><li>Food Delivery App: Built backend for Android/iOS application using Angular Ionic Framework for integration with UI, Firebase for Realtime Database and User Authentication.</li><li>Delivery Package Returning App: Developed 3 integrated web applications (customer, admin and delivery agent) using Angular for UI, Node.js for backend and REST API, PubNub for real-time notifications, Stripe for Payments and MongoDB Atlas for Cloud-based Document Database.</li></ul>"
+		},
+		"3": {
+			"profileTitle": "Software Development Intern",
+			"fromDate": "April 2020",
+			"toDate": "June 2020",
+			"organisationLogo": "./assets/img/org-logo/kjsce.svg",
+			"organisationName": "KJSCE",
+			"workLocation": "Mumbai, MH",
+			"workIndustry": "Productivity Tools",
+			"workType": "Browser Extension Development",
+			"workDescription": "<div>Worked on development of Browser Extension -</div><ul><li>Worked on development of Chromium-browser based extension for Gmail for extracting information and generating summary from email threads using Node.js and Gmail.js</li><li>Achieved 100% results for extracting information like email ids and website URLs mentioned in the email thread.</li><li>Generated a 3 point extractive summary of email thread using cosine similarity measures.</li></ul>"
+		},
+		"4": {
+			"profileTitle": "Software Development Intern",
+			"fromDate": "Nov 2018",
+			"toDate": "April 2019",
+			"organisationLogo": "./assets/img/org-logo/kjsce.svg",
+			"organisationName": "KJSCE",
+			"workLocation": "Mumbai, MH",
+			"workIndustry": "Education",
+			"workType": "Desktop App Development",
+			"workDescription": "<div>Worked on MS Excel VBA -</div><ul><li>Created a Fullstack Desktop Application for Proctor System with features such as Add, Remove, Modify, View and Search the Excel database of students and faculty using Visual Basic for Applications and Microsoft Excel.</li></ul>"
+		}
+	},
+	"skills": {
+		"1": {
+			"skillType": "Programming Languages",
+			"skillList": ["Javascript", "Python", "Java", "HTML/CSS"]
+		},
+		"2": {
+			"skillType": "Frameworks & Libraries",
+			"skillList": ["Bootstrap", "Material", "React", "Angular", "Node.js", "Django", "Flask"]
+		},
+		"3": {
+			"skillType": "Databases",
+			"skillList": ["SQL", "MongoDB (+Atlas)", "Firebase"]
+		},
+		"4": {
+			"skillType": "Tools",
+			"skillList": ["Git", "VS Code", "Android Studio"]
+		},
+		"5": {
+			"skillType": "Cloud Technologies",
+			"skillList": ["AWS (Amazon Web Services)", "Heroku", "GCP (Google Cloud Platform)"]
+		},
+		"6": {
+			"skillType": "Platforms",
+			"skillList": ["Web", "Mobile", "Desktop"]
+		}
+	},
+	"projects": {
+		"1": {
+			"title": "photoml",
+			"description": "Android Image Gallery app with Machine Learning features such as Facial Recognition, OCR, Barcode and Label Detection. Built in Android Studio using Java, Glide and Firebase ML-Kit.",
+			"code": {
+				"linkExists": true,
+				"codeLink": "https://github.com/baijudodhia/photoml"
+			},
+			"hosted": {
+				"linkExists": false,
+				"hostedLink": ""
+			}
+		},
+		"2": {
+			"title": "redshiftracing",
+			"description": "Static website for RedShift Racing India, KJSCE. Built using HTML, CSS, JS and Bootstrap.",
+			"code": {
+				"linkExists": true,
+				"codeLink": "https://github.com/baijudodhia/redshiftracing"
+			},
+			"hosted": {
+				"linkExists": true,
+				"hostedLink": "https://baijudodhia.github.io/redshiftracing/"
+			}
+		},
+		"3": {
+			"title": "dashboard-ng",
+			"description": "Startup Dashboard Application displaying and visualising data about startups built using Angular.",
+			"code": {
+				"linkExists": true,
+				"codeLink": "https://github.com/baijudodhia/dashboard-ng"
+			},
+			"hosted": {
+				"linkExists": true,
+				"hostedLink": "https://baijudodhia.github.io/dashboard-ng/"
+			}
+		},
+		"4": {
+			"title": "designs",
+			"description": "Multiple frontend website templates such as Blog, Online Store, Travel etc. built using only HTML, CSS and JS.",
+			"code": {
+				"linkExists": true,
+				"codeLink": "https://github.com/baijudodhia/designs"
+			},
+			"hosted": {
+				"linkExists": true,
+				"hostedLink": "https://baijudodhia.github.io/designs/"
+			}
+		},
+		"5": {
+			"title": "twitter-django",
+			"description": "Twitter clone website built using Twitter API in Django providing functionality for searching tweets and trends using location.",
+			"code": {
+				"linkExists": true,
+				"codeLink": "https://github.com/baijudodhia/twitter-django"
+			},
+			"hosted": {
+				"linkExists": true,
+				"hostedLink": "https://twitterdj.herokuapp.com/"
+			}
+		},
+		"6": {
+			"title": "img-geometric-transformation",
+			"description": "A python script to perform Geometric Transformation on Image File such as Perspective change, Zoom In/Out, Translate, Scale, Shear, Rotate and Flip.",
+			"code": {
+				"linkExists": true,
+				"codeLink": "https://github.com/baijudodhia/img-geometric-transformation"
+			},
+			"hosted": {
+				"linkExists": true,
+				"hostedLink": "https://colab.research.google.com/drive/1xt1oV4b_egSAQjk9HbDGl9bes_j8NR8Z?usp=sharing"
+			}
+		}
+	},
+	"certifications": {
+		"1": {
+			"title": "Python for Everyone Specialization",
+			"organisation": "University of Michigen",
+			"platform": "Coursera",
+			"completitionDate": "Sept 2020",
+			"certificateLink": "https://www.coursera.org/account/accomplishments/specialization/BJN5ZQLN2PXC"
+		},
+		"2": {
+			"title": "AI for Everyone",
+			"organisation": "deeplearning.ai",
+			"platform": "Coursera",
+			"completitionDate": "Sept 2020",
+			"certificateLink": "https://www.coursera.org/account/accomplishments/verify/L4DMNKR5VKEZ"
+		},
+		"3": {
+			"title": "AWS Fundamentals Specialization",
+			"organisation": "Amazon Web Services (AWS)",
+			"platform": "Coursera",
+			"completitionDate": "Sept 2020",
+			"certificateLink": "https://www.coursera.org/account/accomplishments/specialization/3XXHQPZ2MZ3R"
+		},
+		"4": {
+			"title": "Java Programming Masterclass",
+			"organisation": "Udemy",
+			"platform": "Udemy",
+			"completitionDate": "Sept 2020",
+			"certificateLink": "https://www.udemy.com/certificate/UC-53d1ce83-15dd-48bd-8939-28b61e67774f/"
+		},
+		"5": {
+			"title": "Introduction to Cloud Computing",
+			"organisation": "IBM",
+			"platform": "Coursera",
+			"completitionDate": "Sept 2020",
+			"certificateLink": "https://www.coursera.org/account/accomplishments/verify/FUSRTHFFMGGY"
+		},
+		"6": {
+			"title": "Marketing in a Digital World",
+			"organisation": "University of Illinois",
+			"platform": "Coursera",
+			"completitionDate": "Sept 2020",
+			"certificateLink": "https://www.coursera.org/account/accomplishments/verify/846JB3TDQBG3"
+		}
+	}
 }

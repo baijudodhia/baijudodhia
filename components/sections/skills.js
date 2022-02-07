@@ -1,4 +1,4 @@
-const SkillsTemplate = document.createElement('template');
+const SkillsTemplate = document.createElement("template");
 SkillsTemplate.innerHTML = `
     <link href='../../main.css' rel='stylesheet'>
     <style>
@@ -8,7 +8,7 @@ SkillsTemplate.innerHTML = `
             align-items: stretch;
             justify-content: center;
             align-content: center;
-            row-gap: 15px;
+            row-gap: 20px;
         }
         #skills .skills-item {
             margin-bottom: 8px;
@@ -50,80 +50,78 @@ SkillsTemplate.innerHTML = `
 `;
 
 class AppSkills extends HTMLElement {
-    constructor() {
-        super();
-        // element created
-        this.attachShadow({ mode: 'open' });
-        this.shadowRoot.appendChild(SkillsTemplate.content.cloneNode(true));
-    }
+	constructor() {
+		super();
+		// element created
+		this.attachShadow({ mode: "open" });
+		this.shadowRoot.appendChild(SkillsTemplate.content.cloneNode(true));
+	}
 
-    connectedCallback() {
-        // browser calls this method when the element is added to the document
-        // (can be called many times if an element is repeatedly added/removed)
-    }
+	connectedCallback() {
+		// browser calls this method when the element is added to the document
+		// (can be called many times if an element is repeatedly added/removed)
+	}
 
-    disconnectedCallback() {
-        // browser calls this method when the element is removed from the document
-        // (can be called many times if an element is repeatedly added/removed)
-    }
+	disconnectedCallback() {
+		// browser calls this method when the element is removed from the document
+		// (can be called many times if an element is repeatedly added/removed)
+	}
 
-    static get observedAttributes() {
-        return [
-            "language"
-        ];
-    }
+	static get observedAttributes() {
+		return ["language"];
+	}
 
-    attributeChangedCallback(name, oldValue, newValue) {
-        // called when one of attributes listed above is modified
-        if (name === "language" && oldValue !== newValue && newValue !== null && newValue !== undefined && newValue !== "") {
-            this.addSectionLoader();
-            this.fetchSkillsData(newValue);
-        }
-    }
+	attributeChangedCallback(name, oldValue, newValue) {
+		// called when one of attributes listed above is modified
+		if (name === "language" && oldValue !== newValue && newValue !== null && newValue !== undefined && newValue !== "") {
+			this.addSectionLoader();
+			this.fetchSkillsData(newValue);
+		}
+	}
 
-    adoptedCallback() {
-        // called when the element is moved to a new document
-        // (happens in document.adoptNode, very rarely used)
-    }
+	adoptedCallback() {
+		// called when the element is moved to a new document
+		// (happens in document.adoptNode, very rarely used)
+	}
 
-    // there can be other element methods and properties
-    async fetchSkillsData(language = "en") {
-        const response = await fetch(`/data/skills/${language}.skills.json`);
-        const data = await response.json();
-        this.loadSkills(data['skills']);
-    }
+	// there can be other element methods and properties
+	async fetchSkillsData(language = "en") {
+		const response = await fetch(`/data/skills/${language}.skills.json`);
+		const data = await response.json();
+		this.loadSkills(data["skills"]);
+	}
 
-    loadSkills(data) {
-        if ('content' in document.createElement('template')) {
-            let skillsContainer = document.createElement('div');
-            skillsContainer.setAttribute('id', 'skills-container');
-            skillsContainer.innerHTML = '';
-            let skillsTemplate = this.shadowRoot.querySelector('#skills-template');
-            for (var key in data) {
-                if (data.hasOwnProperty(key)) {
-                    const val = data[key];
-                    var clone = skillsTemplate.content.cloneNode(true);
-                    clone.querySelector("#skill-type").innerText = val['skillType'];
-                    clone.querySelector("#skill-list").innerText = val["skillList"].join(", ");
-                    skillsContainer.appendChild(clone);
-                }
-            }
-            this.removeSectionLoader();
-            this.shadowRoot.querySelector('#skills').append(skillsContainer);
-        }
-    }
+	loadSkills(data) {
+		if ("content" in document.createElement("template")) {
+			let skillsContainer = document.createElement("div");
+			skillsContainer.setAttribute("id", "skills-container");
+			skillsContainer.innerHTML = "";
+			let skillsTemplate = this.shadowRoot.querySelector("#skills-template");
+			for (var key in data) {
+				if (data.hasOwnProperty(key)) {
+					const val = data[key];
+					var clone = skillsTemplate.content.cloneNode(true);
+					clone.querySelector("#skill-type").innerText = val["skillType"];
+					clone.querySelector("#skill-list").innerText = val["skillList"].join(", ");
+					skillsContainer.appendChild(clone);
+				}
+			}
+			this.removeSectionLoader();
+			this.shadowRoot.querySelector("#skills").append(skillsContainer);
+		}
+	}
 
-    addSectionLoader() {
-        const sectionLoader = document.createElement('div');
-        sectionLoader.setAttribute('class', 'section-loader');
+	addSectionLoader() {
+		const sectionLoader = document.createElement("div");
+		sectionLoader.setAttribute("class", "section-loader");
 
-        const skills = this.shadowRoot.querySelector('#skills');
-        skills.append(sectionLoader);
-    }
+		const skills = this.shadowRoot.querySelector("#skills");
+		skills.append(sectionLoader);
+	}
 
-    removeSectionLoader() {
-        this.shadowRoot.querySelector('.section-loader').remove();
-    }
+	removeSectionLoader() {
+		this.shadowRoot.querySelector(".section-loader").remove();
+	}
 }
 
-customElements.define('app-skills', AppSkills);
+customElements.define("app-skills", AppSkills);

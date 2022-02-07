@@ -1,4 +1,4 @@
-const LanguageChangerTemplate = document.createElement('template');
+const LanguageChangerTemplate = document.createElement("template");
 LanguageChangerTemplate.innerHTML = `
     <link href="../../main.css" rel="stylesheet">
     <link href="../../assets/icons/all.css" rel="stylesheet">
@@ -12,43 +12,43 @@ LanguageChangerTemplate.innerHTML = `
 `;
 
 class AppLanguageChanger extends HTMLElement {
-    constructor() {
-        super();
-        // element created
-        this.attachShadow({ mode: 'open' });
-        this.shadowRoot.appendChild(LanguageChangerTemplate.content.cloneNode(true));
-    }
+	constructor() {
+		super();
+		// element created
+		this.attachShadow({ mode: "open" });
+		this.shadowRoot.appendChild(LanguageChangerTemplate.content.cloneNode(true));
+	}
 
-    connectedCallback() {
-        // browser calls this method when the element is added to the document
-        // (can be called many times if an element is repeatedly added/removed)
-    }
+	connectedCallback() {
+		// browser calls this method when the element is added to the document
+		// (can be called many times if an element is repeatedly added/removed)
+	}
 
-    disconnectedCallback() {
-        // browser calls this method when the element is removed from the document
-        // (can be called many times if an element is repeatedly added/removed)
-    }
+	disconnectedCallback() {
+		// browser calls this method when the element is removed from the document
+		// (can be called many times if an element is repeatedly added/removed)
+	}
 
-    static get observedAttributes() {
-        return [
-            /* Attributes to observe. */
-            "language"
-        ];
-    }
+	static get observedAttributes() {
+		return [
+			/* Attributes to observe. */
+			"language"
+		];
+	}
 
-    attributeChangedCallback(name, oldValue, newValue) {
-        // called when one of attributes listed above is modified
-        if (name === "language") {
-            this.shadowRoot.querySelector("app-language-menu").setAttribute("language", newValue);
-        }
-    }
+	attributeChangedCallback(name, oldValue, newValue) {
+		// called when one of attributes listed above is modified
+		if (name === "language") {
+			this.shadowRoot.querySelector("app-language-menu").setAttribute("language", newValue);
+		}
+	}
 
-    adoptedCallback() {
-        // called when the element is moved to a new document
-        // (happens in document.adoptNode, very rarely used)
-    }
+	adoptedCallback() {
+		// called when the element is moved to a new document
+		// (happens in document.adoptNode, very rarely used)
+	}
 
-    // there can be other element methods and properties
+	// there can be other element methods and properties
 }
 
-customElements.define('app-language-changer', AppLanguageChanger);
+customElements.define("app-language-changer", AppLanguageChanger);

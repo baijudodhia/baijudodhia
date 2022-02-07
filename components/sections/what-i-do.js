@@ -1,4 +1,4 @@
-const WhatIDoTemplate = document.createElement('template');
+const WhatIDoTemplate = document.createElement("template");
 WhatIDoTemplate.innerHTML = `
     <link href='../../main.css' rel='stylesheet'>
     <style>
@@ -8,7 +8,7 @@ WhatIDoTemplate.innerHTML = `
             align-content: center;
             justify-content: center;
             align-items: stretch;
-            row-gap: 15px;
+            row-gap: 20px;
         }
         #what-i-do-container {
             display: flex;
@@ -16,7 +16,7 @@ WhatIDoTemplate.innerHTML = `
             justify-content: center;
             align-content: center;
             flex-direction: row;
-            column-gap: 15px;
+            column-gap: 20px;
         }
         @media only screen and (max-width: 931px) {
             #what-i-do-container {
@@ -25,7 +25,7 @@ WhatIDoTemplate.innerHTML = `
                 align-content: center;
                 flex-direction: column;
                 align-items: stretch;
-                row-gap: 15px;
+                row-gap: 20px;
             }
         }
         .what-i-do-left {
@@ -36,12 +36,12 @@ WhatIDoTemplate.innerHTML = `
             align-content: center;
             justify-content: center;
             align-items: stretch;
-            row-gap: 15px;
+            row-gap: 20px;
         }
         .what-i-do-divider {
             display: block;
             align-self: stretch;
-            border-right: 1.5px dashed var(--color-light_f5f5f5-dark_121212-reverse);
+            border-right: 1.5px dashed var(--color-bw_secondary_invert);
         }
         @media only screen and (max-width: 931px) {
             .what-i-do-divider {
@@ -100,39 +100,39 @@ WhatIDoTemplate.innerHTML = `
 `;
 
 class AppWhatIDo extends HTMLElement {
-    constructor() {
-        super();
-        // element created
-        this.attachShadow({ mode: 'open' });
-        this.shadowRoot.appendChild(WhatIDoTemplate.content.cloneNode(true));
-    }
+	constructor() {
+		super();
+		// element created
+		this.attachShadow({ mode: "open" });
+		this.shadowRoot.appendChild(WhatIDoTemplate.content.cloneNode(true));
+	}
 
-    connectedCallback() {
-        // browser calls this method when the element is added to the document
-        // (can be called many times if an element is repeatedly added/removed)
-    }
+	connectedCallback() {
+		// browser calls this method when the element is added to the document
+		// (can be called many times if an element is repeatedly added/removed)
+	}
 
-    disconnectedCallback() {
-        // browser calls this method when the element is removed from the document
-        // (can be called many times if an element is repeatedly added/removed)
-    }
+	disconnectedCallback() {
+		// browser calls this method when the element is removed from the document
+		// (can be called many times if an element is repeatedly added/removed)
+	}
 
-    static get observedAttributes() {
-        return [
-            /* Attributes to observe. */
-        ];
-    }
+	static get observedAttributes() {
+		return [
+			/* Attributes to observe. */
+		];
+	}
 
-    attributeChangedCallback(name, oldValue, newValue) {
-        // called when one of attributes listed above is modified
-    }
+	attributeChangedCallback(name, oldValue, newValue) {
+		// called when one of attributes listed above is modified
+	}
 
-    adoptedCallback() {
-        // called when the element is moved to a new document
-        // (happens in document.adoptNode, very rarely used)
-    }
+	adoptedCallback() {
+		// called when the element is moved to a new document
+		// (happens in document.adoptNode, very rarely used)
+	}
 
-    // there can be other element methods and properties
+	// there can be other element methods and properties
 }
 
-customElements.define('app-what-i-do', AppWhatIDo);
+customElements.define("app-what-i-do", AppWhatIDo);

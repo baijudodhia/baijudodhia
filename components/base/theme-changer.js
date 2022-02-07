@@ -1,4 +1,4 @@
-const ThemeChangerTemplate = document.createElement('template');
+const ThemeChangerTemplate = document.createElement("template");
 ThemeChangerTemplate.innerHTML = `
     <link href="../../main.css" rel="stylesheet">
     <style>
@@ -49,10 +49,11 @@ ThemeChangerTemplate.innerHTML = `
             background-size: 70% !important;
             background: #fff url("/assets/img/theme-changer/light.png");
             border-radius: 50%;
-            box-shadow: 0px 0px 5px -2px #121212;
+            box-shadow: 0px 0px 10px -4px #121212;
         }
         #theme-changer:checked + .theme-changer-slider {
-            background-color: #009aff;
+            transition: 0.25s linear;
+            background-color: var(--color-primary);
         }
         #theme-changer:checked + .theme-changer-slider:before {
             left: 100%;
@@ -60,7 +61,7 @@ ThemeChangerTemplate.innerHTML = `
             background-size: 65% !important;
             transform: translateX(-50%);
             background: #fff url("/assets/img/theme-changer/dark.png");
-            box-shadow: 0px 0px 10px -3px #f5f5f5;
+            box-shadow: 0px 0px 10px -4px #f5f5f5;
         }
     </style>
     <div id="theme-changer-container">
@@ -77,49 +78,49 @@ ThemeChangerTemplate.innerHTML = `
 `;
 
 class AppThemeChanger extends HTMLElement {
-    constructor() {
-        super();
-        // element created
-        this.attachShadow({ mode: 'open' });
-        this.shadowRoot.appendChild(ThemeChangerTemplate.content.cloneNode(true));
-    }
+	constructor() {
+		super();
+		// element created
+		this.attachShadow({ mode: "open" });
+		this.shadowRoot.appendChild(ThemeChangerTemplate.content.cloneNode(true));
+	}
 
-    connectedCallback() {
-        // browser calls this method when the element is added to the document
-        // (can be called many times if an element is repeatedly added/removed)
-    }
+	connectedCallback() {
+		// browser calls this method when the element is added to the document
+		// (can be called many times if an element is repeatedly added/removed)
+	}
 
-    disconnectedCallback() {
-        // browser calls this method when the element is removed from the document
-        // (can be called many times if an element is repeatedly added/removed)
-    }
+	disconnectedCallback() {
+		// browser calls this method when the element is removed from the document
+		// (can be called many times if an element is repeatedly added/removed)
+	}
 
-    static get observedAttributes() {
-        return [
-            /* Attributes to observe. */
-            "value",
-            "theme"
-        ];
-    }
+	static get observedAttributes() {
+		return [
+			/* Attributes to observe. */
+			"value",
+			"theme"
+		];
+	}
 
-    attributeChangedCallback(name, oldValue, newValue) {
-        // called when one of attributes listed above is modified
-        if (name === "value" && oldValue !== null) {
-            this.shadowRoot.querySelector("#theme-changer").setAttribute("value", newValue);
-        }
-        if (name === "theme" && oldValue !== null) {
-            let themeChangerChecked = newValue === 'dark' ? true : false;
-            this.shadowRoot.querySelector("#theme-changer").checked = themeChangerChecked;
-            this.shadowRoot.querySelector("#theme-changer").setAttribute("theme", newValue);
-        }
-    }
+	attributeChangedCallback(name, oldValue, newValue) {
+		// called when one of attributes listed above is modified
+		if (name === "value" && oldValue !== null) {
+			this.shadowRoot.querySelector("#theme-changer").setAttribute("value", newValue);
+		}
+		if (name === "theme" && oldValue !== null) {
+			let themeChangerChecked = newValue === "dark" ? true : false;
+			this.shadowRoot.querySelector("#theme-changer").checked = themeChangerChecked;
+			this.shadowRoot.querySelector("#theme-changer").setAttribute("theme", newValue);
+		}
+	}
 
-    adoptedCallback() {
-        // called when the element is moved to a new document
-        // (happens in document.adoptNode, very rarely used)
-    }
+	adoptedCallback() {
+		// called when the element is moved to a new document
+		// (happens in document.adoptNode, very rarely used)
+	}
 
-    // there can be other element methods and properties
+	// there can be other element methods and properties
 }
 
-customElements.define('app-theme-changer', AppThemeChanger);
+customElements.define("app-theme-changer", AppThemeChanger);

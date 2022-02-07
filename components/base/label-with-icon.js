@@ -15,10 +15,11 @@ LabelWithIconTemplate.innerHTML = `
         column-gap: 10px;
     }
     .lwi > * {
-        color: var(--color-light_121212-dark_f5f5f5);
+        color: var(--color-bw_secondary_invert);
         font-weight: var(--font-weight);
     }
     .lwi-icon {
+        color: var(--color-bw_secondary_invert);
         width: 20px;
         text-align: center;
     }

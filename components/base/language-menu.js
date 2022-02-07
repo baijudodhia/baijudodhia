@@ -14,10 +14,10 @@ LanguageMenuTemplate.innerHTML = `
             cursor: pointer;
         }
         .language-menu-item.active {
-            color: var(--color-light_0055ff-dark_009aff);
+            color: var(--color-primary);
         }
         .language-menu-item:hover {
-            color: var(--color-light_0055ff-dark_009aff);
+            color: var(--color-primary);
         }
         .language-menu-triangle-up {
             align-self: flex-end;
@@ -25,15 +25,15 @@ LanguageMenuTemplate.innerHTML = `
             height: 0;
             border-left: 15px solid transparent;
             border-right: 15px solid transparent;
-            border-bottom: 15px solid var(--color-light_f5f5f5-dark_121212);
+            border-bottom: 15px solid var(--color-bw_secondary);
             margin-right: 15px;
             z-index: 1;
         }
         .language-menu-item-container {
             align-self: stretch;
             padding: 15px;
-            background-color: var(--color-light_f5f5f5-dark_121212);
-            color: var(--color-light_f5f5f5-dark_121212-reverse);
+            background-color: var(--color-bw_secondary);
+            color: var(--color-bw_secondary_invert);
             display: flex;
             flex-direction: column;
             align-content: center;
@@ -86,44 +86,44 @@ LanguageMenuTemplate.innerHTML = `
 `;
 
 class AppLanguageMenu extends HTMLElement {
-    constructor() {
-        super();
-        // element created
+	constructor() {
+		super();
+		// element created
 
-        this.attachShadow({ mode: "open" });
-        this.shadowRoot.appendChild(LanguageMenuTemplate.content.cloneNode(true));
-    }
+		this.attachShadow({ mode: "open" });
+		this.shadowRoot.appendChild(LanguageMenuTemplate.content.cloneNode(true));
+	}
 
-    connectedCallback() {
-        // browser calls this method when the element is added to the document
-        // (can be called many times if an element is repeatedly added/removed)
-    }
+	connectedCallback() {
+		// browser calls this method when the element is added to the document
+		// (can be called many times if an element is repeatedly added/removed)
+	}
 
-    disconnectedCallback() {
-        // browser calls this method when the element is removed from the document
-        // (can be called many times if an element is repeatedly added/removed)
-    }
+	disconnectedCallback() {
+		// browser calls this method when the element is removed from the document
+		// (can be called many times if an element is repeatedly added/removed)
+	}
 
-    static get observedAttributes() {
-        return ["language"];
-    }
+	static get observedAttributes() {
+		return ["language"];
+	}
 
-    attributeChangedCallback(name, oldValue, newValue) {
-        // called when one of attributes listed above is modified
-        if(name === "language") {
-            if(oldValue !== null) {
-                this.shadowRoot.querySelector(`#language-${oldValue}`).classList.remove("active");
-            }
-            this.shadowRoot.querySelector(`#language-${newValue}`).classList.add("active");
-        }
-    }
+	attributeChangedCallback(name, oldValue, newValue) {
+		// called when one of attributes listed above is modified
+		if (name === "language") {
+			if (oldValue !== null) {
+				this.shadowRoot.querySelector(`#language-${oldValue}`).classList.remove("active");
+			}
+			this.shadowRoot.querySelector(`#language-${newValue}`).classList.add("active");
+		}
+	}
 
-    adoptedCallback() {
-        // called when the element is moved to a new document
-        // (happens in document.adoptNode, very rarely used)
-    }
+	adoptedCallback() {
+		// called when the element is moved to a new document
+		// (happens in document.adoptNode, very rarely used)
+	}
 
-    // there can be other element methods and properties
+	// there can be other element methods and properties
 }
 
 customElements.define("app-language-menu", AppLanguageMenu);
