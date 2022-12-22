@@ -120,84 +120,109 @@ BlogPostsTemplate.innerHTML = `
 `;
 
 class AppBlogPosts extends HTMLElement {
-	constructor() {
-		super();
-		// element created
-		this.attachShadow({ mode: "open" });
-		this.shadowRoot.appendChild(BlogPostsTemplate.content.cloneNode(true));
+    constructor() {
+        super();
+        // element created
+        this.attachShadow({ mode: "open" });
+        this.shadowRoot.appendChild(BlogPostsTemplate.content.cloneNode(true));
 
-		this.addSectionLoader();
-		this.fetchBlogPostsData();
-	}
+        this.addSectionLoader();
+        this.fetchBlogPostsData();
+    }
 
-	connectedCallback() {
-		// browser calls this method when the element is added to the document
-		// (can be called many times if an element is repeatedly added/removed)
-	}
+    connectedCallback() {
+        // browser calls this method when the element is added to the document
+        // (can be called many times if an element is repeatedly added/removed)
+    }
 
-	disconnectedCallback() {
-		// browser calls this method when the element is removed from the document
-		// (can be called many times if an element is repeatedly added/removed)
-	}
+    disconnectedCallback() {
+        // browser calls this method when the element is removed from the document
+        // (can be called many times if an element is repeatedly added/removed)
+    }
 
-	static get observedAttributes() {
-		return [
-			/* Attributes to observe. */
-		];
-	}
+    static get observedAttributes() {
+        return [
+            /* Attributes to observe. */
+        ];
+    }
 
-	attributeChangedCallback(name, oldValue, newValue) {
-		// called when one of attributes listed above is modified
-	}
+    attributeChangedCallback(name, oldValue, newValue) {
+        // called when one of attributes listed above is modified
+    }
 
-	adoptedCallback() {
-		// called when the element is moved to a new document
-		// (happens in document.adoptNode, very rarely used)
-	}
+    adoptedCallback() {
+        // called when the element is moved to a new document
+        // (happens in document.adoptNode, very rarely used)
+    }
 
-	// there can be other element methods and properties
-	async fetchBlogPostsData() {
-		const xmlFetch = await fetch("https://baijudodhia.github.io/blog/recent3posts.xml");
-		const xmlText = await xmlFetch.text();
-		const xml = await new window.DOMParser().parseFromString(xmlText, "text/xml");
-		let x = xml.documentElement.childNodes;
-		this.loadBlogPosts(x);
-	}
+    // there can be other element methods and properties
+    // async fetchBlogPostsData() {
+    // 	const xmlFetch = await fetch("https://baijudodhia.blogspot.com/feeds/posts/default");
+    // 	const xmlText = await xmlFetch.text();
+    // 	const xml = await new window.DOMParser().parseFromString(xmlText, "text/xml");
+    // 	let x = xml.documentElement.childNodes;
+    // 	this.loadBlogPosts(x);
+    // }
+    async fetchBlogPostsData() {
+        const feedUrl = "https://baijudodhia.blogspot.com/feeds/posts/default";
+        const response = await fetch(feedUrl);
+        const xmlText = await response.text();
+        const xml = await new window.DOMParser().parseFromString(xmlText, "text/xml");
+        let entries = xml.getElementsByTagName("entry");
 
-	loadBlogPosts(data) {
-		let blogsContainer = document.createElement("div");
-		blogsContainer.setAttribute("id", "blogs-container");
-		blogsContainer.innerHTML = "";
-		let blogsTemplate = this.shadowRoot.querySelector("#blogs-template");
-		for (let i = 0; i < data.length; i++) {
-			if (data[i].nodeType == 1) {
-				var clone = blogsTemplate.content.cloneNode(true);
-				clone.querySelector(".blog-title").innerText = data[i].getElementsByTagName("title")[0].firstChild.nodeValue;
-				clone.querySelector(".blog-url").setAttribute("link", data[i].getElementsByTagName("loc")[0].firstChild.nodeValue + "?utm_source=baijudodhia.github.io&utm_medium=blog_section_view_all_btn");
-				clone.querySelector(".blog-excerpt").innerText = data[i].getElementsByTagName("excerpt")[0].firstChild.nodeValue;
-				// const tags =
-				//   x[i].getElementsByTagName("tags")[0].firstChild.nodeValue;
-				// const category =
-				//   x[i].getElementsByTagName("category")[0].firstChild.nodeValue;
-				blogsContainer.append(clone);
-			}
-		}
-		this.removeSectionLoader();
-		this.shadowRoot.querySelector("#blogs").append(blogsContainer);
-	}
+        // Get the URL, title, and summary for the 3 most recent posts
+        let recentPosts = [];
+        for (let i = 0; i < 3; i++) {
+            let entry = entries[i];
+            let link = entry.getElementsByTagName("link")[0];
+            let url = link.getAttribute("href");
+            let title = entry.getElementsByTagName("title")[0].textContent;
+            let summary = entry.getElementsByTagName("summary")[0].textContent;
 
-	addSectionLoader() {
-		// Section Loader
-		const sectionLoader = document.createElement("div");
-		sectionLoader.setAttribute("class", "section-loader");
+            // Get the tags for the post
+            let tags = [];
+            let tagElements = entry.getElementsByTagName("category");
+            for (let j = 0; j < tagElements.length; j++) {
+                let tagElement = tagElements[j];
+                let tag = tagElement.textContent || tagElement.getAttribute("term");
+                tags.push(tag);
+            }
 
-		const blogPosts = this.shadowRoot.querySelector("#blogs");
-		blogPosts.append(sectionLoader);
-	}
 
-	removeSectionLoader() {
-		this.shadowRoot.querySelector(".section-loader").remove();
-	}
+            recentPosts.push({ url, title, summary, tags });
+        }
+
+        this.loadBlogPosts(recentPosts);
+    }
+
+    loadBlogPosts(recentPosts) {
+        let blogsContainer = document.createElement("div");
+        blogsContainer.setAttribute("id", "blogs-container");
+        blogsContainer.innerHTML = "";
+        let blogsTemplate = this.shadowRoot.querySelector("#blogs-template");
+        for (let i = 0; i < recentPosts.length; i++) {
+            let post = recentPosts[i];
+            var clone = blogsTemplate.content.cloneNode(true);
+            clone.querySelector(".blog-title").innerText = post.title;
+            clone.querySelector(".blog-url").setAttribute("link", post.url + "?utm_source=baijudodhia.github.io&utm_medium=blog_section_view_all_btn");
+            blogsContainer.append(clone);
+        }
+        this.removeSectionLoader();
+        this.shadowRoot.querySelector("#blogs").append(blogsContainer);
+    }
+
+    addSectionLoader() {
+        // Section Loader
+        const sectionLoader = document.createElement("div");
+        sectionLoader.setAttribute("class", "section-loader");
+
+        const blogPosts = this.shadowRoot.querySelector("#blogs");
+        blogPosts.append(sectionLoader);
+    }
+
+    removeSectionLoader() {
+        this.shadowRoot.querySelector(".section-loader").remove();
+    }
 }
 
 customElements.define("app-blog-posts", AppBlogPosts);
