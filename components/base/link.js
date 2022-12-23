@@ -39,7 +39,7 @@ LinkTemplate.innerHTML = `
 			.link-container:focus-visible {
 				outline: none;
 				padding: 0px 8px;
-				border: 1px dashed var(--color-primary); 
+				border: 1px dashed var(--color-primary);
 			}
 			.link-container:active {
 				transform: scale(0.95);

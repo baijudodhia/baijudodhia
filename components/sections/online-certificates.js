@@ -206,7 +206,7 @@ class AppOnlineCertificates extends HTMLElement {
                     var clone = onlineCertificatesTemplate.content.cloneNode(true);
                     clone.querySelector(".online-certificates-title").innerText = val["title"];
                     clone.querySelector(".online-certificates-organisation").setAttribute("label", val["organisation"]);
-                    clone.querySelector(".online-certificates-date").setAttribute("label", val["completitionDate"]);
+                    clone.querySelector(".online-certificates-date").setAttribute("label", val["completionDate"]);
                     clone.querySelector(".online-certificates-link").setAttribute("link", val["certificateLink"]);
                     onlineCertificatesContainer.appendChild(clone);
                 }
