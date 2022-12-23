@@ -169,7 +169,7 @@ class AppBlogPosts extends HTMLElement {
     // }
     async fetchBlogPostsData() {
         const feedUrl = "https://baijudodhia.blogspot.com/feeds/posts/default";
-        const response = await fetch(feedUrl);
+        const response = await fetch(feedUrl, { mode: "no-cors" });
         const xmlText = await response.text();
         const xml = await new window.DOMParser().parseFromString(xmlText, "text/xml");
         let entries = xml.getElementsByTagName("entry");

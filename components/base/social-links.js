@@ -35,9 +35,16 @@ class AppSocialLinks extends HTMLElement {
 		_app_link_linkedin.setAttribute("title", "LinkedIn");
 		_app_link_linkedin.setAttribute("link", "https://www.linkedin.com/in/baijudodhia");
 
+		const _app_link_blog = _app_link.cloneNode(true);
+		_app_link_blog.setAttribute("icon", "fa fa-rss-square");
+		_app_link_blog.setAttribute("icon-title", "Read my Blogs");
+		_app_link_blog.setAttribute("title", "Blog");
+		_app_link_blog.setAttribute("link", "https://baijudodhia.blogspot.com/");
+
 		const _social_links = this.shadowRoot.querySelector(".social-links");
 		_social_links.append(_app_link_github);
 		_social_links.append(_app_link_linkedin);
+		_social_links.append(_app_link_blog);
 	}
 
 	connectedCallback() {
