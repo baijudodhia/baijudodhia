@@ -31,20 +31,24 @@ BlogPostsTemplate.innerHTML = `
             align-content: space-between;
             row-gap: 15px;
             padding: 20px;
-            border: 1.5px solid;
-            border-image: var(--gradient-primary) 30;
-            background-image: none;
-            background-clip: content-box, border-box;
-            background-origin: border-box;
-            box-shadow: 0px 0px 10px -4px var(--color-secondary);
             transition: 0.05s linear;
+            border: 1.5px solid var(--color-primary);
+            // border-image: var(--gradient-primary) 30;
+            // background-image: none;
+            // background-clip: content-box, border-box;
+            // background-origin: border-box;
+            border-radius: 1rem;
+            box-shadow: 0px 0px 10px -4px var(--color-secondary);
         }
         .blog-item:hover {
             font-weight: var(--font-weight-hover);
             color: var(--color-bw_secondary);
-            background-image: var(--gradient-primary);
-            background-clip: border-box;
-            background-origin: border-box;
+            border: 1.5px solid var(--color-primary);
+            // border-image: var(--gradient-primary) 30;
+            // background-image: var(--gradient-primary);
+            background-color: var(--color-primary);
+            // background-clip: border-box;
+            // background-origin: border-box;
             box-shadow: 0px 0px 10px -4px var(--color-secondary);
         }
         .blog-item:hover .blog-divider {
@@ -174,10 +178,19 @@ class AppBlogPosts extends HTMLElement {
         let recentPosts = [];
         for (let i = 0; i < 3; i++) {
             let entry = entries[i];
-            let link = entry.getElementsByTagName("link")[0];
-            let url = link.getAttribute("href");
-            let title = entry.getElementsByTagName("title")[0].textContent;
-            let summary = entry.getElementsByTagName("summary")[0].textContent;
+            let title = entry.getElementsByTagName("title")[0] ? entry.getElementsByTagName("title")[0].textContent : "";
+            let summary = entry.getElementsByTagName("summary")[0] ? entry.getElementsByTagName("summary")[0].textContent : "";
+            let url = "";
+            let linkElements = entry.getElementsByTagName("link");
+            for (let j = 0; j < linkElements.length; j++) {
+                let linkElement = linkElements[j];
+                let rel = linkElement.getAttribute("rel");
+                let type = linkElement.getAttribute("type");
+                if (rel === "alternate" && type === "text/html") {
+                    url = linkElement.getAttribute("href");
+                    break;
+                }
+            }
 
             // Get the tags for the post
             let tags = [];
@@ -188,12 +201,12 @@ class AppBlogPosts extends HTMLElement {
                 tags.push(tag);
             }
 
-
             recentPosts.push({ url, title, summary, tags });
         }
 
         this.loadBlogPosts(recentPosts);
     }
+
 
     loadBlogPosts(recentPosts) {
         let blogsContainer = document.createElement("div");

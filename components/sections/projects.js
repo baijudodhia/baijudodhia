@@ -51,20 +51,24 @@ ProjectsTemplate.innerHTML = `
             align-content: space-between;
             row-gap: 15px;
             padding: 20px;
-            border: 1.5px solid;
-            border-image: var(--gradient-primary) 30;
-            background: transparent;
-            background-clip: content-box, border-box;
-            background-origin: border-box;
-            box-shadow: 0px 0px 10px -4px var(--color-secondary);
             transition: 0.05s linear;
+            border: 1.5px solid var(--color-primary);
+            // border-image: var(--gradient-primary) 30;
+            // background-image: none;
+            // background-clip: content-box, border-box;
+            // background-origin: border-box;
+            border-radius: 1rem;
+            box-shadow: 0px 0px 10px -4px var(--color-secondary);
         }
         .project-item:hover {
             font-weight: var(--font-weight-hover);
             color: var(--color-bw_secondary);
-            background-image: var(--gradient-primary);
-            background-clip: border-box;
-            background-origin: border-box;
+            border: 1.5px solid var(--color-primary);
+            // border-image: var(--gradient-primary) 30;
+            // background-image: var(--gradient-primary);
+            background-color: var(--color-primary);
+            // background-clip: border-box;
+            // background-origin: border-box;
             box-shadow: 0px 0px 10px -4px var(--color-secondary);
         }
         .project-item:hover .project-divider {

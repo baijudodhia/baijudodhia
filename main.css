@@ -42,7 +42,7 @@ html[data-theme="dark"] {
 	--font-weight-hover: bold;
 }
 * {
-	font-family: "Lora", serif;
+	font-family: "Poppins", serif;
 	box-sizing: border-box !important;
 	font-size: 18px;
 	line-height: 1.6;
