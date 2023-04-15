@@ -14,9 +14,9 @@
   "arrayBracketNewLine": true,
   "singleAttributePerLine": true,
   "jsxSingleQuote": true,
-  "insertPragma": true,
+  "insertPragma": false,
   "endOfLine": "lf",
-  "requirePragma": true,
+  "requirePragma": false,
   "overrides": [
     {
       "files": "*.html",
