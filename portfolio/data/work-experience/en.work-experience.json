@@ -1,0 +1,48 @@
+{
+  "workExperience": {
+    "1": {
+      "organisationLogo": "./portfolio/assets/images/org-logo/think360.svg",
+      "profileTitle": "Associate Frontend Engineer",
+      "fromDate": "July 2021",
+      "toDate": "(current)",
+      "organisationName": "Think Analytics",
+      "workLocation": "Mumbai, MH",
+      "workIndustry": "FinTech",
+      "workType": "Web Applications",
+      "workDescription": "Working on development of web application in Financial Services domain. Primarily focused on design & frontend development of those applications."
+    },
+    "2": {
+      "profileTitle": "SDE Intern",
+      "fromDate": "Sept 2020",
+      "toDate": "Nov 2020",
+      "organisationLogo": "./portfolio/assets/images/org-logo/fogr.svg",
+      "organisationName": "FoGR Tech.",
+      "workLocation": "Hyderabad, TS [WFH]",
+      "workIndustry": "E-Commerce",
+      "workType": "Web/Mobile Applications",
+      "workDescription": "<div>Worked on 2 applications - </div><ul><li>Food Delivery App: Built backend for Android/iOS application using Angular Ionic Framework for integration with UI, Firebase for Realtime Database and User Authentication.</li><li>Delivery Package Returning App: Developed 3 integrated web applications (customer, admin and delivery agent) using Angular for UI, Node.js for backend and REST API, PubNub for real-time notifications, Stripe for Payments and MongoDB Atlas for Cloud-based Document Database.</li></ul>"
+    },
+    "3": {
+      "profileTitle": "SDE Intern",
+      "fromDate": "April 2020",
+      "toDate": "June 2020",
+      "organisationLogo": "./portfolio/assets/images/org-logo/kjsce.svg",
+      "organisationName": "KJSCE",
+      "workLocation": "Mumbai, MH",
+      "workIndustry": "Productivity Tools",
+      "workType": "Browser Extension",
+      "workDescription": "<div>Worked on development of Browser Extension -</div><ul><li>Worked on development of Chromium-browser based extension for Gmail for extracting information and generating summary from email threads using Node.js and Gmail.js</li><li>Achieved 100% results for extracting information like email ids and website URLs mentioned in the email thread.</li><li>Generated a 3 point extractive summary of email thread using cosine similarity measures.</li></ul>"
+    },
+    "4": {
+      "profileTitle": "SDE Intern",
+      "fromDate": "Nov 2018",
+      "toDate": "April 2019",
+      "organisationLogo": "./portfolio/assets/images/org-logo/kjsce.svg",
+      "organisationName": "KJSCE",
+      "workLocation": "Mumbai, MH",
+      "workIndustry": "Education",
+      "workType": "Desktop Application",
+      "workDescription": "<div>Worked on MS Excel VBA -</div><ul><li>Created a Fullstack Desktop Application for Proctor System with features such as Add, Remove, Modify, View and Search the Excel database of students and faculty using Visual Basic for Applications and Microsoft Excel.</li></ul>"
+    }
+  }
+}
