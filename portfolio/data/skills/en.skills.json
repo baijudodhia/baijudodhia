@@ -1,0 +1,28 @@
+{
+  "skills": {
+    "1": {
+      "skillType": "Programming Languages",
+      "skillList": ["Javascript", "Python", "Java", "HTML/CSS"]
+    },
+    "2": {
+      "skillType": "Frameworks & Libraries",
+      "skillList": ["Bootstrap", "Material", "React", "Angular", "Node.js", "Django", "Flask"]
+    },
+    "3": {
+      "skillType": "Databases",
+      "skillList": ["SQL", "MongoDB (+Atlas)", "Firebase"]
+    },
+    "4": {
+      "skillType": "Tools",
+      "skillList": ["Git", "VS Code", "Android Studio"]
+    },
+    "5": {
+      "skillType": "Cloud Technologies",
+      "skillList": ["AWS (Amazon Web Services)", "Heroku", "GCP (Google Cloud Platform)"]
+    },
+    "6": {
+      "skillType": "Platforms",
+      "skillList": ["Web", "Mobile", "Desktop"]
+    }
+  }
+}
