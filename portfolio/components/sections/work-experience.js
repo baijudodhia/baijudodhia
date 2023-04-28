@@ -10,6 +10,7 @@ WorkExperienceTemplate.innerHTML = `
             align-content: center;
             row-gap: 30px;
         }
+
         #work-experience-container {
             display: flex;
             flex-direction: column;
@@ -18,6 +19,7 @@ WorkExperienceTemplate.innerHTML = `
             align-content: center;
             row-gap: 30px;
         }
+
         .work-experience-item {
             display: flex;
             flex-direction: column;
@@ -27,40 +29,38 @@ WorkExperienceTemplate.innerHTML = `
             row-gap: 15px;
             padding: 20px 20px 15px 20px;
             border: 1.5px solid var(--color-primary);
-            // border-image: var(--gradient-primary) 30;
-            // background-image: none;
-            // background-clip: content-box, border-box;
-            // background-origin: border-box;
             border-radius: 1rem;
             box-shadow: 0px 0px 10px -4px var(--color-secondary);
         }
+
         @media only screen and (max-width: 931px) {
             .work-experience-item {
                 row-gap: 10px;
             }
         }
+
         .work-experience-item:hover {
             font-weight: var(--font-weight-hover);
             color: var(--color-bw_secondary);
             border: 1.5px solid var(--color-primary);
-            // border-image: var(--gradient-primary) 30;
-            // background-image: var(--gradient-primary);
             background-color: var(--color-primary);
-            // background-clip: border-box;
-            // background-origin: border-box;
             box-shadow: 0px 0px 10px -4px var(--color-secondary);
         }
+
         .work-experience-item:hover .work-experience-divider {
             border-top: 1.5px dashed var(--color-bw_secondary);
         }
+
         .work-experience-item:hover app-label-with-icon::part(lwi_icon) {
             font-weight: var(--font-weight-hover);
             color: var(--color-bw_secondary);
         }
+
         .work-experience-item:hover app-label-with-icon::part(lwi_label) {
             font-weight: var(--font-weight-hover);
             color: var(--color-bw_secondary);
         }
+
         .work-experience-header {
             align-self: stretch;
             display: flex;
@@ -70,6 +70,7 @@ WorkExperienceTemplate.innerHTML = `
             align-content: center;
             column-gap: 30px;
         }
+
         @media only screen and (max-width: 931px) {
             .work-experience-header {
                 align-self: stretch;
@@ -81,57 +82,66 @@ WorkExperienceTemplate.innerHTML = `
                 row-gap: 20px;
             }
         }
+
         .work-experience-organisation-logo-container {
-            flex-grow: 1;
             display: flex;
             align-self: stretch;
             justify-content: center;
             align-content: center;
             flex-direction: row;
-            width: 180px;
+            width: 100%;
             background-color: #ffffff;
             border-radius: 5px;
             padding: 15px;
-            // box-shadow: 0px 0px 10px -4px var(--color-bw_secondary_invert);
+            box-shadow: 0px 1px 8px -5px var(--color-bw_secondary_invert);
+
+            max-height: 70px;
         }
+
         @media only screen and (max-width: 931px) {
             .work-experience-organisation-logo-container {
                 width: unset;
                 align-self: stretch;
-                height: 100px;
+                height: 70px;
                 padding: 15px;
             }
         }
+
         .work-experience-organisation-logo {
             width: 100%;
             height: 100%;
         }
+
         .work-experience-details {
             align-self: stretch;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
             grid-row-gap: 5px;
             grid-column-gap: 15px;
         }
+
         @media only screen and (max-width: 661px) {
             .work-experience-details {
                 align-self: stretch;
                 display: grid;
                 grid-template-columns: repeat(1, 1fr);
-                grid-template-rows: repeat(6, 1fr);
+                grid-template-rows: repeat(4, 1fr);
                 grid-row-gap: 5px;
                 grid-column-gap: 15px;
             }
         }
+
         .work-experience-details app-label-with-icon::part(lwi) {
             min-width: 300px;
         }
+
         @media only screen and (max-width: 781px) {
             .work-experience-details app-label-with-icon::part(lwi) {
                 min-width: fit-content;
             }
         }
+
         .work-experience-divider {
             align-self: stretch;
             margin: 0px;
@@ -141,202 +151,270 @@ WorkExperienceTemplate.innerHTML = `
             background-color: transparent;
             flex: 1;
         }
-        .work-experience-item details {
+
+        .work-experience-profile-details-item {
             align-self: stretch;
-            cursor: pointer;
+            grid-template-columns: repeat(1, 1fr);
+            grid-row-gap: 10px;
+            grid-column-gap: 15px;
         }
-        .work-experience-item details[open] {
-            align-self: flex-start;
-            cursor: pointer;
-        }
-        .work-experience-item details > summary,
-        .work-experience-item details > summary::-webkit-details-marker {
-            display: block;
-        }
-        .work-experience-item details > summary > .summary-header {
+
+        .work-experience-profile-details-item-wrapper {
+            align-self: stretch;
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            align-content: center;
-            column-gap: 15px;
+            flex-direction: column;
+            gap: 0.5rem;
         }
-        .work-experience-item details .summary-header-arrow-down {
-            display: block;
+
+        .work-experience-profile-details-left {
+            width: 2rem;
         }
-        .work-experience-item details[open] .summary-header-arrow-down {
-            display: none;
+
+        .work-experience-profile-details-header {
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            gap: 0px;
         }
-        .work-experience-item details .summary-header-arrow-up {
-            display: none;
+
+        @media only screen and (max-width: 661px) {
+            .work-experience-profile-details-header {
+                align-self: stretch;
+                display: flex;
+                flex-direction: column;
+                gap: 0px;
+            }
         }
-        .work-experience-item details[open] .summary-header-arrow-up {
-            display: block;
-        }
+
         .work-experience-description {
-            padding-top: 5px;
-            padding-bottom: 5px;
+            font-size: 16px;
+            font-weight: normal;
         }
-        .work-experience-description > * {
+
+        .work-experience-description * {
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        .work-experience-description>* {
             margin: 0px;
+        }
+
+        .work-experience-profile {
+            font-size: 18px;
+        }
+
+        .work-experience-date {
+            font-size: 14px;
+            font-weight: 100;
+
+        }
+
+        .work-experience-profile-details {
+            position: relative;
+            padding: 0;
+            list-style: none;
+            margin: 0;
+        }
+
+        .work-experience-profile-details>li {
+            position: relative;
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+
+        .work-experience-profile-details>li:only-child {
+            margin-bottom: 0rem;
+            padding-left: 0rem;
+        }
+
+        .work-experience-profile-details>li:only-child:before,
+        .work-experience-profile-details>li:only-child:after {
+            display: none;
+        }
+
+        .work-experience-profile-details>li:before {
+            content: '';
+            position: absolute;
+            top: 0.5rem;
+            left: 0.5rem;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1.5px solid var(--color-bw_secondary_invert);
+        }
+
+        .work-experience-item:hover .work-experience-profile-details>li:before {
+            border: 1.5px solid var(--color-bw_secondary);
+        }
+
+        .work-experience-profile-details>li:after {
+            content: '';
+            position: absolute;
+            top: 1.15rem;
+            left: 0.825rem;
+            width: 1.25px;
+            height: calc(100% + 0.4rem);
+            background: var(--color-bw_secondary_invert);
+        }
+
+        .work-experience-item:hover .work-experience-profile-details>li:after {
+            width: 1.25px;
+            background: var(--color-bw_secondary);
+        }
+
+        .work-experience-profile-details>li:last-child {
+            margin-bottom: 0;
+        }
+
+        .work-experience-profile-details>li:last-child:after {
+            display: none;
         }
     </style>
     <div id="work-experience">
         <h3>Work Experience</h3>
     </div>
     <template id="work-experience-template">
-        <div class="work-experience-item">
-            <div class="work-experience-header">
-                <div class="work-experience-organisation-logo-container">
-                    <img class="work-experience-organisation-logo" src="" alt="" />
-                </div>
-                <div class="work-experience-details">
-                    <app-label-with-icon
-                        class="work-experience-profile"
-                        icon="fa fa-briefcase"
-                        icon_title="Work Profile"
-                        label=""
-                    ></app-label-with-icon>
-                    <app-label-with-icon
-                        class="work-experience-date"
-                        icon="fa fa-calendar-check-o"
-                        icon_title="Work Duration"
-                        label=""
-                    ></app-label-with-icon>
-                    <app-label-with-icon
-                        class="work-experience-organisation"
-                        icon="fa fa-building-o"
-                        icon_title="Work Organisation"
-                        label=""
-                    ></app-label-with-icon>
-                    <app-label-with-icon
-                        class="work-experience-location"
-                        icon="fa fa-map-marker"
-                        icon_title="Work Location"
-                        label=""
-                    ></app-label-with-icon>
-                    <app-label-with-icon
-                        class="work-experience-type"
-                        icon="fa fa-tasks"
-                        icon_title="Work Type"
-                        label=""
-                    ></app-label-with-icon>
-                    <app-label-with-icon
-                        class="work-experience-industry"
-                        icon="fa fa-industry"
-                        icon_title="Work Industry"
-                        label=""
-                    ></app-label-with-icon>
-                </div>
-            </div>
-            <hr class="work-experience-divider" />
-            <div class="work-experience-description"></div>
-            <!-- <details>
-                <summary>
-                    <div class="summary-header">
-                        <div class="summary-header-arrow-down">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="summary-header-arrow-up">
-                            <i class="fas fa-chevron-up"></i>
-                        </div>
+        <div class="work-experience">
+            <div class="work-experience-item">
+                <div class="work-experience-header">
+                    <div class="work-experience-organisation-logo-container">
+                        <img class="work-experience-organisation-logo" src="" alt="" />
                     </div>
-                </summary>
-            </details> -->
+                    <div class="work-experience-details">
+                        <app-label-with-icon
+                            class="work-experience-organisation"
+                            icon="fa fa-building-o"
+                            icon_title="Work Organisation"
+                            label=""
+                        ></app-label-with-icon>
+                        <app-label-with-icon
+                            class="work-experience-location"
+                            icon="fa fa-map-marker"
+                            icon_title="Work Location"
+                            label=""
+                        ></app-label-with-icon>
+                        <app-label-with-icon
+                            class="work-experience-type"
+                            icon="fa fa-tasks"
+                            icon_title="Work Type"
+                            label=""
+                        ></app-label-with-icon>
+                        <app-label-with-icon
+                            class="work-experience-industry"
+                            icon="fa fa-industry"
+                            icon_title="Work Industry"
+                            label=""
+                        ></app-label-with-icon>
+                    </div>
+                </div>
+                <hr class="work-experience-divider" />
+                <ul class="work-experience-profile-details">
+                    <li class="work-experience-profile-details-item">
+                        <div class="work-experience-profile-details-item-wrapper">
+                            <div class="work-experience-profile-details-header">
+                                <div class="work-experience-profile"></div>
+                                <div class="work-experience-date"></div>
+                            </div>
+                            <div class="work-experience-description"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </template>
 `;
 
 class AppWorkExperience extends HTMLElement {
-    constructor() {
-        super();
-        // element created
-        this.attachShadow({ mode: "open" });
-        this.shadowRoot.appendChild(WorkExperienceTemplate.content.cloneNode(true));
-    }
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild(WorkExperienceTemplate.content.cloneNode(true));
+  }
 
-    connectedCallback() {
-        // browser calls this method when the element is added to the document
-        // (can be called many times if an element is repeatedly added/removed)
-        const link = document.createElement("link");
-        link.setAttribute("href", "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css");
-        link.setAttribute("rel", "stylesheet");
-        this.shadowRoot.prepend(link);
-    }
+  connectedCallback() {
+    const link = document.createElement("link");
+    link.href = "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css";
+    link.rel = "stylesheet";
+    this.shadowRoot.prepend(link);
+  }
 
-    disconnectedCallback() {
-        // browser calls this method when the element is removed from the document
-        // (can be called many times if an element is repeatedly added/removed)
-    }
+  static get observedAttributes() {
+    return ["language"];
+  }
 
-    static get observedAttributes() {
-        return ["language"];
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === "language" && oldValue !== newValue && newValue) {
+      this.addSectionLoader();
+      this.fetchWorkExperienceData(newValue);
     }
+  }
 
-    attributeChangedCallback(name, oldValue, newValue) {
-        // called when one of attributes listed above is modified
-        if (name === "language" && oldValue !== newValue && newValue !== null && newValue !== undefined && newValue !== "") {
-            this.addSectionLoader();
-            this.fetchWorkExperienceData(newValue);
+  async fetchWorkExperienceData(language = "en") {
+    const response = await fetch(`./portfolio/data/work-experience/${language}.work-experience.json`);
+    const data = await response.json();
+    this.loadWorkExperience(data.workExperience);
+  }
+
+  loadWorkExperience(data) {
+    if ("content" in document.createElement("template")) {
+      const workExperienceContainer = document.createElement("div");
+      workExperienceContainer.id = "work-experience-container";
+      workExperienceContainer.innerHTML = "";
+      const workExperienceTemplate = this.shadowRoot.querySelector("#work-experience-template");
+
+      for (const key in data) {
+        if (Object.prototype.hasOwnProperty.call(data, key)) {
+          const val = data[key];
+          const clone = workExperienceTemplate.content.cloneNode(true);
+          const company = val.company;
+
+          clone.querySelector(".work-experience-organisation-logo").setAttribute("src", company.logo);
+          clone.querySelector(".work-experience-organisation-logo").setAttribute("alt", company.name);
+          clone.querySelector(".work-experience-organisation").setAttribute("label", company.name);
+          clone.querySelector(".work-experience-location").setAttribute("label", company.location);
+          clone.querySelector(".work-experience-industry").setAttribute("label", company.industry);
+          clone.querySelector(".work-experience-type").setAttribute("label", company.domain);
+
+          const profileDetails = clone.querySelector(".work-experience-profile-details").cloneNode(true);
+          profileDetails.innerHTML = "";
+
+          const positions = val.positions;
+          for (let i = 0; i < positions.length; i++) {
+            const position = positions[i];
+
+            let profileDetailsItem = clone.querySelector(".work-experience-profile-details-item").cloneNode(true);
+            profileDetailsItem.querySelector(".work-experience-profile").innerHTML = position["profile"];
+            profileDetailsItem.querySelector(
+              ".work-experience-date",
+            ).innerHTML = `${position.fromDate} - ${position.toDate}`;
+            profileDetailsItem.querySelector(".work-experience-description").innerHTML = position.description;
+
+            profileDetails.appendChild(profileDetailsItem);
+          }
+
+          clone.querySelector(".work-experience-profile-details").innerHTML = profileDetails.innerHTML;
+
+          workExperienceContainer.appendChild(clone);
         }
+      }
+      this.removeSectionLoader();
+      this.shadowRoot.querySelector("#work-experience").appendChild(workExperienceContainer);
     }
+  }
 
-    adoptedCallback() {
-        // called when the element is moved to a new document
-        // (happens in document.adoptNode, very rarely used)
-    }
+  addSectionLoader() {
+    const sectionLoader = document.createElement("div");
+    sectionLoader.setAttribute("class", "section-loader");
 
-    // there can be other element methods and properties
-    async fetchWorkExperienceData(language = "en") {
-        const response = await fetch(`./portfolio/data/work-experience/${language}.work-experience.json`);
-        const data = await response.json();
-        this.loadWorkExperience(data["workExperience"]);
-    }
+    const workExperience = this.shadowRoot.querySelector("#work-experience");
+    workExperience.append(sectionLoader);
+  }
 
-    loadWorkExperience(data) {
-        if ("content" in document.createElement("template")) {
-            let workExperienceContainer = document.createElement("div");
-            workExperienceContainer.setAttribute("id", "work-experience-container");
-            workExperienceContainer.innerHTML = "";
-            let workExperienceTemplate = this.shadowRoot.querySelector("#work-experience-template");
-            let firstItemOpenFlag = true;
-            for (var key in data) {
-                if (data.hasOwnProperty(key)) {
-                    const val = data[key];
-                    var clone = workExperienceTemplate.content.cloneNode(true);
-                    clone.querySelector(".work-experience-organisation-logo").setAttribute("src", val["organisationLogo"]);
-                    clone.querySelector(".work-experience-organisation-logo").setAttribute("alt", val["organisationName"]);
-                    clone.querySelector(".work-experience-profile").setAttribute("label", val["profileTitle"]);
-                    clone.querySelector(".work-experience-date").setAttribute("label", val["fromDate"] + " - " + val["toDate"]);
-                    clone.querySelector(".work-experience-organisation").setAttribute("label", val["organisationName"]);
-                    clone.querySelector(".work-experience-location").setAttribute("label", val["workLocation"]);
-                    clone.querySelector(".work-experience-type").setAttribute("label", val["workType"]);
-                    clone.querySelector(".work-experience-industry").setAttribute("label", val["workIndustry"]);
-                    clone.querySelector(".work-experience-description").innerHTML = val["workDescription"];
-                    // if (firstItemOpenFlag) {
-                    // 	clone.querySelector("details").setAttribute("open", "");
-                    // 	firstItemOpenFlag = false;
-                    // }
-                    workExperienceContainer.appendChild(clone);
-                }
-            }
-            this.removeSectionLoader();
-            this.shadowRoot.querySelector("#work-experience").append(workExperienceContainer);
-        }
-    }
-
-    addSectionLoader() {
-        // Section Loader
-        const sectionLoader = document.createElement("div");
-        sectionLoader.setAttribute("class", "section-loader");
-
-        const workExperience = this.shadowRoot.querySelector("#work-experience");
-        workExperience.append(sectionLoader);
-    }
-
-    removeSectionLoader() {
-        this.shadowRoot.querySelector(".section-loader").remove();
-    }
+  removeSectionLoader() {
+    this.shadowRoot.querySelector(".section-loader")?.remove();
+  }
 }
 
 customElements.define("app-work-experience", AppWorkExperience);

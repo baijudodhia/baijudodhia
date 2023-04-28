@@ -14,63 +14,92 @@ SocialLinksTemplate.innerHTML = `
 `;
 
 class AppSocialLinks extends HTMLElement {
-	constructor() {
-		super();
-		// element created
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild(SocialLinksTemplate.content.cloneNode(true));
+  }
 
-		this.attachShadow({ mode: "open" });
-		this.shadowRoot.appendChild(SocialLinksTemplate.content.cloneNode(true));
+  connectedCallback() {
+    // browser calls this method when the element is added to the document
+    // (can be called many times if an element is repeatedly added/removed)
+    this.showLinks();
+  }
 
-		const _app_link = document.createElement("app-link");
+  static get observedAttributes() {
+    return ["github", "linkedin", "blog", "portfolio"];
+  }
 
-		const _app_link_github = _app_link.cloneNode(true);
-		_app_link_github.setAttribute("icon", "fa fa-github-square");
-		_app_link_github.setAttribute("icon-title", "Check out projects on GitHub");
-		_app_link_github.setAttribute("title", "GitHub");
-		_app_link_github.setAttribute("link", "https://github.com/baijudodhia");
+  attributeChangedCallback(name, oldValue, newValue) {
+    // called when one of attributes listed above is modified
+    this.showLinks();
+  }
 
-		const _app_link_linkedin = _app_link.cloneNode(true);
-		_app_link_linkedin.setAttribute("icon", "fa fa-linkedin-square");
-		_app_link_linkedin.setAttribute("icon-title", "Connect with me on LinkedIn");
-		_app_link_linkedin.setAttribute("title", "LinkedIn");
-		_app_link_linkedin.setAttribute("link", "https://www.linkedin.com/in/baijudodhia");
+  showLinks() {
+    const _social_links = this.shadowRoot.querySelector(".social-links");
+    _social_links.innerHTML = "";
 
-		const _app_link_blog = _app_link.cloneNode(true);
-		_app_link_blog.setAttribute("icon", "fa fa-rss-square");
-		_app_link_blog.setAttribute("icon-title", "Read my Blogs");
-		_app_link_blog.setAttribute("title", "Blog");
-		_app_link_blog.setAttribute("link", "https://baijudodhia.blogspot.com/");
+    const utmSource =
+      window.location.hostname.includes("localhost") || window.location.hostname.includes("127.0.0.1")
+        ? "baijudodhia.github.io"
+        : window.location.hostname;
 
-		const _social_links = this.shadowRoot.querySelector(".social-links");
-		_social_links.append(_app_link_github);
-		_social_links.append(_app_link_linkedin);
-		_social_links.append(_app_link_blog);
-	}
+    if (this.hasAttribute("github")) {
+      const _app_link_github = this.createLink(
+        "fab fa-github",
+        "Check out projects on GitHub",
+        "GitHub",
+        `https://github.com/baijudodhia/?utm_source=${utmSource}&utm_medium=website`,
+      );
+      _social_links.append(_app_link_github);
+    }
 
-	connectedCallback() {
-		// browser calls this method when the element is added to the document
-		// (can be called many times if an element is repeatedly added/removed)
-	}
+    if (this.hasAttribute("linkedin")) {
+      const _app_link_linkedin = this.createLink(
+        "fab fa-linkedin",
+        "Connect with me on LinkedIn",
+        "LinkedIn",
+        `https://www.linkedin.com/in/baijudodhia/?utm_source=${utmSource}&utm_medium=website`,
+      );
+      _social_links.append(_app_link_linkedin);
+    }
 
-	disconnectedCallback() {
-		// browser calls this method when the element is removed from the document
-		// (can be called many times if an element is repeatedly added/removed)
-	}
+    if (this.hasAttribute("blog")) {
+      const _app_link_blog = this.createLink(
+        "fas fa-rss",
+        "Read my Blogs",
+        "Blog",
+        `https://baijudodhia.blogspot.com/?utm_source=${utmSource}&utm_medium=website`,
+      );
+      _social_links.append(_app_link_blog);
+    }
 
-	static get observedAttributes() {
-		return [""];
-	}
+    if (this.hasAttribute("portfolio")) {
+      const _app_link_portfolio = this.createLink(
+        "fas fa-laptop-code",
+        "Baiju Dodhia | Portfolio",
+        "Portfolio",
+        `https://baijudodhia.github.io/?utm_source=${utmSource}&utm_medium=website`,
+      );
+      _social_links.append(_app_link_portfolio);
+    }
+  }
 
-	attributeChangedCallback(name, oldValue, newValue) {
-		// called when one of attributes listed above is modified
-	}
+  createLink(icon, iconTitle, title, link) {
+    const _app_link = document.createElement("app-link");
+    _app_link.setAttribute("icon", icon);
+    _app_link.setAttribute("icon-title", iconTitle);
+    _app_link.setAttribute("title", title);
+    _app_link.setAttribute("link", link);
+    return _app_link;
+  }
 
-	adoptedCallback() {
-		// called when the element is moved to a new document
-		// (happens in document.adoptNode, very rarely used)
-	}
+  adoptedCallback() {
+    // called when the element is moved to a new document
+    // (happens in document.adoptNode, very rarely used)
+  }
 
-	// there can be other element methods and properties
+  // there can be other element methods and properties
 }
 
 customElements.define("app-social-links", AppSocialLinks);
