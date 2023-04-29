@@ -47,7 +47,7 @@ ThemeChangerTemplate.innerHTML = `
             background-position: center !important;
             background-repeat: no-repeat !important;
             background-size: 70% !important;
-            background: #fff url("./portfolio/assets/images/theme-changer/light.png");
+            background: #fff url("https://baijudodhia.github.io/portfolio/assets/images/theme-changer/light.png");
             border-radius: 50%;
             box-shadow: 0px 0px 10px -4px #121212;
         }
@@ -60,7 +60,7 @@ ThemeChangerTemplate.innerHTML = `
             transition: 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
             background-size: 65% !important;
             transform: translateX(-50%);
-            background: #fff url("./portfolio/assets/images/theme-changer/dark.png");
+            background: #fff url("https://baijudodhia.github.io/portfolio/assets/images/theme-changer/dark.png");
             box-shadow: 0px 0px 10px -4px #f5f5f5;
         }
     </style>
