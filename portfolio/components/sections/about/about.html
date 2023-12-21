@@ -1,0 +1,59 @@
+<link
+  href="./portfolio/main.css"
+  rel="stylesheet"
+/>
+<style>
+  #about {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    row-gap: 20px;
+  }
+  #about > h1,
+  #about > h2 {
+    margin: 0px;
+  }
+  #about > h1 * {
+    font-size: 28px !important;
+  }
+  #about > h1 app-link::part(link_title) {
+    font-size: 28px !important;
+  }
+  .about-name-container {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 10px;
+  }
+</style>
+<div id="about">
+  <h1>
+    <div class="about-name-container">
+      <div
+        class="about-name"
+        title="Baiju Dodhia"
+        >Baiju Dodhia</div
+      >
+      <app-search-engine></app-search-engine>
+    </div>
+  </h1>
+  <div>
+    Software Engineer with entrepreneurial mindset having strong project-based knowledge of various technical skills
+    including programming languages and software tools.
+  </div>
+  <div class="about-profile">
+    Currently working as Senior Software Engineer at
+    <app-link
+      title="Think360"
+      link="https://www.think360.ai/"
+    ></app-link>
+  </div>
+  <app-social-links
+    github
+    linkedin
+    blog
+  ></app-social-links>
+  <!-- What I Do ? -->
+  <app-what-i-do></app-what-i-do>
+</div>

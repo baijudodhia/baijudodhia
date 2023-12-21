@@ -1,0 +1,116 @@
+<link
+  href="./portfolio/main.css"
+  rel="stylesheet"
+/>
+<style>
+  #blogs {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    align-content: center;
+    row-gap: 30px;
+  }
+  .blogs-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+    flex-direction: row;
+    column-gap: 20px;
+  }
+  #blogs-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  .blog-item {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    align-content: space-between;
+    row-gap: 15px;
+    padding: 20px;
+    transition: 0.05s linear;
+    border: 1.5px solid var(--color-primary);
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px -4px var(--color-secondary);
+  }
+  .blog-item:hover {
+    font-weight: var(--font-weight-hover);
+    color: var(--color-bw_secondary);
+    border: 1.5px solid var(--color-primary);
+    background-color: var(--color-primary);
+    box-shadow: 0px 0px 10px -4px var(--color-secondary);
+  }
+  .blog-item:hover .blog-divider {
+    border-top: 1.5px dashed var(--color-bw_secondary);
+  }
+  .blog-item:hover app-link::part(link) {
+    font-weight: var(--font-weight-hover);
+    color: var(--color-bw_primary);
+  }
+  .blog-item:hover app-link::part(link_container) {
+    border-radius: 5px;
+  }
+  .blog-item:hover app-link::part(link_container):hover {
+    border-radius: 5px;
+    background-color: var(--color-bw_secondary);
+    box-shadow: 0px 0px 10px -4px var(--color-secondary);
+  }
+  .blog-item:hover app-link::part(link) {
+    font-weight: var(--font-weight-hover);
+    color: var(--color-bw_secondary_invert);
+  }
+  .blog-divider {
+    align-self: stretch;
+    margin: 0px;
+    border: none;
+    border-top: 1.5px dashed var(--color-bw_secondary_invert);
+    height: 0px;
+    background-color: transparent;
+  }
+  .blog-excerpt {
+    flex-grow: 1;
+    font-size: 16px;
+  }
+  @media only screen and (max-width: 340px) {
+    .blog-excerpt {
+      font-size: 14px;
+    }
+  }
+  .blog-links {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    align-content: center;
+    column-gap: 20px;
+  }
+</style>
+<div id="blogs">
+  <div class="blogs-header">
+    <h3>Recent Blog Posts</h3>
+    <app-link
+      title="view all"
+      link="https://baijudodhia.github.io/blog?utm_source=baijudodhia.github.io&utm_medium=blog_section_view_all_btn"
+    ></app-link>
+  </div>
+</div>
+<template id="blogs-template">
+  <div class="blog-item">
+    <div class="blog-title"></div>
+    <div class="blog-divider"></div>
+    <div class="blog-excerpt"></div>
+    <app-link
+      class="blog-url"
+      icon="fas fa-arrow-right"
+      icon-direction="right"
+      icon-title="Read the full Blog"
+      title="Read"
+      link=""
+    ></app-link>
+  </div>
+</template>
