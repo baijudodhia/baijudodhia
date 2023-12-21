@@ -20,6 +20,7 @@ class AppBlogPosts extends HTMLElement {
         this.shadowRoot.appendChild(AboutTemplate.content.cloneNode(true));
 
         const styles = [
+          "portfolio/main.css",
           "portfolio/components/sections/blog-preview/blog-preview.css",
           "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
         ];

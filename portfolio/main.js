@@ -72,6 +72,10 @@ const changeLanguage = async (type, lang) => {
   const appAbout = document.querySelector("app-about");
   appAbout.setAttribute("language", lang);
 
+  // Uncomment later when actual certifications are required to be displayed in other language.
+  // const appCertifications = document.querySelector("app-certifications");
+  // appCertifications.setAttribute("language", lang);
+
   let htmlEle = document.getElementsByTagName("html")[0];
   htmlEle.setAttribute("lang", lang);
 
@@ -89,8 +93,8 @@ const changeLanguage = async (type, lang) => {
     const appProjects = document.querySelector("app-projects");
     appProjects.setAttribute("language", lang);
 
-    const appOnlineCertificates = document.querySelector("app-online-certificates");
-    appOnlineCertificates.setAttribute("language", lang);
+    const appCertifications = document.querySelector("app-certifications");
+    appCertifications.setAttribute("language", lang);
   }
 };
 

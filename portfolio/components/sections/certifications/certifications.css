@@ -1,4 +1,4 @@
-#online-certificates {
+#certifications {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -6,7 +6,7 @@
   align-content: center;
   row-gap: 30px;
 }
-.online-certificates-header {
+.certifications-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,7 +14,7 @@
   flex-direction: row;
   column-gap: 20px;
 }
-#online-certificates-container {
+#certifications-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(auto-fit, 1fr);
@@ -22,7 +22,7 @@
   grid-column-gap: 30px;
 }
 @media only screen and (max-width: 720px) {
-  #online-certificates-container {
+  #certifications-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(auto-fit, 1fr);
@@ -30,7 +30,7 @@
     grid-column-gap: 20px;
   }
 }
-.online-certificates-item {
+.certifications-item {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -47,7 +47,7 @@
   border-radius: 1rem;
   box-shadow: 0px 0px 10px -4px var(--color-secondary);
 }
-.online-certificates-item:hover {
+.certifications-item:hover {
   font-weight: var(--font-weight-hover);
   color: var(--color-bw_secondary);
   border: 1.5px solid var(--color-primary);
@@ -58,30 +58,30 @@
   /* background-origin: border-box; */
   box-shadow: 0px 0px 10px -4px var(--color-secondary);
 }
-.online-certificates-item:hover .online-certificates-divider {
+.certifications-item:hover .certifications-divider {
   border-top: 1.5px dashed var(--color-bw_secondary);
 }
-.online-certificates-item:hover app-label-with-icon::part(lwi_icon) {
+.certifications-item:hover app-label-with-icon::part(lwi_icon) {
   font-weight: var(--font-weight-hover);
   color: var(--color-bw_secondary);
 }
-.online-certificates-item:hover app-label-with-icon::part(lwi_label) {
+.certifications-item:hover app-label-with-icon::part(lwi_label) {
   font-weight: var(--font-weight-hover);
   color: var(--color-bw_secondary);
 }
-.online-certificates-item:hover app-link::part(link_container) {
+.certifications-item:hover app-link::part(link_container) {
   border-radius: 5px;
 }
-.online-certificates-item:hover app-link::part(link_container):hover {
+.certifications-item:hover app-link::part(link_container):hover {
   border-radius: 5px;
   background-color: var(--color-bw_secondary);
   box-shadow: 0px 0px 10px -4px var(--color-secondary);
 }
-.online-certificates-item:hover app-link::part(link) {
+.certifications-item:hover app-link::part(link) {
   font-weight: var(--font-weight-hover);
   color: var(--color-bw_secondary_invert);
 }
-.online-certificates-divider {
+.certifications-divider {
   align-self: stretch;
   margin: 0px;
   border: none;
@@ -89,7 +89,7 @@
   height: 0px;
   background-color: transparent;
 }
-.online-certificates-details {
+.certifications-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -97,7 +97,7 @@
   align-content: center;
   row-gap: 15px;
 }
-.online-certificates-link-container {
+.certifications-link-container {
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -105,7 +105,7 @@
   align-items: center;
   column-gap: 8px;
 }
-.online-certificates-link-container .fa-certificate {
+.certifications-link-container .fa-certificate {
   width: 20px;
   text-align: center;
 }

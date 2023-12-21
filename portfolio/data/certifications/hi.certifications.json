@@ -1,0 +1,32 @@
+{
+  "certificates": {
+    "1": {
+      "title": "पायथन स्पेशलाइजेशन",
+      "organisation": "मिशिगन विश्वविद्यालय",
+      "platform": "Coursera",
+      "completionDate": "सितंबर 2020",
+      "certificateLink": "https://www.coursera.org/account/accomplishments/specialization/BJN5ZQLN2PXC"
+    },
+    "2": {
+      "title": "AWS फंडामेंटल्स स्पेशलाइजेशन",
+      "organisation": "अमेज़न वेब सर्विसेज (AWS)",
+      "platform": "Coursera",
+      "completionDate": "सितंबर 2020",
+      "certificateLink": "https://www.coursera.org/account/accomplishments/specialization/3XXHQPZ2MZ3R"
+    },
+    "3": {
+      "title": "क्लाउड कंप्यूटिंग का परिचय",
+      "organisation": "IBM",
+      "platform": "Coursera",
+      "completionDate": "सितंबर 2020",
+      "certificateLink": "https://www.coursera.org/account/accomplishments/verify/FUSRTHFFMGGY"
+    },
+    "4": {
+      "title": "डिजिटल विश्व में विपणी",
+      "organisation": "इलिनॉय विश्वविद्यालय",
+      "platform": "Coursera",
+      "completionDate": "सितंबर 2020",
+      "certificateLink": "https://www.coursera.org/account/accomplishments/verify/846JB3TDQBG3"
+    }
+  }
+}

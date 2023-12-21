@@ -17,6 +17,7 @@ class AppSkills extends HTMLElement {
         this.shadowRoot.appendChild(SkillsTemplate.content.cloneNode(true));
 
         const styles = [
+          "portfolio/main.css",
           "portfolio/components/sections/skills/skills.css",
           "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
         ];
@@ -68,6 +69,12 @@ class AppSkills extends HTMLElement {
 
   loadSkills(data) {
     if ("content" in document.createElement("template")) {
+      // Remove the existing container if it exists
+      const existingContainer = this.shadowRoot.querySelector("#skills-container");
+      if (existingContainer) {
+        existingContainer.remove();
+      }
+
       let skillsContainer = document.createElement("div");
       skillsContainer.setAttribute("id", "skills-container");
       skillsContainer.innerHTML = "";

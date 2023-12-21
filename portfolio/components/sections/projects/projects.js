@@ -17,6 +17,7 @@ class AppProjects extends HTMLElement {
         this.shadowRoot.appendChild(ProjectsTemplate.content.cloneNode(true));
 
         const styles = [
+          "portfolio/main.css",
           "portfolio/components/sections/projects/projects.css",
           "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
         ];
@@ -68,6 +69,12 @@ class AppProjects extends HTMLElement {
 
   loadProjects(data) {
     if ("content" in document.createElement("template")) {
+      // Remove the existing container if it exists
+      const existingContainer = this.shadowRoot.querySelector("#projects-container");
+      if (existingContainer) {
+        existingContainer.remove();
+      }
+
       let projectsContainer = document.createElement("div");
       projectsContainer.setAttribute("id", "projects-container");
       projectsContainer.innerHTML = "";
@@ -101,8 +108,8 @@ class AppProjects extends HTMLElement {
     const sectionLoader = document.createElement("div");
     sectionLoader.setAttribute("class", "section-loader");
 
-    const onlineCertificates = this.shadowRoot.querySelector("#projects");
-    onlineCertificates.append(sectionLoader);
+    const projects = this.shadowRoot.querySelector("#projects");
+    projects.append(sectionLoader);
   }
 
   removeSectionLoader() {

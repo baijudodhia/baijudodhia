@@ -17,6 +17,7 @@ class AppWhatIDo extends HTMLElement {
         this.shadowRoot.appendChild(WhatIDoTemplate.content.cloneNode(true));
 
         const styles = [
+          "portfolio/main.css",
           "portfolio/components/sections/what-i-do/what-i-do.css",
           "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
         ];

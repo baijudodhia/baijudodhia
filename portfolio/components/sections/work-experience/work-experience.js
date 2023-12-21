@@ -16,6 +16,7 @@ class AppWorkExperience extends HTMLElement {
         this.shadowRoot.appendChild(WorkExperienceTemplate.content.cloneNode(true));
 
         const styles = [
+          "portfolio/main.css",
           "portfolio/components/sections/work-experience/work-experience.css",
           "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
         ];
@@ -46,6 +47,12 @@ class AppWorkExperience extends HTMLElement {
 
   loadWorkExperience(data) {
     if ("content" in document.createElement("template")) {
+      // Remove the existing container if it exists
+      const existingContainer = this.shadowRoot.querySelector("#work-experience-container");
+      if (existingContainer) {
+        existingContainer.remove();
+      }
+
       const workExperienceContainer = document.createElement("div");
       workExperienceContainer.id = "work-experience-container";
       workExperienceContainer.innerHTML = "";

@@ -1,6 +1,6 @@
-const OnlineCertificatesTemplate = document.createElement("template");
+const CertificationsTemplate = document.createElement("template");
 
-class AppOnlineCertificates extends HTMLElement {
+class AppCertifications extends HTMLElement {
   constructor() {
     super();
     // element created
@@ -9,14 +9,15 @@ class AppOnlineCertificates extends HTMLElement {
       .then((response) => response.text())
       .then((html) => {
         // Inject the HTML into the shadow DOM
-        OnlineCertificatesTemplate.innerHTML = html;
+        CertificationsTemplate.innerHTML = html;
 
         // Continue with your existing code...
         // (e.g., add event listeners, set up callbacks)
         this.attachShadow({ mode: "open" });
-        this.shadowRoot.appendChild(OnlineCertificatesTemplate.content.cloneNode(true));
+        this.shadowRoot.appendChild(CertificationsTemplate.content.cloneNode(true));
 
         const styles = [
+          "portfolio/main.css",
           "portfolio/components/sections/certifications/certifications.css",
           "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
         ];
@@ -50,7 +51,7 @@ class AppOnlineCertificates extends HTMLElement {
       newValue !== ""
     ) {
       this.addSectionLoader();
-      this.fetchOnlineCertificatesData(newValue);
+      this.fetchCertificationsData(newValue);
     }
   }
 
@@ -60,31 +61,40 @@ class AppOnlineCertificates extends HTMLElement {
   }
 
   // there can be other element methods and properties
-  async fetchOnlineCertificatesData(language = "en") {
-    const response = await fetch(`./portfolio/data/online-certificates/${language}.online-certificates.json`);
+  async fetchCertificationsData(language = "en") {
+    const response = await fetch(`./portfolio/data/certifications/${language}.certifications.json`);
     const data = await response.json();
-    this.loadOnlineCertifications(data["certificates"]);
+
+    this.loadCertifications(data["certificates"]);
   }
 
-  loadOnlineCertifications(data) {
+  loadCertifications(data) {
     if ("content" in document.createElement("template")) {
-      let onlineCertificatesContainer = document.createElement("div");
-      onlineCertificatesContainer.setAttribute("id", "online-certificates-container");
-      onlineCertificatesContainer.innerHTML = "";
-      let onlineCertificatesTemplate = this.shadowRoot.querySelector("#online-certificates-template");
+      // Remove the existing container if it exists
+      const existingContainer = this.shadowRoot.querySelector("#certifications-container");
+      if (existingContainer) {
+        existingContainer.remove();
+      }
+
+      let certificationsContainer = document.createElement("div");
+      certificationsContainer.setAttribute("id", "certifications-container");
+
+      let certificationsTemplate = this.shadowRoot.querySelector("#certifications-template");
+
       for (var key in data) {
         if (data.hasOwnProperty(key)) {
           const val = data[key];
-          var clone = onlineCertificatesTemplate.content.cloneNode(true);
-          clone.querySelector(".online-certificates-title").innerText = val["title"];
-          clone.querySelector(".online-certificates-organisation").setAttribute("label", val["organisation"]);
-          clone.querySelector(".online-certificates-date").setAttribute("label", val["completionDate"]);
-          clone.querySelector(".online-certificates-link").setAttribute("link", val["certificateLink"]);
-          onlineCertificatesContainer.appendChild(clone);
+          var clone = certificationsTemplate.content.cloneNode(true);
+          clone.querySelector(".certifications-title").innerText = val["title"];
+          clone.querySelector(".certifications-organisation").setAttribute("label", val["organisation"]);
+          clone.querySelector(".certifications-date").setAttribute("label", val["completionDate"]);
+          clone.querySelector(".certifications-link").setAttribute("link", val["certificateLink"]);
+          certificationsContainer.appendChild(clone);
         }
       }
+
       this.removeSectionLoader();
-      this.shadowRoot.querySelector("#online-certificates").append(onlineCertificatesContainer);
+      this.shadowRoot.querySelector("#certifications").append(certificationsContainer);
     }
   }
 
@@ -92,8 +102,8 @@ class AppOnlineCertificates extends HTMLElement {
     const sectionLoader = document.createElement("div");
     sectionLoader.setAttribute("class", "section-loader");
 
-    const onlineCertificates = this.shadowRoot.querySelector("#online-certificates");
-    onlineCertificates.append(sectionLoader);
+    const certifications = this.shadowRoot.querySelector("#certifications");
+    certifications.append(sectionLoader);
   }
 
   removeSectionLoader() {
@@ -101,4 +111,4 @@ class AppOnlineCertificates extends HTMLElement {
   }
 }
 
-customElements.define("app-online-certificates", AppOnlineCertificates);
+customElements.define("app-certifications", AppCertifications);
