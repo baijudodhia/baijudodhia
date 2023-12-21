@@ -16,10 +16,13 @@ class AppOnlineCertificates extends HTMLElement {
         this.attachShadow({ mode: "open" });
         this.shadowRoot.appendChild(OnlineCertificatesTemplate.content.cloneNode(true));
 
-        const link = document.createElement("link");
-        link.setAttribute("href", "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css");
-        link.setAttribute("rel", "stylesheet");
-        this.shadowRoot.prepend(link);
+        const styles = [
+          "portfolio/components/sections/certifications/certifications.css",
+          "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
+        ];
+
+        // Call is a prototype for Functions in JS, which correctly binds the context of this
+        setStyles.call(this, styles);
       });
   }
 
