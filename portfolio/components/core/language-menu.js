@@ -73,15 +73,6 @@ LanguageMenuTemplate.innerHTML = `
         >
             ગુજરાતી
         </div>
-        <hr class="dashed-divider" />
-        <div
-            id="language-sa"
-            class="language-menu-item"
-            value="sa"
-            onclick="javascript:changeLanguage('navbar_language_menu','sa')"
-        >
-            संस्कृतम्
-        </div>
     </div>
 `;
 

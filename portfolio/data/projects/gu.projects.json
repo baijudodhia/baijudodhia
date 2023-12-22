@@ -1,0 +1,76 @@
+{
+  "projects": {
+    "1": {
+      "title": "photoml",
+      "description": "ફેશિયલ રેકગ્નિશન, OCR, બારકોડ અને લેબલ ડિટેક્શન જેવી મશીન લર્નિંગ સુવિધાઓ સાથે એન્ડ્રોઇડ ઇમેજ ગેલેરી એપ્લિકેશન. Java, Glide અને Firebase ML-Kit નો ઉપયોગ કરીને Android સ્ટુડિયોમાં બિલ્ટ.",
+      "code": {
+        "linkExists": true,
+        "codeLink": "https://github.com/baijudodhia/photoml"
+      },
+      "hosted": {
+        "linkExists": false,
+        "hostedLink": ""
+      }
+    },
+    "2": {
+      "title": "રેડશિફ્ટ્રેસિંગ",
+      "description": "રેડશિફ્ટ રેસિંગ ઇન્ડિયા, KJSCE માટે સ્ટેટિક વેબસાઇટ. HTML, CSS, JS અને બુટસ્ટ્રેપનો ઉપયોગ કરીને બનાવવામાં આવી છે.",
+      "code": {
+        "linkExists": true,
+        "codeLink": "https://github.com/baijudodhia/redshiftracing"
+      },
+      "hosted": {
+        "linkExists": true,
+        "hostedLink": "https://baijudodhia.github.io/redshiftracing/"
+      }
+    },
+    "3": {
+      "title": "ડૅશબોર્ડ-એનજી",
+      "description": "સ્ટાર્ટઅપ ડેશબોર્ડ એપ્લિકેશન કોણીયનો ઉપયોગ કરીને બનેલ સ્ટાર્ટઅપ્સ વિશેના ડેટાને પ્રદર્શિત અને વિઝ્યુઅલાઈઝ કરે છે.",
+      "code": {
+        "linkExists": true,
+        "codeLink": "https://github.com/baijudodhia/dashboard-ng"
+      },
+      "hosted": {
+        "linkExists": true,
+        "hostedLink": "https://baijudodhia.github.io/dashboard-ng/"
+      }
+    },
+    "4": {
+      "title": "ડિઝાઇન",
+      "description": "બહુવિધ ફ્રન્ટએન્ડ વેબસાઇટ નમૂનાઓ જેમ કે બ્લોગ, ઓનલાઈન સ્ટોર, ટ્રાવેલ વગેરે. માત્ર HTML, CSS અને JS નો ઉપયોગ કરીને બનાવવામાં આવેલ છે.",
+      "code": {
+        "linkExists": true,
+        "codeLink": "https://github.com/baijudodhia/designs"
+      },
+      "hosted": {
+        "linkExists": true,
+        "hostedLink": "https://baijudodhia.github.io/designs/"
+      }
+    },
+    "5": {
+      "title": "twitter-django",
+      "description": "Twitter ક્લોન વેબસાઇટ Django માં Twitter API નો ઉપયોગ કરીને બનાવવામાં આવી છે, જે સ્થાનનો ઉપયોગ કરીને ટ્વીટ્સ અને વલણો શોધવા માટે કાર્યક્ષમતા પૂરી પાડે છે.",
+      "code": {
+        "linkExists": true,
+        "codeLink": "https://github.com/baijudodhia/twitter-django"
+      },
+      "hosted": {
+        "linkExists": true,
+        "hostedLink": "https://twitterdj.herokuapp.com/"
+      }
+    },
+    "6": {
+      "title": "img-ભૌમિતિક-રૂપાંતરણ",
+      "description": "ઇમેજ ફાઇલ પર ભૌમિતિક ટ્રાન્સફોર્મેશન કરવા માટે પાયથોન સ્ક્રિપ્ટ જેમ કે પરિપ્રેક્ષ્ય ફેરફાર, ઝૂમ ઇન/આઉટ, ટ્રાન્સલેટ, સ્કેલ, શીયર, રોટેટ અને ફ્લિપ.",
+      "code": {
+        "linkExists": true,
+        "codeLink": "https://github.com/baijudodhia/img-geometric-transformation"
+      },
+      "hosted": {
+        "linkExists": true,
+        "hostedLink": "https://colab.research.google.com/drive/1xt1oV4b_egSAQjk9HbDGl9bes_j8NR8Z?usp=sharing"
+      }
+    }
+  }
+}

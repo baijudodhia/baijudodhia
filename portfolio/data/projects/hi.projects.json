@@ -1,0 +1,76 @@
+{
+  "projects": {
+    "1": {
+      "title": "फोटोएमएल",
+      "description": "चेहरे की पहचान, ओसीआर, बारकोड और लेबल डिटेक्शन जैसी मशीन लर्निंग सुविधाओं के साथ एंड्रॉइड इमेज गैलरी ऐप। जावा, ग्लाइड और फायरबेस एमएल-किट का उपयोग करके एंड्रॉइड स्टूडियो में निर्मित।",
+      "code": {
+        "linkExists": true,
+        "codeLink": "https://github.com/baijudodhia/photoml"
+      },
+      "hosted": {
+        "linkExists": false,
+        "hostedLink": ""
+      }
+    },
+    "2": {
+      "title": "रेडशिफ्टट्रेसिंग",
+      "description": "रेडशिफ्ट रेसिंग इंडिया, केजेएससीई के लिए स्टेटिक वेबसाइट। HTML, CSS, JS और बूटस्ट्रैप का उपयोग करके निर्मित।",
+      "code": {
+        "linkExists": true,
+        "codeLink": "https://github.com/baijudodhia/redshiftracing"
+      },
+      "hosted": {
+        "linkExists": true,
+        "hostedLink": "https://baijudodhia.github.io/redshiftracing/"
+      }
+    },
+    "3": {
+      "title": "डैशबोर्ड-एनजी",
+      "description": "स्टार्टअप डैशबोर्ड एप्लिकेशन एंगुलर का उपयोग करके बनाए गए स्टार्टअप के बारे में डेटा प्रदर्शित और विज़ुअलाइज़ कर रहा है।",
+      "code": {
+        "linkExists": true,
+        "codeLink": "https://github.com/baijudodhia/dashboard-ng"
+      },
+      "hosted": {
+        "linkExists": true,
+        "hostedLink": "https://baijudodhia.github.io/dashboard-ng/"
+      }
+    },
+    "4": {
+      "title": "डिज़ाइन",
+      "description": "कई फ्रंटएंड वेबसाइट टेम्प्लेट जैसे ब्लॉग, ऑनलाइन स्टोर, ट्रैवल आदि केवल HTML, CSS और JS का उपयोग करके बनाए गए हैं।",
+      "code": {
+        "linkExists": true,
+        "codeLink": "https://github.com/baijudodhia/designs"
+      },
+      "hosted": {
+        "linkExists": true,
+        "hostedLink": "https://baijudodhia.github.io/designs/"
+      }
+    },
+    "5": {
+      "title": "twitter-django",
+      "description": "ट्विटर क्लोन वेबसाइट Django में ट्विटर एपीआई का उपयोग करके बनाई गई है जो स्थान का उपयोग करके ट्वीट्स और रुझानों को खोजने की कार्यक्षमता प्रदान करती है।",
+      "code": {
+        "linkExists": true,
+        "codeLink": "https://github.com/baijudodhia/twitter-django"
+      },
+      "hosted": {
+        "linkExists": true,
+        "hostedLink": "https://twitterdj.herokuapp.com/"
+      }
+    },
+    "6": {
+      "title": "img-ज्यामितीय-परिवर्तन",
+      "description": "परिप्रेक्ष्य परिवर्तन, ज़ूम इन/आउट, अनुवाद, स्केल, कतरनी, घुमाएँ और फ़्लिप जैसे छवि फ़ाइल पर ज्यामितीय परिवर्तन करने के लिए एक पायथन स्क्रिप्ट।",
+      "code": {
+        "linkExists": true,
+        "codeLink": "https://github.com/baijudodhia/img-geometric-transformation"
+      },
+      "hosted": {
+        "linkExists": true,
+        "hostedLink": "https://colab.research.google.com/drive/1xt1oV4b_egSAQjk9HbDGl9bes_j8NR8Z?usp=sharing"
+      }
+    }
+  }
+}
