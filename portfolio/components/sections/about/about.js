@@ -1,55 +1,38 @@
-const AboutTemplate = document.createElement("template");
-
-class AppAbout extends HTMLElement {
-  constructor() {
+class AboutComponent extends HTMLElement {
+  constructor(
+    templateUrl = "portfolio/components/sections/about/about.html",
+    templateStyleUrls = [
+      "portfolio/main.css",
+      "portfolio/components/sections/about/about.css",
+      "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
+    ],
+  ) {
     super();
-    // element created
 
-    fetch("portfolio/components/sections/about/about.html")
-      .then((response) => response.text())
-      .then((html) => {
-        // Inject the HTML into the shadow DOM
-        AboutTemplate.innerHTML = html;
+    this.templateUrl = templateUrl;
+    this.templateStyleUrls = templateStyleUrls;
 
-        // Continue with your existing code...
-        // (e.g., add event listeners, set up callbacks)
-        this.attachShadow({ mode: "open" });
-        this.shadowRoot.appendChild(AboutTemplate.content.cloneNode(true));
-
-        const styles = [
-          "portfolio/main.css",
-          "portfolio/components/sections/about/about.css",
-          "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
-        ];
-
-        // Call is a prototype for Functions in JS, which correctly binds the context of this
-        setStyles.call(this, styles);
-      });
+    this.setupTemplateUrl();
   }
 
-  connectedCallback() {
-    // browser calls this method when the element is added to the document
-    // (can be called many times if an element is repeatedly added/removed)
-  }
+  /**
+   * 1. Browser calls this method when the element is added to the document.
+   * 2. Can be called many times if an element is repeatedly added/removed.
+   */
+  connectedCallback() {}
 
-  disconnectedCallback() {
-    // browser calls this method when the element is removed from the document
-    // (can be called many times if an element is repeatedly added/removed)
-  }
+  /**
+   * 1. Browser calls this method when the element is removed from the document.
+   * 2. Can be called many times if an element is repeatedly added/removed.
+   */
+  disconnectedCallback() {}
 
   static get observedAttributes() {
     return ["language"];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    // called when one of attributes listed above is modified
-    if (
-      name === "language" &&
-      oldValue !== newValue &&
-      newValue !== null &&
-      newValue !== undefined &&
-      newValue !== ""
-    ) {
+    if (name === "language" && oldValue !== newValue && newValue) {
       this.fetchAboutData(newValue);
     }
   }
@@ -59,13 +42,50 @@ class AppAbout extends HTMLElement {
     // (happens in document.adoptNode, very rarely used)
   }
 
-  // there can be other element methods and properties
+  async setupTemplateUrl() {
+    this.template = document.createElement("template");
+
+    try {
+      const response = await fetch(this.templateUrl);
+      const html = await response.text();
+      this.template.innerHTML = html;
+
+      this.setupShadowDOM();
+    } catch (error) {
+      console.error("Error fetching or setting up template:", error);
+    }
+  }
+
+  setupShadowDOM() {
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild(this.template.content.cloneNode(true));
+
+    this.setupTemplateStyleUrls();
+  }
+
+  setupTemplateStyleUrls() {
+    this.templateStyleUrls.forEach((style) => {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = style;
+      this.shadowRoot.appendChild(link);
+    });
+  }
+
   async fetchAboutData(language = "en") {
-    const response = await fetch(`./portfolio/data/about/${language}.about.json`);
-    const data = await response.json();
-    this.shadowRoot.querySelector(".about-name").setAttribute("title", data["name"]);
-    this.shadowRoot.querySelector(".about-name").innerHTML = data["name"];
+    try {
+      const response = await fetch(`./portfolio/data/about/${language}.about.json`);
+      const data = await response.json();
+      const aboutName = this.shadowRoot.querySelector(".about-name");
+
+      if (aboutName) {
+        aboutName.setAttribute("title", data["name"]);
+        aboutName.innerHTML = data["name"];
+      }
+    } catch (error) {
+      console.error("Error fetching about data:", error);
+    }
   }
 }
 
-customElements.define("app-about", AppAbout);
+customElements.define("app-about", AboutComponent);

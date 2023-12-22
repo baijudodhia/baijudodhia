@@ -1,31 +1,31 @@
-const WhatIDoTemplate = document.createElement("template");
-
-class AppWhatIDo extends HTMLElement {
-  constructor() {
+class WhatIDoComponent extends HTMLElement {
+  constructor(
+    templateUrl = "portfolio/components/sections/what-i-do/what-i-do.html",
+    templateStyleUrls = [
+      "portfolio/main.css",
+      "portfolio/components/sections/what-i-do/what-i-do.css",
+      "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
+    ],
+  ) {
     super();
-    // element created
 
-    fetch("portfolio/components/sections/what-i-do/what-i-do.html")
-      .then((response) => response.text())
-      .then((html) => {
-        // Inject the HTML into the shadow DOM
-        WhatIDoTemplate.innerHTML = html;
+    this.templateUrl = templateUrl;
+    this.templateStyleUrls = templateStyleUrls;
 
-        // Continue with your existing code...
-        // (e.g., add event listeners, set up callbacks)
-        this.attachShadow({ mode: "open" });
-        this.shadowRoot.appendChild(WhatIDoTemplate.content.cloneNode(true));
-
-        const styles = [
-          "portfolio/main.css",
-          "portfolio/components/sections/what-i-do/what-i-do.css",
-          "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
-        ];
-
-        // Call is a prototype for Functions in JS, which correctly binds the context of this
-        setStyles.call(this, styles);
-      });
+    this.setupTemplateUrl();
   }
+
+  /**
+   * 1. Browser calls this method when the element is added to the document.
+   * 2. Can be called many times if an element is repeatedly added/removed.
+   */
+  connectedCallback() {}
+
+  /**
+   * 1. Browser calls this method when the element is removed from the document.
+   * 2. Can be called many times if an element is repeatedly added/removed.
+   */
+  disconnectedCallback() {}
 
   connectedCallback() {
     // browser calls this method when the element is added to the document
@@ -38,13 +38,12 @@ class AppWhatIDo extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return [
-      /* Attributes to observe. */
-    ];
+    return ["language"];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    // called when one of attributes listed above is modified
+    if (name === "language" && oldValue !== newValue && newValue) {
+    }
   }
 
   adoptedCallback() {
@@ -52,7 +51,37 @@ class AppWhatIDo extends HTMLElement {
     // (happens in document.adoptNode, very rarely used)
   }
 
+  async setupTemplateUrl() {
+    this.template = document.createElement("template");
+
+    try {
+      const response = await fetch(this.templateUrl);
+      const html = await response.text();
+      this.template.innerHTML = html;
+
+      this.setupShadowDOM();
+    } catch (error) {
+      console.error("Error fetching or setting up template:", error);
+    }
+  }
+
+  setupShadowDOM() {
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild(this.template.content.cloneNode(true));
+
+    this.setupTemplateStyleUrls();
+  }
+
+  setupTemplateStyleUrls() {
+    this.templateStyleUrls.forEach((style) => {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = style;
+      this.shadowRoot.appendChild(link);
+    });
+  }
+
   // there can be other element methods and properties
 }
 
-customElements.define("app-what-i-do", AppWhatIDo);
+customElements.define("app-what-i-do", WhatIDoComponent);
