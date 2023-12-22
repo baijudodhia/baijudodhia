@@ -12,7 +12,15 @@ class WorkExperienceComponent extends HTMLElement {
     this.templateUrl = templateUrl;
     this.templateStyleUrls = templateStyleUrls;
 
-    this.setupTemplateUrl();
+    setComponentTemplate.call(
+      this,
+      () => {
+        this.fetchWorkExperienceData();
+      },
+      () => {
+        console.log("Initial setup failed!");
+      },
+    );
   }
 
   /**
@@ -40,36 +48,6 @@ class WorkExperienceComponent extends HTMLElement {
   adoptedCallback() {
     // called when the element is moved to a new document
     // (happens in document.adoptNode, very rarely used)
-  }
-
-  async setupTemplateUrl() {
-    this.template = document.createElement("template");
-
-    try {
-      const response = await fetch(this.templateUrl);
-      const html = await response.text();
-      this.template.innerHTML = html;
-
-      this.setupShadowDOM();
-    } catch (error) {
-      console.error("Error fetching or setting up template:", error);
-    }
-  }
-
-  setupShadowDOM() {
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot.appendChild(this.template.content.cloneNode(true));
-
-    this.setupTemplateStyleUrls();
-  }
-
-  setupTemplateStyleUrls() {
-    this.templateStyleUrls.forEach((style) => {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = style;
-      this.shadowRoot.appendChild(link);
-    });
   }
 
   async fetchWorkExperienceData(language = "en") {

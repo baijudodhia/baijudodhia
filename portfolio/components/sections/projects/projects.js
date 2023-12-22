@@ -12,7 +12,15 @@ class ProjectComponent extends HTMLElement {
     this.templateUrl = templateUrl;
     this.templateStyleUrls = templateStyleUrls;
 
-    this.setupTemplateUrl();
+    setComponentTemplate.call(
+      this,
+      () => {
+        this.fetchProjectsData();
+      },
+      () => {
+        console.log("Initial setup failed!");
+      },
+    );
   }
 
   /**

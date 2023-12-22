@@ -127,10 +127,6 @@ window.onload = async () => {
   document.getElementById("loading").style.display = "none";
 };
 
-const globalMethod = () => {
-  console.log("FROM GLOABL");
-};
-
 const searchRedirect = (referrer, engine, query) => {
   let url;
   const params = new URLSearchParams({ q: query });
@@ -241,21 +237,38 @@ function HSLToHex(hsl) {
   return `#${f(0)}${f(8)}${f(4)}`;
 }
 
-function setStyles(styles) {
-  for (let style of styles) {
-    // Fetch the CSS file
-    fetch(style)
-      .then((response) => response.text())
-      .then((cssContent) => {
-        // Create a style element
-        const styleElement = document.createElement("style");
+async function setComponentTemplate(success, error) {
+  async function setTemplateUrl() {
+    this.template = document.createElement("template");
 
-        // Set the style element's content with CSS content
-        styleElement.textContent = cssContent;
+    try {
+      const response = await fetch(this.templateUrl);
+      const html = await response.text();
+      this.template.innerHTML = html;
 
-        // Append the style element to the document's head
-        this.shadowRoot.prepend(styleElement);
-      })
-      .catch((error) => console.error("Error fetching CSS file:", error));
+      setShadowDOM.call(this);
+    } catch (error) {
+      console.error("Error fetching or setting up template:", error);
+    }
   }
+
+  function setShadowDOM() {
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild(this.template.content.cloneNode(true));
+
+    setTemplateStyleUrls.call(this);
+  }
+
+  function setTemplateStyleUrls() {
+    this.templateStyleUrls.forEach((style) => {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = style;
+      this.shadowRoot.appendChild(link);
+    });
+
+    success();
+  }
+
+  setTemplateUrl.call(this);
 }
