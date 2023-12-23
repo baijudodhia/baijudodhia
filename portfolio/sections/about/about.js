@@ -52,7 +52,7 @@ class AboutComponent extends HTMLElement {
 
   async fetchAboutData(language = "en") {
     try {
-      const response = await fetch(`./portfolio/data/about/${language}.about.json`);
+      const response = await fetch(`/portfolio/sections/about/data/${language}.about.json`);
       const data = await response.json();
       const aboutName = this.shadowRoot.querySelector(".about-name");
 
