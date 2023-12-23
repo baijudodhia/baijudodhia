@@ -1,9 +1,9 @@
 class WhatIDoComponent extends HTMLElement {
   constructor(
-    templateUrl = "portfolio/components/sections/what-i-do/what-i-do.html",
+    templateUrl = "portfolio/sections/what-i-do/what-i-do.html",
     templateStyleUrls = [
       "portfolio/main.css",
-      "portfolio/components/sections/what-i-do/what-i-do.css",
+      "portfolio/sections/what-i-do/what-i-do.css",
       "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
     ],
   ) {

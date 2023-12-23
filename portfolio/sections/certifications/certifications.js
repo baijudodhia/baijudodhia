@@ -1,9 +1,9 @@
 class CertificationComponent extends HTMLElement {
   constructor(
-    templateUrl = "portfolio/components/sections/certifications/certifications.html",
+    templateUrl = "portfolio/sections/certifications/certifications.html",
     templateStyleUrls = [
       "portfolio/main.css",
-      "portfolio/components/sections/certifications/certifications.css",
+      "portfolio/sections/certifications/certifications.css",
       "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
     ],
   ) {

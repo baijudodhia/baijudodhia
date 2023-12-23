@@ -1,9 +1,9 @@
 class ProjectComponent extends HTMLElement {
   constructor(
-    templateUrl = "portfolio/components/sections/projects/projects.html",
+    templateUrl = "portfolio/sections/projects/projects.html",
     templateStyleUrls = [
       "portfolio/main.css",
-      "portfolio/components/sections/projects/projects.css",
+      "portfolio/sections/projects/projects.css",
       "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
     ],
   ) {

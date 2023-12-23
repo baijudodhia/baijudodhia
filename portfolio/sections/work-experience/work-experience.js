@@ -1,9 +1,9 @@
 class WorkExperienceComponent extends HTMLElement {
   constructor(
-    templateUrl = "portfolio/components/sections/work-experience/work-experience.html",
+    templateUrl = "portfolio/sections/work-experience/work-experience.html",
     templateStyleUrls = [
       "portfolio/main.css",
-      "portfolio/components/sections/work-experience/work-experience.css",
+      "portfolio/sections/work-experience/work-experience.css",
       "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
     ],
   ) {

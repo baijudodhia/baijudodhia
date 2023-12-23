@@ -1,9 +1,9 @@
 class SkillComponent extends HTMLElement {
   constructor(
-    templateUrl = "portfolio/components/sections/skills/skills.html",
+    templateUrl = "portfolio/sections/skills/skills.html",
     templateStyleUrls = [
       "portfolio/main.css",
-      "portfolio/components/sections/skills/skills.css",
+      "portfolio/sections/skills/skills.css",
       "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
     ],
   ) {

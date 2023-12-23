@@ -1,9 +1,9 @@
 class AboutComponent extends HTMLElement {
   constructor(
-    templateUrl = "portfolio/components/sections/about/about.html",
+    templateUrl = "portfolio/sections/about/about.html",
     templateStyleUrls = [
       "portfolio/main.css",
-      "portfolio/components/sections/about/about.css",
+      "portfolio/sections/about/about.css",
       "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
     ],
   ) {
