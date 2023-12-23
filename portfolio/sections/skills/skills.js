@@ -58,32 +58,44 @@ class SkillComponent extends HTMLElement {
 
     const response = await fetch(`${this.basePath}/data/${language}.skills.json`);
     const data = await response.json();
-    this.loadSkills(data["skills"]);
+    this.loadSkills(data);
   }
 
   loadSkills(data) {
     if ("content" in document.createElement("template")) {
-      // Remove the existing container if it exists
-      const existingContainer = this.shadowRoot.querySelector("#skills-container");
-      if (existingContainer) {
-        existingContainer.remove();
-      }
-
-      let skillsContainer = document.createElement("div");
-      skillsContainer.setAttribute("id", "skills-container");
-      skillsContainer.innerHTML = "";
-      let skillsTemplate = this.shadowRoot.querySelector("#skills-template");
-      for (var key in data) {
-        if (data.hasOwnProperty(key)) {
-          const val = data[key];
-          var clone = skillsTemplate.content.cloneNode(true);
-          clone.querySelector("#skill-type").innerText = val["skillType"];
-          clone.querySelector("#skill-list").innerText = val["skillList"].join(", ");
-          skillsContainer.appendChild(clone);
+      const resetContainer = () => {
+        const existingContainer = this.shadowRoot.querySelector("#skills-container");
+        if (existingContainer) {
+          existingContainer.remove();
         }
-      }
+
+        let skillsContainer = document.createElement("div");
+        skillsContainer.setAttribute("id", "skills-container");
+        skillsContainer.innerHTML = "";
+
+        return skillsContainer;
+      };
+
+      const setupItemTemplate = (data, parentNode) => {
+        const itemTemplate = this.shadowRoot.querySelector("#skills-item-template");
+
+        data.map((item, idx) => {
+          const clone = itemTemplate.content.cloneNode(true);
+
+          clone.querySelector(".skills-item-category").innerText = item.category;
+          clone.querySelector(".skills-item-list").innerText = item.list.join(", ");
+
+          console.log(parentNode);
+          parentNode.append(clone);
+        });
+
+        this.shadowRoot.querySelector("#skills").append(parentNode);
+      };
+
+      const skillsBody = resetContainer();
+      setupItemTemplate(data["skills"], skillsBody);
+
       this.removeSectionLoader();
-      this.shadowRoot.querySelector("#skills").append(skillsContainer);
     }
   }
 

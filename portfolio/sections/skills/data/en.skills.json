@@ -1,28 +1,29 @@
 {
-  "skills": {
-    "1": {
-      "skillType": "Programming Languages",
-      "skillList": ["Javascript", "Python", "Java", "HTML/CSS"]
+  "title": "Skills",
+  "skills": [
+    {
+      "category": "Languages",
+      "list": ["JavaScript", "Python", "Java", "HTML/CSS"]
     },
-    "2": {
-      "skillType": "Frameworks & Libraries",
-      "skillList": ["Bootstrap", "Material", "React", "Angular", "Node.js", "Django", "Flask"]
+    {
+      "category": "Frameworks & Libraries",
+      "list": ["Bootstrap", "Material", "React", "Angular", "Node.js", "Django", "Flask"]
     },
-    "3": {
-      "skillType": "Databases",
-      "skillList": ["SQL", "MongoDB (+Atlas)", "Firebase"]
+    {
+      "category": "Databases",
+      "list": ["MySQL", "PostgreSQL", "MongoDB", "Firebase"]
     },
-    "4": {
-      "skillType": "Tools",
-      "skillList": ["Git", "VS Code", "Android Studio"]
+    {
+      "category": "Tools",
+      "list": ["Git", "VSCode", "Android Studio", "Jira", "Asana", "Github", "Bitbucket"]
     },
-    "5": {
-      "skillType": "Cloud Technologies",
-      "skillList": ["AWS (Amazon Web Services)", "Heroku", "GCP (Google Cloud Platform)"]
+    {
+      "category": "Cloud Tech",
+      "list": ["AWS S3", "AWS EC2", "AWS DynamoDB", "AWS RDS", "AWS IAM", "AWS SQS", "AWS CloudWatch"]
     },
-    "6": {
-      "skillType": "Platforms",
-      "skillList": ["Web", "Mobile", "Desktop"]
+    {
+      "category": "Platforms",
+      "list": ["Web", "Mobile"]
     }
-  }
+  ]
 }

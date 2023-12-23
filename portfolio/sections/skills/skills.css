@@ -6,27 +6,60 @@
   align-content: center;
   row-gap: 20px;
 }
-#skills .skills-item {
-  margin-bottom: 8px;
+#skills-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 30px;
+  grid-column-gap: 30px;
 }
-#skills .skills-title {
-  margin-bottom: 10px;
+.skills-item {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  align-content: space-between;
+  row-gap: 15px;
+  padding: 20px;
+  transition: 0.05s linear;
+  border: 1.5px solid var(--color-primary);
+  /* border-image: var(--gradient-primary) 30; */
+  /* background-image: none; */
+  /* background-clip: content-box, border-box; */
+  /* background-origin: border-box; */
+  border-radius: 1rem;
+  box-shadow: 0px 0px 10px -4px var(--color-secondary);
+  width: 100%;
 }
-#skills .skills-list {
-  padding: 0px 0px 0px 0px;
+.skills-item:hover {
+  font-weight: var(--font-weight-hover);
+  color: var(--color-bw_secondary);
+  border: 1.5px solid var(--color-primary);
+  /* border-image: var(--gradient-primary) 30; */
+  /* background-image: var(--gradient-primary); */
+  background-color: var(--color-primary);
+  /* background-clip: border-box; */
+  /* background-origin: border-box; */
+  box-shadow: 0px 0px 10px -4px var(--color-secondary);
 }
-.skills-conditional-breakline {
-  display: none;
+.skills-item:hover .skills-item-divider {
+  border-top: 1.5px dashed var(--color-bw_secondary);
 }
+.skills-item-divider {
+  align-self: stretch;
+  margin: 0px;
+  border: none;
+  border-top: 1.5px dashed var(--color-bw_secondary_invert);
+  height: 0px;
+  background-color: transparent;
+}
+
 @media only screen and (max-width: 771px) {
-  .skills-conditional-breakline {
-    content: " ";
-    display: block;
-    height: 2px;
-    line-height: 1px;
+  #skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
   }
-}
-#skills .skills-list-item {
-  padding: 0px 4px;
-  margin: 0px 6px 4px 0px;
 }

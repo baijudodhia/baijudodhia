@@ -1,32 +1,32 @@
 {
   "certificates": {
     "1": {
+      "title": "Microsoft Azure Fundamentals",
+      "organisation": "Microsoft",
+      "platform": "Azure",
+      "completionDate": "Sept 2022",
+      "certificateLink": "https://www.credly.com/badges/550ff7b9-38ad-48b2-9658-49f7ca75265b/public_url"
+    },
+    "2": {
       "title": "Python Specialization",
       "organisation": "University of Michigen",
       "platform": "Coursera",
       "completionDate": "Sept 2020",
       "certificateLink": "https://www.coursera.org/account/accomplishments/specialization/BJN5ZQLN2PXC"
     },
-    "2": {
+    "3": {
       "title": "AWS Fundamentals Specialization",
       "organisation": "Amazon Web Services (AWS)",
       "platform": "Coursera",
       "completionDate": "Sept 2020",
       "certificateLink": "https://www.coursera.org/account/accomplishments/specialization/3XXHQPZ2MZ3R"
     },
-    "3": {
+    "4": {
       "title": "Introduction to Cloud Computing",
       "organisation": "IBM",
       "platform": "Coursera",
       "completionDate": "Sept 2020",
       "certificateLink": "https://www.coursera.org/account/accomplishments/verify/FUSRTHFFMGGY"
-    },
-    "4": {
-      "title": "Marketing in a Digital World",
-      "organisation": "University of Illinois",
-      "platform": "Coursera",
-      "completionDate": "Sept 2020",
-      "certificateLink": "https://www.coursera.org/account/accomplishments/verify/846JB3TDQBG3"
     }
   }
 }
