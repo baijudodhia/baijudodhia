@@ -1,14 +1,16 @@
 class BlogComponent extends HTMLElement {
   constructor(
-    templateUrl = "portfolio/sections/blog-preview/blog-preview.html",
+    basePath = "/portfolio/sections/blog-preview",
+    templateUrl = "/portfolio/sections/blog-preview/blog-preview.html",
     templateStyleUrls = [
-      "portfolio/main.css",
-      "portfolio/sections/blog-preview/blog-preview.css",
+      "/portfolio/main.css",
+      "/portfolio/sections/blog-preview/blog-preview.css",
       "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
     ],
   ) {
     super();
 
+    this.basePath = basePath;
     this.templateUrl = templateUrl;
     this.templateStyleUrls = templateStyleUrls;
 

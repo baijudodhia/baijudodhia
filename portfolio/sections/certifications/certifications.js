@@ -1,14 +1,16 @@
 class CertificationComponent extends HTMLElement {
   constructor(
-    templateUrl = "portfolio/sections/certifications/certifications.html",
+    basePath = "/portfolio/sections/certifications",
+    templateUrl = "/portfolio/sections/certifications/certifications.html",
     templateStyleUrls = [
-      "portfolio/main.css",
-      "portfolio/sections/certifications/certifications.css",
+      "/portfolio/main.css",
+      "/portfolio/sections/certifications/certifications.css",
       "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
     ],
   ) {
     super();
 
+    this.basePath = basePath;
     this.templateUrl = templateUrl;
     this.templateStyleUrls = templateStyleUrls;
 
@@ -54,7 +56,7 @@ class CertificationComponent extends HTMLElement {
   async fetchCertificationsData(language = "en") {
     this.addSectionLoader();
 
-    const response = await fetch(`./portfolio/data/certifications/${language}.certifications.json`);
+    const response = await fetch(`${this.basePath}/data/${language}.certifications.json`);
     const data = await response.json();
 
     this.loadCertifications(data["certificates"]);

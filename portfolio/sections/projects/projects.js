@@ -1,14 +1,16 @@
 class ProjectComponent extends HTMLElement {
   constructor(
-    templateUrl = "portfolio/sections/projects/projects.html",
+    basePath = "/portfolio/sections/projects",
+    templateUrl = "/portfolio/sections/projects/projects.html",
     templateStyleUrls = [
-      "portfolio/main.css",
-      "portfolio/sections/projects/projects.css",
+      "/portfolio/main.css",
+      "/portfolio/sections/projects/projects.css",
       "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
     ],
   ) {
     super();
 
+    this.basePath = basePath;
     this.templateUrl = templateUrl;
     this.templateStyleUrls = templateStyleUrls;
 
@@ -86,7 +88,7 @@ class ProjectComponent extends HTMLElement {
   async fetchProjectsData(language = "en") {
     this.addSectionLoader();
 
-    const response = await fetch(`./portfolio/data/projects/${language}.projects.json`);
+    const response = await fetch(`${this.basePath}/data/${language}.projects.json`);
     const data = await response.json();
     this.loadProjects(data["projects"]);
   }

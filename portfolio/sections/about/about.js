@@ -1,14 +1,16 @@
 class AboutComponent extends HTMLElement {
   constructor(
-    templateUrl = "portfolio/sections/about/about.html",
+    basePath = "/portfolio/sections/about",
+    templateUrl = "/portfolio/sections/about/about.html",
     templateStyleUrls = [
-      "portfolio/main.css",
-      "portfolio/sections/about/about.css",
+      "/portfolio/main.css",
+      "/portfolio/sections/about/about.css",
       "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
     ],
   ) {
     super();
 
+    this.basePath = basePath;
     this.templateUrl = templateUrl;
     this.templateStyleUrls = templateStyleUrls;
 
@@ -52,7 +54,7 @@ class AboutComponent extends HTMLElement {
 
   async fetchAboutData(language = "en") {
     try {
-      const response = await fetch(`/portfolio/sections/about/data/${language}.about.json`);
+      const response = await fetch(`${this.basePath}/data/${language}.about.json`);
       const data = await response.json();
       const aboutName = this.shadowRoot.querySelector(".about-name");
 

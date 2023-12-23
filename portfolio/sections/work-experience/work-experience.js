@@ -1,14 +1,16 @@
 class WorkExperienceComponent extends HTMLElement {
   constructor(
-    templateUrl = "portfolio/sections/work-experience/work-experience.html",
+    basePath = "/portfolio/sections/work-experience",
+    templateUrl = "/portfolio/sections/work-experience/work-experience.html",
     templateStyleUrls = [
-      "portfolio/main.css",
-      "portfolio/sections/work-experience/work-experience.css",
+      "/portfolio/main.css",
+      "/portfolio/sections/work-experience/work-experience.css",
       "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
     ],
   ) {
     super();
 
+    this.basePath = basePath;
     this.templateUrl = templateUrl;
     this.templateStyleUrls = templateStyleUrls;
 
@@ -52,7 +54,7 @@ class WorkExperienceComponent extends HTMLElement {
 
   async fetchWorkExperienceData(language = "en") {
     this.addSectionLoader();
-    const response = await fetch(`./portfolio/data/work-experience/${language}.work-experience.json`);
+    const response = await fetch(`${this.basePath}/data/${language}.work-experience.json`);
     const data = await response.json();
     this.loadWorkExperience(data.workExperience);
   }
