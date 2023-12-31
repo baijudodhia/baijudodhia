@@ -255,10 +255,13 @@
 
       <!-- Certifications -->
       <app-certifications language></app-certifications>
-      <!-- <hr class="dashed-divider" /> -->
+      <hr class="dashed-divider" />
 
       <!-- Recent Blog Posts -->
-      <!-- <app-blog-posts language></app-blog-posts> -->
+      <app-blog-posts
+        language
+        blogs
+      ></app-blog-posts>
     </main>
 
     <!-- Connect -->
@@ -283,6 +286,43 @@
         </div>
       </div>
     </footer>
+
+    <!-- Download and Load Blogger RSS Feed -->
+    <script type="text/javascript">
+      function recentPost(json) {
+        let postList = [];
+
+        for (let i = 0; i < json.feed.entry.length; i++) {
+          const postTitle = json.feed.entry[i].title.$t;
+          const postSummary = json.feed.entry[i].summary.$t;
+          const postThumbnail = json.feed.entry[i].media$thumbnail.url;
+
+          let postUrl = "";
+          for (let j = 0; j < json.feed.entry[i].link.length; j++) {
+            if (json.feed.entry[i].link[j].rel == "alternate") {
+              postUrl = json.feed.entry[i].link[j].href;
+
+              break;
+            }
+          }
+          let postTags = [];
+          for (let j = 0; j < json.feed.entry[i].category.length; j++) {
+            postTags.push(json.feed.entry[i].category[j].term);
+          }
+
+          postList.push({
+            url: postUrl,
+            title: postTitle,
+            summary: postSummary,
+            thumbnail: postThumbnail,
+            tags: postTags,
+          });
+        }
+
+        document.querySelector("app-blog-posts").setAttribute("blogs", JSON.stringify(postList));
+      }
+    </script>
+    <script src="https://baijudodhia.blogspot.com/feeds/posts/summary?max-results=4&alt=json-in-script&callback=recentPost"></script>
 
     <!-- Don't save the website state -->
     <script>

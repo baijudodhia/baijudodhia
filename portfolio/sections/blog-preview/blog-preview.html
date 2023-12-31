@@ -9,9 +9,11 @@
 </div>
 <template id="blogs-template">
   <div class="blog-item">
+    <img class="blog-thumbnail" />
     <div class="blog-title"></div>
-    <div class="blog-divider"></div>
-    <div class="blog-excerpt"></div>
+    <!-- <div class="blog-divider"></div> -->
+    <!-- <div class="blog-excerpt"></div> -->
+    <div class="blog-tags"> </div>
     <app-link
       class="blog-url"
       icon="fas fa-arrow-right"
@@ -21,4 +23,13 @@
       link=""
     ></app-link>
   </div>
+</template>
+<template id="blog-tag-template">
+  <a
+    class="blog-tag"
+    href="jsx"
+    rel="tag"
+    target="_blank"
+  >
+  </a>
 </template>

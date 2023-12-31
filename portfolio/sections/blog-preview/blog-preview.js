@@ -17,7 +17,7 @@ class BlogComponent extends HTMLElement {
     setComponentTemplate.call(
       this,
       () => {
-        this.fetchBlogPostsData();
+        // this.fetchBlogPostsData();
       },
       () => {
         console.log("Initial setup failed!");
@@ -36,10 +36,14 @@ class BlogComponent extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return [];
+    return ["blogs"];
   }
 
-  attributeChangedCallback(name, oldValue, newValue) {}
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === "blogs" && oldValue !== newValue && newValue) {
+      this.loadBlogPosts(JSON.parse(newValue));
+    }
+  }
 
   adoptedCallback() {
     // called when the element is moved to a new document
@@ -85,6 +89,24 @@ class BlogComponent extends HTMLElement {
   }
 
   loadBlogPosts(recentPosts) {
+    this.addSectionLoader();
+
+    const getBlogTagsTemplate = (container, tags) => {
+      let blogTagTemplate = this.shadowRoot.querySelector("#blog-tag-template");
+
+      for (let i = 0; i < tags.length; i++) {
+        let tag = tags[i];
+
+        var blogTagTemplateClone = blogTagTemplate.content.cloneNode(true);
+        blogTagTemplateClone
+          .querySelector(".blog-tag")
+          .setAttribute("href", `https://baijudodhia.blogspot.com/search/label/${tag}`);
+        blogTagTemplateClone.querySelector(".blog-tag").innerText = tag;
+
+        container.append(blogTagTemplateClone);
+      }
+    };
+
     let blogsContainer = document.createElement("div");
     blogsContainer.setAttribute("id", "blogs-container");
     blogsContainer.innerHTML = "";
@@ -95,7 +117,11 @@ class BlogComponent extends HTMLElement {
       clone.querySelector(".blog-title").innerText = post.title;
       clone
         .querySelector(".blog-url")
-        .setAttribute("link", post.url + "?utm_source=baijudodhia.github.io&utm_medium=blog_section_view_all_btn");
+        .setAttribute("link", post.url + "?utm_source=baijudodhia.github.io&utm_medium=read_blog_btn");
+      clone.querySelector(".blog-thumbnail").setAttribute("src", post.thumbnail.replace("/s72-c/", "/h680/"));
+
+      getBlogTagsTemplate(clone.querySelector(".blog-tags"), post.tags);
+
       blogsContainer.append(clone);
     }
     this.removeSectionLoader();

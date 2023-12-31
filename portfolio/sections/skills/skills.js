@@ -85,7 +85,6 @@ class SkillComponent extends HTMLElement {
           clone.querySelector(".skills-item-category").innerText = item.category;
           clone.querySelector(".skills-item-list").innerText = item.list.join(", ");
 
-          console.log(parentNode);
           parentNode.append(clone);
         });
 
