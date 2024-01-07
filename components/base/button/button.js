@@ -54,7 +54,22 @@ class AppButtonComponent extends HTMLElement {
   disconnectedCallback() {}
 
   static get observedAttributes() {
-    return ["id", "appearance", "size", "shape", "styles", "loading", "style", "disabled", "label", "icon-left", "icon-right", "type", "href", "title"];
+    return [
+      "id",
+      "appearance",
+      "size",
+      "shape",
+      "styles",
+      "loading",
+      "style",
+      "disabled",
+      "label",
+      "icon-left",
+      "icon-right",
+      "type",
+      "href",
+      "title",
+    ];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -70,6 +85,10 @@ class AppButtonComponent extends HTMLElement {
   }
 
   getElement() {
+    if (!this.shadowRoot) {
+      return null;
+    }
+
     const element = this.shadowRoot.querySelector("button");
     if (element) {
       element.remove();
@@ -97,7 +116,7 @@ class AppButtonComponent extends HTMLElement {
     this.props = getComponentProps.call(this, this.props);
     const button = this.getElement(this.props.type);
 
-    if ("content" in document.createElement("template")) {
+    if (button && "content" in document.createElement("template")) {
       const itemTemplate = this.getTemplateClone(this.getTemplate());
 
       // Apply data-attributes directly to the button element
