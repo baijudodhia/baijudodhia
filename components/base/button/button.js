@@ -9,6 +9,7 @@ class AppButtonComponent extends HTMLElement {
       loading: false,
       disabled: false,
       label: "",
+      title: "",
       "icon-left": "",
       "icon-right": "",
       href: "",
@@ -53,7 +54,7 @@ class AppButtonComponent extends HTMLElement {
   disconnectedCallback() {}
 
   static get observedAttributes() {
-    return ["id", "appearance", "size", "shape", "styles", "loading", "style", "disabled", "label", "icon-left", "icon-right", "type", "href"];
+    return ["id", "appearance", "size", "shape", "styles", "loading", "style", "disabled", "label", "icon-left", "icon-right", "type", "href", "title"];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -117,6 +118,12 @@ class AppButtonComponent extends HTMLElement {
           } else if (key === "label") {
             const clone = itemTemplate.querySelector("#button-label");
             clone.innerText = value;
+            if (!clone.hasAttribute("title")) {
+              clone.setAttribute("title", value);
+            }
+          } else if (key === "title") {
+            const clone = itemTemplate.querySelector("#button-label");
+            clone.setAttribute("title", value);
           } else if (key === "icon-left") {
             const clone = itemTemplate.querySelector("#button-icon-left");
             value.split(" ").forEach((className) => {

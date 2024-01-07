@@ -64,7 +64,7 @@ SearchEngineMenuTemplate.innerHTML = `
                 class="search-engine-menu-item"
                 value="bing"
                 title="Microsoft Bing Search | Baiju Dodhia"
-                onclick="javascript:searchRedirect('about_name_search_engine_menu','bing','Baiju&nbsp;Dodhia')"
+                onclick="javascript:searchRedirect('about_name_search_engine_menu','bing','&quot;Baiju&nbsp;Dodhia&quot;&nbsp;OR&nbsp;&quot;baijudodhia&quot;')"
             >
                 Bing Search
             </div>
@@ -84,7 +84,7 @@ SearchEngineMenuTemplate.innerHTML = `
                 class="search-engine-menu-item"
                 value="brave"
                 title="Brave Search | Baiju Dodhia"
-                onclick="javascript:searchRedirect('about_name_search_engine_menu','brave','Baiju&nbsp;Dodhia')"
+                onclick="javascript:searchRedirect('about_name_search_engine_menu','brave','baijudodhia')"
             >
                 Brave Search
             </div>
@@ -92,40 +92,40 @@ SearchEngineMenuTemplate.innerHTML = `
 `;
 
 class AppSearchEngineMenu extends HTMLElement {
-    constructor() {
-        super();
-        // element created
+  constructor() {
+    super();
+    // element created
 
-        this.attachShadow({ mode: "open" });
-        this.shadowRoot.appendChild(SearchEngineMenuTemplate.content.cloneNode(true));
-    }
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild(SearchEngineMenuTemplate.content.cloneNode(true));
+  }
 
-    connectedCallback() {
-        // browser calls this method when the element is added to the document
-        // (can be called many times if an element is repeatedly added/removed)
-    }
+  connectedCallback() {
+    // browser calls this method when the element is added to the document
+    // (can be called many times if an element is repeatedly added/removed)
+  }
 
-    disconnectedCallback() {
-        // browser calls this method when the element is removed from the document
-        // (can be called many times if an element is repeatedly added/removed)
-    }
+  disconnectedCallback() {
+    // browser calls this method when the element is removed from the document
+    // (can be called many times if an element is repeatedly added/removed)
+  }
 
-    static get observedAttributes() {
-        return [
-            /* Value to watch for */
-        ];
-    }
+  static get observedAttributes() {
+    return [
+      /* Value to watch for */
+    ];
+  }
 
-    attributeChangedCallback(name, oldValue, newValue) {
-        // called when one of attributes listed above is modified
-    }
+  attributeChangedCallback(name, oldValue, newValue) {
+    // called when one of attributes listed above is modified
+  }
 
-    adoptedCallback() {
-        // called when the element is moved to a new document
-        // (happens in document.adoptNode, very rarely used)
-    }
+  adoptedCallback() {
+    // called when the element is moved to a new document
+    // (happens in document.adoptNode, very rarely used)
+  }
 
-    // there can be other element methods and properties
+  // there can be other element methods and properties
 }
 
 customElements.define("app-search-engine-menu", AppSearchEngineMenu);

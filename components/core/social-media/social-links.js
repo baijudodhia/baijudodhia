@@ -86,11 +86,14 @@ class AppSocialLinks extends HTMLElement {
   }
 
   createLink(icon, iconTitle, title, link) {
-    const _app_link = document.createElement("app-link");
-    _app_link.setAttribute("icon", icon);
-    _app_link.setAttribute("icon-title", iconTitle);
-    _app_link.setAttribute("title", title);
-    _app_link.setAttribute("link", link);
+    const _app_link = document.createElement("app-button");
+    _app_link.setAttribute("icon-left", icon);
+    _app_link.setAttribute("label", title);
+    _app_link.setAttribute("title", iconTitle);
+    _app_link.setAttribute("type", "link");
+    _app_link.setAttribute("href", link);
+    _app_link.setAttribute("size", "s");
+    _app_link.setAttribute("appearance", "primary");
     return _app_link;
   }
 
