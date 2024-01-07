@@ -1,4 +1,4 @@
-function HexToHSL(hex) {
+function convertHexToHsl(hex) {
   let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
 
   let r = parseInt(result[1], 16);
@@ -38,7 +38,7 @@ function HexToHSL(hex) {
   return { h, s, l };
 }
 
-function HSLToHex(hsl) {
+function convertHslToHex(hsl) {
   regexp = /hsl\(\s*(\d+)\s*,\s*(\d+(?:\.\d+)?%)\s*,\s*(\d+(?:\.\d+)?%)\)/g;
   res = regexp.exec(hsl).slice(1);
   h = res[0];

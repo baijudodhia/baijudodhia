@@ -4,6 +4,11 @@ function goTop() {
   document.documentElement.scrollTop = 0;
 }
 
+function setScreenSizes() {
+  const doc = document.documentElement;
+  doc.style.setProperty("--screen-height-browser-head", `${window.outerHeight - window.innerHeight}px`);
+}
+
 /* Currently Portfolio Specific */
 const changeLanguage = async (type, lang) => {
   const appLanguageChanger = document.querySelector("app-language-changer");
@@ -63,6 +68,8 @@ window.onload = async () => {
 	1. Set Default Theme
 	2. Set Default Language
 	*/
+  await setScreenSizes();
+  window.addEventListener("resize", setScreenSizes);
   await setDefaultTheme();
   await setDefaultLanguage();
 
@@ -84,40 +91,3 @@ const searchRedirect = (referrer, engine, query) => {
   }
   window.open(url, "_blank");
 };
-
-// Portfolio Specific
-async function setComponentTemplate(success, error) {
-  async function setTemplateUrl() {
-    this.template = document.createElement("template");
-
-    try {
-      const response = await fetch(this.templateUrl);
-      const html = await response.text();
-      this.template.innerHTML = html;
-
-      setShadowDOM.call(this);
-    } catch (error) {
-      console.error("Error fetching or setting up template:", error);
-    }
-  }
-
-  function setShadowDOM() {
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot.appendChild(this.template.content.cloneNode(true));
-
-    setTemplateStyleUrls.call(this);
-  }
-
-  function setTemplateStyleUrls() {
-    this.templateStyleUrls.forEach((style) => {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = style;
-      this.shadowRoot.appendChild(link);
-    });
-
-    success();
-  }
-
-  setTemplateUrl.call(this);
-}
