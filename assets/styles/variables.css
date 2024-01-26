@@ -2,6 +2,10 @@
   /* Blacks and Whites */
   --color-white: #fff; /* White color */
   --color-black: #000; /* Black color */
+  --color-bw-light: #fff;
+  --color-bw-light-text: #000;
+  --color-bw-dark: #000;
+  --color-bw-dark-text: #fff;
 
   /* Primary Colors */
   --color-primary-light: #2196f3; /* Light theme primary color for background and borders */
@@ -87,6 +91,10 @@
 }
 
 html[data-theme="light"] {
+  /* Blacks and Whites */
+  --color-bw: var(--color-bw-light);
+  --color-bw-text: var(--color-bw-light-text);
+
   /* Primary Colors */
   --color-primary: var(--color-primary-light); /* Light theme primary color for background and borders */
   --color-primary-hover: var(--color-primary-light-hover); /* Light theme hover state, lighter shade of primary color */
@@ -113,6 +121,10 @@ html[data-theme="light"] {
 }
 
 html[data-theme="dark"] {
+  /* Blacks and Whites */
+  --color-bw: var(--color-bw-dark);
+  --color-bw-text: var(--color-bw-dark-text);
+
   /* Primary Colors */
   --color-primary: var(--color-primary-dark); /* Dark theme primary color for background and borders */
   --color-primary-hover: var(--color-primary-dark-hover); /* Dark theme hover state, lighter shade of primary color */

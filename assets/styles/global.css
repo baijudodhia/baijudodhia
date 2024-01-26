@@ -20,20 +20,23 @@
   text-decoration: underline;
 }
 ::-webkit-scrollbar-track {
-  background-color: var(--color-bw_primary);
+  background-color: var(--color-bw);
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 8px;
   background-color: var(--color-primary);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary-hover);
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: var(--color-primary-active);
 }
 html,
 body {
   margin: 0;
-  background-color: var(--color-bw_primary) !important;
-  color: var(--color-bw_secondary_invert) !important;
+  background-color: var(--color-bw) !important;
+  color: var(--color-bw-text) !important;
   scroll-behavior: smooth !important;
   font-weight: var(--font-weight) !important;
 }
