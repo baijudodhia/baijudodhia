@@ -1,4 +1,4 @@
-class CertificationComponent extends HTMLElement {
+class CertificateComponent extends HTMLElement {
   constructor(
     basePath = "/portfolio/sections/certifications",
     templateUrl = "/portfolio/sections/certifications/certifications.html",
@@ -17,7 +17,7 @@ class CertificationComponent extends HTMLElement {
     setComponentTemplate.call(
       this,
       () => {
-        this.fetchCertificationsData();
+        this.fetchData();
       },
       () => {
         console.log("Initial setup failed!");
@@ -43,7 +43,7 @@ class CertificationComponent extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === "language" && oldValue !== newValue && newValue) {
-      this.fetchCertificationsData(newValue);
+      this.fetchData(newValue);
     }
   }
 
@@ -53,42 +53,92 @@ class CertificationComponent extends HTMLElement {
   }
 
   // there can be other element methods and properties
-  async fetchCertificationsData(language = "en") {
+  async fetchData(language = "en") {
     this.addSectionLoader();
 
     const response = await fetch(`${this.basePath}/data/${language}.certifications.json`);
     const data = await response.json();
-
-    this.loadCertifications(data["certificates"]);
+    this.loadComponent(data);
   }
 
-  loadCertifications(data) {
+  loadComponent(data) {
     if ("content" in document.createElement("template")) {
-      // Remove the existing container if it exists
-      const existingContainer = this.shadowRoot.querySelector("#certifications-container");
-      if (existingContainer) {
-        existingContainer.remove();
-      }
-
-      let certificationsContainer = document.createElement("div");
-      certificationsContainer.setAttribute("id", "certifications-container");
-
-      let certificationsTemplate = this.shadowRoot.querySelector("#certifications-template");
-
-      for (var key in data) {
-        if (data.hasOwnProperty(key)) {
-          const val = data[key];
-          var clone = certificationsTemplate.content.cloneNode(true);
-          clone.querySelector(".certifications-title").innerText = val["title"];
-          clone.querySelector(".certifications-organisation").setAttribute("label", val["organisation"]);
-          clone.querySelector(".certifications-date").setAttribute("label", val["completionDate"]);
-          clone.querySelector(".certifications-link").setAttribute("link", val["certificateLink"]);
-          certificationsContainer.appendChild(clone);
+      const resetContainer = () => {
+        const existingContainer = this.shadowRoot.querySelector("#certificates-container");
+        if (existingContainer) {
+          existingContainer.remove();
         }
-      }
+
+        let container = document.createElement("div");
+        container.setAttribute("id", "certificates-container");
+        container.innerHTML = "";
+
+        return container;
+      };
+
+      const setupItemTemplate = (data, parentNode) => {
+        const card = document.createElement("app-card");
+
+        data.map((item, idx) => {
+          const getCardBody = (item) => {
+            const clone = this.shadowRoot.querySelector("#certificate-body-template").content.cloneNode(true);
+
+            if (item?.organisation) {
+              const organisationElement = document.createElement("span");
+              organisationElement.textContent = item.organisation;
+              clone.querySelector(".certificate-organisation").appendChild(organisationElement);
+            } else {
+              clone.querySelector(".certificate-organisation").remove();
+            }
+
+            if (item?.platform) {
+              const platformElement = document.createElement("span");
+              platformElement.textContent = item.platform;
+              clone.querySelector(".certificate-platform").appendChild(platformElement);
+            } else {
+              clone.querySelector(".certificate-platform").remove();
+            }
+
+            if (item?.issueDate) {
+              const issueDateElement = document.createElement("span");
+              issueDateElement.textContent = item.issueDate;
+              clone.querySelector(".certificate-issue-date").appendChild(issueDateElement);
+            } else {
+              clone.querySelector(".certificate-issue-date").remove();
+            }
+
+            return new XMLSerializer().serializeToString(clone);
+          };
+
+          const getCardFooter = (item) => {
+            const clone = this.shadowRoot.querySelector("#certificate-links-template").content.cloneNode(true);
+
+            if (item?.link) {
+              clone.querySelector("#certificate-link").setAttribute("href", item.link);
+            } else {
+              clone.querySelector("#certificate-link").remove();
+            }
+
+            return new XMLSerializer().serializeToString(clone);
+          };
+
+          const clone = card.cloneNode(true);
+
+          clone.setAttribute("id", `certificate-${idx}`);
+          clone.setAttribute("header", item.title);
+          clone.setAttribute("body", getCardBody(item));
+          clone.setAttribute("footer", getCardFooter(item));
+
+          parentNode.append(clone);
+        });
+
+        this.shadowRoot.querySelector("#certificates").append(parentNode);
+      };
+
+      const certificatesBody = resetContainer();
+      setupItemTemplate(data["items"], certificatesBody);
 
       this.removeSectionLoader();
-      this.shadowRoot.querySelector("#certifications").append(certificationsContainer);
     }
   }
 
@@ -96,8 +146,8 @@ class CertificationComponent extends HTMLElement {
     const sectionLoader = document.createElement("div");
     sectionLoader.setAttribute("class", "section-loader");
 
-    const certifications = this.shadowRoot.querySelector("#certifications");
-    certifications.append(sectionLoader);
+    const certificates = this.shadowRoot.querySelector("#certificates");
+    certificates.append(sectionLoader);
   }
 
   removeSectionLoader() {
@@ -105,4 +155,4 @@ class CertificationComponent extends HTMLElement {
   }
 }
 
-customElements.define("app-certifications", CertificationComponent);
+customElements.define("app-certifications", CertificateComponent);

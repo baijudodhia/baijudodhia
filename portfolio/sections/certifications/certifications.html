@@ -1,39 +1,66 @@
-<div id="certifications">
-  <div class="certifications-header">
+<div id="certificates">
+  <div class="certificates-header">
     <h3>Certifications</h3>
   </div>
+  <div id="certificates-container"> </div>
 </div>
-<template id="certifications-template">
-  <div class="certifications-item">
-    <div class="certifications-title"></div>
-    <hr class="certifications-divider" />
-    <div class="certifications-details">
-      <app-label-with-icon
-        class="certifications-organisation"
-        icon="fa fa-building-o"
-        icon_title="Course Organisation"
-        label="University of Michigen"
-      ></app-label-with-icon>
-      <app-label-with-icon
-        class="certifications-date"
-        icon="fa fa-calendar-check-o"
-        icon_title="Certificate Issue Date"
-        label="Sept 2020"
-      ></app-label-with-icon>
-      <div class="certifications-link-container">
-        <i
-          class="fa fa-certificate"
-          aria-hidden="true"
-        ></i>
-        <app-link
-          class="certifications-link"
-          icon="fa fa-external-link-square"
-          icon-direction="right"
-          icon-title="Course Completion Certificate"
-          title="Certificate"
-          link=""
-        ></app-link>
-      </div>
+
+<template id="certificate-body-template">
+  <div
+    class="certificate-body"
+    style="flex-grow: 1; display: flex; flex-direction: column; column-gap: 1rem"
+  >
+    <div
+      class="certificate-organisation"
+      style="display: inline-flex; flex-direction: row; align-items: center; margin-bottom: 0.5rem"
+    >
+      <i
+        style="margin-right: 0.5rem"
+        class="fa fa-building"
+      ></i>
     </div>
+    <div
+      class="certificate-platform"
+      style="display: inline-flex; flex-direction: row; align-items: center; margin-bottom: 0.5rem"
+    >
+      <i
+        style="margin-right: 0.5rem"
+        class="fa fa-building"
+      ></i>
+    </div>
+    <div
+      class="certificate-issue-date"
+      style="display: inline-flex; flex-direction: row; align-items: center"
+    >
+      <i
+        style="margin-right: 0.5rem"
+        class="fa fa-calendar-check-o"
+      ></i>
+    </div>
+  </div>
+</template>
+
+<template id="certificate-links-template">
+  <div
+    class="certificate-links"
+    style="
+      flex-grow: 1;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+      align-content: center;
+      column-gap: 1rem;
+    "
+  >
+    <app-button
+      id="certificate-link"
+      appearance="secondary"
+      label="certificate"
+      type="link"
+      size="s"
+      href=""
+      icon-right="fa fa-external-link-square-alt"
+    ></app-button>
   </div>
 </template>

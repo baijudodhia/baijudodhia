@@ -1,5 +1,8 @@
 {
-  "workExperience": [
+  "header": {
+    "title": "Work Experience"
+  },
+  "items": [
     {
       "company": {
         "logo": "./portfolio/assets/images/org-logo/think360.svg",

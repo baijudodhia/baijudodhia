@@ -17,7 +17,7 @@ class SkillComponent extends HTMLElement {
     setComponentTemplate.call(
       this,
       () => {
-        this.fetchSkillsData();
+        this.fetchData();
       },
       () => {
         console.log("Initial setup failed!");
@@ -43,7 +43,7 @@ class SkillComponent extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === "language" && oldValue !== newValue && newValue) {
-      this.fetchSkillsData(newValue);
+      this.fetchData(newValue);
     }
   }
 
@@ -53,15 +53,15 @@ class SkillComponent extends HTMLElement {
   }
 
   // there can be other element methods and properties
-  async fetchSkillsData(language = "en") {
+  async fetchData(language = "en") {
     this.addSectionLoader();
 
     const response = await fetch(`${this.basePath}/data/${language}.skills.json`);
     const data = await response.json();
-    this.loadSkills(data);
+    this.loadComponent(data);
   }
 
-  loadSkills(data) {
+  loadComponent(data) {
     if ("content" in document.createElement("template")) {
       const resetContainer = () => {
         const existingContainer = this.shadowRoot.querySelector("#skills-container");
@@ -69,21 +69,22 @@ class SkillComponent extends HTMLElement {
           existingContainer.remove();
         }
 
-        let skillsContainer = document.createElement("div");
-        skillsContainer.setAttribute("id", "skills-container");
-        skillsContainer.innerHTML = "";
+        let container = document.createElement("div");
+        container.setAttribute("id", "skills-container");
+        container.innerHTML = "";
 
-        return skillsContainer;
+        return container;
       };
 
       const setupItemTemplate = (data, parentNode) => {
-        const itemTemplate = this.shadowRoot.querySelector("#skills-item-template");
+        const card = document.createElement("app-card");
 
         data.map((item, idx) => {
-          const clone = itemTemplate.content.cloneNode(true);
+          const clone = card.cloneNode(true);
 
-          clone.querySelector(".skills-item-category").innerText = item.category;
-          clone.querySelector(".skills-item-list").innerText = item.list.join(", ");
+          clone.setAttribute("id", `skill-${idx}`);
+          clone.setAttribute("header", item.category);
+          clone.setAttribute("body", item.list.join(", "));
 
           parentNode.append(clone);
         });
@@ -92,7 +93,7 @@ class SkillComponent extends HTMLElement {
       };
 
       const skillsBody = resetContainer();
-      setupItemTemplate(data["skills"], skillsBody);
+      setupItemTemplate(data["items"], skillsBody);
 
       this.removeSectionLoader();
     }

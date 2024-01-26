@@ -17,7 +17,7 @@ class ProjectComponent extends HTMLElement {
     setComponentTemplate.call(
       this,
       () => {
-        this.fetchProjectsData();
+        this.fetchData();
       },
       () => {
         console.log("Initial setup failed!");
@@ -43,7 +43,7 @@ class ProjectComponent extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === "language" && oldValue !== newValue && newValue) {
-      this.fetchProjectsData(newValue);
+      this.fetchData(newValue);
     }
   }
 
@@ -52,85 +52,76 @@ class ProjectComponent extends HTMLElement {
     // (happens in document.adoptNode, very rarely used)
   }
 
-  async setupTemplateUrl() {
-    this.template = document.createElement("template");
-
-    try {
-      const response = await fetch(this.templateUrl);
-      const html = await response.text();
-      this.template.innerHTML = html;
-
-      this.setupShadowDOM();
-    } catch (error) {
-      console.error("Error fetching or setting up template:", error);
-    }
-  }
-
-  setupShadowDOM() {
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot.appendChild(this.template.content.cloneNode(true));
-
-    this.setupTemplateStyleUrls();
-  }
-
-  setupTemplateStyleUrls() {
-    this.templateStyleUrls.forEach((style) => {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = style;
-      this.shadowRoot.appendChild(link);
-    });
-
-    this.fetchProjectsData();
-  }
-
   // there can be other element methods and properties
-  async fetchProjectsData(language = "en") {
+  async fetchData(language = "en") {
     this.addSectionLoader();
 
     const response = await fetch(`${this.basePath}/data/${language}.projects.json`);
     const data = await response.json();
-    this.loadProjects(data["projects"]);
+    this.loadComponent(data);
   }
 
-  loadProjects(data) {
+  loadComponent(data) {
     if ("content" in document.createElement("template")) {
-      // Remove the existing container if it exists
-      const existingContainer = this.shadowRoot.querySelector("#projects-container");
-      if (existingContainer) {
-        existingContainer.remove();
-      }
-
-      let projectsContainer = document.createElement("div");
-      projectsContainer.setAttribute("id", "projects-container");
-      projectsContainer.innerHTML = "";
-      let projectsTemplate = this.shadowRoot.querySelector("#projects-template");
-      for (var key in data) {
-        if (data.hasOwnProperty(key)) {
-          const val = data[key];
-          var clone = projectsTemplate.content.cloneNode(true);
-          clone.querySelector(".project-title").innerText = val["title"];
-          clone.querySelector(".project-description").innerText = val["description"];
-          if (val["code"]["linkExists"] === true) {
-            clone.querySelector(".app-link-code").setAttribute("link", val["code"]["codeLink"]);
-          } else {
-            clone.querySelector(".app-link-code").remove();
-          }
-          if (val.hosted.linkExists) {
-            clone.querySelector(".app-link-live").setAttribute("link", val["hosted"]["hostedLink"]);
-          } else {
-            clone.querySelector(".app-link-live").remove();
-          }
-          projectsContainer.appendChild(clone);
+      const resetContainer = () => {
+        const existingContainer = this.shadowRoot.querySelector("#projects-container");
+        if (existingContainer) {
+          existingContainer.remove();
         }
-      }
+
+        let container = document.createElement("div");
+        container.setAttribute("id", "projects-container");
+        container.innerHTML = "";
+
+        return container;
+      };
+
+      const setupItemTemplate = (data, parentNode) => {
+        const card = document.createElement("app-card");
+
+        data.map((item, idx) => {
+          const getCardFooter = () => {
+            const projectLinksClone = this.shadowRoot.querySelector("#project-links-template").content.cloneNode(true);
+
+            if (item?.code?.linkExists) {
+              projectLinksClone.querySelector("#app-link-code").setAttribute("href", item.code.codeLink);
+            } else {
+              projectLinksClone.querySelector("#app-link-code").remove();
+            }
+
+            if (item?.hosted?.linkExists) {
+              projectLinksClone.querySelector("#app-link-live").setAttribute("href", item.hosted.hostedLink);
+            } else {
+              projectLinksClone.querySelector("#app-link-live").remove();
+            }
+
+            // Convert the content of projectLinksClone to HTML string
+            const projectLinksHTML = new XMLSerializer().serializeToString(projectLinksClone);
+
+            return projectLinksHTML;
+          };
+
+          const clone = card.cloneNode(true);
+
+          clone.setAttribute("id", `project-${idx}`);
+          clone.setAttribute("header", item.title);
+          clone.setAttribute("body", item.description);
+          clone.setAttribute("footer", getCardFooter());
+
+          parentNode.append(clone);
+        });
+
+        this.shadowRoot.querySelector("#projects").append(parentNode);
+      };
+
+      const projectsBody = resetContainer();
+      setupItemTemplate(data["items"], projectsBody);
+
       this.removeSectionLoader();
-      this.shadowRoot.querySelector("#projects").append(projectsContainer);
     }
   }
 
   addSectionLoader() {
-    // Section Loader
     const sectionLoader = document.createElement("div");
     sectionLoader.setAttribute("class", "section-loader");
 

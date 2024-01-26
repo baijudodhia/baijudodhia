@@ -1,56 +1,57 @@
 <div id="work-experience">
-  <h3>Work Experience</h3>
+  <div class="work-experience-header">
+    <h3>Work Experience</h3>
+  </div>
+  <div id="work-experience-container"> </div>
 </div>
-<template id="work-experience-template">
-  <div class="work-experience">
-    <div class="work-experience-item">
-      <div class="work-experience-header">
-        <div class="work-experience-organisation-logo-container">
-          <img
-            class="work-experience-organisation-logo"
-            src=""
-            alt=""
-          />
-        </div>
-        <div class="work-experience-details">
-          <app-label-with-icon
-            class="work-experience-organisation"
-            icon="fa fa-building-o"
-            icon_title="Work Organisation"
-            label=""
-          ></app-label-with-icon>
-          <app-label-with-icon
-            class="work-experience-location"
-            icon="fa fa-map-marker"
-            icon_title="Work Location"
-            label=""
-          ></app-label-with-icon>
-          <app-label-with-icon
-            class="work-experience-type"
-            icon="fa fa-tasks"
-            icon_title="Work Type"
-            label=""
-          ></app-label-with-icon>
-          <app-label-with-icon
-            class="work-experience-industry"
-            icon="fa fa-industry"
-            icon_title="Work Industry"
-            label=""
-          ></app-label-with-icon>
-        </div>
-      </div>
-      <hr class="work-experience-divider" />
-      <ul class="work-experience-profile-details">
-        <li class="work-experience-profile-details-item">
-          <div class="work-experience-profile-details-item-wrapper">
-            <div class="work-experience-profile-details-header">
-              <div class="work-experience-profile"></div>
-              <div class="work-experience-date"></div>
-            </div>
-            <div class="work-experience-description"></div>
-          </div>
-        </li>
-      </ul>
+
+<template id="work-experience-header-template">
+  <div class="work-experience-header">
+    <div class="work-experience-organisation-logo-container">
+      <img
+        class="work-experience-organisation-logo"
+        src=""
+        alt=""
+      />
+    </div>
+    <div class="work-experience-details">
+      <app-label-with-icon
+        class="work-experience-organisation"
+        icon="fa fa-building-o"
+        icon_title="Work Organisation"
+        label=""
+      ></app-label-with-icon>
+      <app-label-with-icon
+        class="work-experience-location"
+        icon="fa fa-map-marker"
+        icon_title="Work Location"
+        label=""
+      ></app-label-with-icon>
+      <app-label-with-icon
+        class="work-experience-type"
+        icon="fa fa-tasks"
+        icon_title="Work Type"
+        label=""
+      ></app-label-with-icon>
+      <app-label-with-icon
+        class="work-experience-industry"
+        icon="fa fa-industry"
+        icon_title="Work Industry"
+        label=""
+      ></app-label-with-icon>
     </div>
   </div>
+</template>
+<template id="work-experience-body-template">
+  <ul class="work-experience-profile-details">
+    <li class="work-experience-profile-details-item">
+      <div class="work-experience-profile-details-item-wrapper">
+        <div class="work-experience-profile-details-header">
+          <div class="work-experience-profile"></div>
+          <div class="work-experience-date"></div>
+        </div>
+        <div class="work-experience-description"></div>
+      </div>
+    </li>
+  </ul>
 </template>

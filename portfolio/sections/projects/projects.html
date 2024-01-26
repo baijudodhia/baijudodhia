@@ -1,35 +1,49 @@
 <div id="projects">
   <div class="projects-header">
     <h3>Projects</h3>
-    <app-link
-      title="view all"
-      link="https://github.com/baijudodhia?tab=repositories"
-    ></app-link>
+    <app-button
+      id="app-view-all"
+      appearance="secondary"
+      label="view all"
+      type="link"
+      size="m"
+      href="https://github.com/baijudodhia?tab=repositories"
+      icon-right="fa fa-external-link-square-alt"
+    ></app-button>
   </div>
+  <div id="projects-container"> </div>
 </div>
-<template id="projects-template">
-  <div class="project-item">
-    <div class="project-title"></div>
-    <hr class="project-divider" />
-    <div class="project-description"></div>
-    <div class="project-links">
-      <app-link
-        class="app-link-code"
-        icon="fa fa-code"
-        icon-title="Check out code on GitHub"
-        title="code"
-        link=""
-        hover-effect="underline"
-      ></app-link>
-      <app-link
-        class="app-link-live"
-        icon="fa fa-external-link-square"
-        icon-direction="right"
-        icon-title="Check out the live demo"
-        title="live"
-        link=""
-        hover-effect="underline"
-      ></app-link>
-    </div>
+
+<template id="project-links-template">
+  <div
+    class="project-links"
+    style="
+      flex-grow: 1;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+      align-content: center;
+      column-gap: 1rem;
+    "
+  >
+    <app-button
+      id="app-link-code"
+      appearance="secondary"
+      label="code"
+      type="link"
+      size="s"
+      href=""
+      icon-right="fa fa-code"
+    ></app-button>
+    <app-button
+      id="app-link-live"
+      appearance="secondary"
+      label="live"
+      type="link"
+      size="s"
+      href=""
+      icon-right="fa fa-external-link-square-alt"
+    ></app-button>
   </div>
 </template>
