@@ -1,11 +1,20 @@
+let cache = {};
+
 async function setComponentTemplate(success, error) {
   async function setTemplateUrl() {
     this.template = document.createElement("template");
 
     try {
-      const response = await fetch(this.templateUrl);
-      const html = await response.text();
-      this.template.innerHTML = html;
+      let _cache = cache[this.templateUrl];
+
+      if (!_cache) {
+        const response = await fetch(this.templateUrl);
+        const html = await response.text();
+        this.template.innerHTML = html;
+        cache[this.templateUrl] = html;
+      } else {
+        this.template.innerHTML = _cache;
+      }
 
       setShadowDOM.call(this);
     } catch (error) {
