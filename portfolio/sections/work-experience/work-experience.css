@@ -1,19 +1,25 @@
-#work-experience {
+#work-experiences {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
   align-content: center;
-  row-gap: 30px;
+  row-gap: 1.5rem;
 }
 
-#work-experience-container {
+.work-experiences-header {
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
   align-content: center;
-  row-gap: 30px;
+  flex-direction: row;
+  column-gap: 1rem;
+}
+
+#work-experiences-container {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .work-experience-item {

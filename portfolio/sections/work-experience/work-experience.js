@@ -62,13 +62,13 @@ class WorkExperienceComponent extends HTMLElement {
   loadComponent(data) {
     if ("content" in document.createElement("template")) {
       const resetContainer = () => {
-        const existingContainer = this.shadowRoot.querySelector("#work-experience-container");
+        const existingContainer = this.shadowRoot.querySelector("#work-experiences-container");
         if (existingContainer) {
           existingContainer.remove();
         }
 
         let container = document.createElement("div");
-        container.setAttribute("id", "work-experience-container");
+        container.setAttribute("id", "work-experiences-container");
         container.innerHTML = "";
 
         return container;
@@ -80,63 +80,69 @@ class WorkExperienceComponent extends HTMLElement {
         data.map((item, idx) => {
           const getCardHeader = (item) => {
             const clone = this.shadowRoot.querySelector("#work-experience-header-template").content.cloneNode(true);
+            const header = clone.querySelector(".work-experience-header").cloneNode(true);
 
             const companyInfo = item.company;
 
             if (companyInfo?.logo) {
-              clone.querySelector(".work-experience-organisation-logo").setAttribute("src", companyInfo.logo);
-              clone.querySelector(".work-experience-organisation-logo").setAttribute("alt", companyInfo.name);
+              header.querySelector(".work-experience-organisation-logo").setAttribute("src", companyInfo.logo);
+              header.querySelector(".work-experience-organisation-logo").setAttribute("alt", companyInfo.name);
             } else {
-              clone.querySelector(".work-experience-organisation-logo").remove();
+              header.querySelector(".work-experience-organisation-logo").remove();
             }
 
             if (companyInfo?.name) {
-              clone.querySelector(".work-experience-organisation").setAttribute("label", companyInfo.name);
+              header.querySelector(".work-experience-organisation").setAttribute("label", companyInfo.name);
             } else {
-              clone.querySelector(".work-experience-organisation").remove();
+              header.querySelector(".work-experience-organisation").remove();
             }
 
             if (companyInfo?.location) {
-              clone.querySelector(".work-experience-location").setAttribute("label", companyInfo.location);
+              header.querySelector(".work-experience-location").setAttribute("label", companyInfo.location);
             } else {
-              clone.querySelector(".work-experience-location").remove();
+              header.querySelector(".work-experience-location").remove();
             }
 
             if (companyInfo?.industry) {
-              clone.querySelector(".work-experience-industry").setAttribute("label", companyInfo.industry);
+              header.querySelector(".work-experience-industry").setAttribute("label", companyInfo.industry);
             } else {
-              clone.querySelector(".work-experience-industry").remove();
+              header.querySelector(".work-experience-industry").remove();
             }
 
             if (companyInfo?.domain) {
-              clone.querySelector(".work-experience-type").setAttribute("label", companyInfo.domain);
+              header.querySelector(".work-experience-type").setAttribute("label", companyInfo.domain);
             } else {
-              clone.querySelector(".work-experience-type").remove();
+              header.querySelector(".work-experience-type").remove();
             }
 
-            return new XMLSerializer().serializeToString(clone);
+            return header.outerHTML;
           };
 
           const getCardBody = (item) => {
-            const clone = this.shadowRoot.querySelector("#work-experience-body-template").content.cloneNode(true);
-
-            const details = clone.querySelector(".work-experience-profile-details").cloneNode(true);
-            details.innerHTML = "";
-
             const companyPositions = item.positions;
+            const clone = this.shadowRoot
+              .querySelector("#work-experience-profile-detail-template")
+              .content.cloneNode(true);
+            const timeline = document.createElement("app-timeline").cloneNode(true);
 
             for (let i = 0; i < companyPositions.length; i++) {
               const position = companyPositions[i];
+              const detail = clone.querySelector(".work-experience-profile-detail").cloneNode(true);
 
-              const item = clone.querySelector(".work-experience-profile-details-item").cloneNode(true);
-              item.querySelector(".work-experience-profile").innerHTML = position.profile;
-              item.querySelector(".work-experience-date").innerHTML = `${position.fromDate} - ${position.toDate}`;
-              item.querySelector(".work-experience-description").innerHTML = position.description;
+              detail.querySelector(".work-experience-profile").innerHTML = position.profile;
+              detail.querySelector(".work-experience-profile").style.fontSize = "1.2rem";
+              detail.querySelector(".work-experience-profile").style.fontWeight = "bold";
+              detail.querySelector(".work-experience-date").innerHTML = `${position.fromDate} - ${position.toDate}`;
+              detail.querySelector(".work-experience-date").style.fontSize = "0.8rem";
+              detail.querySelector(".work-experience-date").style.fontWeight = "normal";
+              detail.querySelector(".work-experience-description").innerHTML = position.description;
+              detail.querySelector(".work-experience-description").style.fontSize = "1rem";
+              detail.querySelector(".work-experience-description").style.fontWeight = "normal";
 
-              details.appendChild(item);
+              timeline.appendChild(detail);
             }
 
-            return new XMLSerializer().serializeToString(details);
+            return new XMLSerializer().serializeToString(timeline);
           };
 
           const clone = card.cloneNode(true);
@@ -148,7 +154,7 @@ class WorkExperienceComponent extends HTMLElement {
           parentNode.append(clone);
         });
 
-        this.shadowRoot.querySelector("#work-experience").append(parentNode);
+        this.shadowRoot.querySelector("#work-experiences").append(parentNode);
       };
 
       const workExperienceBody = resetContainer();
@@ -162,7 +168,7 @@ class WorkExperienceComponent extends HTMLElement {
     const sectionLoader = document.createElement("div");
     sectionLoader.setAttribute("class", "section-loader");
 
-    const workExperience = this.shadowRoot.querySelector("#work-experience");
+    const workExperience = this.shadowRoot.querySelector("#work-experiences");
     workExperience.append(sectionLoader);
   }
 
