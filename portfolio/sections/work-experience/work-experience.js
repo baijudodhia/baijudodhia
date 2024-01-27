@@ -117,13 +117,13 @@ class WorkExperienceComponent extends HTMLElement {
               const detail = clone.querySelector(".work-experience-profile-detail").cloneNode(true);
 
               detail.querySelector(".work-experience-profile").innerHTML = position.profile;
-              detail.querySelector(".work-experience-profile").style.fontSize = "1.2rem";
+              detail.querySelector(".work-experience-profile").style.fontSize = "1rem";
               detail.querySelector(".work-experience-profile").style.fontWeight = "bold";
               detail.querySelector(".work-experience-date").innerHTML = `${position.fromDate} - ${position.toDate}`;
               detail.querySelector(".work-experience-date").style.fontSize = "0.8rem";
               detail.querySelector(".work-experience-date").style.fontWeight = "normal";
               detail.querySelector(".work-experience-description").innerHTML = position.description;
-              detail.querySelector(".work-experience-description").style.fontSize = "1rem";
+              detail.querySelector(".work-experience-description").style.fontSize = "0.9rem";
               detail.querySelector(".work-experience-description").style.fontWeight = "normal";
 
               timeline.appendChild(detail);
