@@ -79,43 +79,30 @@ class WorkExperienceComponent extends HTMLElement {
 
         data.map((item, idx) => {
           const getCardHeader = (item) => {
-            const clone = this.shadowRoot.querySelector("#work-experience-header-template").content.cloneNode(true);
-            const header = clone.querySelector(".work-experience-header").cloneNode(true);
+            const header = document.createElement("app-work-experience-header");
 
             const companyInfo = item.company;
 
             if (companyInfo?.logo) {
-              header.querySelector(".work-experience-organisation-logo").setAttribute("src", companyInfo.logo);
-              header.querySelector(".work-experience-organisation-logo").setAttribute("alt", companyInfo.name);
-            } else {
-              header.querySelector(".work-experience-organisation-logo").remove();
+              header.setAttribute("logo", companyInfo.logo);
             }
 
             if (companyInfo?.name) {
-              header.querySelector(".work-experience-organisation").setAttribute("label", companyInfo.name);
-            } else {
-              header.querySelector(".work-experience-organisation").remove();
+              header.setAttribute("organisation", companyInfo.name);
             }
 
             if (companyInfo?.location) {
-              header.querySelector(".work-experience-location").setAttribute("label", companyInfo.location);
-            } else {
-              header.querySelector(".work-experience-location").remove();
+              header.setAttribute("location", companyInfo.location);
             }
-
             if (companyInfo?.industry) {
-              header.querySelector(".work-experience-industry").setAttribute("label", companyInfo.industry);
-            } else {
-              header.querySelector(".work-experience-industry").remove();
+              header.setAttribute("industry", companyInfo.industry);
             }
 
             if (companyInfo?.domain) {
-              header.querySelector(".work-experience-type").setAttribute("label", companyInfo.domain);
-            } else {
-              header.querySelector(".work-experience-type").remove();
+              header.setAttribute("type", companyInfo.domain);
             }
 
-            return header.outerHTML;
+            return new XMLSerializer().serializeToString(header);
           };
 
           const getCardBody = (item) => {
