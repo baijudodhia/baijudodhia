@@ -3,9 +3,9 @@ class AppTimelineComponent extends HTMLElement {
     props = {
       items: [],
     },
-    basePath = "/components/core/timeline",
-    templateUrl = "/components/core/timeline/timeline.html",
-    templateStyleUrls = ["/assets/styles/index.css", "/components/core/timeline/timeline.css"],
+    basePath = "/components/base/timeline",
+    templateUrl = "/components/base/timeline/timeline.html",
+    templateStyleUrls = ["/assets/styles/index.css", "/components/base/timeline/timeline.css"],
   ) {
     super();
 
