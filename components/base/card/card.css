@@ -115,7 +115,7 @@
   border-radius: 2rem;
 }
 #card[data-shape="curved"] {
-  border-radius: 0.5rem;
+  border-radius: 1rem;
 }
 #card[data-shape="rectangle"] {
   border-radius: 0rem;
