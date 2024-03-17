@@ -4,7 +4,7 @@ class WhatIDoComponent extends HTMLElement {
     basePath = "/portfolio/sections/what-i-do",
     templateUrl = "/portfolio/sections/what-i-do/what-i-do.html",
     templateStyleUrls = [
-      "/portfolio//main.css",
+      "/portfolio/main.css",
       "/portfolio/sections/what-i-do/what-i-do.css",
       "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
     ],
