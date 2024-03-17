@@ -12,25 +12,6 @@
       />
     </noscript>
 
-    <!-- Scripts -->
-    <script src="./portfolio/components/base/link.js"></script>
-    <script src="./portfolio/components/base/social-links.js"></script>
-    <script src="./portfolio/components/base/label-with-icon.js"></script>
-    <script src="./portfolio/components/base/color-changer.js"></script>
-    <script src="./portfolio/components/base/language-menu.js"></script>
-    <script src="./portfolio/components/base/language-changer.js"></script>
-    <script src="./portfolio/components/base/theme-changer.js"></script>
-    <script src="./portfolio/components/base/search-engine.js"></script>
-    <script src="./portfolio/components/base/search-engine-menu.js"></script>
-    <script src="./portfolio/components/sections/about.js"></script>
-    <script src="./portfolio/components/sections/what-i-do.js"></script>
-    <script src="./portfolio/components/sections/work-experience.js"></script>
-    <script src="./portfolio/components/sections/skills.js"></script>
-    <script src="./portfolio/components/sections/projects.js"></script>
-    <script src="./portfolio/components/sections/online-certificates.js"></script>
-    <script src="./portfolio/components/sections/blogposts.js"></script>
-    <script src="./portfolio/main.js"></script>
-
     <!-- Custom CSS -->
     <link
       rel="stylesheet"
@@ -40,6 +21,48 @@
       href="https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css"
       rel="stylesheet"
     />
+
+    <!-- New Styles -->
+    <link
+      rel="stylesheet"
+      href="./assets/styles/index.css"
+    />
+
+    <!-- New Scripts -->
+    <script src="./assets/scripts/helper.js"></script>
+    <script src="./assets/scripts/component.js"></script>
+
+    <!-- New Components -->
+    <script src="./components/base/button/button.js"></script>
+    <script src="./components/base/card/card.js"></script>
+    <script src="./components/base/timeline/timeline.js"></script>
+
+    <!-- Components -->
+    <!-- Base Components -->
+    <script src="./components/core/link.js"></script>
+    <script src="./components/core/label-with-icon.js"></script>
+    <script src="./components/core/color-changer/color-changer.js"></script>
+    <script src="./components/core/theme-changer/theme-changer.js"></script>
+    <script src="./components/core/language-changer/language-changer.js"></script>
+    <script src="./components/core/language-changer/language-menu.js"></script>
+    <script src="./components/core/search-engine/search-engine.js"></script>
+    <script src="./components/core/search-engine/search-engine-menu.js"></script>
+    <!-- Core Components -->
+    <script src="./components/core/social-media/social-links.js"></script>
+    <!-- Portfolio Components -->
+    <script src="./portfolio/sections/about/about.js"></script>
+    <script src="./portfolio/sections/blogs/blogs.js"></script>
+    <script src="./portfolio/sections/certifications/certifications.js"></script>
+    <script src="./portfolio/sections/projects/projects.js"></script>
+    <script src="./portfolio/sections/skills/skills.js"></script>
+    <script src="./portfolio/sections/what-i-do/what-i-do.js"></script>
+    <script src="./portfolio/sections/work-experience/work-experience.js"></script>
+    <script src="./portfolio/sections/work-experience/work-experience-header/work-experience-header.js"></script>
+
+    <!-- Scripts -->
+    <script src="./portfolio/helper.js"></script>
+    <script src="./portfolio/theme.js"></script>
+    <script src="./portfolio/main.js"></script>
 
     <!-- Meta tags -->
     <meta charset="utf-8" />
@@ -251,12 +274,15 @@
       <app-projects language></app-projects>
       <hr class="dashed-divider" />
 
-      <!-- Online Certifications -->
-      <app-online-certificates language></app-online-certificates>
-      <!-- <hr class="dashed-divider" /> -->
+      <!-- Certifications -->
+      <app-certifications language></app-certifications>
+      <hr class="dashed-divider" />
 
       <!-- Recent Blog Posts -->
-      <!-- <app-blog-posts language></app-blog-posts> -->
+      <app-blog-posts
+        language
+        blogs
+      ></app-blog-posts>
     </main>
 
     <!-- Connect -->
@@ -281,6 +307,43 @@
         </div>
       </div>
     </footer>
+
+    <!-- Download and Load Blogger RSS Feed -->
+    <script type="text/javascript">
+      function recentPost(json) {
+        let postList = [];
+
+        for (let i = 0; i < json.feed.entry.length; i++) {
+          const postTitle = json.feed.entry[i].title.$t;
+          const postSummary = json.feed.entry[i].summary.$t;
+          const postThumbnail = json.feed.entry[i].media$thumbnail.url;
+
+          let postUrl = "";
+          for (let j = 0; j < json.feed.entry[i].link.length; j++) {
+            if (json.feed.entry[i].link[j].rel == "alternate") {
+              postUrl = json.feed.entry[i].link[j].href;
+
+              break;
+            }
+          }
+          let postTags = [];
+          for (let j = 0; j < json.feed.entry[i].category.length; j++) {
+            postTags.push(json.feed.entry[i].category[j].term);
+          }
+
+          postList.push({
+            url: postUrl,
+            title: postTitle,
+            summary: postSummary,
+            thumbnail: postThumbnail,
+            tags: postTags,
+          });
+        }
+
+        document.querySelector("app-blog-posts").setAttribute("blogs", JSON.stringify(postList));
+      }
+    </script>
+    <script src="https://baijudodhia.blogspot.com/feeds/posts/summary?max-results=4&alt=json-in-script&callback=recentPost"></script>
 
     <!-- Don't save the website state -->
     <script>

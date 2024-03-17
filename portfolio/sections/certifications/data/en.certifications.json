@@ -1,0 +1,35 @@
+{
+  "header": {
+    "title": "Certificates"
+  },
+  "items": [
+    {
+      "title": "Microsoft Azure Fundamentals",
+      "organisation": "Microsoft",
+      "platform": "Azure",
+      "issueDate": "Sept 2022",
+      "link": "https://www.credly.com/badges/550ff7b9-38ad-48b2-9658-49f7ca75265b/public_url"
+    },
+    {
+      "title": "Python Specialization",
+      "organisation": "University of Michigen",
+      "platform": "Coursera",
+      "issueDate": "Sept 2020",
+      "link": "https://www.coursera.org/account/accomplishments/specialization/BJN5ZQLN2PXC"
+    },
+    {
+      "title": "AWS Fundamentals Specialization",
+      "organisation": "Amazon Web Services (AWS)",
+      "platform": "Coursera",
+      "issueDate": "Sept 2020",
+      "link": "https://www.coursera.org/account/accomplishments/specialization/3XXHQPZ2MZ3R"
+    },
+    {
+      "title": "Introduction to Cloud Computing",
+      "organisation": "IBM",
+      "platform": "Coursera",
+      "issueDate": "Sept 2020",
+      "link": "https://www.coursera.org/account/accomplishments/verify/FUSRTHFFMGGY"
+    }
+  ]
+}

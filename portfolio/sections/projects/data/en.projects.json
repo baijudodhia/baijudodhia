@@ -1,0 +1,56 @@
+{
+  "header": {
+    "title": "Projects",
+    "viewAll": "https://github.com/baijudodhia?tab=repositories"
+  },
+  "items": [
+    {
+      "title": "photoml",
+      "description": "Android Image Gallery app with Machine Learning features such as Facial Recognition, OCR, Barcode and Label Detection. Built in Android Studio using Java, Glide and Firebase ML-Kit.",
+      "code": {
+        "linkExists": true,
+        "codeLink": "https://github.com/baijudodhia/photoml"
+      },
+      "hosted": {
+        "linkExists": false,
+        "hostedLink": ""
+      }
+    },
+    {
+      "title": "summarise",
+      "description": "Gmail Extension which generates a max 3-line summary of a thread.",
+      "code": {
+        "linkExists": true,
+        "codeLink": "https://github.com/baijudodhia/email-summarise"
+      },
+      "hosted": {
+        "linkExists": true,
+        "hostedLink": "https://baijudodhia.github.io/email-summarise/"
+      }
+    },
+    {
+      "title": "img-geometric-transformation",
+      "description": "A python script to perform Geometric Transformation on Image File such as Perspective change, Zoom In/Out, Translate, Scale, Shear, Rotate and Flip.",
+      "code": {
+        "linkExists": true,
+        "codeLink": "https://github.com/baijudodhia/img-geometric-transformation"
+      },
+      "hosted": {
+        "linkExists": true,
+        "hostedLink": "https://colab.research.google.com/drive/1xt1oV4b_egSAQjk9HbDGl9bes_j8NR8Z?usp=sharing"
+      }
+    },
+    {
+      "title": "designs",
+      "description": "Multiple frontend website templates such as Blog, Online Store, Travel etc. built using only HTML, CSS and JS.",
+      "code": {
+        "linkExists": true,
+        "codeLink": "https://github.com/baijudodhia/designs"
+      },
+      "hosted": {
+        "linkExists": true,
+        "hostedLink": "https://baijudodhia.github.io/designs/"
+      }
+    }
+  ]
+}

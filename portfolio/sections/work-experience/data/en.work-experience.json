@@ -1,0 +1,68 @@
+{
+  "header": {
+    "title": "Work Experience"
+  },
+  "items": [
+    {
+      "company": {
+        "logo": "./portfolio/assets/images/org-logo/think360.svg",
+        "name": "Think Analytics",
+        "location": "Mumbai, MH",
+        "industry": "FinTech",
+        "domain": "Web Applications"
+      },
+      "positions": [
+        {
+          "id": "frontend-engineer",
+          "profile": "Senior Software Engineer",
+          "fromDate": "April 2023",
+          "toDate": "*",
+          "description": "<ul style=\"list-style-type: disc; margin-left: 0.5rem; padding-left: 1rem\"><li>Managed the frontend team for the product development of KwikID, a SaaS product serving the BFSI industry for Video KYC and Customer Onboarding flows.</li><li>Primarily focused on developing new features, re-architecting, and refactoring the existing codebase, setting up new processes and managing the team in designing secure, efficient, and scalable solutions to enhance the end-customer experience.</li><li>Notably, some of my key development contributions, including the creation of new libraries integral to the product, played a crucial role in driving substantial sales growth.</li></ul>"
+        },
+        {
+          "id": "frontend-engineer",
+          "profile": "Associate Frontend Engineer",
+          "fromDate": "July 2021",
+          "toDate": "March 2023",
+          "description": "<ul style=\"list-style-type: disc; margin-left: 0.5rem; padding-left: 1rem\"><li>Led the development of frontend web applications, with a key focus on crafting seamless UI/UX for Lending Journeys using React.js. Additionally, contributed to development of backend APIs using Python Flask.</li></ul>"
+        }
+      ]
+    },
+    {
+      "company": {
+        "logo": "./portfolio/assets/images/org-logo/fogr.svg",
+        "name": "FoGR Tech.",
+        "location": "Hyderabad, TS [WFH]",
+        "industry": "E-Commerce",
+        "domain": "Web/Mobile Applications"
+      },
+      "positions": [
+        {
+          "id": "frontend-engineer",
+          "profile": "SDE Intern",
+          "fromDate": "Sept 2020",
+          "toDate": "Nov 2020",
+          "description": "<div>Worked on 2 applications - </div><ul style=\"list-style-type: disc; margin-left: 0.5rem; padding-left: 1rem\"><li>Food Delivery App: Built backend for Android/iOS application using Angular Ionic Framework for integration with UI, Firebase for Realtime Database and User Authentication.</li><li>Delivery Package Returning App: Developed 3 integrated web applications (customer, admin and delivery agent) using Angular for UI, Node.js for backend and REST API, PubNub for real-time notifications, Stripe for Payments and MongoDB Atlas for Cloud-based Document Database.</li></ul>"
+        }
+      ]
+    },
+    {
+      "company": {
+        "logo": "./portfolio/assets/images/org-logo/kjsce.svg",
+        "name": "KJSCE",
+        "location": "Mumbai, MH",
+        "industry": "Productivity Tools",
+        "domain": "Browser Extension"
+      },
+      "positions": [
+        {
+          "id": "frontend-engineer",
+          "profile": "SDE Intern",
+          "fromDate": "April 2020",
+          "toDate": "June 2020",
+          "description": "<div>Worked on development of Browser Extension -</div><ul style=\"list-style-type: disc; margin-left: 0.5rem; padding-left: 1rem\"><li>Worked on development of Chromium-browser based extension for Gmail for extracting information and generating summary from email threads using Node.js and Gmail.js</li><li>Achieved 100% results for extracting information like email ids and website URLs mentioned in the email thread.</li><li>Generated a 3 point extractive summary of email thread using cosine similarity measures.</li></ul>"
+        }
+      ]
+    }
+  ]
+}

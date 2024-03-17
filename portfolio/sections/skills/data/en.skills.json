@@ -1,0 +1,68 @@
+{
+  "header": {
+    "title": "Skills"
+  },
+  "items": [
+    {
+      "category": "Languages",
+      "list": [
+        "JavaScript",
+        "Python",
+        "Java",
+        "HTML/CSS"
+      ]
+    },
+    {
+      "category": "Frameworks & Libraries",
+      "list": [
+        "Bootstrap",
+        "Material",
+        "React",
+        "Angular",
+        "Node.js",
+        "Django",
+        "Flask"
+      ]
+    },
+    {
+      "category": "Databases",
+      "list": [
+        "MySQL",
+        "PostgreSQL",
+        "MongoDB",
+        "Firebase"
+      ]
+    },
+    {
+      "category": "Tools",
+      "list": [
+        "Git",
+        "VSCode",
+        "Android Studio",
+        "Jira",
+        "Asana",
+        "Github",
+        "Bitbucket"
+      ]
+    },
+    {
+      "category": "Cloud Tech",
+      "list": [
+        "AWS S3",
+        "AWS EC2",
+        "AWS DynamoDB",
+        "AWS RDS",
+        "AWS IAM",
+        "AWS SQS",
+        "AWS CloudWatch"
+      ]
+    },
+    {
+      "category": "Platforms",
+      "list": [
+        "Web",
+        "Mobile"
+      ]
+    }
+  ]
+}
