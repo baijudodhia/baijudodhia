@@ -5,13 +5,21 @@ async function setComponentTemplate(success, error) {
     this.template = document.createElement("template");
 
     try {
-      let _cache = cache[this.templateUrl];
+      const cdn_domain = localStorage.getItem("cdn_domain");
+      let finalUrl = this.templateUrl;
+      if (cdn_domain === "" || cdn_domain === undefined || cdn_domain === null) {
+        finalUrl = this.templateUrl;
+      } else {
+        finalUrl = `${cdn_domain}/${this.templateUrl}`;
+      }
+
+      let _cache = cache[finalUrl];
 
       if (!_cache) {
-        const response = await fetch(this.templateUrl);
+        const response = await fetch(finalUrl);
         const html = await response.text();
         this.template.innerHTML = html;
-        cache[this.templateUrl] = html;
+        cache[finalUrl] = html;
       } else {
         this.template.innerHTML = _cache;
       }
