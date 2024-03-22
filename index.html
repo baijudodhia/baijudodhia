@@ -51,6 +51,7 @@
     <script src="./components/core/language-changer/language-menu.js"></script>
     <script src="./components/core/search-engine/search-engine.js"></script>
     <script src="./components/core/search-engine/search-engine-menu.js"></script>
+    <script src="./components/core/pwa-installer.js"></script>
     <!-- Core Components -->
     <script src="./components/core/social-media/social-links.js"></script>
     <!-- Portfolio Components -->
@@ -66,6 +67,13 @@
     <script src="./portfolio/helper.js"></script>
     <script src="./portfolio/theme.js"></script>
     <script src="./portfolio/main.js"></script>
+
+    <!-- PWA Support -->
+    <!-- Link to Manifest File -->
+    <link
+      rel="manifest"
+      href="./assets/pwa-manifest.json"
+    />
 
     <!-- Meta tags -->
     <meta charset="utf-8" />
@@ -249,6 +257,7 @@
           <div id="waving-hand">👋</div>
         </div>
         <div class="navbar-menu">
+          <app-pwa-installer></app-pwa-installer>
           <app-language-changer></app-language-changer>
           <app-theme-changer
             theme

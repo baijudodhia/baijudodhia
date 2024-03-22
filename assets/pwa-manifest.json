@@ -1,0 +1,92 @@
+{
+  "short_name": "Baiju Dodhia",
+  "name": "Baiju Dodhia | Portfolio | Blog",
+  "icons": [
+    {
+      "src": "./favicons/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "./favicons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "./favicons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "./favicons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./favicons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "./screenshots/screenshot_1920x1080.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "purpose": "any",
+      "form_factor": "wide"
+    },
+    {
+      "src": "./screenshots/screenshot_1080x1920.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "purpose": "any",
+      "form_factor": "narrow"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay"],
+  "theme_color": "#0055ff",
+  "background_color": "#ffffff",
+  "orientation": "portrait",
+  "dir": "auto",
+  "lang": "en",
+  "scope": "/",
+  "description": "Software Engineer in JavaScript, Python and Web Development with great flexibility of learning and adapting to any programming language or technology.",
+  "id": ".",
+  "shortcuts": [
+    {
+      "name": "Baiju Dodhia | Portfolio | Blog",
+      "url": "/",
+      "description": "Software Engineer in JavaScript, Python and Web Development with great flexibility of learning and adapting to any programming language or technology.",
+      "icons": [
+        {
+          "src": "./favicons/favicon.ico",
+          "sizes": "48x48",
+          "type": "image/x-icon"
+        },
+        {
+          "src": "./favicons/favicon-16x16.png",
+          "sizes": "16x16",
+          "type": "image/png"
+        },
+        {
+          "src": "./favicons/favicon-32x32.png",
+          "sizes": "32x32",
+          "type": "image/png"
+        },
+        {
+          "src": "./favicons/android-chrome-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        },
+        {
+          "src": "./favicons/android-chrome-512x512.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}
