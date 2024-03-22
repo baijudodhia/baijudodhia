@@ -148,7 +148,7 @@ main {
   align-self: stretch;
   margin: 0px;
   border: none;
-  border-top: 1.5px dashed var(--color-bw_secondary_invert);
+  border-top: 2px dashed var(--color-bw_secondary_invert);
   height: 0px;
   background-color: transparent;
 }
@@ -345,7 +345,7 @@ app-search-engine-menu {
   align-items: stretch;
   align-content: center;
   row-gap: 20px;
-  padding: 15px 0px;
+  padding: 1rem 0px 1.5rem 0px;
 }
 .footer-container {
   display: flex;

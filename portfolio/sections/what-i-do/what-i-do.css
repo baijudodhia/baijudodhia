@@ -37,7 +37,7 @@
 .what-i-do-divider {
   display: block;
   align-self: stretch;
-  border-right: 1.5px dashed var(--color-bw_secondary_invert);
+  border-right: 2px dashed var(--color-bw_secondary_invert);
 }
 @media only screen and (max-width: 931px) {
   .what-i-do-divider {
