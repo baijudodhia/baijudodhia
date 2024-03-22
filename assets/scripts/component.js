@@ -4,15 +4,15 @@ async function setComponentTemplate(success, error) {
   async function setTemplateUrl() {
     this.template = document.createElement("template");
 
-    try {
-      const cdn_domain = localStorage.getItem("cdn_domain");
-      let finalUrl = this.templateUrl;
-      if (cdn_domain === "" || cdn_domain === undefined || cdn_domain === null) {
-        finalUrl = this.templateUrl;
-      } else {
-        finalUrl = `${cdn_domain}/${this.templateUrl}`;
-      }
+    const cdn_domain = localStorage.getItem("cdn_domain");
+    let finalUrl = this.templateUrl;
+    if (cdn_domain === "" || cdn_domain === undefined || cdn_domain === null) {
+      finalUrl = this.templateUrl;
+    } else {
+      finalUrl = `${cdn_domain}${this.templateUrl}`;
+    }
 
+    try {
       let _cache = cache[finalUrl];
 
       if (!_cache) {
@@ -39,9 +39,17 @@ async function setComponentTemplate(success, error) {
 
   function setTemplateStyleUrls() {
     this.templateStyleUrls.forEach((style) => {
+      const cdn_domain = localStorage.getItem("cdn_domain");
+      let finalUrl = style;
+      if (cdn_domain === "" || cdn_domain === undefined || cdn_domain === null) {
+        finalUrl = style;
+      } else {
+        finalUrl = `${cdn_domain}${style}`;
+      }
+
       const link = document.createElement("link");
       link.rel = "stylesheet";
-      link.href = style;
+      link.href = finalUrl;
       this.shadowRoot.appendChild(link);
     });
 
