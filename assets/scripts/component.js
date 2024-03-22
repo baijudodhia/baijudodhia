@@ -50,12 +50,7 @@ async function setComponentTemplate(success, error) {
       const hostname = window.location.hostname;
 
       let finalUrl = style;
-      if (
-        cdn_domain &&
-        !this.templateUrl.includes("http") &&
-        !hostname.includes("localhost") &&
-        !hostname.includes("127.0.0.1")
-      ) {
+      if (cdn_domain && !style.includes("http") && !hostname.includes("localhost") && !hostname.includes("127.0.0.1")) {
         finalUrl = `${cdn_domain}${style}`;
       } else {
         finalUrl = style;
