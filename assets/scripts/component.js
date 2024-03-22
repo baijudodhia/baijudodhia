@@ -6,10 +6,10 @@ async function setComponentTemplate(success, error) {
 
     const cdn_domain = localStorage.getItem("cdn_domain");
     let finalUrl = this.templateUrl;
-    if (cdn_domain === "" || cdn_domain === undefined || cdn_domain === null) {
-      finalUrl = this.templateUrl;
-    } else {
+    if (cdn_domain !== "" && cdn_domain !== undefined && cdn_domain !== null && !style.includes("http")) {
       finalUrl = `${cdn_domain}${this.templateUrl}`;
+    } else {
+      finalUrl = this.templateUrl;
     }
 
     try {
@@ -41,10 +41,10 @@ async function setComponentTemplate(success, error) {
     this.templateStyleUrls.forEach((style) => {
       const cdn_domain = localStorage.getItem("cdn_domain");
       let finalUrl = style;
-      if (cdn_domain === "" || cdn_domain === undefined || cdn_domain === null) {
-        finalUrl = style;
-      } else {
+      if (cdn_domain !== "" && cdn_domain !== undefined && cdn_domain !== null && !style.includes("http")) {
         finalUrl = `${cdn_domain}${style}`;
+      } else {
+        finalUrl = style;
       }
 
       const link = document.createElement("link");
