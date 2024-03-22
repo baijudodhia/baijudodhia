@@ -5,8 +5,15 @@ async function setComponentTemplate(success, error) {
     this.template = document.createElement("template");
 
     const cdn_domain = localStorage.getItem("cdn_domain");
+    const hostname = window.location.hostname;
+
     let finalUrl = this.templateUrl;
-    if (cdn_domain !== "" && cdn_domain !== undefined && cdn_domain !== null && !this.templateUrl.includes("http")) {
+    if (
+      cdn_domain &&
+      !this.templateUrl.includes("http") &&
+      !hostname.includes("localhost") &&
+      !hostname.includes("127.0.0.1")
+    ) {
       finalUrl = `${cdn_domain}${this.templateUrl}`;
     } else {
       finalUrl = this.templateUrl;
@@ -40,8 +47,15 @@ async function setComponentTemplate(success, error) {
   function setTemplateStyleUrls() {
     this.templateStyleUrls.forEach((style) => {
       const cdn_domain = localStorage.getItem("cdn_domain");
+      const hostname = window.location.hostname;
+
       let finalUrl = style;
-      if (cdn_domain !== "" && cdn_domain !== undefined && cdn_domain !== null && !style.includes("http")) {
+      if (
+        cdn_domain &&
+        !this.templateUrl.includes("http") &&
+        !hostname.includes("localhost") &&
+        !hostname.includes("127.0.0.1")
+      ) {
         finalUrl = `${cdn_domain}${style}`;
       } else {
         finalUrl = style;

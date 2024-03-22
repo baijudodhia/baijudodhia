@@ -271,3 +271,30 @@ button #loader[data-size="xl"] {
 }
 
 /* Add Loading Animation Styles for different appearances and sizes as needed */
+
+/* Button Template Sizes */
+button[data-size="xs"] > #button-icon-left,
+button[data-size="xs"] > #button-icon-right,
+button[data-size="xs"] > #button-label {
+  font-size: var(--font-size-xs) !important;
+}
+button[data-size="s"] > #button-icon-left,
+button[data-size="s"] > #button-icon-right,
+button[data-size="s"] > #button-label {
+  font-size: var(--font-size-s) !important;
+}
+button[data-size="m"] > #button-icon-left,
+button[data-size="m"] > #button-icon-right,
+button[data-size="m"] > #button-label {
+  font-size: var(--font-size-m) !important;
+}
+button[data-size="l"] > #button-icon-left,
+button[data-size="l"] > #button-icon-right,
+button[data-size="l"] > #button-label {
+  font-size: var(--font-size-l) !important;
+}
+button[data-size="xl"] > #button-icon-left,
+button[data-size="xl"] > #button-icon-right,
+button[data-size="xl"] > #button-label {
+  font-size: var(--font-size-xl) !important;
+}
