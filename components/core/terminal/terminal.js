@@ -237,7 +237,6 @@ class AppTerminalComponent extends HTMLElement {
         break;
       default:
         const key = e.key;
-        console.log(key);
 
         switch (key) {
           case "Backspace":
