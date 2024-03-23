@@ -1,0 +1,16 @@
+{
+  "commands": {
+    "resume link": "Your resume link goes here",
+    "skills": {
+      "frontend": "List of frontend skills",
+      "backend": "List of backend skills",
+      "cloud": "List of cloud computing skills",
+      "platform": "List of platform skills"
+    },
+    "work experience": {
+      "company 1": "Description of work experience at company 1",
+      "company 2": "Description of work experience at company 2"
+    },
+    "about": "Information about yourself"
+  }
+}

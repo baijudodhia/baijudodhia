@@ -169,6 +169,12 @@ class AppButtonComponent extends HTMLElement {
         button.addEventListener("click", () => {
           window.open(this.props.href, "_blank");
         });
+      } else {
+        button.addEventListener("click", (e) => {
+          const event = new CustomEvent("on_click", e);
+
+          this.dispatchEvent(event);
+        });
       }
 
       if (this.props.loading === "true") {

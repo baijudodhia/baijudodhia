@@ -20,16 +20,19 @@
   text-decoration: underline;
 }
 ::-webkit-scrollbar-track {
+  border-radius: 1rem;
   background-color: var(--color-bw);
 }
 ::-webkit-scrollbar-thumb {
-  border-radius: 8px;
+  border-radius: 1rem;
   background-color: var(--color-primary);
 }
 ::-webkit-scrollbar-thumb:hover {
+  border-radius: 1rem;
   background-color: var(--color-primary-hover);
 }
 ::-webkit-scrollbar-thumb:active {
+  border-radius: 1rem;
   background-color: var(--color-primary-active);
 }
 html,

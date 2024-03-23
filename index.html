@@ -52,6 +52,7 @@
     <script src="./components/core/search-engine/search-engine.js"></script>
     <script src="./components/core/search-engine/search-engine-menu.js"></script>
     <script src="./components/core/pwa-installer.js"></script>
+    <script src="./components/core/terminal/terminal.js"></script>
     <!-- Core Components -->
     <script src="./components/core/social-media/social-links.js"></script>
     <!-- Portfolio Components -->
@@ -258,6 +259,14 @@
         </div>
         <div class="navbar-menu">
           <app-pwa-installer></app-pwa-installer>
+          <app-button
+            id="terminal-button"
+            icon-right="fa fa-terminal"
+            appearnace="outlined"
+            style="--color-primary: var(--color-bw_primary_invert)"
+            size="xs"
+            shape="rectangle"
+          ></app-button>
           <app-language-changer></app-language-changer>
           <app-theme-changer
             theme
@@ -270,6 +279,24 @@
     <div class="spacing"></div>
 
     <main>
+      <!-- Terminal -->
+      <div id="terminal-wrapper">
+        <div id="terminal-header">
+          <div id="terminal-label">Terminal</div>
+          <div id="terminal-close">
+            <app-button
+              id="terminal-close-button"
+              label="close"
+              icon-right="fa fa-times"
+              appearnace="outlined"
+              size="s"
+              shape="rounded"
+            ></app-button>
+          </div>
+        </div>
+        <div id="terminal-container"></div>
+      </div>
+
       <!-- About -->
       <app-about language></app-about>
 
@@ -367,7 +394,25 @@
     </script>
     <script src="https://baijudodhia.blogspot.com/feeds/posts/summary?max-results=4&alt=json-in-script&callback=recentPost"></script>
 
-    <!-- <script src="./portfolio/sections/blogs/blogs.js"></script> -->
+    <!-- Terminal Loader -->
+    <script>
+      fetch("./components/core/terminal/terminal.json")
+        .then((response) => response.json())
+        .then((config) => {
+          const terminalComponent = new AppTerminalComponent({ config: config });
+
+          document.querySelector("#terminal-container").appendChild(terminalComponent);
+        })
+        .catch((error) => console.error("Error loading terminal config:", error));
+
+      document.querySelector("app-button#terminal-button").addEventListener("on_click", (e) => {
+        document.querySelector("#terminal-wrapper").classList.add("open");
+      });
+
+      document.querySelector("app-button#terminal-close-button").addEventListener("on_click", (e) => {
+        document.querySelector("#terminal-wrapper").classList.remove("open");
+      });
+    </script>
 
     <!-- Don't save the website state -->
     <script>
