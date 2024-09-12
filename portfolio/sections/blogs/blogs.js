@@ -17,6 +17,7 @@ class BlogComponent extends HTMLElement {
     setComponentTemplate.call(
       this,
       () => {
+        // Below code is commented since blogs are fetched from main index.js file through script.
         // this.fetchData();
       },
       () => {
