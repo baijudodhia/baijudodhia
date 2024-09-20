@@ -1,5 +1,8 @@
 class WhatIDoComponent extends HTMLElement {
   constructor(
+    props = {
+      id: "what-id-do",
+    },
     data = {},
     basePath = "/portfolio/sections/what-i-do",
     templateUrl = "/portfolio/sections/what-i-do/what-i-do.html",
@@ -15,6 +18,7 @@ class WhatIDoComponent extends HTMLElement {
     this.basePath = basePath;
     this.templateUrl = templateUrl;
     this.templateStyleUrls = templateStyleUrls;
+    this.props = props;
 
     setComponentTemplate.call(
       this,

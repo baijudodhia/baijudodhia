@@ -1,6 +1,7 @@
 class AppTimelineComponent extends HTMLElement {
   constructor(
     props = {
+      id: "timeline",
       items: [],
     },
     basePath = "/components/base/timeline",
@@ -77,16 +78,18 @@ class AppTimelineComponent extends HTMLElement {
     const template = this.getTemplate();
     const children = Array.from(this.children);
 
-    children.forEach((child) => {
-      const clone = this.getTemplateClone(template);
+    if (element && "content" in document.createElement("template")) {
+      children.forEach((child) => {
+        const clone = this.getTemplateClone(template);
 
-      clone.querySelector(".timeline-item-content").innerHTML = child.outerHTML;
+        clone.querySelector(".timeline-item-content").innerHTML = child.outerHTML;
 
-      element.appendChild(clone);
-    });
+        element.appendChild(clone);
+      });
 
-    if (children.length === 1) {
-      element.classList.add("single-child");
+      if (children.length === 1) {
+        element.classList.add("single-child");
+      }
     }
   }
 }

@@ -1,5 +1,8 @@
 class SkillComponent extends HTMLElement {
   constructor(
+    props = {
+      id: "skills",
+    },
     basePath = "/portfolio/sections/skills",
     templateUrl = "/portfolio/sections/skills/skills.html",
     templateStyleUrls = [
@@ -10,6 +13,7 @@ class SkillComponent extends HTMLElement {
   ) {
     super();
 
+    this.props = props;
     this.basePath = basePath;
     this.templateUrl = templateUrl;
     this.templateStyleUrls = templateStyleUrls;

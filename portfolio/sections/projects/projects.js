@@ -1,5 +1,8 @@
 class ProjectComponent extends HTMLElement {
   constructor(
+    props = {
+      id: "projects",
+    },
     basePath = "/portfolio/sections/projects",
     templateUrl = "/portfolio/sections/projects/projects.html",
     templateStyleUrls = [
@@ -10,6 +13,7 @@ class ProjectComponent extends HTMLElement {
   ) {
     super();
 
+    this.props = props;
     this.basePath = basePath;
     this.templateUrl = templateUrl;
     this.templateStyleUrls = templateStyleUrls;

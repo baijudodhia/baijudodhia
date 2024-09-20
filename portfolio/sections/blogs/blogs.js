@@ -1,5 +1,8 @@
 class BlogComponent extends HTMLElement {
   constructor(
+    props = {
+      id: "blog",
+    },
     basePath = "/portfolio/sections/blogs",
     templateUrl = "/portfolio/sections/blogs/blogs.html",
     templateStyleUrls = [
@@ -10,6 +13,7 @@ class BlogComponent extends HTMLElement {
   ) {
     super();
 
+    this.props = props;
     this.basePath = basePath;
     this.templateUrl = templateUrl;
     this.templateStyleUrls = templateStyleUrls;

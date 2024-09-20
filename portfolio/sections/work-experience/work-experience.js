@@ -1,5 +1,8 @@
 class WorkExperienceComponent extends HTMLElement {
   constructor(
+    props = {
+      id: "work-experience",
+    },
     basePath = "/portfolio/sections/work-experience",
     templateUrl = "/portfolio/sections/work-experience/work-experience.html",
     templateStyleUrls = [
@@ -10,6 +13,7 @@ class WorkExperienceComponent extends HTMLElement {
   ) {
     super();
 
+    this.props = props;
     this.basePath = basePath;
     this.templateUrl = templateUrl;
     this.templateStyleUrls = templateStyleUrls;

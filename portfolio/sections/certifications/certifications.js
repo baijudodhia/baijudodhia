@@ -1,5 +1,8 @@
 class CertificateComponent extends HTMLElement {
   constructor(
+    props = {
+      id: "certifications",
+    },
     basePath = "/portfolio/sections/certifications",
     templateUrl = "/portfolio/sections/certifications/certifications.html",
     templateStyleUrls = [
@@ -10,6 +13,7 @@ class CertificateComponent extends HTMLElement {
   ) {
     super();
 
+    this.props = props;
     this.basePath = basePath;
     this.templateUrl = templateUrl;
     this.templateStyleUrls = templateStyleUrls;

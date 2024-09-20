@@ -1,5 +1,8 @@
 class AboutComponent extends HTMLElement {
   constructor(
+    props = {
+      id: "about",
+    },
     basePath = "/portfolio/sections/about",
     templateUrl = "/portfolio/sections/about/about.html",
     templateStyleUrls = [
@@ -10,6 +13,7 @@ class AboutComponent extends HTMLElement {
   ) {
     super();
 
+    this.props = props;
     this.basePath = basePath;
     this.templateUrl = templateUrl;
     this.templateStyleUrls = templateStyleUrls;
@@ -17,7 +21,7 @@ class AboutComponent extends HTMLElement {
     setComponentTemplate.call(
       this,
       () => {
-        this.fetchAboutData();
+        this.fetchData();
       },
       () => {
         console.log("Initial setup failed!");
@@ -43,7 +47,7 @@ class AboutComponent extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === "language" && oldValue !== newValue && newValue) {
-      this.fetchAboutData(newValue);
+      this.fetchData(newValue);
     }
   }
 
@@ -52,7 +56,7 @@ class AboutComponent extends HTMLElement {
     // (happens in document.adoptNode, very rarely used)
   }
 
-  async fetchAboutData(language = "en") {
+  async fetchData(language = "en") {
     try {
       const response = await fetch(`${this.basePath}/data/${language}.about.json`);
       const data = await response.json();
