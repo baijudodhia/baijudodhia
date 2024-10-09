@@ -14,14 +14,15 @@ async function setComponentTemplate(success, error) {
     this.template = document.createElement("template");
 
     const cdn_domain = localStorage.getItem("cdn_domain");
-    const hostname = window.location.hostname;
+    const origin = window.location.origin;
 
     let finalUrl = this.templateUrl;
     if (
       cdn_domain &&
       !this.templateUrl.includes("http") &&
-      !hostname.includes("localhost") &&
-      !hostname.includes("127.0.0.1")
+      !origin.includes("localhost") &&
+      !origin.includes("127.0.0.1") &&
+      !origin.includes("http")
     ) {
       finalUrl = `${cdn_domain}${this.templateUrl}`;
     } else {
@@ -56,7 +57,7 @@ async function setComponentTemplate(success, error) {
   function setTemplateStyleUrls() {
     this.templateStyleUrls.forEach(async (style) => {
       const cdn_domain = localStorage.getItem("cdn_domain");
-      const hostname = window.location.hostname;
+      const origin = window.location.origin;
 
       let finalUrl = style;
 
@@ -64,15 +65,15 @@ async function setComponentTemplate(success, error) {
       if (typeof style === "string" && style.endsWith(".css")) {
         if (
           cdn_domain &&
-          !hostname.includes("localhost") &&
-          !hostname.includes("127.0.0.1") &&
-          !hostname.includes("http")
+          !style.includes("http") &&
+          !origin.includes("localhost") &&
+          !origin.includes("127.0.0.1") &&
+          !origin.includes("http")
         ) {
           finalUrl = `${cdn_domain}${style}`;
         } else {
           finalUrl = style;
         }
-        console.log(finalUrl)
 
         // Check if the style is already cached
         let cachedStyle = styleCache[finalUrl];
