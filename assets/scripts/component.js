@@ -72,6 +72,7 @@ async function setComponentTemplate(success, error) {
         } else {
           finalUrl = style;
         }
+        console.log(finalUrl)
 
         // Check if the style is already cached
         let cachedStyle = styleCache[finalUrl];
