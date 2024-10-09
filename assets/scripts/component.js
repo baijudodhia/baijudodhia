@@ -63,13 +63,7 @@ async function setComponentTemplate(success, error) {
 
       // Check if the style is a URL
       if (typeof style === "string" && style.endsWith(".css")) {
-        if (
-          cdn_domain &&
-          !style.includes("http") &&
-          !origin.includes("localhost") &&
-          !origin.includes("127.0.0.1") &&
-          !origin.includes("http")
-        ) {
+        if (cdn_domain && !style.startsWith("http") && !origin.includes("localhost") && !origin.includes("127.0.0.1")) {
           finalUrl = `${cdn_domain}${style}`;
         } else {
           finalUrl = style;
