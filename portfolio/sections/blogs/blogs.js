@@ -4,10 +4,152 @@ class BlogComponent extends HTMLElement {
       id: "blog",
     },
     basePath = "/portfolio/sections/blogs",
-    templateUrl = "/portfolio/sections/blogs/blogs.html",
+
+    templateHtml = `
+      <div id="blogs">
+        <div class="blogs-header">
+          <h3>Blogs</h3>
+          <app-button
+            id="app-view-all"
+            appearance="secondary"
+            label="view all"
+            type="link"
+            size="m"
+            href="https://baijudodhia.github.io/blog?utm_source=baijudodhia.github.io&utm_medium=blog_section_view_all_btn"
+            icon-right="fa fa-external-link-square-alt"
+          ></app-button>
+        </div>
+        <div id="blogs-container"> </div>
+      </div>
+
+      <template id="blog-body-template">
+        <div
+          class="blog-body"
+          style="display: flex; flex-direction: column; gap: 1rem; height: 100%"
+        >
+          <img
+            class="blog-thumbnail"
+            style="
+        object-fit: contain;
+        width: 100%;
+        height: 8rem;
+        min-width: unset;
+        max-width: unset;
+        max-height: unset;
+        min-height: unset;
+        display: flex;
+        align-self: stretch;
+        justify-content: center;
+        align-content: center;
+        flex-direction: row;
+        background-color: #ffffff;
+        border-radius: 0.5rem;
+        border-width: 1px;
+        border-style: solid;
+        border-color: var(--color-primary);
+        box-shadow: 0px 2px 10px -3px var(--color-primary);
+      "
+          />
+          <div
+            class="blog-title"
+            style="flex-grow: 1; display: flex; flex-direction: column; column-gap: 1rem"
+          ></div>
+          <div
+            class="blog-tags"
+            style="
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        column-gap: 0.5rem;
+      "
+          ></div>
+        </div>
+      </template>
+
+      <template id="blog-links-template">
+        <div
+          class="blog-links"
+          style="
+      flex-grow: 1;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+      align-content: center;
+      column-gap: 1rem;
+    "
+        >
+          <app-button
+            id="blog-link"
+            appearance="secondary"
+            label="read"
+            type="link"
+            size="s"
+            href=""
+            icon-right="fas fa-arrow-right"
+          ></app-button>
+        </div>
+      </template>
+
+      <template id="blog-tag-template">
+        <app-button
+          id="blog-tag"
+          appearance="secondary"
+          label=""
+          type="link"
+          size="xs"
+          href=""
+        ></app-button>
+      </template>
+    `,
     templateStyleUrls = [
+      `
+      #blogs {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  align-content: center;
+  row-gap: 1.5rem;
+}
+
+.blogs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  flex-direction: row;
+  column-gap: 1rem;
+}
+
+#blogs-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 1.5rem;
+}
+@media only screen and (max-width: 950px) {
+  #blogs-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-row-gap: 1rem;
+    grid-column-gap: 1rem;
+  }
+}
+@media only screen and (max-width: 650px) {
+  #blogs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+      `,
       "/portfolio/main.css",
-      "/portfolio/sections/blogs/blogs.css",
       "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
     ],
   ) {
@@ -15,7 +157,7 @@ class BlogComponent extends HTMLElement {
 
     this.props = props;
     this.basePath = basePath;
-    this.templateUrl = templateUrl;
+    this.templateHtml = templateHtml;
     this.templateStyleUrls = templateStyleUrls;
 
     setComponentTemplate.call(

@@ -4,10 +4,123 @@ class CertificateComponent extends HTMLElement {
       id: "certifications",
     },
     basePath = "/portfolio/sections/certifications",
-    templateUrl = "/portfolio/sections/certifications/certifications.html",
+
+    templateHtml = `
+      <div id="certificates">
+        <div class="certificates-header">
+          <h3>Certifications</h3>
+        </div>
+        <div id="certificates-container"> </div>
+      </div>
+
+      <template id="certificate-body-template">
+        <div
+          class="certificate-body"
+          style="flex-grow: 1; display: flex; flex-direction: column; column-gap: 1rem"
+        >
+          <div
+            class="certificate-organisation"
+            style="display: inline-flex; flex-direction: row; align-items: center; margin-bottom: 0.5rem"
+          >
+            <i
+              style="margin-right: 0.5rem"
+              class="fa fa-building"
+            ></i>
+          </div>
+          <div
+            class="certificate-platform"
+            style="display: inline-flex; flex-direction: row; align-items: center; margin-bottom: 0.5rem"
+          >
+            <i
+              style="margin-right: 0.5rem"
+              class="fa fa-building"
+            ></i>
+          </div>
+          <div
+            class="certificate-issue-date"
+            style="display: inline-flex; flex-direction: row; align-items: center"
+          >
+            <i
+              style="margin-right: 0.5rem"
+              class="fa fa-calendar-check-o"
+            ></i>
+          </div>
+        </div>
+      </template>
+
+      <template id="certificate-links-template">
+        <div
+          class="certificate-links"
+          style="
+      flex-grow: 1;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+      align-content: center;
+      column-gap: 1rem;
+    "
+        >
+          <app-button
+            id="certificate-link"
+            appearance="secondary"
+            label="certificate"
+            type="link"
+            size="s"
+            href=""
+            icon-right="fa fa-external-link-square-alt"
+          ></app-button>
+        </div>
+      </template>
+    `,
     templateStyleUrls = [
+      `
+      #certificates {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  align-content: center;
+  row-gap: 1.5rem;
+}
+
+.certificates-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  flex-direction: row;
+  column-gap: 1rem;
+}
+
+#certificates-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 1.5rem;
+}
+@media only screen and (max-width: 950px) {
+  #certificates-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-row-gap: 1rem;
+    grid-column-gap: 1rem;
+  }
+}
+@media only screen and (max-width: 650px) {
+  #certificates-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-row-gap: 1rem;
+    grid-column-gap: 1rem;
+  }
+}
+
+      `,
       "/portfolio/main.css",
-      "/portfolio/sections/certifications/certifications.css",
       "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
     ],
   ) {
@@ -15,7 +128,7 @@ class CertificateComponent extends HTMLElement {
 
     this.props = props;
     this.basePath = basePath;
-    this.templateUrl = templateUrl;
+    this.templateHtml = templateHtml;
     this.templateStyleUrls = templateStyleUrls;
 
     setComponentTemplate.call(
