@@ -355,7 +355,6 @@ button[data-size="xl"] > #button-label {
     setComponentTemplate.call(
       this,
       () => {
-        console.log("Initial setup successfull!");
         this.render();
       },
       () => {
@@ -449,8 +448,6 @@ button[data-size="xl"] > #button-label {
   render() {
     this.props = getComponentProps.call(this, this.props);
     const button = this.getElement(this.props.type);
-
-    console.count("Rendering: ", button);
 
     if (button && "content" in document.createElement("template")) {
       const itemTemplate = this.getTemplateClone(this.getTemplate());
