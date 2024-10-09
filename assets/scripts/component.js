@@ -1,4 +1,5 @@
-let cache = {};
+let templatecache = {};
+let styleCache = {};
 
 async function setComponentTemplate(success, error) {
   async function setTemplateHtml() {
@@ -28,15 +29,15 @@ async function setComponentTemplate(success, error) {
     }
 
     try {
-      let _cache = cache[finalUrl];
+      let _templateCache = templateCache[finalUrl];
 
-      if (!_cache) {
+      if (!_templateCache) {
         const response = await fetch(finalUrl);
         const html = await response.text();
         this.template.innerHTML = html;
-        cache[finalUrl] = html;
+        templateCache[finalUrl] = html;
       } else {
-        this.template.innerHTML = _cache;
+        this.template.innerHTML = _templateCache;
       }
 
       setShadowDOM.call(this);
@@ -53,7 +54,7 @@ async function setComponentTemplate(success, error) {
   }
 
   function setTemplateStyleUrls() {
-    this.templateStyleUrls.forEach((style) => {
+    this.templateStyleUrls.forEach(async (style) => {
       const cdn_domain = localStorage.getItem("cdn_domain");
       const hostname = window.location.hostname;
 
@@ -65,6 +66,20 @@ async function setComponentTemplate(success, error) {
           finalUrl = `${cdn_domain}${style}`;
         } else {
           finalUrl = style;
+        }
+
+        // Check if the style is already cached
+        let cachedStyle = styleCache[finalUrl];
+
+        if (!cachedStyle) {
+          try {
+            const response = await fetch(finalUrl);
+            cachedStyle = await response.text();
+            styleCache[finalUrl] = cachedStyle; // Store in cache
+          } catch (error) {
+            console.error("Error fetching stylesheet:", error);
+            return; // Exit if fetching fails
+          }
         }
 
         // Create a link element for stylesheets
