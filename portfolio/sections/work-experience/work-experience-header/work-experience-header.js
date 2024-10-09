@@ -9,10 +9,155 @@ class WorkExperienceHeaderComponent extends HTMLElement {
       type: "",
     },
     basePath = "/portfolio/sections/work-experience/work-experience-header",
-    templateUrl = "/portfolio/sections/work-experience/work-experience-header/work-experience-header.html",
+
+    templateHtml = `
+      <div id="work-experience-header-container"></div>
+
+      <template id="work-experience-header-template">
+        <div class="work-experience-header">
+          <div class="work-experience-organisation-logo-container">
+            <img
+              class="work-experience-organisation-logo"
+              src=""
+              alt=""
+            />
+          </div>
+          <div class="work-experience-details">
+            <div
+              class="work-experience-detail-item"
+              title="Work Organisation"
+            >
+              <i class="fa fa-building"></i>
+              <div class="work-experience-detail-organisation"></div>
+            </div>
+            <div
+              class="work-experience-detail-item"
+              title="Work Location"
+            >
+              <i class="fa fa-map-marker-alt"></i>
+              <div class="work-experience-detail-location"></div>
+            </div>
+            <div
+              class="work-experience-detail-item"
+              title="Work Type"
+            >
+              <i class="fa fa-tasks"></i>
+              <div class="work-experience-detail-type"></div>
+            </div>
+            <div
+              class="work-experience-detail-item"
+              title="Work Industry"
+            >
+              <i class="fa fa-industry"></i>
+              <div class="work-experience-detail-industry"></div>
+            </div>
+          </div>
+        </div>
+      </template>
+    `,
     templateStyleUrls = [
+      `
+      .work-experience-header {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  column-gap: 1.5rem;
+}
+@media only screen and (max-width: 931px) {
+  .work-experience-header {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    row-gap: 1rem;
+  }
+}
+
+.work-experience-details {
+  align-self: stretch;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 0.5rem;
+  grid-column-gap: 1rem;
+  width: 100%;
+}
+@media only screen and (max-width: 600px) {
+  .work-experience-details {
+    align-self: stretch;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-row-gap: 0.5rem;
+    grid-column-gap: 1rem;
+  }
+}
+
+.work-experience-organisation-logo-container {
+  object-fit: contain;
+  width: 100%;
+  min-width: unset;
+  max-width: 280px;
+  max-height: 70px;
+  min-height: unset;
+  display: flex;
+  align-self: stretch;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-primary);
+  box-shadow: 0px 2px 10px -3px var(--color-primary);
+}
+
+@media only screen and (max-width: 931px) {
+  .work-experience-organisation-logo-container {
+    object-fit: contain;
+    width: 100%;
+    height: 100px;
+    min-width: unset;
+    max-width: unset;
+    max-height: unset;
+    min-height: unset;
+    display: flex;
+    align-self: stretch;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--color-primary);
+    box-shadow: 0px 2px 10px -3px var(--color-primary);
+  }
+}
+
+.work-experience-organisation-logo {
+  width: 100%;
+  height: 100%;
+}
+
+.work-experience-detail-item {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+      `,
       "/portfolio/main.css",
-      "/portfolio/sections/work-experience/work-experience-header/work-experience-header.css",
       "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
     ],
   ) {
@@ -20,7 +165,7 @@ class WorkExperienceHeaderComponent extends HTMLElement {
 
     this.props = props;
     this.basePath = basePath;
-    this.templateUrl = templateUrl;
+    this.templateHtml = templateHtml;
     this.templateStyleUrls = templateStyleUrls;
 
     setComponentTemplate.call(

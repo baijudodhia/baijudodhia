@@ -1,7 +1,15 @@
 let cache = {};
 
 async function setComponentTemplate(success, error) {
-  async function setTemplateUrl() {
+  async function setTemplateHtml() {
+    this.template = document.createElement("template");
+
+    this.template.innerHTML = this.templateHtml;
+
+    setShadowDOM.call(this);
+  }
+
+  async function setTemplateHtmlUrl() {
     this.template = document.createElement("template");
 
     const cdn_domain = localStorage.getItem("cdn_domain");
@@ -50,22 +58,36 @@ async function setComponentTemplate(success, error) {
       const hostname = window.location.hostname;
 
       let finalUrl = style;
-      if (cdn_domain && !style.includes("http") && !hostname.includes("localhost") && !hostname.includes("127.0.0.1")) {
-        finalUrl = `${cdn_domain}${style}`;
-      } else {
-        finalUrl = style;
-      }
 
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = finalUrl;
-      this.shadowRoot.appendChild(link);
+      // Check if the style is a URL
+      if (typeof style === "string" && style.endsWith(".css")) {
+        if (cdn_domain && !hostname.includes("localhost") && !hostname.includes("127.0.0.1")) {
+          finalUrl = `${cdn_domain}${style}`;
+        } else {
+          finalUrl = style;
+        }
+
+        // Create a link element for stylesheets
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = finalUrl;
+        this.shadowRoot.appendChild(link);
+      } else {
+        // Create a style element for inline styles
+        const styleElement = document.createElement("style");
+        styleElement.textContent = style; // Assuming it's a template literal or a string of CSS
+        this.shadowRoot.appendChild(styleElement);
+      }
     });
 
     success();
   }
 
-  setTemplateUrl.call(this);
+  if (!isEmptyValue(this.templateUrl)) {
+    setTemplateHtmlUrl.call(this);
+  } else if (!isEmptyValue(this.templateHtml)) {
+    setTemplateHtml.call(this);
+  }
 }
 
 function getComponentProps(props) {

@@ -4,10 +4,53 @@ class WorkExperienceComponent extends HTMLElement {
       id: "work-experience",
     },
     basePath = "/portfolio/sections/work-experience",
-    templateUrl = "/portfolio/sections/work-experience/work-experience.html",
+
+    templateHtml = `
+      <div id="work-experiences">
+        <div class="work-experiences-header">
+          <h3>Work Experience</h3>
+        </div>
+        <div id="work-experiences-container"> </div>
+      </div>
+
+      <template id="work-experience-profile-detail-template">
+        <div class="work-experience-profile-detail">
+          <div class="work-experience-profile-detail-header">
+            <div class="work-experience-profile"></div>
+            <div class="work-experience-date"></div>
+          </div>
+          <div class="work-experience-description"></div>
+        </div>
+      </template>
+    `,
     templateStyleUrls = [
+      `
+      #work-experiences {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  align-content: center;
+  row-gap: 1.5rem;
+}
+
+.work-experiences-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  flex-direction: row;
+  column-gap: 1rem;
+}
+
+#work-experiences-container {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+      `,
       "/portfolio/main.css",
-      "/portfolio/sections/work-experience/work-experience.css",
       "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
     ],
   ) {
@@ -15,7 +58,7 @@ class WorkExperienceComponent extends HTMLElement {
 
     this.props = props;
     this.basePath = basePath;
-    this.templateUrl = templateUrl;
+    this.templateHtml = templateHtml;
     this.templateStyleUrls = templateStyleUrls;
 
     setComponentTemplate.call(

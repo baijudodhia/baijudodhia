@@ -5,10 +5,109 @@ class WhatIDoComponent extends HTMLElement {
     },
     data = {},
     basePath = "/portfolio/sections/what-i-do",
-    templateUrl = "/portfolio/sections/what-i-do/what-i-do.html",
+
+    templateHtml = `
+      <div id="what-i-do">
+        <h3 id="what-i-do-title"></h3>
+        <div id="what-i-do-container">
+          <div class="what-i-do-left">
+            <div id="what-i-do-line1"> </div>
+            <div id="what-i-do-line2"> </div>
+          </div>
+          <div class="what-i-do-divider"></div>
+          <div class="what-i-do-right">
+            <span id="what-i-do-line3"> </span>
+            <br />
+            <app-button
+              appearance="link"
+              type="link"
+              label="BloomBox, E-Cell KJSCE"
+              title="BloomBox, E-Cell KJSCE"
+              href="https://www.bloomboxkjsce.com/"
+            ></app-button>
+            ,&nbsp;<br />
+            <app-button
+              appearance="link"
+              type="link"
+              label="RedShift Racing India"
+              title="RedShift Racing India"
+              href="http://www.redshift-racing.in/"
+            ></app-button>
+            ,&nbsp;<br />
+            <app-button
+              appearance="link"
+              type="link"
+              label="CSI KJSCE"
+              title="CSI KJSCE"
+              href="https://www.csikjsce.org/"
+            ></app-button>
+            ,&nbsp;<br />
+            <app-button
+              appearance="link"
+              type="link"
+              label="Hult Prize Somaiya"
+              title="Hult Prize Somaiya"
+              href="https://www.hultprize.org/"
+            ></app-button>
+          </div>
+        </div>
+      </div>
+    `,
     templateStyleUrls = [
+      `
+      #what-i-do {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: stretch;
+  row-gap: 20px;
+}
+#what-i-do-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  column-gap: 20px;
+}
+@media only screen and (max-width: 931px) {
+  #what-i-do-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    align-items: stretch;
+    row-gap: 20px;
+  }
+}
+.what-i-do-left {
+  flex-basis: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: stretch;
+  row-gap: 20px;
+}
+.what-i-do-divider {
+  display: block;
+  align-self: stretch;
+  border-right: 2px dashed var(--color-bw_secondary_invert);
+}
+@media only screen and (max-width: 931px) {
+  .what-i-do-divider {
+    display: none;
+  }
+}
+.what-i-do-right {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+      `,
       "/portfolio/main.css",
-      "/portfolio/sections/what-i-do/what-i-do.css",
       "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
     ],
   ) {
@@ -16,7 +115,7 @@ class WhatIDoComponent extends HTMLElement {
 
     this.data = data;
     this.basePath = basePath;
-    this.templateUrl = templateUrl;
+    this.templateHtml = templateHtml;
     this.templateStyleUrls = templateStyleUrls;
     this.props = props;
 

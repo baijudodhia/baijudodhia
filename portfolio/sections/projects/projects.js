@@ -4,10 +4,114 @@ class ProjectComponent extends HTMLElement {
       id: "projects",
     },
     basePath = "/portfolio/sections/projects",
-    templateUrl = "/portfolio/sections/projects/projects.html",
+
+    templateHtml = `
+      <div id="projects">
+        <div class="projects-header">
+          <h3>Projects</h3>
+          <app-button
+            id="app-view-all"
+            appearance="secondary"
+            label="view all"
+            type="link"
+            size="m"
+            href="https://github.com/baijudodhia?tab=repositories"
+            icon-right="fa fa-external-link-square-alt"
+          ></app-button>
+        </div>
+        <div id="projects-container"> </div>
+      </div>
+
+      <template id="project-links-template">
+        <div
+          class="project-links"
+          style="
+      flex-grow: 1;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+      align-content: center;
+      column-gap: 1rem;
+    "
+        >
+          <app-button
+            id="app-link-code"
+            appearance="secondary"
+            label="code"
+            type="link"
+            size="s"
+            href=""
+            icon-right="fa fa-code"
+          ></app-button>
+          <app-button
+            id="app-link-live"
+            appearance="secondary"
+            label="live"
+            type="link"
+            size="s"
+            href=""
+            icon-right="fa fa-external-link-square-alt"
+          ></app-button>
+        </div>
+      </template>
+    `,
     templateStyleUrls = [
+      `
+      #projects {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  align-content: center;
+  row-gap: 1.5rem;
+}
+
+.projects-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  flex-direction: row;
+  column-gap: 1rem;
+}
+
+#projects-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 1.5rem;
+}
+@media only screen and (max-width: 950px) {
+  #projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-row-gap: 1rem;
+    grid-column-gap: 1rem;
+  }
+}
+@media only screen and (max-width: 650px) {
+  #projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.project-links {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  align-content: center;
+  column-gap: 1rem;
+}
+
+      `,
       "/portfolio/main.css",
-      "/portfolio/sections/projects/projects.css",
       "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
     ],
   ) {
@@ -15,7 +119,7 @@ class ProjectComponent extends HTMLElement {
 
     this.props = props;
     this.basePath = basePath;
-    this.templateUrl = templateUrl;
+    this.templateHtml = templateHtml;
     this.templateStyleUrls = templateStyleUrls;
 
     setComponentTemplate.call(

@@ -4,10 +4,69 @@ class AboutComponent extends HTMLElement {
       id: "about",
     },
     basePath = "/portfolio/sections/about",
-    templateUrl = "/portfolio/sections/about/about.html",
+
+    templateHtml = `
+      <div id="about">
+        <h1>
+          <div class="about-name-container">
+            <div
+              class="about-name"
+              title="Baiju Dodhia"
+              >Baiju Dodhia</div
+            >
+            <app-search-engine></app-search-engine>
+          </div>
+        </h1>
+        <div>
+          Software Engineer with entrepreneurial mindset having strong project-based knowledge of various technical
+          skills including programming languages and software tools.
+        </div>
+        <div class="about-profile">
+          Currently working as Senior Software Engineer at
+          <app-button
+            appearance="link"
+            label="Think360"
+            type="link"
+            href="https://www.think360.ai/"
+          ></app-button>
+        </div>
+        <app-social-links
+          github
+          linkedin
+          blog
+        ></app-social-links>
+        <!-- What I Do ? -->
+        <app-what-i-do></app-what-i-do>
+      </div>
+    `,
     templateStyleUrls = [
+      `
+      #about {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: flex-start;
+  row-gap: 20px;
+}
+#about > h1,
+#about > h2 {
+  margin: 0px;
+}
+#about > h1 * {
+  font-size: 28px !important;
+}
+#about > h1 app-link::part(link_title) {
+  font-size: 28px !important;
+}
+.about-name-container {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+      `,
       "/portfolio/main.css",
-      "/portfolio/sections/about/about.css",
       "https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css",
     ],
   ) {
@@ -15,7 +74,7 @@ class AboutComponent extends HTMLElement {
 
     this.props = props;
     this.basePath = basePath;
-    this.templateUrl = templateUrl;
+    this.templateHtml = templateHtml;
     this.templateStyleUrls = templateStyleUrls;
 
     setComponentTemplate.call(
