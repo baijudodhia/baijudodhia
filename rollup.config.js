@@ -1,23 +1,55 @@
-import commonjs from "@rollup/plugin-commonjs"; // CommonJS module support
-import resolve from "@rollup/plugin-node-resolve"; // Resolving node_modules
-import postcss from "rollup-plugin-postcss"; // CSS processing
-import { terser } from "rollup-plugin-terser"; // Minification
+import commonjs from "@rollup/plugin-commonjs";
+import resolve from "@rollup/plugin-node-resolve";
+import postcss from "rollup-plugin-postcss";
+import { terser } from "rollup-plugin-terser";
 
-export default {
-  input: "./components/index.js", // Main JS entry file
+// CSS Configuration
+const cssConfig = {
+  input: "lib/styles/index.css", // Your main CSS entry point
   output: {
-    file: "dist/bundle.js", // Output bundled JavaScript file
-    format: "iife", // Format for the browser
-    name: "component", // Global variable name for the IIFE
+    file: "styles.min.css",
+    assetFileNames: "[name][extname]",
   },
   plugins: [
-    resolve(), // Helps Rollup find the node_modules
-    commonjs(), // Converts CommonJS modules to ES6
     postcss({
-      extract: "bundle.css", // Output CSS file
-      minimize: true, // Optional: Minify the CSS
-      sourceMap: true, // Optional: Generate source maps
+      extract: true,
+      minimize: true,
+      sourceMap: true,
+      use: ["sass"], // If you're using Sass
+      extract: "lib/dist/styles.min.css",
+      config: {
+        path: "./postcss.config.js",
+        ctx: {
+          env: "production",
+        },
+      },
     }),
-    terser(), // Minify JavaScript
   ],
 };
+
+// JavaScript Configuration for Components
+const componentsJS = {
+  input: "lib/components/index.js",
+  output: {
+    file: "lib/dist/components.min.js",
+    format: "iife",
+    name: "Components",
+    sourcemap: true,
+  },
+  plugins: [resolve(), commonjs(), terser()],
+};
+
+// JavaScript Configuration for Utils
+const utilsJS = {
+  input: "lib/utils/index.js",
+  output: {
+    file: "lib/dist/utils.min.js",
+    format: "iife",
+    name: "Utils",
+    sourcemap: true,
+  },
+  plugins: [resolve(), commonjs(), terser()],
+};
+
+// Export the configuration
+export default [utilsJS, cssConfig, componentsJS];
