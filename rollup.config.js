@@ -5,7 +5,7 @@ import { terser } from "rollup-plugin-terser";
 
 // CSS Configuration
 const cssConfig = {
-  input: "lib/styles/index.css", // Your main CSS entry point
+  input: "lib/styles/index.css",
   output: {
     file: "styles.min.css",
     assetFileNames: "[name][extname]",
@@ -15,13 +15,10 @@ const cssConfig = {
       extract: true,
       minimize: true,
       sourceMap: true,
-      use: ["sass"], // If you're using Sass
+      use: ["sass"],
       extract: "lib/dist/styles.min.css",
       config: {
         path: "./postcss.config.js",
-        ctx: {
-          env: "production",
-        },
       },
     }),
   ],
@@ -36,7 +33,20 @@ const componentsJS = {
     name: "Components",
     sourcemap: true,
   },
-  plugins: [resolve(), commonjs(), terser()],
+  plugins: [
+    postcss({
+      extract: false,
+      minimize: true,
+      sourceMap: true,
+      use: ["sass"],
+      config: {
+        path: "./postcss.config.js",
+      },
+    }),
+    resolve(),
+    commonjs(),
+    terser(),
+  ],
 };
 
 // JavaScript Configuration for Utils
