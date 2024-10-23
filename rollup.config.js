@@ -1,7 +1,7 @@
-import { terser } from "rollup-plugin-terser"; // Minification
+import commonjs from "@rollup/plugin-commonjs"; // CommonJS module support
+import resolve from "@rollup/plugin-node-resolve"; // Resolving node_modules
 import postcss from "rollup-plugin-postcss"; // CSS processing
-import resolve from '@rollup/plugin-node-resolve'; // Resolving node_modules
-import commonjs from '@rollup/plugin-commonjs'; // CommonJS module support
+import { terser } from "rollup-plugin-terser"; // Minification
 
 export default {
   input: "./components/index.js", // Main JS entry file
@@ -14,7 +14,7 @@ export default {
     resolve(), // Helps Rollup find the node_modules
     commonjs(), // Converts CommonJS modules to ES6
     postcss({
-      extract: "dist/bundle.css", // Output CSS file
+      extract: "bundle.css", // Output CSS file
       minimize: true, // Optional: Minify the CSS
       sourceMap: true, // Optional: Generate source maps
     }),
