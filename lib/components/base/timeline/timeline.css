@@ -1,0 +1,51 @@
+@import url("../../../styles/reset.css");
+@import url("../../../styles/global.css");
+
+#timeline {
+  margin-left: 0.5em;
+  padding-left: 1em;
+}
+
+#timeline.single-child,
+#timeline.single-child > .timeline-item {
+  margin: 0rem !important;
+  padding: 0rem !important;
+  list-style: none !important;
+}
+
+.timeline-item {
+  position: relative;
+  list-style-type: circle;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.timeline-item:first-child {
+  margin-top: 0rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0rem;
+}
+
+.timeline-item:after {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  left: -1rem;
+  width: 0px;
+  height: calc(100% - 0.25rem);
+  border-right-width: 2px;
+  border-right-style: dashed;
+  border-right-color: var(--color-bw-text);
+}
+
+.timeline-item:last-child:after {
+  display: none;
+}
+
+.timeline-item-line {
+  position: absolute;
+  top: 0px;
+  height: 0px;
+}

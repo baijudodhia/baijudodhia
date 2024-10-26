@@ -6,42 +6,44 @@
   --color-bw-light-text: #000;
   --color-bw-dark: #000;
   --color-bw-dark-text: #fff;
+  --color-bw: var(--color-bw-light);
+  --color-bw-text: var(--color-bw-light-text);
 
   /* Primary Colors */
-  --color-primary-light: #0055ff; /* Light theme primary color for background and borders */
-  --color-primary-light-hover: #4e89ff; /* 6196ff Light theme hover state, lighter shade of primary color */
-  --color-primary-light-active: #0044cc; /* Light theme active state, darker shade of primary color */
-  --color-primary-light-text: #ffffff; /* Light theme text color on primary background */
+  --color-primary: #0055ff; /* Light theme primary color for background and borders */
+  --color-primary-hover: #4e89ff; /* 6196ff Light theme hover state, lighter shade of primary color */
+  --color-primary-active: #0044cc; /* Light theme active state, darker shade of primary color */
+  --color-primary-text: #ffffff; /* Light theme text color on primary background */
   --color-primary-dark: #009aff; /* Dark theme primary color for background and borders */
   --color-primary-dark-hover: #33adff; /* Dark theme hover state, lighter shade of primary color */
   --color-primary-dark-active: #008ae6; /* Dark theme active state, darker shade of primary color */
   --color-primary-dark-text: #ffffff; /* Dark theme text color on primary background */
 
   /* Secondary Colors */
-  --color-secondary-light: #ffc107; /* Light theme secondary color for background and borders */
-  --color-secondary-light-hover: #ffd54f; /* Light theme hover state, lighter shade of secondary color */
-  --color-secondary-light-active: #ffa000; /* Light theme active state, darker shade of secondary color */
-  --color-secondary-light-text: #212121; /* Light theme text color on secondary background */
+  --color-secondary: #ffc107; /* Light theme secondary color for background and borders */
+  --color-secondary-hover: #ffd54f; /* Light theme hover state, lighter shade of secondary color */
+  --color-secondary-active: #ffa000; /* Light theme active state, darker shade of secondary color */
+  --color-secondary-text: #212121; /* Light theme text color on secondary background */
   --color-secondary-dark: #ffa000; /* Dark theme secondary color for background and borders */
   --color-secondary-dark-hover: #ffd54f; /* Dark theme hover state, lighter shade of secondary color */
   --color-secondary-dark-active: #ffa000; /* Dark theme active state, darker shade of secondary color */
   --color-secondary-dark-text: #212121; /* Dark theme text color on secondary background */
 
   /* Tertiary Colors */
-  --color-tertiary-light: #4caf50; /* Light theme tertiary color for background and borders */
-  --color-tertiary-light-hover: #81c784; /* Light theme hover state, lighter shade of tertiary color */
-  --color-tertiary-light-active: #388e3c; /* Light theme active state, darker shade of tertiary color */
-  --color-tertiary-light-text: #ffffff; /* Light theme text color on tertiary background */
+  --color-tertiary: #4caf50; /* Light theme tertiary color for background and borders */
+  --color-tertiary-hover: #81c784; /* Light theme hover state, lighter shade of tertiary color */
+  --color-tertiary-active: #388e3c; /* Light theme active state, darker shade of tertiary color */
+  --color-tertiary-text: #ffffff; /* Light theme text color on tertiary background */
   --color-tertiary-dark: #388e3c; /* Dark theme tertiary color for background and borders */
   --color-tertiary-dark-hover: #81c784; /* Dark theme hover state, lighter shade of tertiary color */
   --color-tertiary-dark-active: #388e3c; /* Dark theme active state, darker shade of tertiary color */
   --color-tertiary-dark-text: #ffffff; /* Dark theme text color on tertiary background */
 
   /* Disabled State Colors */
-  --color-disabled-light: #b0bec5; /* Light theme disabled color for background and borders */
-  --color-disabled-light-hover: #78909c; /* Light theme hover state, lighter shade of disabled color */
-  --color-disabled-light-active: #546e7a; /* Light theme active state, darker shade of disabled color */
-  --color-disabled-light-text: #eeeeee; /* Light theme text color on disabled background */
+  --color-disabled: #b0bec5; /* Light theme disabled color for background and borders */
+  --color-disabled-hover: #78909c; /* Light theme hover state, lighter shade of disabled color */
+  --color-disabled-active: #546e7a; /* Light theme active state, darker shade of disabled color */
+  --color-disabled-text: #eeeeee; /* Light theme text color on disabled background */
   --color-disabled-dark: #78909c; /* Dark theme disabled color for background and borders */
   --color-disabled-dark-hover: #546e7a; /* Dark theme hover state, lighter shade of disabled color */
   --color-disabled-dark-active: #37474f; /* Dark theme active state, darker shade of disabled color */
@@ -88,36 +90,6 @@
   --multiplier-l: 1.25;
   --multiplier-xl: 1.5;
   --multiplier-xxl: 2;
-}
-
-html[data-theme="light"] {
-  /* Blacks and Whites */
-  --color-bw: var(--color-bw-light);
-  --color-bw-text: var(--color-bw-light-text);
-
-  /* Primary Colors */
-  --color-primary: var(--color-primary-light); /* Light theme primary color for background and borders */
-  --color-primary-hover: var(--color-primary-light-hover); /* Light theme hover state, lighter shade of primary color */
-  --color-primary-active: var(--color-primary-light-active); /* Light theme active state, darker shade of primary color */
-  --color-primary-text: var(--color-primary-light-text); /* Light theme text color on primary background */
-
-  /* Secondary Colors */
-  --color-secondary: var(--color-secondary-light); /* Light theme secondary color for background and borders */
-  --color-secondary-hover: var(--color-secondary-light-hover); /* Light theme hover state, lighter shade of secondary color */
-  --color-secondary-active: var(--color-secondary-light-active); /* Light theme active state, darker shade of secondary color */
-  --color-secondary-text: var(--color-secondary-light-text); /* Light theme text color on secondary background */
-
-  /* Tertiary Colors */
-  --color-tertiary: var(--color-tertiary-light); /* Light theme tertiary color for background and borders */
-  --color-tertiary-hover: var(--color-tertiary-light-hover); /* Light theme hover state, lighter shade of tertiary color */
-  --color-tertiary-active: var(--color-tertiary-light-active); /* Light theme active state, darker shade of tertiary color */
-  --color-tertiary-text: var(--color-tertiary-light-text); /* Light theme text color on tertiary background */
-
-  /* Disabled State Colors */
-  --color-disabled: var(--color-disabled-light); /* Light theme disabled color for background and borders */
-  --color-disabled-hover: var(--color-disabled-light-hover); /* Light theme hover state, lighter shade of disabled color */
-  --color-disabled-active: var(--color-disabled-light-active); /* Light theme active state, darker shade of disabled color */
-  --color-disabled-text: var(--color-disabled-light-text); /* Light theme text color on disabled background */
 }
 
 html[data-theme="dark"] {
