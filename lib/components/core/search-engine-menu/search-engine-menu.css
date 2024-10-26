@@ -1,0 +1,46 @@
+@import url("../../../styles/reset.css");
+@import url("../../../styles/global.css");
+
+.search-engine-menu {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: flex-start;
+}
+.search-engine-menu-item {
+  align-self: stretch;
+  cursor: pointer;
+  width: max-content;
+}
+.search-engine-menu-item.active {
+  color: var(--color-primary);
+}
+.search-engine-menu-item:hover {
+  color: var(--color-primary);
+}
+.search-engine-menu-triangle-up {
+  align-self: flex-end;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid var(--color-bw_secondary);
+  z-index: 1;
+  transform: translateX(50%);
+  margin-right: 50%;
+}
+.search-engine-menu-item-container {
+  align-self: stretch;
+  padding: 15px;
+  background-color: var(--color-bw_secondary);
+  color: var(--color-bw_secondary_invert);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  row-gap: 10px;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+}

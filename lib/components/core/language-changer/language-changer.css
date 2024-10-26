@@ -1,0 +1,34 @@
+@import url("../../../styles/reset.css");
+@import url("../../../styles/global.css");
+
+.language-changer {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.language-button {
+  color: var(--color-bw_secondary_invert);
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+}
+.language-button > .fa:before {
+  font-size: 20px;
+}
+.language-changer:hover {
+  position: relative;
+}
+.language-changer:hover > app-language-menu {
+  transition: 0.2s linear;
+  transform: scale(1);
+  top: calc(100%);
+  right: -17px;
+}

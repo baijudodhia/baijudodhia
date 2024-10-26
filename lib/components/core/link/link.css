@@ -1,0 +1,59 @@
+@import url("../../../styles/reset.css");
+@import url("../../../styles/global.css");
+
+.link-container {
+  display: inline-block;
+  padding: 0px 0px;
+  width: fit-content;
+  border: 2px solid transparent;
+  transition: 0.2s linear;
+  text-decoration: none !important;
+}
+.link-container > * {
+  color: var(--color-primary);
+  font-weight: var(--font-weight);
+}
+.link-container.background {
+  border-radius: 7px;
+}
+.link-container.background:hover > * {
+  color: var(--color-secondary);
+  font-weight: var(--font-weight);
+}
+.link-container.background:hover {
+  background-color: var(--color-tertiary);
+  padding: 0px 8px;
+}
+.link-container.underline {
+  border-radius: 0px;
+}
+.link-container.underline:hover {
+  border-radius: 0px;
+  border-bottom: 2px dashed var(--color-bw_secondary_invert);
+}
+.link-container.underline:hover > * {
+  color: var(--color-bw_secondary_invert);
+}
+.link-container:focus,
+.link-container:focus-visible {
+  outline: none;
+  padding: 0px 8px;
+  border: 1px dashed var(--color-primary);
+}
+.link-container:active {
+  transform: scale(0.95);
+}
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  column-gap: 6px;
+  padding: 0px 0px;
+  width: fit-content;
+  text-decoration: none !important;
+}
+.link-icon {
+  width: 20px;
+}

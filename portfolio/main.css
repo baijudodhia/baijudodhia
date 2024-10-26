@@ -147,37 +147,8 @@ main {
   justify-content: center;
   align-content: center;
 }
-.language-container {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-}
-.language-button {
-  color: var(--color-bw_secondary_invert);
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  flex-direction: row;
-}
-.language-button > .fa:before {
-  font-size: 20px;
-}
-.language-container:hover {
-  position: relative;
-}
-.language-container:hover > app-language-menu {
-  transition: 0.2s linear;
-  transform: scale(1);
-  top: calc(100%);
-  right: -17px;
-}
+
+/* Language Menu */
 app-language-menu {
   position: absolute;
   min-width: 200px;
@@ -192,36 +163,6 @@ app-language-menu {
 }
 
 /* Search Engine */
-.search-engine-container {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-}
-.search-engine-button {
-  color: var(--color-bw_secondary_invert);
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  flex-direction: row;
-}
-.search-engine-button > .fa:before {
-  font-size: 20px;
-}
-.search-engine-container:hover {
-  position: relative;
-}
-.search-engine-container:hover > app-search-engine-menu {
-  transition: 0.2s linear;
-  transform: scale(1);
-  top: calc(100%);
-}
 app-search-engine-menu {
   position: absolute;
   min-width: 200px;

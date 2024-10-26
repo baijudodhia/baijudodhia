@@ -32,21 +32,108 @@
       src="./lib/dist/index.min.js"
     ></script>
   </head>
-  <body>
+  <body style="padding: 2rem">
     <app-button
       label="Submit"
-      theme="primary"
+      appearance="primary"
     ></app-button>
+    <app-button
+      label="Submit"
+      appearance="secondary"
+    ></app-button>
+    <app-button
+      label="Submit"
+      appearance="tertiary"
+    ></app-button>
+
+    <br />
+    &nbsp;
+
     <app-card
-      header="<app-button label='Submit' theme='primary'></app-button>"
-      body="<h1>Baiju Dodhia</h1>"
-      footer="<app-button label='Submit' theme='primary'></app-button>"
+      header="<app-button label='Submit' appearance='primary'></app-button>"
+      body="<app-button label='Submit' appearance='secondary'></app-button>"
+      footer="<app-button label='Submit' appearance='tertiary'></app-button>"
     ></app-card>
 
+    <br />
+    &nbsp;
+
     <app-timeline>
-      <div><h1>Baiju Dodhia</h1><h1>Baiju Dodhia</h1>Baiju Dodhia</div>
-      <div><h1>Baiju Dodhia</h1><h1>Baiju Dodhia</h1>Baiju Dodhia</div>
-      <div><h1>Baiju Dodhia</h1><h1>Baiju Dodhia</h1>Baiju Dodhia</div>
+      <div>
+        <app-button
+          label="Submit"
+          appearance="primary"
+        ></app-button>
+        <app-button
+          label="Submit"
+          appearance="secondary"
+        ></app-button>
+        <app-button
+          label="Submit"
+          appearance="tertiary"
+        ></app-button
+      ></div>
+      <div>
+        <app-button
+          label="Submit"
+          appearance="primary"
+        ></app-button>
+        <app-button
+          label="Submit"
+          appearance="secondary"
+        ></app-button>
+        <app-button
+          label="Submit"
+          appearance="tertiary"
+        ></app-button
+      ></div>
+      <div>
+        <app-button
+          label="Submit"
+          appearance="primary"
+        ></app-button>
+        <app-button
+          label="Submit"
+          appearance="secondary"
+        ></app-button>
+        <app-button
+          label="Submit"
+          appearance="tertiary"
+        ></app-button
+      ></div>
     </app-timeline>
+
+    <app-color-changer></app-color-changer>
+    &nbsp;
+
+    <button
+      onclick="javascript:changeTheme('dark');"
+      style="color: yellow; background: gray"
+      >Light</button
+    >
+    <button
+      onclick="javascript:changeTheme('light');"
+      style="color: yellow; background: gray"
+      >Dark</button
+    >
+    <script>
+      const setLightTheme = () => {
+        document.getElementsByTagName("html")[0].setAttribute("data-theme", "light");
+      };
+
+      const setDarkTheme = () => {
+        document.getElementsByTagName("html")[0].setAttribute("data-theme", "dark");
+      };
+
+      const changeTheme = (theme) => {
+        if (theme === "dark") {
+          localStorage.setItem("theme", "light");
+          setLightTheme();
+        } else {
+          localStorage.setItem("theme", "dark");
+          setDarkTheme();
+        }
+      };
+    </script>
   </body>
 </html>
