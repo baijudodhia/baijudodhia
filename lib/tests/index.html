@@ -460,39 +460,169 @@
         </section>
 
         <!-- Timeline -->
-        <section
-          id="section-timeline"
-          class="section"
-        >
+        <div id="section-timeline" class="section">
           <app-text
             style="font-variant: small-caps; font-weight: bold"
             text="Timeline"
             size="xl"
           ></app-text>
-          <app-timeline>
-            <div>
-              <app-card
-                appearance="primary"
-                header="2024"
-                body="Current Year"
-              ></app-card>
+
+          <div class="component-demo">
+            <app-text
+              style="font-variant: small-caps"
+              text="Appearance"
+              size="l"
+            ></app-text>
+            <div class="component-group">
+              <app-timeline appearance="primary">
+                <div>Started project planning</div>
+                <div>Completed initial research</div>
+                <div>Launched beta version</div>
+              </app-timeline>
+              <app-timeline appearance="secondary">
+                <div>Started project planning</div>
+                <div>Completed initial research</div>
+                <div>Launched beta version</div>
+              </app-timeline>
+              <app-timeline appearance="tertiary">
+                <div>Started project planning</div>
+                <div>Completed initial research</div>
+                <div>Launched beta version</div>
+              </app-timeline>
             </div>
-            <div>
-              <app-card
-                appearance="secondary"
-                header="2023"
-                body="Previous Year"
-              ></app-card>
+          </div>
+
+          <div class="component-demo">
+            <app-text
+              style="font-variant: small-caps"
+              text="Sizes"
+              size="l"
+            ></app-text>
+            <div class="component-group">
+              <app-timeline size="xs">
+                <div>Started project planning</div>
+                <div>Completed initial research</div>
+                <div>Launched beta version</div>
+              </app-timeline>
+              <app-timeline size="s">
+                <div>Started project planning</div>
+                <div>Completed initial research</div>
+                <div>Launched beta version</div>
+              </app-timeline>
+              <app-timeline size="m">
+                <div>Started project planning</div>
+                <div>Completed initial research</div>
+                <div>Launched beta version</div>
+              </app-timeline>
+              <app-timeline size="l">
+                <div>Started project planning</div>
+                <div>Completed initial research</div>
+                <div>Launched beta version</div>
+              </app-timeline>
+              <app-timeline size="xl">
+                <div>Started project planning</div>
+                <div>Completed initial research</div>
+                <div>Launched beta version</div>
+              </app-timeline>
             </div>
-            <div>
-              <app-card
-                appearance="tertiary"
-                header="2022"
-                body="Two Years Ago"
-              ></app-card>
+          </div>
+
+          <div class="component-demo">
+            <app-text
+              style="font-variant: small-caps"
+              text="Line Types"
+              size="l"
+            ></app-text>
+            <div class="component-group">
+              <app-timeline line-style="solid">
+                <div>Started project planning</div>
+                <div>Completed initial research</div>
+                <div>Launched beta version</div>
+              </app-timeline>
+              <app-timeline line-style="dashed">
+                <div>Started project planning</div>
+                <div>Completed initial research</div>
+                <div>Launched beta version</div>
+              </app-timeline>
+              <app-timeline line-style="dotted">
+                <div>Started project planning</div>
+                <div>Completed initial research</div>
+                <div>Launched beta version</div>
+              </app-timeline>
             </div>
-          </app-timeline>
-        </section>
+          </div>
+
+          <div class="component-demo">
+            <app-text
+              style="font-variant: small-caps"
+              text="Shapes"
+              size="l"
+            ></app-text>
+            <div class="component-group">
+              <app-timeline shape="rounded">
+                <div>Started project planning</div>
+                <div>Completed initial research</div>
+                <div>Launched beta version</div>
+              </app-timeline>
+              <app-timeline shape="curved">
+                <div>Started project planning</div>
+                <div>Completed initial research</div>
+                <div>Launched beta version</div>
+              </app-timeline>
+              <app-timeline shape="rectangle">
+                <div>Started project planning</div>
+                <div>Completed initial research</div>
+                <div>Launched beta version</div>
+              </app-timeline>
+            </div>
+          </div>
+
+          <div class="component-demo">
+            <app-text
+              style="font-variant: small-caps"
+              text="Rich Content"
+              size="l"
+            ></app-text>
+            <div class="component-group">
+              <app-timeline size="m">
+                <div>
+                  <app-card
+                    appearance="primary"
+                    body="<app-text size='m' text='Project Kickoff'></app-text><app-text size='s' text='Initial meeting with stakeholders'></app-text><app-button appearance='primary' size='s' label='View Details'></app-button>"
+                  ></app-card>
+                </div>
+                <div>
+                  <app-card
+                    appearance="secondary"
+                    body="<app-text size='m' text='Design Phase'></app-text><app-text size='s' text='Creating wireframes and mockups'></app-text><app-button appearance='secondary' size='s' label='Review Designs'></app-button>"
+                    ></app-card>
+                  </div>
+                <div>
+                  <app-card
+                    appearance="tertiary"
+                    body="<app-text size='m' text='Development'></app-text><app-text size='s' text='Implementing core features'></app-text><app-button appearance='tertiary' size='s' label='Check Progress'></app-button>"
+                  ></app-card>
+                </div>
+              </app-timeline>
+            </div>
+          </div>
+
+          <div class="component-demo">
+            <app-text
+              style="font-variant: small-caps"
+              text="Single Item"
+              size="l"
+            ></app-text>
+            <div class="component-group">
+              <app-timeline size="m">
+                <div>
+                  <app-text appearance="primary" size="m" text="Current Status"></app-text>
+                  <app-text appearance="secondary" size="s" text="Project is in development phase"></app-text>
+                </div>
+              </app-timeline>
+            </div>
+          </div>
+        </div>
 
         <!-- Utilities -->
         <!-- Color Picker -->

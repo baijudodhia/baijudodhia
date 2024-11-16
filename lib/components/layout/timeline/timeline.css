@@ -1,51 +1,203 @@
 @import url("../../../styles/reset.css");
 @import url("../../../styles/global.css");
 
+/* Base Timeline Styles */
 #timeline {
-  margin-left: 0.5em;
-  padding-left: 1em;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
 }
 
-#timeline.single-child,
-#timeline.single-child > .timeline-item {
-  margin: 0rem !important;
-  padding: 0rem !important;
-  list-style: none !important;
-}
-
+/* Timeline Item Base Styles */
 .timeline-item {
   position: relative;
-  list-style-type: circle;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-}
-
-.timeline-item:first-child {
-  margin-top: 0rem;
+  list-style: none;
+  padding-left: var(--space-xl);
+  margin-bottom: var(--space-s);
+  color: var(--color-bw-text);
 }
 
 .timeline-item:last-child {
-  margin-bottom: 0rem;
+  margin-bottom: 0;
 }
 
+/* Timeline Line and Dot Styles */
+.timeline-item:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: var(--space-m);
+  width: var(--space-s);
+  height: var(--space-s);
+  background-color: currentColor;
+  border: 2px solid var(--color-bw);
+  box-shadow: 0 0 0 2px currentColor;
+  z-index: 2;
+}
+
+/* Timeline Cirle Shapes */
+.timeline-item[data-shape="rounded"]:before {
+  border-radius: 2rem;
+}
+.timeline-item[data-shape="curved"]:before {
+  border-radius: 0.5rem;
+}
+.timeline-item[data-shape="rectangle"]:before {
+  border-radius: 0rem;
+}
+
+/* Connecting Line */
 .timeline-item:after {
   content: "";
   position: absolute;
-  top: 1.5rem;
-  left: -1rem;
-  width: 0px;
-  height: calc(100% - 0.25rem);
-  border-right-width: 2px;
-  border-right-style: dashed;
-  border-right-color: var(--color-bw-text);
+  left: 6px; /* Half of dot size (var(--space-s) = 12px) - half of line width (2px) */
+  top: var(--space-m);
+  height: calc(100% + var(--space-s));
+  width: 2px;
+  background-color: currentColor;
+  opacity: 0.5;
+  z-index: 1;
 }
 
+/* Size Variants */
+#timeline[data-size="xs"] .timeline-item {
+  padding: var(--space-xxs);
+  padding-left: var(--space-xl);
+  font-size: var(--font-size-xs);
+  line-height: var(--font-size-xs);
+}
+
+#timeline[data-size="xs"] .timeline-item:before {
+  width: calc(var(--space-s) * var(--multiplier-xxs));
+  height: calc(var(--space-s) * var(--multiplier-xxs));
+  top: var(--space-xs);
+}
+
+#timeline[data-size="xs"] .timeline-item:after {
+  left: calc(var(--space-xxs));
+  top: var(--space-xs);
+}
+
+#timeline[data-size="s"] .timeline-item {
+  padding: var(--space-xs);
+  padding-left: var(--space-xl);
+  font-size: var(--font-size-s);
+  line-height: var(--font-size-s);
+}
+
+#timeline[data-size="s"] .timeline-item:before {
+  width: calc(var(--space-s) * var(--multiplier-xs));
+  height: calc(var(--space-s) * var(--multiplier-xs));
+  top: var(--space-s);
+}
+
+#timeline[data-size="s"] .timeline-item:after {
+  left: calc(var(--space-s) / 2); /* Half of dot size for s */
+  top: var(--space-s);
+}
+
+#timeline[data-size="m"] .timeline-item {
+  padding: var(--space-s);
+  padding-left: var(--space-xxl);
+  font-size: var(--font-size-m);
+  line-height: var(--font-size-m);
+}
+
+#timeline[data-size="m"] .timeline-item:before {
+  width: calc(var(--space-s) * var(--multiplier-s));
+  height: calc(var(--space-s) * var(--multiplier-s));
+  top: var(--space-m);
+}
+
+#timeline[data-size="m"] .timeline-item:after {
+  left: calc(var(--space-s) / 2); /* Half of dot size for m */
+  top: var(--space-m);
+}
+
+#timeline[data-size="l"] .timeline-item {
+  padding: var(--space-m);
+  padding-left: var(--space-xxl);
+  font-size: var(--font-size-l);
+  line-height: var(--font-size-l);
+}
+
+#timeline[data-size="l"] .timeline-item:before {
+  width: calc(var(--space-s) * var(--multiplier-m));
+  height: calc(var(--space-s) * var(--multiplier-m));
+  top: var(--space-l);
+}
+
+#timeline[data-size="l"] .timeline-item:after {
+  left: calc(var(--space-m) / 2.5); /* Half of dot size for l */
+  top: var(--space-l);
+}
+
+#timeline[data-size="xl"] .timeline-item {
+  padding: var(--space-l);
+  padding-left: var(--space-xxxl);
+  font-size: var(--font-size-xl);
+  line-height: var(--font-size-xl);
+}
+
+#timeline[data-size="xl"] .timeline-item:before {
+  width: calc(var(--space-s) * var(--multiplier-l));
+  height: calc(var(--space-s) * var(--multiplier-l));
+  top: var(--space-xl);
+}
+
+#timeline[data-size="xl"] .timeline-item:after {
+  left: calc(var(--space-m) / 2.25); /* Half of dot size for xl */
+  top: var(--space-xl);
+}
+
+/* Line Style Variants */
+#timeline[data-line-style="solid"] .timeline-item:after {
+  opacity: 0.5;
+}
+
+#timeline[data-line-style="dashed"] .timeline-item:after {
+  background: linear-gradient(to bottom, currentColor 50%, transparent 50%);
+  background-size: 2px 8px;
+  opacity: 0.5;
+}
+
+#timeline[data-line-style="dotted"] .timeline-item:after {
+  background: linear-gradient(to bottom, currentColor 25%, transparent 25%);
+  background-size: 2px 4px;
+  opacity: 0.5;
+}
+
+/* Content Styles */
+.timeline-item-content {
+  position: relative;
+}
+
+/* Single Child State */
+#timeline.single-child .timeline-item:after {
+  display: none;
+}
+
+/* Remove line from last item */
+.timeline-item:only-child {
+  padding: 0px !important;
+}
+.timeline-item:only-child:before {
+  display: none;
+}
 .timeline-item:last-child:after {
   display: none;
 }
 
-.timeline-item-line {
-  position: absolute;
-  top: 0px;
-  height: 0px;
+/* Appearance Styles */
+#timeline[data-appearance="primary"] .timeline-item {
+  color: var(--color-primary);
+}
+
+#timeline[data-appearance="secondary"] .timeline-item {
+  color: var(--color-secondary);
+}
+
+#timeline[data-appearance="tertiary"] .timeline-item {
+  color: var(--color-tertiary);
 }
