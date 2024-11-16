@@ -174,7 +174,7 @@ class WorkExperienceHeaderComponent extends HTMLElement {
         this.render();
       },
       () => {
-        console.log("Initial setup failed!");
+        console.log("Initial setup for app-work-epxerience-header failed!");
       },
     );
   }

@@ -1,5 +1,5 @@
-@import url("../../../styles/reset.css");
-@import url("../../../styles/global.css");
+@import url("../../../../styles/reset.css");
+@import url("../../../../styles/global.css");
 
 .search-engine-menu {
   display: flex;

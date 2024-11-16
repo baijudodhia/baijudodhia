@@ -75,7 +75,7 @@ class SkillComponent extends HTMLElement {
         this.fetchData();
       },
       () => {
-        console.log("Initial setup failed!");
+        console.log("Initial setup for app-skills failed!");
       },
     );
   }
