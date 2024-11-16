@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Component Library</title>
+
+    <link
+      rel="stylesheet"
+      href="../../lib/dist/styles/main.min.css"
+    />
+    <script
+      type="module"
+      src="../../lib/dist/index.min.js"
+    ></script>
+
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: var(--color-bw);
+        padding: 1rem 2rem;
+        border-bottom: 1px solid var(--color-primary);
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 250px;
+        height: calc(100vh - 70px);
+        padding: 2rem;
+        background: var(--color-bw);
+        border-right: 1px solid var(--color-primary);
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .main-content {
+        margin-left: 250px;
+        margin-top: 70px;
+        padding: 2rem;
+      }
+
+      .section {
+        display: none;
+        margin-bottom: 2rem;
+      }
+
+      .section.active {
+        display: block;
+      }
+
+      .section-title {
+        margin-bottom: 2rem;
+        color: var(--color-primary);
+      }
+
+      .component-demo {
+        margin-bottom: 2rem;
+      }
+
+      .component-group {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin: 1rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Component Library</h1>
+      <div
+        class="header-controls"
+        style="display: flex; gap: 1rem; align-items: center"
+      >
+        <app-social-links
+          github
+          linkedin
+        ></app-social-links>
+        <app-theme-changer></app-theme-changer>
+        <app-color-changer></app-color-changer>
+      </div>
+    </header>
+
+    <nav class="sidebar">
+      <app-button
+        label="Buttons"
+        appearance="primary"
+        shape="curved"
+        onclick="showSection('buttons')"
+      ></app-button>
+      <app-button
+        label="Cards"
+        appearance="primary"
+        shape="curved"
+        onclick="showSection('cards')"
+      ></app-button>
+      <app-button
+        label="Timeline"
+        appearance="primary"
+        shape="curved"
+        onclick="showSection('timeline')"
+      ></app-button>
+      <app-button
+        label="Navigation"
+        appearance="primary"
+        shape="curved"
+        onclick="showSection('navigation')"
+      ></app-button>
+    </nav>
+
+    <main class="main-content">
+      <section
+        id="buttons"
+        class="section active"
+      >
+        <h2 class="section-title">Buttons</h2>
+
+        <div class="component-demo">
+          <h3>Appearances</h3>
+          <div class="component-group">
+            <app-button
+              label="Primary"
+              appearance="primary"
+            ></app-button>
+            <app-button
+              label="Secondary"
+              appearance="secondary"
+            ></app-button>
+            <app-button
+              label="Tertiary"
+              appearance="tertiary"
+            ></app-button>
+            <app-button
+              label="Outlined"
+              appearance="outlined"
+            ></app-button>
+            <app-button
+              label="Mono"
+              appearance="mono"
+            ></app-button>
+            <app-button
+              label="Link"
+              appearance="link"
+            ></app-button>
+          </div>
+        </div>
+
+        <div class="component-demo">
+          <h3>Sizes</h3>
+          <div class="component-group">
+            <app-button
+              label="Extra Small"
+              appearance="primary"
+              size="xs"
+            ></app-button>
+            <app-button
+              label="Small"
+              appearance="primary"
+              size="s"
+            ></app-button>
+            <app-button
+              label="Medium"
+              appearance="primary"
+              size="m"
+            ></app-button>
+            <app-button
+              label="Large"
+              appearance="primary"
+              size="l"
+            ></app-button>
+            <app-button
+              label="Extra Large"
+              appearance="primary"
+              size="xl"
+            ></app-button>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="cards"
+        class="section"
+      >
+        <h2 class="section-title">Cards</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem">
+          <app-card
+            appearance="primary"
+            header="Primary Card"
+            body="This is a primary card component with header and footer sections"
+            footer="Card Footer"
+          ></app-card>
+
+          <app-card
+            appearance="secondary"
+            header="Secondary Card"
+            body="This is a secondary card component with header and footer sections"
+            footer="Card Footer"
+          ></app-card>
+
+          <app-card
+            appearance="tertiary"
+            header="Tertiary Card"
+            body="This is a tertiary card component with header and footer sections"
+            footer="Card Footer"
+          ></app-card>
+        </div>
+      </section>
+
+      <section
+        id="timeline"
+        class="section"
+      >
+        <h2 class="section-title">Timeline</h2>
+        <app-timeline>
+          <div>
+            <app-card
+              appearance="primary"
+              header="2024"
+              body="Current Year"
+            ></app-card>
+          </div>
+          <div>
+            <app-card
+              appearance="secondary"
+              header="2023"
+              body="Previous Year"
+            ></app-card>
+          </div>
+          <div>
+            <app-card
+              appearance="tertiary"
+              header="2022"
+              body="Two Years Ago"
+            ></app-card>
+          </div>
+        </app-timeline>
+      </section>
+
+      <section
+        id="navigation"
+        class="section"
+      >
+        <h2 class="section-title">Navigation Components</h2>
+        <div class="component-group">
+          <app-theme-changer></app-theme-changer>
+          <app-language-changer></app-language-changer>
+          <app-search-engine></app-search-engine>
+          <app-color-changer></app-color-changer>
+          <app-social-links
+            github
+            linkedin
+            blog
+            portfolio
+          ></app-social-links>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      function showSection(sectionId) {
+        document.querySelectorAll(".section").forEach((section) => {
+          section.classList.remove("active");
+        });
+        document.getElementById(sectionId).classList.add("active");
+      }
+    </script>
+  </body>
+</html>
