@@ -97,18 +97,18 @@
           // Iterate through each category
           for (const category in data) {
             // Create a section for each category
-            const categoryTitle = `<app-label style='font-variant: small-caps; font-weight: bold' size='xl' label='${category.charAt(0).toUpperCase() + category.slice(1)}'></app-label>`;
+            const categoryTitle = `<app-text style='font-variant: small-caps; font-weight: bold' size='xl' text='${category.charAt(0).toUpperCase() + category.slice(1)}'></app-text>`;
             sidebar.insertAdjacentHTML("beforeend", categoryTitle);
 
             // Iterate through each component in the category
             data[category].forEach((item) => {
               const label = `
-                <app-label
-                  label="${item.label}"
+                <app-text
+                  text="${item.label}"
                   appearance="link"
                   size='m'
                   onclick="showSection('section-${item.component}')"
-                ></app-label>
+                ></app-text>
               `;
               sidebar.insertAdjacentHTML("beforeend", label);
             });
@@ -130,11 +130,11 @@
   <body>
     <div class="body">
       <header class="header">
-        <app-label
-          label="Component Library"
+        <app-text
+          text="Component Library"
           size="xxl"
           style="font-variant: small-caps; font-weight: bold"
-        ></app-label>
+        ></app-text>
       </header>
 
       <nav
@@ -151,18 +151,18 @@
           id="section-button"
           class="section active"
         >
-          <app-label
-            label="Buttons"
+          <app-text
+            text="Buttons"
             size="xl"
             style="font-variant: small-caps; font-weight: bold"
-          ></app-label>
+          ></app-text>
           <div class="component-demo">
-            <app-label
+            <app-text
               style="font-variant: small-caps"
-              label="Appearances"
+              text="Appearances"
               size="l"
               style="font-variant: small-caps"
-            ></app-label>
+            ></app-text>
             <div class="component-group">
               <app-button
                 label="Primary"
@@ -192,12 +192,12 @@
           </div>
 
           <div class="component-demo">
-            <app-label
+            <app-text
               style="font-variant: small-caps"
-              label="Sizes"
+              text="Sizes"
               size="l"
               style="font-variant: small-caps"
-            ></app-label>
+            ></app-text>
             <div class="component-group">
               <app-button
                 label="Extra Large"
@@ -228,12 +228,12 @@
           </div>
 
           <div class="component-demo">
-            <app-label
+            <app-text
               style="font-variant: small-caps"
-              label="Icons"
+              text="Icons"
               size="l"
               style="font-variant: small-caps"
-            ></app-label>
+            ></app-text>
             <div class="component-group">
               <app-button
                 label="Left Icon"
@@ -252,19 +252,19 @@
                 icon-right="fas fa-arrow-right"
               ></app-button>
               <app-button
-                appearance="primary"
+                label="primary"
                 icon-left="fas fa-heart"
               ></app-button>
             </div>
           </div>
 
           <div class="component-demo">
-            <app-label
+            <app-text
               style="font-variant: small-caps"
-              label="Shapes"
+              text="Shapes"
               size="l"
               style="font-variant: small-caps"
-            ></app-label>
+            ></app-text>
             <div class="component-group">
               <app-button
                 label="Rounded"
@@ -293,75 +293,75 @@
           id="section-label"
           class="section"
         >
-          <app-label
+          <app-text
             style="font-variant: small-caps; font-weight: bold"
-            label="Label"
+            text="Label"
             size="xl"
-          ></app-label>
+          ></app-text>
           <div class="component-demo">
-            <app-label
+            <app-text
               style="font-variant: small-caps"
-              label="Appearances"
+              text="Appearances"
               size="l"
-            ></app-label>
+            ></app-text>
             <div class="component-group">
-              <app-label label="No Appearance"></app-label>
-              <app-label
-                label="Primary"
+              <app-text text="No Appearance"></app-text>
+              <app-text
+                text="Primary"
                 appearance="primary"
-              ></app-label>
-              <app-label
-                label="Secondary"
+              ></app-text>
+              <app-text
+                text="Secondary"
                 appearance="secondary"
-              ></app-label>
-              <app-label
-                label="Tertiary"
+              ></app-text>
+              <app-text
+                text="Tertiary"
                 appearance="tertiary"
-              ></app-label>
-              <app-label
-                label="Link"
+              ></app-text>
+              <app-text
+                text="Link"
                 appearance="link"
-              ></app-label>
+              ></app-text>
             </div>
           </div>
 
           <div class="component-demo">
-            <app-label
+            <app-text
               style="font-variant: small-caps"
-              label="Sizes"
+              text="Sizes"
               size="l"
-            ></app-label>
+            ></app-text>
             <div class="component-group">
-              <app-label
-                label="Extra Large"
+              <app-text
+                text="Extra Large"
                 icon-left="fas fa-bars"
                 icon-right="fas fa-arrow-right"
                 size="xl"
-              ></app-label>
-              <app-label
-                label="Large"
+              ></app-text>
+              <app-text
+                text="Large"
                 icon-left="fas fa-bars"
                 icon-right="fas fa-arrow-right"
                 size="l"
-              ></app-label>
-              <app-label
-                label="Medium"
+              ></app-text>
+              <app-text
+                text="Medium"
                 icon-left="fas fa-bars"
                 icon-right="fas fa-arrow-right"
                 size="m"
-              ></app-label>
-              <app-label
-                label="Small"
+              ></app-text>
+              <app-text
+                text="Small"
                 icon-left="fas fa-bars"
                 icon-right="fas fa-arrow-right"
                 size="s"
-              ></app-label>
-              <app-label
-                label="Extra Small"
+              ></app-text>
+              <app-text
+                text="Extra Small"
                 icon-left="fas fa-bars"
                 icon-right="fas fa-arrow-right"
                 size="xs"
-              ></app-label>
+              ></app-text>
             </div>
           </div>
         </section>
@@ -371,11 +371,11 @@
           id="section-link"
           class="section"
         >
-          <app-label
+          <app-text
             style="font-variant: small-caps; font-weight: bold"
-            label="Links"
+            text="Links"
             size="xl"
-          ></app-label>
+          ></app-text>
         </section>
 
         <!-- Select -->
@@ -383,11 +383,11 @@
           id="section-select"
           class="section"
         >
-          <app-label
+          <app-text
             style="font-variant: small-caps; font-weight: bold"
-            label="Select"
+            text="Select"
             size="xl"
-          ></app-label>
+          ></app-text>
         </section>
 
         <!-- Custom -->
@@ -396,11 +396,11 @@
           id="section-social-links"
           class="section"
         >
-          <app-label
+          <app-text
             style="font-variant: small-caps; font-weight: bold"
-            label="Social Links"
+            text="Social Links"
             size="xl"
-          ></app-label>
+          ></app-text>
         </section>
 
         <!-- Layout -->
@@ -409,11 +409,11 @@
           id="section-card"
           class="section"
         >
-          <app-label
+          <app-text
             style="font-variant: small-caps; font-weight: bold"
-            label="Cards"
+            text="Cards"
             size="xl"
-          ></app-label>
+          ></app-text>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem">
             <app-card
               appearance="primary"
@@ -443,11 +443,11 @@
           id="section-timeline"
           class="section"
         >
-          <app-label
+          <app-text
             style="font-variant: small-caps; font-weight: bold"
-            label="Timeline"
+            text="Timeline"
             size="xl"
-          ></app-label>
+          ></app-text>
           <app-timeline>
             <div>
               <app-card
@@ -479,11 +479,11 @@
           id="section-color-picker"
           class="section"
         >
-          <app-label
+          <app-text
             style="font-variant: small-caps; font-weight: bold"
-            label="Color Picker"
+            text="Color Picker"
             size="xl"
-          ></app-label>
+          ></app-text>
         </section>
 
         <!-- PWA Installer -->
@@ -491,11 +491,11 @@
           id="section-pwa-installer"
           class="section"
         >
-          <app-label
+          <app-text
             style="font-variant: small-caps; font-weight: bold"
-            label="PWA Installer"
+            text="PWA Installer"
             size="xl"
-          ></app-label>
+          ></app-text>
         </section>
 
         <!-- Theme Switcher -->
@@ -503,11 +503,11 @@
           id="section-theme-switcher"
           class="section"
         >
-          <app-label
+          <app-text
             style="font-variant: small-caps; font-weight: bold"
-            label="Theme Switcher"
+            text="Theme Switcher"
             size="xl"
-          ></app-label>
+          ></app-text>
         </section>
       </main>
     </div>

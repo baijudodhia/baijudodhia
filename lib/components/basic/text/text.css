@@ -1,34 +1,34 @@
 @import url("../../../styles/reset.css");
 @import url("../../../styles/global.css");
 
-#label {
+#text {
   display: flex;
   flex-direction: row;
   align-items: center;
   color: var(--color-bw-text);
 }
 
-#label > *:not(:last-child) {
+#text > *:not(:last-child) {
   margin-right: 0.5rem;
 }
 
-/* Primary Label Styles */
-#label[data-appearance="primary"] {
+/* Primary Text Styles */
+#text[data-appearance="primary"] {
   color: var(--color-primary);
 }
 
-/* Secondary Label Styles */
-#label[data-appearance="secondary"] {
+/* Secondary Text Styles */
+#text[data-appearance="secondary"] {
   color: var(--color-secondary);
 }
 
-/* Tertiary Label Styles */
-#label[data-appearance="tertiary"] {
+/* Tertiary Text Styles */
+#text[data-appearance="tertiary"] {
   color: var(--color-tertiary);
 }
 
-/* Link Label Styles */
-#label[data-appearance="link"] {
+/* Link Text Styles */
+#text[data-appearance="link"] {
   color: var(--color-primary);
   padding: 0rem !important;
   cursor: pointer;
@@ -38,55 +38,55 @@
   text-decoration-color: var(--color-primary);
 }
 
-#label[data-appearance="link"]:not([disabled]):hover {
+#text[data-appearance="link"]:not([disabled]):hover {
   color: var(--color-primary-hover);
   text-decoration-style: solid;
   text-decoration-color: var(--color-primary-hover);
 }
 
-#label[data-appearance="link"]:not([disabled]):active {
+#text[data-appearance="link"]:not([disabled]):active {
   color: var(--color-primary-active);
   text-decoration-style: dashed;
   text-decoration-color: var(--color-primary-active);
 }
 
-/* Label Sizes */
-#label[data-size="xs"] {
+/* Text Sizes */
+#text[data-size="xs"] {
   padding: var(--space-xxs) 0px;
   font-size: var(--font-size-xs);
   line-height: var(--font-size-xs);
   height: calc((2 * var(--space-xxs)) + var(--font-size-xs));
 }
 
-#label[data-size="s"] {
+#text[data-size="s"] {
   padding: var(--space-xs) 0px;
   font-size: var(--font-size-s);
   line-height: var(--font-size-s);
   height: calc((2 * var(--space-xs)) + var(--font-size-s));
 }
 
-#label[data-size="m"] {
+#text[data-size="m"] {
   padding: var(--space-s) 0px;
   font-size: var(--font-size-m);
   line-height: var(--font-size-m);
   height: calc((2 * var(--space-s)) + var(--font-size-m));
 }
 
-#label[data-size="l"] {
+#text[data-size="l"] {
   padding: var(--space-m) 0px;
   font-size: var(--font-size-l);
   line-height: var(--font-size-l);
   height: calc((2 * var(--space-m)) + var(--font-size-l));
 }
 
-#label[data-size="xl"] {
+#text[data-size="xl"] {
   padding: var(--space-l) 0px;
   font-size: var(--font-size-xl);
   line-height: var(--font-size-xl);
   height: calc((2 * var(--space-l)) + var(--font-size-xxl));
 }
 
-#label[data-size="xxl"] {
+#text[data-size="xxl"] {
   padding: var(--space-xl) 0px;
   font-size: var(--font-size-xxl);
   line-height: var(--font-size-xxl);

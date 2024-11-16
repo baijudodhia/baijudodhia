@@ -5,8 +5,8 @@
       "label": "Button"
     },
     {
-      "component": "label",
-      "label": "Label"
+      "component": "text",
+      "label": "Text"
     },
     {
       "component": "link",
