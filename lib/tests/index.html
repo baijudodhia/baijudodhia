@@ -34,7 +34,7 @@
     <style>
       .body {
         display: grid;
-        grid-template-columns: minmax(160px, 200px) 2.7fr;
+        grid-template-columns: minmax(0, auto) 1fr;
         grid-template-rows: max-content 1fr;
         gap: 0px 0px;
         grid-template-areas:
@@ -43,17 +43,32 @@
         width: 100vw;
         height: 100vh;
       }
+
       .header {
         grid-area: header;
         padding: 0px 1rem;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
       }
+
       .sidebar {
         grid-area: sidebar;
-        padding: 1rem;
+        padding: 1rem 2rem;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         overflow: auto;
+        width: minmax(160px, 200px);
+        transition: width 0.3s ease, padding 0.3s ease;
       }
+
+      .sidebar.hidden {
+        width: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
       .main-content {
         grid-area: main-content;
         padding: 1rem 2rem;
@@ -130,6 +145,13 @@
   <body>
     <div class="body">
       <header class="header">
+        <app-button
+          id="menu-toggle-btn"
+          icon-left="fas fa-bars"
+          appearance="outline"
+          shape="rounded"
+          onclick="javascript:document.querySelector('#sidebar').classList.toggle('hidden');"
+        ></app-button>
         <app-text
           text="Component Library"
           size="xxl"
@@ -312,7 +334,7 @@
                 shape="rounded"
                 tooltip-html="<div style='padding: 1rem;'><app-text text='Portfolio' style='color: var(--color-bw)' appearance='link' href='https://baijudodhia.github.io/' variant='link' style='cursor: pointer;'></app-text><app-text text='Blog' style='color: var(--color-bw)' appearance='link' href='https://baijudodhia.blogspot.com/' variant='link' style='cursor: pointer;'></app-text></div>"
                 tooltip-trigger="focusin"
-            ></app-button>
+              ></app-button>
             </div>
         </section>
 
