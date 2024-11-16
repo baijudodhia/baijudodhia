@@ -16,7 +16,7 @@ class BlogComponent extends HTMLElement {
             type="link"
             size="m"
             href="https://baijudodhia.github.io/blog?utm_source=baijudodhia.github.io&utm_medium=blog_section_view_all_btn"
-            icon-right="fa fa-external-link-square-alt"
+            icon-right="fas fa-external-link-square-alt"
           ></app-button>
         </div>
         <div id="blogs-container"> </div>

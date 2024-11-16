@@ -68,7 +68,7 @@ class CertificateComponent extends HTMLElement {
             type="link"
             size="s"
             href=""
-            icon-right="fa fa-external-link-square-alt"
+            icon-right="fas fa-external-link-square-alt"
           ></app-button>
         </div>
       </template>
