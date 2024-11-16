@@ -9,10 +9,6 @@
       "label": "Text"
     },
     {
-      "component": "link",
-      "label": "Link"
-    },
-    {
       "component": "select",
       "label": "Select"
     }
