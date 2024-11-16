@@ -9,12 +9,6 @@
       "label": "Text"
     }
   ],
-  "custom": [
-    {
-      "component": "social-links",
-      "label": "Social Links"
-    }
-  ],
   "layout": [
     {
       "component": "card",
@@ -37,6 +31,12 @@
     {
       "component": "theme-switcher",
       "label": "Theme Switcher"
+    }
+  ],
+  "custom": [
+    {
+      "component": "social-links",
+      "label": "Social Links"
     }
   ]
 }
