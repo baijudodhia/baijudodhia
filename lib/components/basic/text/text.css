@@ -8,6 +8,10 @@
   color: var(--color-bw-text);
 }
 
+#text-text {
+  width: 100%;
+}
+
 #text > *:not(:last-child) {
   margin-right: 0.5rem;
 }
