@@ -158,9 +158,15 @@
         id="section-button"
         class="section active"
       >
-        <h2 class="section-title">Buttons</h2>
+        <app-label
+          label="Buttons"
+          size="xl"
+        ></app-label>
         <div class="component-demo">
-          <h3>Appearances</h3>
+          <app-label
+            label="Appearances"
+            size="l"
+          ></app-label>
           <div class="component-group">
             <app-button
               label="Primary"
@@ -190,7 +196,10 @@
         </div>
 
         <div class="component-demo">
-          <h3>Sizes</h3>
+          <app-label
+            label="Sizes"
+            size="l"
+          ></app-label>
           <div class="component-group">
             <app-button
               label="Extra Small"
@@ -219,6 +228,32 @@
             ></app-button>
           </div>
         </div>
+
+        <div class="component-demo">
+          <app-label
+            label="Icons"
+            size="l"
+          ></app-label>
+          <div class="component-group">
+            <app-button
+              label="Left Icon"
+              appearance="primary"
+              icon-left="fas fa-heart"
+            ></app-button>
+            <app-button
+              label="Right Icon"
+              appearance="primary"
+              icon-right="fas fa-arrow-right"
+            ></app-button>
+            <app-button
+              label="Both Icon"
+              appearance="primary"
+              size="xl"
+              icon-left="fas fa-heart"
+              icon-right="fas fa-arrow-right"
+            ></app-button>
+          </div>
+        </div>
       </section>
 
       <!-- Label -->
@@ -227,6 +262,41 @@
         class="section"
       >
         <h2 class="section-title">Label</h2>
+        <div class="component-demo">
+          <h3>Sizes</h3>
+          <div class="component-group">
+            <app-label
+              label="Extra Small"
+              icon-left="fas fa-bars"
+              icon-right="fas fa-arrow-right"
+              size="xs"
+            ></app-label>
+            <app-label
+              label="Small"
+              icon-left="fas fa-bars"
+              icon-right="fas fa-arrow-right"
+              size="s"
+            ></app-label>
+            <app-label
+              label="Medium"
+              icon-left="fas fa-bars"
+              icon-right="fas fa-arrow-right"
+              size="m"
+            ></app-label>
+            <app-label
+              label="Large"
+              icon-left="fas fa-bars"
+              icon-right="fas fa-arrow-right"
+              size="l"
+            ></app-label>
+            <app-label
+              label="Extra Large"
+              icon-left="fas fa-bars"
+              icon-right="fas fa-arrow-right"
+              size="xl"
+            ></app-label>
+          </div>
+        </div>
       </section>
 
       <!-- Link -->

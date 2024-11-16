@@ -1,24 +1,48 @@
 @import url("../../../styles/reset.css");
 @import url("../../../styles/global.css");
 
-.label {
-  display: inline-block;
-  width: fit-content;
-}
-.lwi {
+#label {
   display: flex;
   flex-direction: row;
-  align-content: center;
-  justify-content: flex-start;
   align-items: center;
-  column-gap: 10px;
 }
-.lwi > * {
-  color: var(--color-bw_secondary_invert);
-  font-weight: var(--font-weight);
+
+#label > *:not(:last-child) {
+  margin-right: 0.5rem;
 }
-.lwi-icon {
-  color: var(--color-bw_secondary_invert);
-  width: 20px;
-  text-align: center;
+
+/* Label Sizes */
+#label[data-size="xs"] {
+  padding: var(--space-xxs) 0px;
+  font-size: var(--font-size-xs);
+  line-height: var(--font-size-xs);
+  height: calc((2 * var(--space-xxs)) + var(--font-size-xs));
+}
+
+#label[data-size="s"] {
+  padding: var(--space-xs) 0px;
+  font-size: var(--font-size-s);
+  line-height: var(--font-size-s);
+  height: calc((2 * var(--space-xs)) + var(--font-size-s));
+}
+
+#label[data-size="m"] {
+  padding: var(--space-s) 0px;
+  font-size: var(--font-size-m);
+  line-height: var(--font-size-m);
+  height: calc((2 * var(--space-s)) + var(--font-size-m));
+}
+
+#label[data-size="l"] {
+  padding: var(--space-m) 0px;
+  font-size: var(--font-size-l);
+  line-height: var(--font-size-l);
+  height: calc((2 * var(--space-m)) + var(--font-size-l));
+}
+
+#label[data-size="xl"] {
+  padding: var(--space-l) 0px;
+  font-size: var(--font-size-xl);
+  line-height: var(--font-size-xl);
+  height: calc((2 * var(--space-l)) + var(--font-size-xxl));
 }
