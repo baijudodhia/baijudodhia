@@ -58,6 +58,7 @@
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+        overflow-y: auto;
       }
 
       .main-content {
@@ -91,6 +92,47 @@
         margin: 1rem 0;
       }
     </style>
+
+    <script>
+      // Function to load dynamic sidebar from JSON
+      (async () => {
+        try {
+          const res = await fetch("./list.json");
+          const data = await res.json();
+          const sidebar = document.querySelector("#sidebar");
+
+          // Iterate through each category
+          for (const category in data) {
+            // Create a section for each category
+            const categoryTitle = `<h3>${category.charAt(0).toUpperCase() + category.slice(1)}</h3>`;
+            sidebar.insertAdjacentHTML("beforeend", categoryTitle);
+
+            // Iterate through each component in the category
+            data[category].forEach((item) => {
+              const button = `
+                <app-button
+                  label="${item.label}"
+                  appearance="link"
+                  shape="curved"
+                  onclick="showSection('section-${item.component}')"
+                ></app-button>
+              `;
+              sidebar.insertAdjacentHTML("beforeend", button);
+            });
+          }
+        } catch (error) {
+          console.error("Error loading JSON:", error);
+        }
+      })();
+
+      // Function to show a section based on its ID
+      function showSection(sectionId) {
+        document.querySelectorAll(".section").forEach((section) => {
+          section.classList.remove("active");
+        });
+        document.getElementById(sectionId).classList.add("active");
+      }
+    </script>
   </head>
   <body>
     <header class="header">
@@ -99,49 +141,24 @@
         class="header-controls"
         style="display: flex; gap: 1rem; align-items: center"
       >
-        <app-social-links
-          github
-          linkedin
-        ></app-social-links>
-        <app-theme-changer></app-theme-changer>
-        <app-color-changer></app-color-changer>
       </div>
     </header>
 
-    <nav class="sidebar">
-      <app-button
-        label="Buttons"
-        appearance="primary"
-        shape="curved"
-        onclick="showSection('buttons')"
-      ></app-button>
-      <app-button
-        label="Cards"
-        appearance="primary"
-        shape="curved"
-        onclick="showSection('cards')"
-      ></app-button>
-      <app-button
-        label="Timeline"
-        appearance="primary"
-        shape="curved"
-        onclick="showSection('timeline')"
-      ></app-button>
-      <app-button
-        label="Navigation"
-        appearance="primary"
-        shape="curved"
-        onclick="showSection('navigation')"
-      ></app-button>
+    <nav
+      id="sidebar"
+      class="sidebar"
+    >
+      <!-- Dynamic content will be appended here -->
     </nav>
 
     <main class="main-content">
+      <!-- Basic -->
+      <!-- Button -->
       <section
-        id="buttons"
+        id="section-button"
         class="section active"
       >
         <h2 class="section-title">Buttons</h2>
-
         <div class="component-demo">
           <h3>Appearances</h3>
           <div class="component-group">
@@ -204,8 +221,43 @@
         </div>
       </section>
 
+      <!-- Label -->
       <section
-        id="cards"
+        id="section-label"
+        class="section"
+      >
+        <h2 class="section-title">Label</h2>
+      </section>
+
+      <!-- Link -->
+      <section
+        id="section-link"
+        class="section"
+      >
+        <h2 class="section-title">Link</h2>
+      </section>
+
+      <!-- Select -->
+      <section
+        id="section-select"
+        class="section"
+      >
+        <h2 class="section-title">Select</h2>
+      </section>
+
+      <!-- Custom -->
+      <!-- Social Links -->
+      <section
+        id="section-social-links"
+        class="section"
+      >
+        <h2 class="section-title">Social Links</h2>
+      </section>
+
+      <!-- Layout -->
+      <!-- Card -->
+      <section
+        id="section-card"
         class="section"
       >
         <h2 class="section-title">Cards</h2>
@@ -233,8 +285,9 @@
         </div>
       </section>
 
+      <!-- Timeline -->
       <section
-        id="timeline"
+        id="section-timeline"
         class="section"
       >
         <h2 class="section-title">Timeline</h2>
@@ -263,33 +316,30 @@
         </app-timeline>
       </section>
 
+      <!-- Utilities -->
+      <!-- Color Picker -->
       <section
-        id="navigation"
+        id="section-color-picker"
         class="section"
       >
-        <h2 class="section-title">Navigation Components</h2>
-        <div class="component-group">
-          <app-theme-changer></app-theme-changer>
-          <app-language-changer></app-language-changer>
-          <app-search-engine></app-search-engine>
-          <app-color-changer></app-color-changer>
-          <app-social-links
-            github
-            linkedin
-            blog
-            portfolio
-          ></app-social-links>
-        </div>
+        <h2 class="section-title">Color Picker</h2>
+      </section>
+
+      <!-- PWA Installer -->
+      <section
+        id="section-pwa-installer"
+        class="section"
+      >
+        <h2 class="section-title">PWA Installer</h2>
+      </section>
+
+      <!-- Theme Switcher -->
+      <section
+        id="section-theme-switcher"
+        class="section"
+      >
+        <h2 class="section-title">Theme Switcher</h2>
       </section>
     </main>
-
-    <script>
-      function showSection(sectionId) {
-        document.querySelectorAll(".section").forEach((section) => {
-          section.classList.remove("active");
-        });
-        document.getElementById(sectionId).classList.add("active");
-      }
-    </script>
   </body>
 </html>

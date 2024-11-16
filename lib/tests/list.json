@@ -1,0 +1,50 @@
+{
+  "basic": [
+    {
+      "component": "button",
+      "label": "Button"
+    },
+    {
+      "component": "label",
+      "label": "Label"
+    },
+    {
+      "component": "link",
+      "label": "Link"
+    },
+    {
+      "component": "select",
+      "label": "Select"
+    }
+  ],
+  "custom": [
+    {
+      "component": "social-links",
+      "label": "Social Links"
+    }
+  ],
+  "layout": [
+    {
+      "component": "card",
+      "label": "Card"
+    },
+    {
+      "component": "timeline",
+      "label": "Timeline"
+    }
+  ],
+  "utilities": [
+    {
+      "component": "color-picker",
+      "label": "Color Picker"
+    },
+    {
+      "component": "pwa-installer",
+      "label": "PWA Installer"
+    },
+    {
+      "component": "theme-switcher",
+      "label": "Theme Switcher"
+    }
+  ]
+}
