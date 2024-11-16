@@ -32,39 +32,32 @@
     />
 
     <style>
+      .body {
+        display: grid;
+        grid-template-columns: minmax(160px, 200px) 2.7fr;
+        grid-template-rows: max-content 1fr;
+        gap: 0px 0px;
+        grid-template-areas:
+          "header header"
+          "sidebar main-content";
+        width: 100vw;
+        height: 100vh;
+      }
       .header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background: var(--color-bw);
-        padding: 1rem 2rem;
-        border-bottom: 1px solid var(--color-primary);
-        z-index: 100;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        grid-area: header;
+        padding: 0px 1rem;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       }
-
       .sidebar {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        width: 250px;
-        height: calc(100vh - 70px);
-        padding: 2rem;
-        background: var(--color-bw);
-        border-right: 1px solid var(--color-primary);
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        overflow-y: auto;
+        grid-area: sidebar;
+        padding: 1rem;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        overflow: auto;
       }
-
       .main-content {
-        margin-left: 250px;
-        margin-top: 70px;
-        padding: 2rem;
+        grid-area: main-content;
+        padding: 1rem 2rem;
+        overflow: auto;
       }
 
       .section {
@@ -104,20 +97,20 @@
           // Iterate through each category
           for (const category in data) {
             // Create a section for each category
-            const categoryTitle = `<h3>${category.charAt(0).toUpperCase() + category.slice(1)}</h3>`;
+            const categoryTitle = `<app-label style='font-variant: small-caps; font-weight: bold' size='xl' label='${category.charAt(0).toUpperCase() + category.slice(1)}'></app-label>`;
             sidebar.insertAdjacentHTML("beforeend", categoryTitle);
 
             // Iterate through each component in the category
             data[category].forEach((item) => {
-              const button = `
-                <app-button
+              const label = `
+                <app-label
                   label="${item.label}"
                   appearance="link"
-                  shape="curved"
+                  size='m'
                   onclick="showSection('section-${item.component}')"
-                ></app-button>
+                ></app-label>
               `;
-              sidebar.insertAdjacentHTML("beforeend", button);
+              sidebar.insertAdjacentHTML("beforeend", label);
             });
           }
         } catch (error) {
@@ -135,281 +128,388 @@
     </script>
   </head>
   <body>
-    <header class="header">
-      <h1>Component Library</h1>
-      <div
-        class="header-controls"
-        style="display: flex; gap: 1rem; align-items: center"
-      >
-      </div>
-    </header>
-
-    <nav
-      id="sidebar"
-      class="sidebar"
-    >
-      <!-- Dynamic content will be appended here -->
-    </nav>
-
-    <main class="main-content">
-      <!-- Basic -->
-      <!-- Button -->
-      <section
-        id="section-button"
-        class="section active"
-      >
+    <div class="body">
+      <header class="header">
         <app-label
-          label="Buttons"
-          size="xl"
+          label="Component Library"
+          size="xxl"
+          style="font-variant: small-caps; font-weight: bold"
         ></app-label>
-        <div class="component-demo">
-          <app-label
-            label="Appearances"
-            size="l"
-          ></app-label>
-          <div class="component-group">
-            <app-button
-              label="Primary"
-              appearance="primary"
-            ></app-button>
-            <app-button
-              label="Secondary"
-              appearance="secondary"
-            ></app-button>
-            <app-button
-              label="Tertiary"
-              appearance="tertiary"
-            ></app-button>
-            <app-button
-              label="Outlined"
-              appearance="outlined"
-            ></app-button>
-            <app-button
-              label="Mono"
-              appearance="mono"
-            ></app-button>
-            <app-button
-              label="Link"
-              appearance="link"
-            ></app-button>
-          </div>
-        </div>
+      </header>
 
-        <div class="component-demo">
+      <nav
+        id="sidebar"
+        class="sidebar"
+      >
+        <!-- Dynamic content will be appended here -->
+      </nav>
+
+      <main class="main-content">
+        <!-- Basic -->
+        <!-- Button -->
+        <section
+          id="section-button"
+          class="section active"
+        >
           <app-label
-            label="Sizes"
-            size="l"
+            label="Buttons"
+            size="xl"
+            style="font-variant: small-caps; font-weight: bold"
           ></app-label>
-          <div class="component-group">
-            <app-button
-              label="Extra Small"
-              appearance="primary"
-              size="xs"
-            ></app-button>
-            <app-button
-              label="Small"
-              appearance="primary"
-              size="s"
-            ></app-button>
-            <app-button
-              label="Medium"
-              appearance="primary"
-              size="m"
-            ></app-button>
-            <app-button
-              label="Large"
-              appearance="primary"
+          <div class="component-demo">
+            <app-label
+              style="font-variant: small-caps"
+              label="Appearances"
               size="l"
-            ></app-button>
-            <app-button
-              label="Extra Large"
-              appearance="primary"
-              size="xl"
-            ></app-button>
+              style="font-variant: small-caps"
+            ></app-label>
+            <div class="component-group">
+              <app-button
+                label="Primary"
+                appearance="primary"
+              ></app-button>
+              <app-button
+                label="Secondary"
+                appearance="secondary"
+              ></app-button>
+              <app-button
+                label="Tertiary"
+                appearance="tertiary"
+              ></app-button>
+              <app-button
+                label="Outlined"
+                appearance="outlined"
+              ></app-button>
+              <app-button
+                label="Mono"
+                appearance="mono"
+              ></app-button>
+              <app-button
+                label="Link"
+                appearance="link"
+              ></app-button>
+            </div>
           </div>
-        </div>
 
-        <div class="component-demo">
+          <div class="component-demo">
+            <app-label
+              style="font-variant: small-caps"
+              label="Sizes"
+              size="l"
+              style="font-variant: small-caps"
+            ></app-label>
+            <div class="component-group">
+              <app-button
+                label="Extra Large"
+                appearance="primary"
+                size="xl"
+              ></app-button>
+              <app-button
+                label="Large"
+                appearance="primary"
+                size="l"
+              ></app-button>
+              <app-button
+                label="Medium"
+                appearance="primary"
+                size="m"
+              ></app-button>
+              <app-button
+                label="Small"
+                appearance="primary"
+                size="s"
+              ></app-button>
+              <app-button
+                label="Extra Small"
+                appearance="primary"
+                size="xs"
+              ></app-button>
+            </div>
+          </div>
+
+          <div class="component-demo">
+            <app-label
+              style="font-variant: small-caps"
+              label="Icons"
+              size="l"
+              style="font-variant: small-caps"
+            ></app-label>
+            <div class="component-group">
+              <app-button
+                label="Left Icon"
+                appearance="primary"
+                icon-left="fas fa-heart"
+              ></app-button>
+              <app-button
+                label="Right Icon"
+                appearance="primary"
+                icon-right="fas fa-arrow-right"
+              ></app-button>
+              <app-button
+                label="Both Icon"
+                appearance="primary"
+                icon-left="fas fa-heart"
+                icon-right="fas fa-arrow-right"
+              ></app-button>
+              <app-button
+                appearance="primary"
+                icon-left="fas fa-heart"
+              ></app-button>
+            </div>
+          </div>
+
+          <div class="component-demo">
+            <app-label
+              style="font-variant: small-caps"
+              label="Shapes"
+              size="l"
+              style="font-variant: small-caps"
+            ></app-label>
+            <div class="component-group">
+              <app-button
+                label="Rounded"
+                appearance="primary"
+                shape="rounded"
+                icon-left="fas fa-heart"
+              ></app-button>
+              <app-button
+                label="Curved"
+                appearance="primary"
+                shape="curved"
+                icon-left="fas fa-heart"
+              ></app-button>
+              <app-button
+                label="Rectangle"
+                appearance="primary"
+                shape="rectangle"
+                icon-left="fas fa-heart"
+              ></app-button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Label -->
+        <section
+          id="section-label"
+          class="section"
+        >
           <app-label
-            label="Icons"
-            size="l"
+            style="font-variant: small-caps; font-weight: bold"
+            label="Label"
+            size="xl"
           ></app-label>
-          <div class="component-group">
-            <app-button
-              label="Left Icon"
-              appearance="primary"
-              icon-left="fas fa-heart"
-            ></app-button>
-            <app-button
-              label="Right Icon"
-              appearance="primary"
-              icon-right="fas fa-arrow-right"
-            ></app-button>
-            <app-button
-              label="Both Icon"
-              appearance="primary"
-              size="xl"
-              icon-left="fas fa-heart"
-              icon-right="fas fa-arrow-right"
-            ></app-button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Label -->
-      <section
-        id="section-label"
-        class="section"
-      >
-        <h2 class="section-title">Label</h2>
-        <div class="component-demo">
-          <h3>Sizes</h3>
-          <div class="component-group">
+          <div class="component-demo">
             <app-label
-              label="Extra Small"
-              icon-left="fas fa-bars"
-              icon-right="fas fa-arrow-right"
-              size="xs"
-            ></app-label>
-            <app-label
-              label="Small"
-              icon-left="fas fa-bars"
-              icon-right="fas fa-arrow-right"
-              size="s"
-            ></app-label>
-            <app-label
-              label="Medium"
-              icon-left="fas fa-bars"
-              icon-right="fas fa-arrow-right"
-              size="m"
-            ></app-label>
-            <app-label
-              label="Large"
-              icon-left="fas fa-bars"
-              icon-right="fas fa-arrow-right"
+              style="font-variant: small-caps"
+              label="Appearances"
               size="l"
             ></app-label>
-            <app-label
-              label="Extra Large"
-              icon-left="fas fa-bars"
-              icon-right="fas fa-arrow-right"
-              size="xl"
-            ></app-label>
+            <div class="component-group">
+              <app-label label="No Appearance"></app-label>
+              <app-label
+                label="Primary"
+                appearance="primary"
+              ></app-label>
+              <app-label
+                label="Secondary"
+                appearance="secondary"
+              ></app-label>
+              <app-label
+                label="Tertiary"
+                appearance="tertiary"
+              ></app-label>
+              <app-label
+                label="Link"
+                appearance="link"
+              ></app-label>
+            </div>
           </div>
-        </div>
-      </section>
 
-      <!-- Link -->
-      <section
-        id="section-link"
-        class="section"
-      >
-        <h2 class="section-title">Link</h2>
-      </section>
+          <div class="component-demo">
+            <app-label
+              style="font-variant: small-caps"
+              label="Sizes"
+              size="l"
+            ></app-label>
+            <div class="component-group">
+              <app-label
+                label="Extra Large"
+                icon-left="fas fa-bars"
+                icon-right="fas fa-arrow-right"
+                size="xl"
+              ></app-label>
+              <app-label
+                label="Large"
+                icon-left="fas fa-bars"
+                icon-right="fas fa-arrow-right"
+                size="l"
+              ></app-label>
+              <app-label
+                label="Medium"
+                icon-left="fas fa-bars"
+                icon-right="fas fa-arrow-right"
+                size="m"
+              ></app-label>
+              <app-label
+                label="Small"
+                icon-left="fas fa-bars"
+                icon-right="fas fa-arrow-right"
+                size="s"
+              ></app-label>
+              <app-label
+                label="Extra Small"
+                icon-left="fas fa-bars"
+                icon-right="fas fa-arrow-right"
+                size="xs"
+              ></app-label>
+            </div>
+          </div>
+        </section>
 
-      <!-- Select -->
-      <section
-        id="section-select"
-        class="section"
-      >
-        <h2 class="section-title">Select</h2>
-      </section>
+        <!-- Link -->
+        <section
+          id="section-link"
+          class="section"
+        >
+          <app-label
+            style="font-variant: small-caps; font-weight: bold"
+            label="Links"
+            size="xl"
+          ></app-label>
+        </section>
 
-      <!-- Custom -->
-      <!-- Social Links -->
-      <section
-        id="section-social-links"
-        class="section"
-      >
-        <h2 class="section-title">Social Links</h2>
-      </section>
+        <!-- Select -->
+        <section
+          id="section-select"
+          class="section"
+        >
+          <app-label
+            style="font-variant: small-caps; font-weight: bold"
+            label="Select"
+            size="xl"
+          ></app-label>
+        </section>
 
-      <!-- Layout -->
-      <!-- Card -->
-      <section
-        id="section-card"
-        class="section"
-      >
-        <h2 class="section-title">Cards</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem">
-          <app-card
-            appearance="primary"
-            header="Primary Card"
-            body="This is a primary card component with header and footer sections"
-            footer="Card Footer"
-          ></app-card>
+        <!-- Custom -->
+        <!-- Social Links -->
+        <section
+          id="section-social-links"
+          class="section"
+        >
+          <app-label
+            style="font-variant: small-caps; font-weight: bold"
+            label="Social Links"
+            size="xl"
+          ></app-label>
+        </section>
 
-          <app-card
-            appearance="secondary"
-            header="Secondary Card"
-            body="This is a secondary card component with header and footer sections"
-            footer="Card Footer"
-          ></app-card>
-
-          <app-card
-            appearance="tertiary"
-            header="Tertiary Card"
-            body="This is a tertiary card component with header and footer sections"
-            footer="Card Footer"
-          ></app-card>
-        </div>
-      </section>
-
-      <!-- Timeline -->
-      <section
-        id="section-timeline"
-        class="section"
-      >
-        <h2 class="section-title">Timeline</h2>
-        <app-timeline>
-          <div>
+        <!-- Layout -->
+        <!-- Card -->
+        <section
+          id="section-card"
+          class="section"
+        >
+          <app-label
+            style="font-variant: small-caps; font-weight: bold"
+            label="Cards"
+            size="xl"
+          ></app-label>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem">
             <app-card
               appearance="primary"
-              header="2024"
-              body="Current Year"
+              header="Primary Card"
+              body="This is a primary card component with header and footer sections"
+              footer="Card Footer"
             ></app-card>
-          </div>
-          <div>
+
             <app-card
               appearance="secondary"
-              header="2023"
-              body="Previous Year"
+              header="Secondary Card"
+              body="This is a secondary card component with header and footer sections"
+              footer="Card Footer"
             ></app-card>
-          </div>
-          <div>
+
             <app-card
               appearance="tertiary"
-              header="2022"
-              body="Two Years Ago"
+              header="Tertiary Card"
+              body="This is a tertiary card component with header and footer sections"
+              footer="Card Footer"
             ></app-card>
           </div>
-        </app-timeline>
-      </section>
+        </section>
 
-      <!-- Utilities -->
-      <!-- Color Picker -->
-      <section
-        id="section-color-picker"
-        class="section"
-      >
-        <h2 class="section-title">Color Picker</h2>
-      </section>
+        <!-- Timeline -->
+        <section
+          id="section-timeline"
+          class="section"
+        >
+          <app-label
+            style="font-variant: small-caps; font-weight: bold"
+            label="Timeline"
+            size="xl"
+          ></app-label>
+          <app-timeline>
+            <div>
+              <app-card
+                appearance="primary"
+                header="2024"
+                body="Current Year"
+              ></app-card>
+            </div>
+            <div>
+              <app-card
+                appearance="secondary"
+                header="2023"
+                body="Previous Year"
+              ></app-card>
+            </div>
+            <div>
+              <app-card
+                appearance="tertiary"
+                header="2022"
+                body="Two Years Ago"
+              ></app-card>
+            </div>
+          </app-timeline>
+        </section>
 
-      <!-- PWA Installer -->
-      <section
-        id="section-pwa-installer"
-        class="section"
-      >
-        <h2 class="section-title">PWA Installer</h2>
-      </section>
+        <!-- Utilities -->
+        <!-- Color Picker -->
+        <section
+          id="section-color-picker"
+          class="section"
+        >
+          <app-label
+            style="font-variant: small-caps; font-weight: bold"
+            label="Color Picker"
+            size="xl"
+          ></app-label>
+        </section>
 
-      <!-- Theme Switcher -->
-      <section
-        id="section-theme-switcher"
-        class="section"
-      >
-        <h2 class="section-title">Theme Switcher</h2>
-      </section>
-    </main>
+        <!-- PWA Installer -->
+        <section
+          id="section-pwa-installer"
+          class="section"
+        >
+          <app-label
+            style="font-variant: small-caps; font-weight: bold"
+            label="PWA Installer"
+            size="xl"
+          ></app-label>
+        </section>
+
+        <!-- Theme Switcher -->
+        <section
+          id="section-theme-switcher"
+          class="section"
+        >
+          <app-label
+            style="font-variant: small-caps; font-weight: bold"
+            label="Theme Switcher"
+            size="xl"
+          ></app-label>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

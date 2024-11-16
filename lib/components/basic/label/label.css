@@ -5,10 +5,49 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  color: var(--color-bw-text);
 }
 
 #label > *:not(:last-child) {
   margin-right: 0.5rem;
+}
+
+/* Primary Label Styles */
+#label[data-appearance="primary"] {
+  color: var(--color-primary);
+}
+
+/* Secondary Label Styles */
+#label[data-appearance="secondary"] {
+  color: var(--color-secondary);
+}
+
+/* Tertiary Label Styles */
+#label[data-appearance="tertiary"] {
+  color: var(--color-tertiary);
+}
+
+/* Link Label Styles */
+#label[data-appearance="link"] {
+  color: var(--color-primary);
+  padding: 0rem !important;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-style: dashed;
+  text-decoration-color: var(--color-primary);
+}
+
+#label[data-appearance="link"]:not([disabled]):hover {
+  color: var(--color-primary-hover);
+  text-decoration-style: solid;
+  text-decoration-color: var(--color-primary-hover);
+}
+
+#label[data-appearance="link"]:not([disabled]):active {
+  color: var(--color-primary-active);
+  text-decoration-style: dashed;
+  text-decoration-color: var(--color-primary-active);
 }
 
 /* Label Sizes */
@@ -45,4 +84,11 @@
   font-size: var(--font-size-xl);
   line-height: var(--font-size-xl);
   height: calc((2 * var(--space-l)) + var(--font-size-xxl));
+}
+
+#label[data-size="xxl"] {
+  padding: var(--space-xl) 0px;
+  font-size: var(--font-size-xxl);
+  line-height: var(--font-size-xxl);
+  height: calc((2 * var(--space-xl)) + var(--font-size-xxxl));
 }
