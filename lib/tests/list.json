@@ -7,10 +7,6 @@
     {
       "component": "text",
       "label": "Text"
-    },
-    {
-      "component": "select",
-      "label": "Select"
     }
   ],
   "custom": [

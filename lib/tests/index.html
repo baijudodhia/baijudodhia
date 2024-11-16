@@ -286,6 +286,34 @@
               ></app-button>
             </div>
           </div>
+
+          <div class="component-demo">
+            <app-text style="font-variant: small-caps" text="Tooltips" size="l" style="font-variant: small-caps"></app-text>
+            <div class="component-group">
+              <app-button
+                label="Basic"
+                appearance="primary"
+                tooltip="This is a button with tooltip"
+              ></app-button>
+              <app-button
+                label="HTML Tooltip"
+                appearance="outline"
+                tooltip-html="<strong>Bold</strong> <em>Italic</em>"
+              ></app-button>
+              <app-button
+                label="Menu Tooltip"
+                appearance="mono"
+                tooltip-html="<div style='padding: 1rem;'><app-text text='Portfolio' appearance='link' href='https://baijudodhia.github.io/' variant='link' style='cursor: pointer;'></app-text><app-text text='Blog' appearance='link' href='https://baijudodhia.blogspot.com/' variant='link' style='cursor: pointer;'></app-text></div>"
+                tooltip-trigger="click"
+              ></app-button>
+              <app-button
+                icon-left="fas fa-globe-asia"
+                appearance="outline"
+                shape="rounded"
+                tooltip-html="<div style='padding: 1rem;'><app-text text='Portfolio' style='color: var(--color-bw)' appearance='link' href='https://baijudodhia.github.io/' variant='link' style='cursor: pointer;'></app-text><app-text text='Blog' style='color: var(--color-bw)' appearance='link' href='https://baijudodhia.blogspot.com/' variant='link' style='cursor: pointer;'></app-text></div>"
+                tooltip-trigger="focusin"
+            ></app-button>
+            </div>
         </section>
 
         <!-- Text -->
@@ -381,18 +409,6 @@
               ></app-text>
             </div>
           </div>
-        </section>
-
-        <!-- Select -->
-        <section
-          id="section-select"
-          class="section"
-        >
-          <app-text
-            style="font-variant: small-caps; font-weight: bold"
-            text="Select"
-            size="xl"
-          ></app-text>
         </section>
 
         <!-- Custom -->
