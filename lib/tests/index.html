@@ -148,8 +148,9 @@
         <app-button
           id="menu-toggle-btn"
           icon-left="fas fa-bars"
-          appearance="outline"
+          appearance="mono"
           shape="rounded"
+          style="color: var(--color-bw-text); border: none!important;"
           onclick="javascript:document.querySelector('#sidebar').classList.toggle('hidden');"
         ></app-button>
         <app-text
@@ -319,7 +320,7 @@
               ></app-button>
               <app-button
                 label="HTML Tooltip"
-                appearance="outline"
+                appearance="outlined"
                 tooltip-html="<strong>Bold</strong> <em>Italic</em>"
               ></app-button>
               <app-button
@@ -330,9 +331,10 @@
               ></app-button>
               <app-button
                 icon-left="fas fa-globe-asia"
-                appearance="outline"
+                appearance="mono"
                 shape="rounded"
-                tooltip-html="<div style='padding: 1rem;'><app-text text='Portfolio' style='color: var(--color-bw)' appearance='link' href='https://baijudodhia.github.io/' variant='link' style='cursor: pointer;'></app-text><app-text text='Blog' style='color: var(--color-bw)' appearance='link' href='https://baijudodhia.blogspot.com/' variant='link' style='cursor: pointer;'></app-text></div>"
+                style="color: var(--color-bw-text); border: none!important;"
+                tooltip-html="<div style='padding: 1rem;'><app-text text='Portfolio' appearance='link' href='https://baijudodhia.github.io/' variant='link' style='cursor: pointer;'></app-text><app-text text='Blog' appearance='link' href='https://baijudodhia.blogspot.com/' variant='link' style='cursor: pointer;'></app-text></div>"
                 tooltip-trigger="focusin"
               ></app-button>
             </div>
@@ -435,36 +437,156 @@
 
         <!-- Layout -->
         <!-- Card -->
-        <section
-          id="section-card"
-          class="section"
-        >
+        <section id="section-card" class="section">
           <app-text
             style="font-variant: small-caps; font-weight: bold"
             text="Cards"
             size="xl"
           ></app-text>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem">
-            <app-card
-              appearance="primary"
-              header="Primary Card"
-              body="<div style='padding: 1rem;'><app-text text='Portfolio' appearance='link' href='https://baijudodhia.github.io/' variant='link' style='cursor: pointer;'></app-text><app-text text='Blog' appearance='link' href='https://baijudodhia.blogspot.com/' variant='link' style='cursor: pointer;'></app-text></div>"
-              footer="<app-button label='HTML Tooltip' appearance='primary' tooltip-html='<strong>Bold</strong> <em>Italic</em>'></app-button>"
-            ></app-card>
 
-            <app-card
-              appearance="secondary"
-              header="Secondary Card"
-              body="<div style='padding: 1rem;'><app-text text='Portfolio' appearance='link' href='https://baijudodhia.github.io/' variant='link' style='cursor: pointer;'></app-text><app-text text='Blog' appearance='link' href='https://baijudodhia.blogspot.com/' variant='link' style='cursor: pointer;'></app-text></div>"
-              footer="<app-button label='HTML Tooltip' appearance='secondary' tooltip-html='<strong>Bold</strong> <em>Italic</em>'></app-button>"
-            ></app-card>
+          <!-- Basic Cards -->
+          <div class="component-demo">
+            <app-text
+              style="font-variant: small-caps"
+              text="Basic Cards"
+              size="l"
+            ></app-text>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem">
+              <app-card
+                appearance="primary"
+                header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Primary Card'></app-text>"
+                body="<div style='padding: 2rem 0rem'><app-text text='This is a primary card showcasing the basic layout with header, body, and footer sections.'></app-text></div>"
+                footer="<app-button label='Learn More' appearance='primary'></app-button>"
+              ></app-card>
 
-            <app-card
-              appearance="tertiary"
-              header="Tertiary Card"
-              body="<div style='padding: 1rem;'><app-text text='Portfolio' appearance='link' href='https://baijudodhia.github.io/' variant='link' style='cursor: pointer;'></app-text><app-text text='Blog' appearance='link' href='https://baijudodhia.blogspot.com/' variant='link' style='cursor: pointer;'></app-text></div>"
-              footer="<app-button label='HTML Tooltip' appearance='tertiary' tooltip-html='<strong>Bold</strong> <em>Italic</em>'></app-button>"
-            ></app-card>
+              <app-card
+                appearance="secondary"
+                header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Secondary Card'></app-text>"
+                body="<div style='padding: 2rem 0rem'><app-text text='A secondary styled card that can be used for less prominent content or alternative sections.'></app-text></div>"
+                footer="<app-button label='Explore' appearance='secondary'></app-button>"
+              ></app-card>
+
+              <app-card
+                appearance="tertiary"
+                header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Tertiary Card'></app-text>"
+                body="<div style='padding: 2rem 0rem'><app-text text='Tertiary cards can be used for supplementary information or supporting content.'></app-text></div>"
+                footer="<app-button label='Details' appearance='tertiary'></app-button>"
+              ></app-card>
+            </div>
+          </div>
+
+          <!-- Interactive Cards -->
+          <div class="component-demo">
+            <app-text
+              style="font-variant: small-caps"
+              text="Interactive Cards"
+              size="l"
+            ></app-text>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem">
+              <app-card
+                appearance="primary"
+                header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Profile Card'></app-text>"
+                body="<div style='padding: 0rem'>
+                  <app-text size='m' text='Baiju Dodhia'></app-text>
+                  <app-text size='s' text='Senior Developer'></app-text>
+                  <div style='margin-top: 1rem'>
+                    <app-text size='s' text='Skills:'></app-text>
+                    <div style='display: flex; gap: 0.5rem; margin-top: 0.5rem'>
+                      <app-button size='xs' appearance='outlined' label='JavaScript'></app-button>
+                      <app-button size='xs' appearance='outlined' label='Python'></app-button>
+                      <app-button size='xs' appearance='outlined' label='React'></app-button>
+                    </div>
+                  </div>
+                </div>"
+                footer="<div style='display: flex; justify-content: space-between'>
+                  <app-button appearance='primary' size='s' label='View Profile'></app-button>
+                  <app-button appearance='outlined' size='s' label='Message'></app-button>
+                </div>"
+              ></app-card>
+
+              <app-card
+                appearance="secondary"
+                header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Project Card'></app-text>"
+                body="<div style='padding: 0rem'>
+                  <app-text size='m' text='Website Redesign'></app-text>
+                  <app-text size='s' text='Status: In Progress'></app-text>
+                  <div style='margin-top: 1rem'>
+                    <app-timeline size='s' line-style='dashed'>
+                      <div>Design Phase Complete</div>
+                      <div>Development Started</div>
+                      <div>Testing Pending</div>
+                    </app-timeline>
+                  </div>
+                </div>"
+                footer="<div style='display: flex; justify-content: space-between'>
+                  <app-button appearance='secondary' size='s' label='View Details'></app-button>
+                  <app-button appearance='outlined' size='s' icon-left='fas fa-star'></app-button>
+                </div>"
+              ></app-card>
+
+              <app-card
+                appearance="tertiary"
+                header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Stats Card'></app-text>"
+                body="<div style='padding: 0rem'>
+                  <div style='display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem'>
+                    <div>
+                      <app-text size='xl' text='1.2k'></app-text>
+                      <app-text size='s' text='Downloads'></app-text>
+                    </div>
+                    <div>
+                      <app-text size='xl' text='4.8'></app-text>
+                      <app-text size='s' text='Rating'></app-text>
+                    </div>
+                    <div>
+                      <app-text size='xl' text='245'></app-text>
+                      <app-text size='s' text='Reviews'></app-text>
+                    </div>
+                    <div>
+                      <app-text size='xl' text='18'></app-text>
+                      <app-text size='s' text='Updates'></app-text>
+                    </div>
+                  </div>
+                </div>"
+                footer="<app-button appearance='tertiary' size='s' label='View Analytics' style='width: 100%'></app-button>"
+              ></app-card>
+            </div>
+          </div>
+
+          <!-- Feature Cards -->
+          <div class="component-demo">
+            <app-text
+              style="font-variant: small-caps"
+              text="Feature Cards"
+              size="l"
+            ></app-text>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem">
+              <app-card
+                appearance="primary"
+                body="<div style='padding: 1rem; text-align: center'>
+                  <div style='margin-bottom: 1rem'><i class='fas fa-rocket' style='font-size: 2rem; color: var(--color-primary)'></i></div>
+                  <app-text style='width: 100%; text-align: center; font-weight: bold;' size='l' text='Quick Setup'></app-text>
+                  <app-text size='s' text='Get started in minutes with our easy-to-follow setup process.'></app-text>
+                </div>"
+              ></app-card>
+
+              <app-card
+                appearance="primary"
+                body="<div style='padding: 1rem; text-align: center'>
+                  <div style='margin-bottom: 1rem'><i class='fas fa-shield-alt' style='font-size: 2rem; color: var(--color-primary)'></i></div>
+                  <app-text style='width: 100%; text-align: center; font-weight: bold;' size='l' text='Secure'></app-text>
+                  <app-text size='s' text='Enterprise-grade security features to protect your data.'></app-text>
+                </div>"
+              ></app-card>
+
+              <app-card
+                appearance="primary"
+                body="<div style='padding: 1rem; text-align: center'>
+                  <div style='margin-bottom: 1rem'><i class='fas fa-plug' style='font-size: 2rem; color: var(--color-primary)'></i></div>
+                  <app-text style='width: 100%; text-align: center; font-weight: bold;' size='l' text='Integrations'></app-text>
+                  <app-text size='s' text='Connect with your favorite tools and services seamlessly.'></app-text>
+                </div>"
+              ></app-card>
+            </div>
           </div>
         </section>
 
