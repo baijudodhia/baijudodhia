@@ -1,10 +1,13 @@
-<div class="color-picker"> </div>
-
 <template id="color-picker-template">
-  <input
-    type="color"
-    id="color-picker-input"
-    title="Website Color Theme Picker"
-    onchange="this.changeThemeColor(this.value);"
-  />
+  <div
+    id="color-picker"
+    class="color-picker"
+  >
+    <input
+      type="color"
+      id="color-picker-input"
+      class="color-picker-input"
+      name="color-picker"
+    />
+  </div>
 </template>
