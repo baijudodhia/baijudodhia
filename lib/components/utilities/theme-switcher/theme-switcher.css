@@ -10,7 +10,7 @@
   padding: 0px var(--space-l);
 }
 .theme-switcher-switch {
-  display: inline-block;
+  display: flex;
   height: var(--font-size-l);
   position: relative;
   width: calc(var(--font-size-l) * var(--multiplier-xl));
