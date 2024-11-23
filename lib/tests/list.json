@@ -1,5 +1,5 @@
 {
-  "COMPONENTS": {
+  "Components": {
     "inputs": [
       {
         "component": "button",
@@ -46,7 +46,7 @@
       }
     ]
   },
-  "USE CASES": {
+  "Use Cases": {
     "form-patterns": [
       {
         "component": "login-form",
@@ -116,7 +116,7 @@
       }
     ]
   },
-  "PAGES": [
+  "Pages": [
     {
       "component": "portfolio",
       "label": "Developer Portfolio",

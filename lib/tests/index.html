@@ -125,7 +125,6 @@
             titleEl.setAttribute("size", "xl");
             titleEl.setAttribute("text", title.charAt(0).toUpperCase() + title.slice(1));
             titleEl.style.fontWeight = "bold";
-            titleEl.style.fontVariant = "small-caps"
 
             section.appendChild(titleEl);
 
@@ -137,7 +136,6 @@
                 subTitle.setAttribute("size", "l");
                 subTitle.setAttribute("text", formatTitle(subCategory));
                 subTitle.style.fontWeight = "bold";
-                subTitle.style.fontVariant = "small-caps"
 
                 section.appendChild(subTitle);
 
@@ -155,7 +153,7 @@
 
                   link.style.display = "block";
                   link.style.cursor = "pointer";
-                  link.style.fontVariant = "small-caps"
+
                   link.addEventListener("click", () => showSection(`section-${item.component}`));
                   section.appendChild(link);
                 });
@@ -174,7 +172,7 @@
 
                 link.style.display = "block";
                 link.style.cursor = "pointer";
-                link.style.fontVariant = "small-caps"
+
                 link.addEventListener("click", () => showSection(`section-${item.component}`));
                 section.appendChild(link);
               });
@@ -224,7 +222,7 @@
         <app-text
           text="Component Library"
           size="xxl"
-          style="font-variant: small-caps; font-weight: bold"
+          style="font-weight: bold"
         ></app-text>
         <app-theme-switcher style="margin-left: auto !important"></app-theme-switcher>
       </header>
@@ -246,14 +244,12 @@
           <app-text
             text="Buttons"
             size="xl"
-            style="font-variant: small-caps; font-weight: bold"
+            style="font-weight: bold"
           ></app-text>
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Appearances"
               size="l"
-              style="font-variant: small-caps"
             ></app-text>
             <div class="component-group">
               <app-button
@@ -285,10 +281,8 @@
 
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Sizes"
               size="l"
-              style="font-variant: small-caps"
             ></app-text>
             <div class="component-group">
               <app-button
@@ -321,10 +315,8 @@
 
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Icons"
               size="l"
-              style="font-variant: small-caps"
             ></app-text>
             <div class="component-group">
               <app-button
@@ -352,10 +344,8 @@
 
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Shapes"
               size="l"
-              style="font-variant: small-caps"
             ></app-text>
             <div class="component-group">
               <app-button
@@ -381,10 +371,8 @@
 
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Tooltips"
               size="l"
-              style="font-variant: small-caps"
             ></app-text>
             <div class="component-group">
               <app-button
@@ -416,10 +404,8 @@
 
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="PWA Installer"
               size="l"
-              style="font-variant: small-caps"
             ></app-text>
             <div class="component-group">
               <app-button
@@ -438,13 +424,12 @@
           class="section"
         >
           <app-text
-            style="font-variant: small-caps; font-weight: bold"
+            style="font-weight: bold"
             text="Text"
             size="xl"
           ></app-text>
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Appearances"
               size="l"
             ></app-text>
@@ -471,7 +456,6 @@
 
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Sizes"
               size="l"
             ></app-text>
@@ -511,7 +495,6 @@
 
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Variants"
               size="l"
             ></app-text>
@@ -534,7 +517,7 @@
           class="section"
         >
           <app-text
-            style="font-variant: small-caps; font-weight: bold"
+            style="font-weight: bold"
             text="Cards"
             size="xl"
           ></app-text>
@@ -542,7 +525,6 @@
           <!-- Basic Cards -->
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Basic Cards"
               size="l"
             ></app-text>
@@ -573,7 +555,6 @@
           <!-- Interactive Cards -->
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Interactive Cards"
               size="l"
             ></app-text>
@@ -650,7 +631,6 @@
           <!-- Feature Cards -->
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Feature Cards"
               size="l"
             ></app-text>
@@ -691,14 +671,13 @@
           class="section"
         >
           <app-text
-            style="font-variant: small-caps; font-weight: bold"
+            style="font-weight: bold"
             text="Timeline"
             size="xl"
           ></app-text>
 
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Appearance"
               size="l"
             ></app-text>
@@ -723,7 +702,6 @@
 
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Sizes"
               size="l"
             ></app-text>
@@ -758,7 +736,6 @@
 
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Line Types"
               size="l"
             ></app-text>
@@ -783,7 +760,6 @@
 
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Shapes"
               size="l"
             ></app-text>
@@ -808,7 +784,6 @@
 
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Rich Content"
               size="l"
             ></app-text>
@@ -838,7 +813,6 @@
 
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Single Item"
               size="l"
             ></app-text>
@@ -868,7 +842,7 @@
           class="section"
         >
           <app-text
-            style="font-variant: small-caps; font-weight: bold"
+            style="font-weight: bold"
             text="Color Picker"
             size="xl"
           ></app-text>
@@ -876,7 +850,6 @@
           <!-- Appearances -->
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Appearances"
               size="l"
             ></app-text>
@@ -899,7 +872,6 @@
           <!-- Sizes -->
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Sizes"
               size="l"
             ></app-text>
@@ -935,7 +907,6 @@
           <!-- States -->
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="States"
               size="l"
             ></app-text>
@@ -955,7 +926,6 @@
           <!-- With Labels -->
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="With Labels"
               size="l"
             ></app-text>
@@ -996,7 +966,6 @@
           <!-- Interactive Example -->
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Interactive Example"
               size="l"
             ></app-text>
@@ -1033,7 +1002,6 @@
           <!-- With Card Examples -->
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Color Swatches"
               size="l"
             ></app-text>
@@ -1083,14 +1051,13 @@
           class="section"
         >
           <app-text
-            style="font-variant: small-caps; font-weight: bold"
+            style="font-weight: bold"
             text="Theme Switcher"
             size="xl"
           ></app-text>
 
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Appearances"
               size="l"
             ></app-text>
@@ -1112,7 +1079,6 @@
 
           <div class="component-demo">
             <app-text
-              style="font-variant: small-caps"
               text="Sizes"
               size="l"
             ></app-text>
@@ -1148,7 +1114,7 @@
           class="section"
         >
           <app-text
-            style="font-variant: small-caps; font-weight: bold"
+            style="font-weight: bold"
             text="Social Links"
             size="xl"
           ></app-text>
