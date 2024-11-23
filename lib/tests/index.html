@@ -116,27 +116,86 @@
           const data = await res.json();
           const sidebar = document.querySelector("#sidebar");
 
-          // Iterate through each category
-          for (const category in data) {
-            // Create a section for each category
-            const categoryTitle = `<app-text style='font-variant: small-caps; font-weight: bold' size='xl' text='${category.charAt(0).toUpperCase() + category.slice(1)}'></app-text>`;
-            sidebar.insertAdjacentHTML("beforeend", categoryTitle);
+          function createNav(title, items) {
+            const section = document.createElement("div");
+            section.className = "nav-section";
 
-            // Iterate through each component in the category
-            data[category].forEach((item) => {
-              if (!item?.hidden) {
-                const label = `
-                  <app-text
-                    text="${item.label}"
-                    appearance="link"
-                    size='m'
-                    onclick="showSection('section-${item.component}')"
-                  ></app-text>
-                `;
-                sidebar.insertAdjacentHTML("beforeend", label);
-              }
-            });
+            // Category Title
+            const titleEl = document.createElement("app-text");
+            titleEl.setAttribute("size", "xl");
+            titleEl.setAttribute("text", title.charAt(0).toUpperCase() + title.slice(1));
+            titleEl.style.fontWeight = "bold";
+            titleEl.style.fontVariant = "small-caps"
+
+            section.appendChild(titleEl);
+
+            // For sections with subcategories (components and use-cases)
+            if (typeof items === "object" && !Array.isArray(items)) {
+              Object.entries(items).forEach(([subCategory, components]) => {
+                // Subcategory title
+                const subTitle = document.createElement("app-text");
+                subTitle.setAttribute("size", "l");
+                subTitle.setAttribute("text", formatTitle(subCategory));
+                subTitle.style.fontWeight = "bold";
+                subTitle.style.fontVariant = "small-caps"
+
+                section.appendChild(subTitle);
+
+                // Components/Patterns in subcategory
+                components.forEach((item) => {
+                  const link = document.createElement("app-text");
+                  link.setAttribute("appearance", "link");
+                  link.setAttribute("size", "m");
+                  link.setAttribute("text", item.label);
+
+                  // Add description as tooltip if available
+                  if (item.description) {
+                    link.setAttribute("tooltip", item.description);
+                  }
+
+                  link.style.display = "block";
+                  link.style.cursor = "pointer";
+                  link.style.fontVariant = "small-caps"
+                  link.addEventListener("click", () => showSection(`section-${item.component}`));
+                  section.appendChild(link);
+                });
+              });
+            } else if (Array.isArray(items)) {
+              // For flat arrays (pages section)
+              items.forEach((item) => {
+                const link = document.createElement("app-text");
+                link.setAttribute("appearance", "link");
+                link.setAttribute("size", "m");
+                link.setAttribute("text", item.label);
+
+                if (item.description) {
+                  link.setAttribute("tooltip", item.description);
+                }
+
+                link.style.display = "block";
+                link.style.cursor = "pointer";
+                link.style.fontVariant = "small-caps"
+                link.addEventListener("click", () => showSection(`section-${item.component}`));
+                section.appendChild(link);
+              });
+            }
+
+            return section;
           }
+
+          // Helper function to format titles
+          function formatTitle(str) {
+            return str
+              .split("-")
+              .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+              .join(" ");
+          }
+
+          // Create sections for each main category
+          Object.entries(data).forEach(([category, items]) => {
+            const navSection = createNav(category, items);
+            sidebar.appendChild(navSection);
+          });
         } catch (error) {
           console.error("Error loading JSON:", error);
         }
@@ -167,7 +226,7 @@
           size="xxl"
           style="font-variant: small-caps; font-weight: bold"
         ></app-text>
-        <app-theme-switcher style="margin-left: auto!important;"></app-theme-switcher>
+        <app-theme-switcher style="margin-left: auto !important"></app-theme-switcher>
       </header>
 
       <nav
