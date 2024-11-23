@@ -117,15 +117,17 @@
 
             // Iterate through each component in the category
             data[category].forEach((item) => {
-              const label = `
-                <app-text
-                  text="${item.label}"
-                  appearance="link"
-                  size='m'
-                  onclick="showSection('section-${item.component}')"
-                ></app-text>
-              `;
-              sidebar.insertAdjacentHTML("beforeend", label);
+              if(!item?.hidden) {
+                const label = `
+                  <app-text
+                    text="${item.label}"
+                    appearance="link"
+                    size='m'
+                    onclick="showSection('section-${item.component}')"
+                  ></app-text>
+                `;
+                sidebar.insertAdjacentHTML("beforeend", label);
+              }
             });
           }
         } catch (error) {
@@ -972,15 +974,64 @@
         </section>
 
         <!-- Theme Switcher -->
-        <section
-          id="section-theme-switcher"
-          class="section"
-        >
+        <section id="section-theme-switcher" class="section">
           <app-text
             style="font-variant: small-caps; font-weight: bold"
             text="Theme Switcher"
             size="xl"
           ></app-text>
+
+          <div class="component-demo">
+            <app-text
+              style="font-variant: small-caps"
+              text="Appearances"
+              size="l"
+            ></app-text>
+            <div class="component-group">
+              <app-theme-switcher appearance="primary"></app-theme-switcher>
+              <app-theme-switcher appearance="secondary"></app-theme-switcher>
+              <app-theme-switcher appearance="tertiary"></app-theme-switcher>
+            </div>
+          </div>
+
+          <div class="component-demo">
+            <app-text
+              style="font-variant: small-caps"
+              text="Sizes"
+              size="l"
+            ></app-text>
+            <div class="component-group">
+              <app-theme-switcher size="xs"></app-theme-switcher>
+              <app-theme-switcher size="s"></app-theme-switcher>
+              <app-theme-switcher size="m"></app-theme-switcher>
+              <app-theme-switcher size="l"></app-theme-switcher>
+              <app-theme-switcher size="xl"></app-theme-switcher>
+            </div>
+          </div>
+
+          <div class="component-demo">
+            <app-text
+              style="font-variant: small-caps"
+              text="With Labels"
+              size="l"
+            ></app-text>
+            <div class="component-group">
+              <app-theme-switcher label="Light"></app-theme-switcher>
+              <app-theme-switcher label="Dark" theme="dark"></app-theme-switcher>
+            </div>
+          </div>
+
+          <div class="component-demo">
+            <app-text
+              style="font-variant: small-caps"
+              text="States"
+              size="l"
+            ></app-text>
+            <div class="component-group">
+              <app-theme-switcher label="Enabled"></app-theme-switcher>
+              <app-theme-switcher label="Disabled" disabled="true"></app-theme-switcher>
+            </div>
+          </div>
         </section>
 
         <!-- Custom -->
