@@ -26,7 +26,8 @@
     },
     {
       "component": "pwa-installer",
-      "label": "PWA Installer"
+      "label": "PWA Installer",
+      "hidden": true
     },
     {
       "component": "theme-switcher",
