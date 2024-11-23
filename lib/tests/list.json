@@ -25,11 +25,6 @@
       "label": "Color Picker"
     },
     {
-      "component": "pwa-installer",
-      "label": "PWA Installer",
-      "hidden": true
-    },
-    {
       "component": "theme-switcher",
       "label": "Theme Switcher"
     }

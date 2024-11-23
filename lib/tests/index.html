@@ -17,6 +17,13 @@
       src="../../lib/dist/index.min.js"
     ></script>
 
+    <!-- PWA Support -->
+    <!-- Link to Manifest File -->
+    <link
+      rel="manifest"
+      href="../../assets/pwa-manifest.json"
+    />
+
     <link
       rel="preconnect"
       href="https://fonts.googleapis.com"
@@ -117,7 +124,7 @@
 
             // Iterate through each component in the category
             data[category].forEach((item) => {
-              if(!item?.hidden) {
+              if (!item?.hidden) {
                 const label = `
                   <app-text
                     text="${item.label}"
@@ -152,7 +159,7 @@
           icon-left="fas fa-bars"
           appearance="mono"
           shape="rounded"
-          style="color: var(--color-bw-text); border: none!important;"
+          style="color: var(--color-bw-text); border: none !important"
           onclick="javascript:document.querySelector('#sidebar').classList.toggle('hidden');"
         ></app-button>
         <app-text
@@ -313,7 +320,12 @@
           </div>
 
           <div class="component-demo">
-            <app-text style="font-variant: small-caps" text="Tooltips" size="l" style="font-variant: small-caps"></app-text>
+            <app-text
+              style="font-variant: small-caps"
+              text="Tooltips"
+              size="l"
+              style="font-variant: small-caps"
+            ></app-text>
             <div class="component-group">
               <app-button
                 label="Basic"
@@ -335,11 +347,29 @@
                 icon-left="fas fa-globe-asia"
                 appearance="mono"
                 shape="rounded"
-                style="color: var(--color-bw-text); border: none!important;"
+                style="color: var(--color-bw-text); border: none !important"
                 tooltip-html="<div style='padding: 1rem;'><app-text text='Portfolio' appearance='link' href='https://baijudodhia.github.io/' variant='link' style='cursor: pointer;'></app-text><app-text text='Blog' appearance='link' href='https://baijudodhia.blogspot.com/' variant='link' style='cursor: pointer;'></app-text></div>"
                 tooltip-trigger="focusin"
               ></app-button>
             </div>
+          </div>
+
+          <div class="component-demo">
+            <app-text
+              style="font-variant: small-caps"
+              text="PWA Installer"
+              size="l"
+              style="font-variant: small-caps"
+            ></app-text>
+            <div class="component-group">
+              <app-button
+                label="Install"
+                appearance="primary"
+                icon-right="fas fa-download"
+                type="pwa-installer"
+              ></app-button>
+            </div>
+          </div>
         </section>
 
         <!-- Text -->
@@ -439,7 +469,10 @@
 
         <!-- Layout -->
         <!-- Card -->
-        <section id="section-card" class="section">
+        <section
+          id="section-card"
+          class="section"
+        >
           <app-text
             style="font-variant: small-caps; font-weight: bold"
             text="Cards"
@@ -593,7 +626,10 @@
         </section>
 
         <!-- Timeline -->
-        <div id="section-timeline" class="section">
+        <div
+          id="section-timeline"
+          class="section"
+        >
           <app-text
             style="font-variant: small-caps; font-weight: bold"
             text="Timeline"
@@ -728,8 +764,8 @@
                   <app-card
                     appearance="secondary"
                     body="<app-text size='m' text='Design Phase'></app-text><app-text size='s' text='Creating wireframes and mockups'></app-text><app-button appearance='secondary' size='s' label='Review Designs'></app-button>"
-                    ></app-card>
-                  </div>
+                  ></app-card>
+                </div>
                 <div>
                   <app-card
                     appearance="tertiary"
@@ -749,8 +785,16 @@
             <div class="component-group">
               <app-timeline size="m">
                 <div>
-                  <app-text appearance="primary" size="m" text="Current Status"></app-text>
-                  <app-text appearance="secondary" size="s" text="Project is in development phase"></app-text>
+                  <app-text
+                    appearance="primary"
+                    size="m"
+                    text="Current Status"
+                  ></app-text>
+                  <app-text
+                    appearance="secondary"
+                    size="s"
+                    text="Project is in development phase"
+                  ></app-text>
                 </div>
               </app-timeline>
             </div>
@@ -759,7 +803,10 @@
 
         <!-- Utilities -->
         <!-- Color Picker -->
-        <section id="section-color-picker" class="section">
+        <section
+          id="section-color-picker"
+          class="section"
+        >
           <app-text
             style="font-variant: small-caps; font-weight: bold"
             text="Color Picker"
@@ -854,21 +901,30 @@
             ></app-text>
             <div class="component-group">
               <div style="display: flex; align-items: center; gap: 0.5rem">
-                <app-text text="Primary Color:" size="m"></app-text>
+                <app-text
+                  text="Primary Color:"
+                  size="m"
+                ></app-text>
                 <app-color-picker
                   appearance="primary"
                   value="#0055ff"
                 ></app-color-picker>
               </div>
               <div style="display: flex; align-items: center; gap: 0.5rem">
-                <app-text text="Secondary Color:" size="m"></app-text>
+                <app-text
+                  text="Secondary Color:"
+                  size="m"
+                ></app-text>
                 <app-color-picker
                   appearance="secondary"
                   value="#ffc107"
                 ></app-color-picker>
               </div>
               <div style="display: flex; align-items: center; gap: 0.5rem">
-                <app-text text="Tertiary Color:" size="m"></app-text>
+                <app-text
+                  text="Tertiary Color:"
+                  size="m"
+                ></app-text>
                 <app-color-picker
                   appearance="tertiary"
                   value="#4caf50"
@@ -959,18 +1015,6 @@
               ></app-card>
             </div>
           </div>
-        </section>
-
-        <!-- PWA Installer -->
-        <section
-          id="section-pwa-installer"
-          class="section"
-        >
-          <app-text
-            style="font-variant: small-caps; font-weight: bold"
-            text="PWA Installer"
-            size="xl"
-          ></app-text>
         </section>
 
         <!-- Theme Switcher -->
