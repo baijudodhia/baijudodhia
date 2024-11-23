@@ -1,21 +1,21 @@
 @import url("../../../styles/reset.css");
 @import url("../../../styles/global.css");
 
-#theme-switcher-container {
+.theme-switcher {
   display: flex;
   flex-direction: row;
   align-content: center;
   justify-content: center;
   align-items: center;
-  padding: 0px 12.5px;
+  padding: 0px var(--space-l);
 }
 .theme-switcher-switch {
-  position: relative;
   display: inline-block;
-  width: 25px;
-  height: 15px;
+  height: var(--font-size-l);
+  position: relative;
+  width: calc(var(--font-size-l) * var(--multiplier-xl));
 }
-#theme-switcher {
+#theme-switcher-input {
   height: 0;
   opacity: 0;
   overflow: visible;
@@ -31,34 +31,92 @@
   bottom: 0;
   cursor: pointer;
   background-color: #ccc;
-  border-radius: 20px;
+  border-radius: 2rem;
   transition: 0s;
 }
 .theme-switcher-slider:before {
   content: "";
-  position: absolute;
-  left: 0%;
-  bottom: -5px;
-  height: 1.5rem;
-  width: 1.5rem;
-  transform: translateX(-50%);
-  transition: 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
-  background-position: center !important;
+
+  background-position: 50% !important;
   background-repeat: no-repeat !important;
-  background-size: 70% !important;
-  background: #fff url("/portfolio/assets/images/theme-switcher/light.png");
+  background-size: 65% !important;
+  background: #fff url(/portfolio/assets/images/theme-switcher/light.png);
+  box-shadow: 0 0 10px -4px #121212;
   border-radius: 50%;
-  box-shadow: 0px 0px 10px -4px #121212;
+
+  height: calc(var(--font-size-l));
+  width: calc(var(--font-size-l));
+
+  position: absolute;
+  left: 5%;
+
+  transform: translateX(-50%) scale(var(--multiplier-xl));
+  transition: 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
-#theme-switcher:checked + .theme-switcher-slider {
+#theme-switcher-input:checked + .theme-switcher-slider {
   transition: 0.25s linear;
   background-color: var(--color-primary);
 }
-#theme-switcher:checked + .theme-switcher-slider:before {
-  left: 100%;
+#theme-switcher-input:checked + .theme-switcher-slider:before {
+  left: 95%;
   transition: 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
-  background-size: 65% !important;
-  transform: translateX(-50%);
   background: #fff url("/portfolio/assets/images/theme-switcher/dark.png");
   box-shadow: 0px 0px 10px -4px #f5f5f5;
+}
+
+/* Appearance */
+.theme-switcher[data-appearance="primary"] #theme-switcher-input:checked + .theme-switcher-slider {
+  background-color: var(--color-primary);
+}
+.theme-switcher[data-appearance="secondary"] #theme-switcher-input:checked + .theme-switcher-slider {
+  background-color: var(--color-secondary);
+}
+.theme-switcher[data-appearance="tertiary"] #theme-switcher-input:checked + .theme-switcher-slider {
+  background-color: var(--color-tertiary);
+}
+
+/* Size */
+.theme-switcher[data-size="xs"] .theme-switcher-switch {
+  height: var(--font-size-s);
+  width: calc(var(--font-size-s) * var(--multiplier-xl));
+}
+.theme-switcher[data-size="xs"] .theme-switcher-slider:before {
+  height: calc(var(--font-size-s));
+  width: calc(var(--font-size-s));
+}
+
+.theme-switcher[data-size="s"] .theme-switcher-switch {
+  height: var(--font-size-m);
+  width: calc(var(--font-size-m) * var(--multiplier-xl));
+}
+.theme-switcher[data-size="s"] .theme-switcher-slider:before {
+  height: calc(var(--font-size-m));
+  width: calc(var(--font-size-m));
+}
+
+.theme-switcher[data-size="m"] .theme-switcher-switch {
+  height: var(--font-size-l);
+  width: calc(var(--font-size-l) * var(--multiplier-xl));
+}
+.theme-switcher[data-size="m"] .theme-switcher-slider:before {
+  height: calc(var(--font-size-l));
+  width: calc(var(--font-size-l));
+}
+
+.theme-switcher[data-size="l"] .theme-switcher-switch {
+  height: var(--font-size-xl);
+  width: calc(var(--font-size-xl) * var(--multiplier-xl));
+}
+.theme-switcher[data-size="l"] .theme-switcher-slider:before {
+  height: calc(var(--font-size-xl));
+  width: calc(var(--font-size-xl));
+}
+
+.theme-switcher[data-size="xl"] .theme-switcher-switch {
+  height: var(--font-size-xxl);
+  width: calc(var(--font-size-xxl) * var(--multiplier-xl));
+}
+.theme-switcher[data-size="xl"] .theme-switcher-slider:before {
+  height: calc(var(--font-size-xxl));
+  width: calc(var(--font-size-xxl));
 }

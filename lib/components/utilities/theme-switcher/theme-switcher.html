@@ -1,11 +1,13 @@
 <template id="theme-switcher-template">
-  <div id="theme-switcher-container">
+  <div
+    id="theme-switcher-container"
+    class="theme-switcher-container"
+  >
     <label class="theme-switcher-switch">
       <input
-        id="theme-switcher"
-        name="theme"
-        onchange="changeTheme();"
         type="checkbox"
+        id="theme-switcher-input"
+        class="theme-switcher-input"
       />
       <span class="theme-switcher-slider"></span>
     </label>
