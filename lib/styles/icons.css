@@ -1,0 +1,110 @@
+@import url("https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css");
+
+/* Font Awesome */
+@font-face {
+  font-family: "FontAwesome";
+  src: url("https://baijudodhia.github.io/cdn/font-awesome-5.15.4/fonts/fontawesome-webfont.eot?v=4.7.0");
+  src: url("https://baijudodhia.github.io/cdn/font-awesome-5.15.4/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0")
+      format("embedded-opentype"),
+    url("https://baijudodhia.github.io/cdn/font-awesome-5.15.4/fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),
+    url("https://baijudodhia.github.io/cdn/font-awesome-5.15.4/fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"),
+    url("https://baijudodhia.github.io/cdn/font-awesome-5.15.4/fonts/fontawesome-webfont.ttf?v=4.7.0")
+      format("truetype"),
+    url("https://baijudodhia.github.io/cdn/font-awesome-5.15.4/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.fa-code:before {
+  content: "\f121";
+}
+.fa-external-link:before {
+  content: "\f08e";
+}
+.fa-external-link-square:before {
+  content: "\f14c";
+}
+.fa-language:before {
+  font-size: 16px;
+  content: "\f1ab";
+}
+.fa-spinner:before {
+  content: "\f110";
+}
+.fa-industry:before {
+  content: "\f275";
+}
+.fa-github:before {
+  font-size: 16px;
+  content: "\f09b";
+}
+.fa-github-alt:before {
+  font-size: 16px;
+  content: "\f113";
+}
+.fa-github-square:before {
+  font-size: 16px;
+  content: "\f092";
+}
+.fa-linkedin:before {
+  font-size: 16px;
+  content: "\f0e1";
+}
+.fa-linkedin-square:before {
+  font-size: 16px;
+  content: "\f08c";
+}
+.fa-briefcase:before {
+  content: "\f0b1";
+}
+.fa-calendar:before {
+  content: "\f073";
+}
+.fa-calendar-o:before {
+  content: "\f133";
+}
+.fa-calendar-plus-o:before {
+  content: "\f271";
+}
+.fa-calendar-minus-o:before {
+  content: "\f272";
+}
+.fa-calendar-times-o:before {
+  content: "\f273";
+}
+.fa-calendar-check-o:before {
+  content: "\f274";
+}
+.fa-building:before {
+  content: "\f1ad";
+}
+.fa-building-o:before {
+  content: "\f0f7";
+}
+.fa-globe:before {
+  content: "\f0ac";
+}
+.fa-map-marker:before {
+  content: "\f041";
+}
+.fa-tasks:before {
+  content: "\f0ae";
+}
+.fa-certificate:before {
+  content: "\f0a3";
+}
+.fa-external-link-square:before {
+  content: "\f14c";
+}
+.fa-search:before {
+  content: "\f002";
+}

@@ -16,7 +16,7 @@ class ProjectComponent extends HTMLElement {
             type="link"
             size="m"
             href="https://github.com/baijudodhia?tab=repositories"
-            icon-right="fa fa-external-link-square-alt"
+            icon-right="fas fa-external-link-square-alt"
           ></app-button>
         </div>
         <div id="projects-container"> </div>
@@ -51,7 +51,7 @@ class ProjectComponent extends HTMLElement {
             type="link"
             size="s"
             href=""
-            icon-right="fa fa-external-link-square-alt"
+            icon-right="fas fa-external-link-square-alt"
           ></app-button>
         </div>
       </template>
@@ -128,7 +128,7 @@ class ProjectComponent extends HTMLElement {
         this.fetchData();
       },
       () => {
-        console.log("Initial setup failed!");
+        console.log("Initial setup for app-projects failed!");
       },
     );
   }

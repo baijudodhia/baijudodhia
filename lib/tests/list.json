@@ -1,0 +1,131 @@
+{
+  "Components": {
+    "inputs": [
+      {
+        "component": "button",
+        "label": "Button",
+        "description": "Interactive elements for actions and events"
+      },
+      {
+        "component": "color-picker",
+        "label": "Color Picker",
+        "description": "Color selection control"
+      },
+      {
+        "component": "theme-switcher",
+        "label": "Theme Switcher",
+        "description": "Toggle between light/dark themes"
+      }
+    ],
+    "typography": [
+      {
+        "component": "text",
+        "label": "Text",
+        "description": "Text elements with various styles"
+      }
+    ],
+    "layout": [
+      {
+        "component": "card",
+        "label": "Card",
+        "description": "Content container with header, body, footer"
+      }
+    ],
+    "data-display": [
+      {
+        "component": "timeline",
+        "label": "Timeline",
+        "description": "Vertical display of chronological data"
+      }
+    ],
+    "navigation": [
+      {
+        "component": "social-links",
+        "label": "Social Links",
+        "description": "Social media navigation buttons"
+      }
+    ]
+  },
+  "Use Cases": {
+    "form-patterns": [
+      {
+        "component": "login-form",
+        "label": "Login Form",
+        "description": "Common login form with validation"
+      },
+      {
+        "component": "signup-form",
+        "label": "Signup Form",
+        "description": "User registration form"
+      },
+      {
+        "component": "search-form",
+        "label": "Search Form",
+        "description": "Search with filters"
+      }
+    ],
+    "layout-patterns": [
+      {
+        "component": "profile-card",
+        "label": "Profile Card",
+        "description": "User profile display"
+      },
+      {
+        "component": "stats-grid",
+        "label": "Statistics Grid",
+        "description": "Dashboard metrics layout"
+      },
+      {
+        "component": "feature-grid",
+        "label": "Feature Grid",
+        "description": "Product features showcase"
+      }
+    ],
+    "data-patterns": [
+      {
+        "component": "activity-feed",
+        "label": "Activity Feed",
+        "description": "Real-time updates stream"
+      },
+      {
+        "component": "progress-tracker",
+        "label": "Progress Tracker",
+        "description": "Step by step progress"
+      },
+      {
+        "component": "status-board",
+        "label": "Status Board",
+        "description": "Project status dashboard"
+      }
+    ],
+    "interactive-patterns": [
+      {
+        "component": "dialog-flow",
+        "label": "Dialog Flow",
+        "description": "Modal interaction patterns"
+      },
+      {
+        "component": "theme-selector",
+        "label": "Theme Selector",
+        "description": "Color theme customization"
+      },
+      {
+        "component": "loading-states",
+        "label": "Loading States",
+        "description": "Loading indicators & skeletons"
+      }
+    ]
+  },
+  "Pages": [
+    {
+      "component": "portfolio",
+      "label": "Developer Portfolio",
+      "description": "Full stack engineer portfolio showcase"
+    },
+    {
+      "component": "dashboard",
+      "label": "Analytics Dashboard",
+      "description": "Indian startups & economic data dashboard"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+@import url("../../../styles/reset.css");
+@import url("../../../styles/global.css");
+
+#color-picker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+#color-picker-input {
+  -webkit-appearance: none;
+  border: none;
+  padding: 0px;
+  border-radius: var(--radius-xxl);
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+#color-picker-input:hover {
+  transform: scale(1.1);
+}
+
+#color-picker-input::-webkit-color-swatch-wrapper {
+  padding: 0;
+  border-radius: var(--radius-xxl);
+}
+
+#color-picker-input::-webkit-color-swatch {
+  border: none;
+  border-radius: var(--radius-xxl);
+}
+
+/* Size Variants */
+#color-picker[data-size="xs"] #color-picker-input {
+  width: calc(var(--space-m) * var(--multiplier-xs));
+  height: calc(var(--space-m) * var(--multiplier-xs));
+}
+
+#color-picker[data-size="s"] #color-picker-input {
+  width: calc(var(--space-m) * var(--multiplier-s));
+  height: calc(var(--space-m) * var(--multiplier-s));
+}
+
+#color-picker[data-size="m"] #color-picker-input {
+  width: calc(var(--space-m) * var(--multiplier-m));
+  height: calc(var(--space-m) * var(--multiplier-m));
+}
+
+#color-picker[data-size="l"] #color-picker-input {
+  width: calc(var(--space-m) * var(--multiplier-l));
+  height: calc(var(--space-m) * var(--multiplier-l));
+}
+
+#color-picker[data-size="xl"] #color-picker-input {
+  width: calc(var(--space-m) * var(--multiplier-xl));
+  height: calc(var(--space-m) * var(--multiplier-xl));
+}
+
+/* Appearance Variants */
+#color-picker[data-appearance="primary"] #color-picker-input {
+  box-shadow: 0px 0px var(--space-xxs) calc(-1 * var(--space-xs)) var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+#color-picker[data-appearance="secondary"] #color-picker-input {
+  box-shadow: 0px 0px var(--space-xxs) calc(-1 * var(--space-xs)) var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+#color-picker[data-appearance="tertiary"] #color-picker-input {
+  box-shadow: 0px 0px var(--space-xxs) calc(-1 * var(--space-xs)) var(--color-tertiary);
+  border-color: var(--color-tertiary);
+}

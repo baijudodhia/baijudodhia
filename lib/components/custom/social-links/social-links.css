@@ -1,0 +1,10 @@
+@import url("../../../styles/reset.css");
+@import url("../../../styles/global.css");
+
+.social-links {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  column-gap: 10px;
+}

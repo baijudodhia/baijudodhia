@@ -1,0 +1,98 @@
+@import url("../../../styles/reset.css");
+@import url("../../../styles/global.css");
+
+#text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--color-bw-text);
+}
+
+#text-text {
+  width: 100%;
+}
+
+#text > *:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+/* Primary Text Styles */
+#text[data-appearance="primary"] {
+  color: var(--color-primary);
+}
+
+/* Secondary Text Styles */
+#text[data-appearance="secondary"] {
+  color: var(--color-secondary);
+}
+
+/* Tertiary Text Styles */
+#text[data-appearance="tertiary"] {
+  color: var(--color-tertiary);
+}
+
+/* Link Text Styles */
+#text[data-appearance="link"] {
+  color: var(--color-primary);
+  padding: 0rem !important;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-style: dashed;
+  text-decoration-color: var(--color-primary);
+}
+
+#text[data-appearance="link"]:not([disabled]):hover {
+  color: var(--color-primary-hover);
+  text-decoration-style: solid;
+  text-decoration-color: var(--color-primary-hover);
+}
+
+#text[data-appearance="link"]:not([disabled]):active {
+  color: var(--color-primary-active);
+  text-decoration-style: dashed;
+  text-decoration-color: var(--color-primary-active);
+}
+
+/* Text Sizes */
+#text[data-size="xs"] {
+  padding: var(--space-xxs) 0px;
+  font-size: var(--font-size-xs);
+  line-height: var(--font-size-xs);
+  height: calc((2 * var(--space-xxs)) + var(--font-size-xs));
+}
+
+#text[data-size="s"] {
+  padding: var(--space-xs) 0px;
+  font-size: var(--font-size-s);
+  line-height: var(--font-size-s);
+  height: calc((2 * var(--space-xs)) + var(--font-size-s));
+}
+
+#text[data-size="m"] {
+  padding: var(--space-s) 0px;
+  font-size: var(--font-size-m);
+  line-height: var(--font-size-m);
+  height: calc((2 * var(--space-s)) + var(--font-size-m));
+}
+
+#text[data-size="l"] {
+  padding: var(--space-m) 0px;
+  font-size: var(--font-size-l);
+  line-height: var(--font-size-l);
+  height: calc((2 * var(--space-m)) + var(--font-size-l));
+}
+
+#text[data-size="xl"] {
+  padding: var(--space-l) 0px;
+  font-size: var(--font-size-xl);
+  line-height: var(--font-size-xl);
+  height: calc((2 * var(--space-l)) + var(--font-size-xxl));
+}
+
+#text[data-size="xxl"] {
+  padding: var(--space-xl) 0px;
+  font-size: var(--font-size-xxl);
+  line-height: var(--font-size-xxl);
+  height: calc((2 * var(--space-xl)) + var(--font-size-xxxl));
+}

@@ -125,7 +125,7 @@ class WhatIDoComponent extends HTMLElement {
         this.setComponentContent();
       },
       () => {
-        console.log("Initial setup failed!");
+        console.log("Initial setup for app-what-i-do failed!");
       },
     );
   }

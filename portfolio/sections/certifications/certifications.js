@@ -68,7 +68,7 @@ class CertificateComponent extends HTMLElement {
             type="link"
             size="s"
             href=""
-            icon-right="fa fa-external-link-square-alt"
+            icon-right="fas fa-external-link-square-alt"
           ></app-button>
         </div>
       </template>
@@ -137,7 +137,7 @@ class CertificateComponent extends HTMLElement {
         this.fetchData();
       },
       () => {
-        console.log("Initial setup failed!");
+        console.log("Initial setup for app-certifications failed!");
       },
     );
   }
