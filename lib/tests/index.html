@@ -1158,40 +1158,38 @@
               size="l"
             ></app-text>
             <div class="component-group">
-              <div class="component-group">
-                <app-code-block
-                  title="Primary Code Block"
-                  appearance="primary"
-                  code="function greet(name) {
-                return `Hello, ${name}!`;
-              }"
-                  language="javascript"
-                >
-                </app-code-block>
+              <app-code-block
+                title="Primary"
+                appearance="primary"
+                code="function greet(name) {
+  return `Hello, ${name}!`;
+}"
+                language="javascript"
+              >
+              </app-code-block>
 
-                <app-code-block
-                  title="Secondary Code Block"
-                  appearance="secondary"
-                  code="def greet(name):
-                  return f'Hello, {name}!'"
-                  language="python"
-                >
-                </app-code-block>
+              <app-code-block
+                title="Secondary"
+                appearance="secondary"
+                code="def greet(name):
+  return f'Hello, {name}!'"
+                language="python"
+              >
+              </app-code-block>
 
-                <app-code-block
-                  title="Tertiary Code Block"
-                  appearance="tertiary"
-                  code="#include <iostream>
-              using namespace std;
+              <app-code-block
+                title="Tertiary"
+                appearance="tertiary"
+                code="#include <iostream>
+using namespace std;
 
-              int main() {
-                  cout << 'Hello World!' << endl;
-                  return 0;
-              }"
-                  language="cpp"
-                >
-                </app-code-block>
-              </div>
+int main() {
+    cout << 'Hello World!' << endl;
+    return 0;
+}"
+                language="cpp"
+              >
+              </app-code-block>
             </div>
           </div>
 
