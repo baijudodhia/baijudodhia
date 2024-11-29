@@ -141,6 +141,14 @@
 
                 // Components/Patterns in subcategory
                 components.forEach((item) => {
+                  const linkWrapper = document.createElement("div");
+                  linkWrapper.style.display = "block";
+                  linkWrapper.style.cursor = "pointer";
+                  linkWrapper.addEventListener("click", () => {
+                    showSection(`section-${item.component}`);
+                    window.location.hash = item.component;
+                  });
+
                   const link = document.createElement("app-text");
                   link.setAttribute("appearance", "link");
                   link.setAttribute("size", "m");
@@ -151,16 +159,20 @@
                     link.setAttribute("tooltip", item.description);
                   }
 
-                  link.style.display = "block";
-                  link.style.cursor = "pointer";
-
-                  link.addEventListener("click", () => showSection(`section-${item.component}`));
-                  section.appendChild(link);
+                  linkWrapper.appendChild(link);
+                  section.appendChild(linkWrapper);
                 });
               });
             } else if (Array.isArray(items)) {
-              // For flat arrays (pages section)
               items.forEach((item) => {
+                const linkWrapper = document.createElement("div");
+                linkWrapper.style.display = "block";
+                linkWrapper.style.cursor = "pointer";
+                linkWrapper.addEventListener("click", () => {
+                  showSection(`section-${item.component}`);
+                  window.location.hash = item.component;
+                });
+
                 const link = document.createElement("app-text");
                 link.setAttribute("appearance", "link");
                 link.setAttribute("size", "m");
@@ -170,18 +182,14 @@
                   link.setAttribute("tooltip", item.description);
                 }
 
-                link.style.display = "block";
-                link.style.cursor = "pointer";
-
-                link.addEventListener("click", () => showSection(`section-${item.component}`));
-                section.appendChild(link);
+                linkWrapper.appendChild(link);
+                section.appendChild(linkWrapper);
               });
             }
 
             return section;
           }
 
-          // Helper function to format titles
           function formatTitle(str) {
             return str
               .split("-")
@@ -189,22 +197,48 @@
               .join(" ");
           }
 
-          // Create sections for each main category
           Object.entries(data).forEach(([category, items]) => {
             const navSection = createNav(category, items);
             sidebar.appendChild(navSection);
           });
+
+          // Handle initial hash after sidebar is loaded
+          handleHashChange();
         } catch (error) {
           console.error("Error loading JSON:", error);
         }
       })();
+
+      // Handle hash changes and section display
+      window.addEventListener("hashchange", handleHashChange);
+      window.addEventListener("DOMContentLoaded", handleHashChange);
+
+      function handleHashChange() {
+        const hash = window.location.hash.slice(1);
+        if (hash) {
+          const sectionId = `section-${hash}`;
+          showSection(sectionId);
+        } else {
+          // Small delay to ensure sections are loaded
+          setTimeout(() => {
+            const firstSection = document.querySelector(".section");
+            if (firstSection) {
+              showSection(firstSection.id);
+            }
+          }, 100);
+        }
+      }
 
       // Function to show a section based on its ID
       function showSection(sectionId) {
         document.querySelectorAll(".section").forEach((section) => {
           section.classList.remove("active");
         });
-        document.getElementById(sectionId).classList.add("active");
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+          targetSection.classList.add("active");
+          window.scrollTo(0, 0);
+        }
       }
     </script>
   </head>
