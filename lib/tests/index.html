@@ -1107,6 +1107,133 @@
           </div>
         </section>
 
+        <!-- Code Block -->
+        <section
+          id="section-code-block"
+          class="section"
+        >
+          <app-text
+            style="font-weight: bold"
+            text="Theme Switcher"
+            size="xl"
+          ></app-text>
+
+          <div class="component-demo">
+            <app-text
+              text="Appearances"
+              size="l"
+            ></app-text>
+            <div class="component-group">
+              <div class="component-group">
+                <app-code-block
+                  title="Primary Code Block"
+                  appearance="primary"
+                  code="function greet(name) {
+                return `Hello, ${name}!`;
+              }"
+                  language="javascript"
+                >
+                </app-code-block>
+
+                <app-code-block
+                  title="Secondary Code Block"
+                  appearance="secondary"
+                  code="def greet(name):
+                  return f'Hello, {name}!'"
+                  language="python"
+                >
+                </app-code-block>
+
+                <app-code-block
+                  title="Tertiary Code Block"
+                  appearance="tertiary"
+                  code="#include <iostream>
+              using namespace std;
+
+              int main() {
+                  cout << 'Hello World!' << endl;
+                  return 0;
+              }"
+                  language="cpp"
+                >
+                </app-code-block>
+              </div>
+            </div>
+          </div>
+
+          <div class="component-demo">
+            <app-text
+              text="Shapes"
+              size="l"
+            ></app-text>
+            <div class="component-group">
+              <app-code-block
+                title="Rounded"
+                shape="rounded"
+                code="SELECT * FROM users
+WHERE age > 18
+ORDER BY name;"
+                language="sql"
+              >
+              </app-code-block>
+
+              <app-code-block
+                title="Curved"
+                shape="curved"
+                code="<div class='container'>
+  <h1>Hello World</h1>
+</div>"
+                language="html"
+              >
+              </app-code-block>
+
+              <app-code-block
+                title="Rectangle"
+                shape="rectangle"
+                code="body {
+  margin: 0;
+  padding: 20px;
+  background: #f0f0f0;
+}"
+                language="css"
+              >
+              </app-code-block>
+            </div>
+          </div>
+
+          <div class="component-demo">
+            <app-text
+              text="Sizes"
+              size="l"
+            ></app-text>
+            <div class="component-group">
+              <app-code-block
+                title="Small"
+                size="s"
+                code="console.log('Small size');"
+                language="javascript"
+              >
+              </app-code-block>
+
+              <app-code-block
+                title="Medium"
+                size="m"
+                code="console.log('Medium size');"
+                language="javascript"
+              >
+              </app-code-block>
+
+              <app-code-block
+                title="Large"
+                size="l"
+                code="console.log('Large size');"
+                language="javascript"
+              >
+              </app-code-block>
+            </div>
+          </div>
+        </section>
+
         <!-- Custom -->
         <!-- Social Links -->
         <section

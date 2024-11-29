@@ -42,6 +42,11 @@
         "component": "theme-switcher",
         "label": "Theme Switcher",
         "description": "Toggle between light/dark themes"
+      },
+      {
+        "component": "code-block",
+        "label": "Code Block",
+        "description": "Coding viewer block"
       }
     ]
   }
