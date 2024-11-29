@@ -1,6 +1,6 @@
 @import url("../../../styles/reset.css");
 @import url("../../../styles/global.css");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css");
+@import url("../../../../cdn/highlight-js-11.9.0/highlight-github.min.css");
 
 #code-block {
   width: 100%;
