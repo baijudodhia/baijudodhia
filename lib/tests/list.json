@@ -1,6 +1,6 @@
 {
   "Components": {
-    "Basic": [
+    "basic": [
       {
         "component": "button",
         "label": "Button",
@@ -47,6 +47,43 @@
         "component": "code-block",
         "label": "Code Block",
         "description": "Coding viewer block"
+      }
+    ],
+    "portfolio": [
+      {
+        "component": "about",
+        "label": "About",
+        "description": "About Section of Portfolio"
+      },
+      {
+        "component": "what-i-do",
+        "label": "What I Do?",
+        "description": "What I do? Section of Portfolio"
+      },
+      {
+        "component": "skills",
+        "label": "Skills",
+        "description": "Skills Section of Portfolio"
+      },
+      {
+        "component": "work-experience",
+        "label": "Work Experience",
+        "description": "Work Experience Section of Portfolio"
+      },
+      {
+        "component": "projects",
+        "label": "Projects",
+        "description": "Projects Section of Portfolio"
+      },
+      {
+        "component": "certifications",
+        "label": "Certifications",
+        "description": "Certifications Section of Portfolio"
+      },
+      {
+        "component": "full-portfolio",
+        "label": "Full Portfolio",
+        "description": "Full Portfolio"
       }
     ]
   }

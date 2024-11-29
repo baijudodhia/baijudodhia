@@ -123,6 +123,7 @@
             // Category Title
             const titleEl = document.createElement("app-text");
             titleEl.setAttribute("size", "xl");
+            titleEl.setAttribute("style", "padding: 0.5rem 0px;");
             titleEl.setAttribute("text", title.charAt(0).toUpperCase() + title.slice(1));
             titleEl.style.fontWeight = "bold";
 
@@ -134,6 +135,7 @@
                 // Subcategory title
                 const subTitle = document.createElement("app-text");
                 subTitle.setAttribute("size", "l");
+                subTitle.setAttribute("style", "padding: 0.5rem 0px;");
                 subTitle.setAttribute("text", formatTitle(subCategory));
                 subTitle.style.fontWeight = "bold";
 
@@ -152,6 +154,7 @@
                   const link = document.createElement("app-text");
                   link.setAttribute("appearance", "link");
                   link.setAttribute("size", "m");
+                  link.setAttribute("style", "padding: 0.5rem 0px;");
                   link.setAttribute("text", item.label);
 
                   // Add description as tooltip if available
@@ -176,6 +179,7 @@
                 const link = document.createElement("app-text");
                 link.setAttribute("appearance", "link");
                 link.setAttribute("size", "m");
+                link.setAttribute("style", "padding: 0.5rem 0px;");
                 link.setAttribute("text", item.label);
 
                 if (item.description) {
@@ -256,7 +260,7 @@
         <app-text
           text="Component Library"
           size="xxl"
-          style="font-weight: bold"
+          style="font-weight: bold; padding: 0.5rem 0px"
         ></app-text>
         <app-theme-switcher style="margin-left: auto !important"></app-theme-switcher>
       </header>
@@ -278,7 +282,7 @@
           <app-text
             text="Buttons"
             size="xl"
-            style="font-weight: bold"
+            style="font-weight: bold; padding: 0.5rem 0px"
           ></app-text>
           <div class="component-demo">
             <app-text
@@ -458,7 +462,7 @@
           class="section"
         >
           <app-text
-            style="font-weight: bold"
+            style="font-weight: bold; padding: 0.5rem 0px"
             text="Text"
             size="xl"
           ></app-text>
@@ -551,7 +555,7 @@
           class="section"
         >
           <app-text
-            style="font-weight: bold"
+            style="font-weight: bold; padding: 0.5rem 0px"
             text="Cards"
             size="xl"
           ></app-text>
@@ -705,7 +709,7 @@
           class="section"
         >
           <app-text
-            style="font-weight: bold"
+            style="font-weight: bold; padding: 0.5rem 0px"
             text="Timeline"
             size="xl"
           ></app-text>
@@ -876,7 +880,7 @@
           class="section"
         >
           <app-text
-            style="font-weight: bold"
+            style="font-weight: bold; padding: 0.5rem 0px"
             text="Color Picker"
             size="xl"
           ></app-text>
@@ -1085,7 +1089,7 @@
           class="section"
         >
           <app-text
-            style="font-weight: bold"
+            style="font-weight: bold; padding: 0.5rem 0px"
             text="Theme Switcher"
             size="xl"
           ></app-text>
@@ -1147,7 +1151,7 @@
           class="section"
         >
           <app-text
-            style="font-weight: bold"
+            style="font-weight: bold; padding: 0.5rem 0px"
             text="Code Block"
             size="xl"
           ></app-text>
@@ -1273,7 +1277,7 @@ ORDER BY name;"
           class="section"
         >
           <app-text
-            style="font-weight: bold"
+            style="font-weight: bold; padding: 0.5rem 0px"
             text="Social Links"
             size="xl"
           ></app-text>
@@ -1285,6 +1289,1348 @@ ORDER BY name;"
               portfolio="true"
               blog="true"
             ></app-social-links>
+          </div>
+        </section>
+
+        <!-- Portfolio -->
+        <!-- About Sections -->
+        <section
+          id="section-about"
+          class="section"
+        >
+          <app-text
+            style="font-weight: bold; padding: 0.5rem 0px"
+            text="About"
+            size="xl"
+          ></app-text>
+
+          <div class="component-group">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; font-weight: bold">
+              <div style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start">
+                <app-text
+                  style="font-weight: bold"
+                  text="Baiju Dodhia"
+                  size="xxl"
+                ></app-text>
+                <app-button
+                  icon-left="fas fa-search"
+                  appearance="mono"
+                  shape="rounded"
+                  size="xl"
+                  style="color: var(--color-primary); border: none !important"
+                  tooltip-html="
+                <div style='padding: 1rem;'>
+                  <app-text text='Google' style='padding-bottom: 1rem' appearance='link' href='https://www.google.com/search?q=%22Baiju%C2%A0Dodhia%22%C2%A0OR%C2%A0%22baijudodhia%22' variant='link' style='cursor: pointer;'></app-text>
+                  <app-text text='Bing' style='padding-bottom: 1rem' appearance='link' href='https://www.bing.com/search?q=%22Baiju%C2%A0Dodhia%22%C2%A0OR%C2%A0%22baijudodhia%22' variant='link' style='cursor: pointer;'></app-text>
+                  <app-text text='Brave' style='padding-bottom: 1rem' appearance='link' href='https://search.brave.com/search?q=baijudodhia' variant='link' style='cursor: pointer;'></app-text>
+                  <app-text text='DuckDuckGo' appearance='link' href='https://duckduckgo.com/?q=Baiju%C2%A0Dodhia&ia=web' variant='link' style='cursor: pointer;'></app-text>
+                </div>
+                "
+                  tooltip-trigger="focusin"
+                  tooltip-position="bottom"
+                ></app-button>
+              </div>
+              <app-text
+                style="font-weight: bold"
+                text="Software Engineer with entrepreneurial mindset having strong project-based knowledge of various technical skills including programming languages and software tools."
+                size="l"
+              ></app-text>
+              <div style="display: flex; gap: 0.5rem; font-weight: bold">
+                <app-text
+                  size="l"
+                  text="Currently working as Senior Software Engineer at"
+                ></app-text>
+                <app-text
+                  size="l"
+                  appearance="link"
+                  text="Think360.ai"
+                  variant="link"
+                  href="https://www.think360.ai/"
+                ></app-text>
+              </div>
+              <app-social-links
+                linkedin="true"
+                github="true"
+                blog="true"
+                size="m"
+                shape="rounded"
+                appearance="primary"
+              ></app-social-links>
+            </div>
+          </div>
+        </section>
+
+        <!-- What I Do? Sections -->
+        <section
+          id="section-what-i-do"
+          class="section"
+        >
+          <app-text
+            style="font-weight: bold; padding: 0.5rem 0px"
+            text="What I Do?"
+            size="xl"
+          ></app-text>
+
+          <div class="component-group">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; font-weight: bold">
+              <div style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start">
+                <app-text
+                  style="font-weight: bold"
+                  text="What I Do?"
+                  size="xxl"
+                ></app-text>
+              </div>
+              <div style="display: flex; flex-direction: row; align-items: flex-start; justify-content: flex-start; gap: 1rem">
+                <div style="height: 100%; display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; width: 100%; padding-right: 1rem; border-right: 2px dashed var(--color-bw-text)">
+                  <app-text
+                    size="l"
+                    text="I work primarily in JavaScript, Python and Web Development with great flexibility of learning and adapting to any programming language or technology."
+                  ></app-text>
+                  <app-text
+                    size="l"
+                    text="Apart from coding and technology, pretty much involved in exploring and learning about better design techniques, digital marketing, entrepreneurship and startups, business and project management."
+                  ></app-text>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; width: 100%">
+                  <app-text
+                    size="l"
+                    text="I have been a part of a lot of student communities related to tech, startups and entrepreneurship during my undergraduate years such as"
+                  ></app-text>
+                  <div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 0.5rem">
+                    <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 0.5rem">
+                      <app-text
+                        size="l"
+                        appearance="link"
+                        text="BloomBox, E-Cell KJSCE"
+                        variant="link"
+                        href="https://www.think360.ai/"
+                      ></app-text>
+                      <app-text
+                        size="l"
+                        text=", "
+                      ></app-text>
+                    </div>
+                    <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 0.5rem">
+                      <app-text
+                        size="l"
+                        appearance="link"
+                        text="RedShift Racing India"
+                        variant="link"
+                        href="https://www.think360.ai/"
+                      ></app-text>
+                      <app-text
+                        size="l"
+                        text=", "
+                      ></app-text>
+                    </div>
+                    <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 0.5rem">
+                      <app-text
+                        size="l"
+                        appearance="link"
+                        text="CSI KJSCE"
+                        variant="link"
+                        href="https://www.think360.ai/"
+                      ></app-text>
+                      <app-text
+                        size="l"
+                        text=", "
+                      ></app-text>
+                    </div>
+                    <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 0.5rem">
+                      <app-text
+                        size="l"
+                        appearance="link"
+                        text="Hult Prize Somaiya"
+                        variant="link"
+                        href="https://www.think360.ai/"
+                      ></app-text>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Skills Sections -->
+        <section
+          id="section-skills"
+          class="section"
+        >
+          <app-text
+            style="font-weight: bold; padding: 0.5rem 0px"
+            text="Skills"
+            size="xl"
+          ></app-text>
+
+          <div class="component-group">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; font-weight: bold">
+              <div style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start">
+                <app-text
+                  style="font-weight: bold"
+                  text="Skills"
+                  size="xxl"
+                ></app-text>
+              </div>
+              <div
+                style="
+                  display: grid;
+                  grid-auto-columns: 1fr;
+                  grid-auto-rows: 1fr;
+                  grid-template-columns: repeat(3, 1fr);
+                  grid-template-rows: repeat(2, 1fr);
+                  gap: 2rem;
+                  align-content: space-between;
+                  justify-items: start;
+                  align-items: start;
+                "
+              >
+                <app-card
+                  appearance="primary"
+                  style="height: 100%"
+                  header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Languages'></app-text>"
+                  body="<div><app-text text='JavaScript, Python, Java, HTML/CSS'></app-text></div>"
+                ></app-card>
+                <app-card
+                  appearance="primary"
+                  style="height: 100%"
+                  header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Frameworks & Libraries'></app-text>"
+                  body="<div><app-text text='Bootstrap, Material, React, Angular, Node.js, Django, Flask'></app-text></div>"
+                ></app-card>
+                <app-card
+                  appearance="primary"
+                  style="height: 100%"
+                  header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Databases'></app-text>"
+                  body="<div><app-text text='MySQL, PostgreSQL, MongoDB, Firebase'></app-text></div>"
+                ></app-card>
+                <app-card
+                  appearance="primary"
+                  style="height: 100%"
+                  header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Tools'></app-text>"
+                  body="<div><app-text text='Git, VSCode, Android Studio, Jira, Asana, Github, Bitbucket'></app-text></div>"
+                ></app-card>
+                <app-card
+                  appearance="primary"
+                  style="height: 100%"
+                  header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Cloud Tech'></app-text>"
+                  body="<div><app-text text='AWS S3, AWS EC2, AWS DynamoDB, AWS RDS, AWS IAM, AWS SQS, AWS CloudWatch'></app-text></div>"
+                ></app-card>
+                <app-card
+                  appearance="primary"
+                  style="height: 100%"
+                  header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Platforms'></app-text>"
+                  body="<div><app-text text='Web, Mobile'></app-text></div>"
+                ></app-card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Work Experience Sections -->
+        <section
+          id="section-work-experience"
+          class="section"
+        >
+          <app-text
+            style="font-weight: bold; padding: 0.5rem 0px"
+            text="Work Experience"
+            size="xl"
+          ></app-text>
+
+          <div class="component-group">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 2rem; font-weight: bold">
+              <div style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start">
+                <app-text
+                  style="font-weight: bold"
+                  text="Work Experience"
+                  size="xxl"
+                ></app-text>
+              </div>
+              <app-card
+                appearance="primary"
+                header="
+                  <div
+                    style='
+                      display: inline-flex;
+                      flex-direction: row;
+                      align-items: stretch;
+                      justify-content: flex-start;
+                      gap: 1rem;
+                      width: 100%;
+                    '
+                  >
+                    <div
+                      style='
+                        object-fit: contain;
+                        width: 100%;
+                        min-width: unset;
+                        max-width: 280px;
+                        max-height: 70px;
+                        min-height: unset;
+                        display: flex;
+                        align-self: stretch;
+                        justify-content: center;
+                        align-content: center;
+                        flex-direction: row;
+                        background-color: #ffffff;
+                        border-radius: 0.5rem;
+                        padding: 1rem;
+                        border-width: 1px;
+                        border-style: solid;
+                        border-color: var(--color-primary);
+                        box-shadow: 0px 2px 10px -3px var(--color-primary);
+                      '
+                    >
+                      <img
+                        style='width: 100%; height: 100%'
+                        src='https://baijudodhia.github.io/portfolio/assets/images/org-logo/think360.svg'
+                        alt=''
+                      />
+                    </div>
+                    <div style='align-self: stretch; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); grid-row-gap: 0.5rem; grid-column-gap: 1rem; width: 100%; padding: 0px 1rem;'>
+                      <app-text
+                        text='Think360.ai'
+                        icon-left='fa fa-building'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Mumbai, MH'
+                        icon-left='fas fa-map-marker-alt'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Web Apps'
+                        icon-left='fas fa-tasks'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Fintech'
+                        icon-left='fas fa-industry'
+                        size='l'
+                      ></app-text>
+                    </div>
+                  </div>
+                "
+                body="
+                  <app-timeline line-style='dashed' appearance='primary'>
+                    <div>
+                      <app-text size='l' text='Senior Software Engineer'></app-text>
+                      <app-text size='s' text='April 2023 - *' style='font-weight: normal'></app-text>
+                      <ul style='list-style-type:disc;margin-left:.5rem;padding-left:1rem;color:var(--color-bw-text);font-weight: normal'><li>Managed the frontend team for the product development of KwikID, a SaaS product serving the BFSI industry for Video KYC and Customer Onboarding flows.</li><li>Primarily focused on developing new features, re-architecting, and refactoring the existing codebase, setting up new processes and managing the team in designing secure, efficient, and scalable solutions to enhance the end-customer experience.</li><li>Notably, some of my key development contributions, including the creation of new libraries integral to the product, played a crucial role in driving substantial sales growth.</li></ul>
+                    </div>
+                    <div>
+                      <app-text size='l' text='Associate Frontend Engineer'></app-text>
+                      <app-text size='s' text='July 2021 - March 2023' style='font-weight: normal'></app-text>
+                      <ul style='list-style-type:disc;margin-left:.5rem;padding-left:1rem;color:var(--color-bw-text);font-weight: normal'><li>Led the development of frontend web applications, with a key focus on crafting seamless UI/UX for Lending Journeys using React.js. Additionally, contributed to development of backend APIs using Python Flask.</li></ul>
+                    </div>
+                  </app-timeline>
+                  "
+              ></app-card>
+              <app-card
+                appearance="primary"
+                header="
+                  <div
+                    style='
+                      display: inline-flex;
+                      flex-direction: row;
+                      align-items: stretch;
+                      justify-content: flex-start;
+                      gap: 1rem;
+                      width: 100%;
+                    '
+                  >
+                    <div
+                      style='
+                        object-fit: contain;
+                        width: 100%;
+                        min-width: unset;
+                        max-width: 280px;
+                        max-height: 70px;
+                        min-height: unset;
+                        display: flex;
+                        align-self: stretch;
+                        justify-content: center;
+                        align-content: center;
+                        flex-direction: row;
+                        background-color: #ffffff;
+                        border-radius: 0.5rem;
+                        padding: 1rem;
+                        border-width: 1px;
+                        border-style: solid;
+                        border-color: var(--color-primary);
+                        box-shadow: 0px 2px 10px -3px var(--color-primary);
+                      '
+                    >
+                      <img
+                        style='width: 100%; height: 100%'
+                        src='https://baijudodhia.github.io/portfolio/assets/images/org-logo/fogr.svg'
+                        alt=''
+                      />
+                    </div>
+                    <div style='align-self: stretch; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); grid-row-gap: 0.5rem; grid-column-gap: 1rem; width: 100%; padding: 0px 1rem;'>
+                      <app-text
+                        text='FoGR Tech'
+                        icon-left='fa fa-building'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Remote, India'
+                        icon-left='fas fa-map-marker-alt'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Web/Mobile Apps'
+                        icon-left='fas fa-tasks'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='E-Commerce'
+                        icon-left='fas fa-industry'
+                        size='l'
+                      ></app-text>
+                    </div>
+                  </div>
+                "
+                body="
+                  <app-timeline line-style='dashed' appearance='primary'>
+                    <div>
+                      <app-text size='l' text='SDE Intern'></app-text>
+                      <app-text size='s' text='Sept 2020 - Nov 2020' style='font-weight: normal'></app-text>
+                      <div style='color:var(--color-bw-text); font-weight: normal'><div>Worked on 2 applications - </div><ul style='list-style-type: disc; margin-left: 0.5rem; padding-left: 1rem'><li>Food Delivery App: Built backend for Android/iOS application using Angular Ionic Framework for integration with UI, Firebase for Realtime Database and User Authentication.</li><li>Delivery Package Returning App: Developed 3 integrated web applications (customer, admin and delivery agent) using Angular for UI, Node.js for backend and REST API, PubNub for real-time notifications, Stripe for Payments and MongoDB Atlas for Cloud-based Document Database.</li></ul></div>
+                    </div>
+                  </app-timeline>
+                  "
+              ></app-card>
+              <app-card
+                appearance="primary"
+                header="
+                  <div
+                    style='
+                      display: inline-flex;
+                      flex-direction: row;
+                      align-items: stretch;
+                      justify-content: flex-start;
+                      gap: 1rem;
+                      width: 100%;
+                    '
+                  >
+                    <div
+                      style='
+                        object-fit: contain;
+                        width: 100%;
+                        min-width: unset;
+                        max-width: 280px;
+                        max-height: 70px;
+                        min-height: unset;
+                        display: flex;
+                        align-self: stretch;
+                        justify-content: center;
+                        align-content: center;
+                        flex-direction: row;
+                        background-color: #ffffff;
+                        border-radius: 0.5rem;
+                        padding: 1rem;
+                        border-width: 1px;
+                        border-style: solid;
+                        border-color: var(--color-primary);
+                        box-shadow: 0px 2px 10px -3px var(--color-primary);
+                      '
+                    >
+                      <img
+                        style='width: 100%; height: 100%'
+                        src='https://baijudodhia.github.io/portfolio/assets/images/org-logo/kjsce.svg'
+                        alt=''
+                      />
+                    </div>
+                    <div style='align-self: stretch; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); grid-row-gap: 0.5rem; grid-column-gap: 1rem; width: 100%; padding: 0px 1rem;'>
+                      <app-text
+                        text='KJSCE'
+                        icon-left='fa fa-building'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Mumbai, MH'
+                        icon-left='fas fa-map-marker-alt'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Browser Extension'
+                        icon-left='fas fa-tasks'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Productivity Tools'
+                        icon-left='fas fa-industry'
+                        size='l'
+                      ></app-text>
+                    </div>
+                  </div>
+                "
+                body="
+                  <app-timeline line-style='dashed' appearance='primary'>
+                    <div>
+                      <app-text size='l' text='SDE Intern'></app-text>
+                      <app-text size='s' text='April 2020 - June 2020' style='font-weight: normal'></app-text>
+                      <div style='color:var(--color-bw-text);font-weight: normal'><div>Worked on development of Browser Extension -</div><ul style='list-style-type: disc; margin-left: 0.5rem; padding-left: 1rem'><li>Worked on development of Chromium-browser based extension for Gmail for extracting information and generating summary from email threads using Node.js and Gmail.js</li><li>Achieved 100% results for extracting information like email ids and website URLs mentioned in the email thread.</li><li>Generated a 3 point extractive summary of email thread using cosine similarity measures.</li></ul></div>
+                    </div>
+                  </app-timeline>
+                  "
+              ></app-card>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects Sections -->
+        <section
+          id="section-projects"
+          class="section"
+        >
+          <app-text
+            style="font-weight: bold; padding: 0.5rem 0px"
+            text="Projects"
+            size="xl"
+          ></app-text>
+
+          <div class="component-group">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; font-weight: bold">
+              <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%">
+                <app-text
+                  style="font-weight: bold"
+                  text="Projects"
+                  size="xxl"
+                ></app-text>
+                <app-button
+                  label="View all"
+                  appearance="secondary"
+                  icon-right="fas fa-external-link-square-alt"
+                  type="link"
+                  href="https://github.com/baijudodhia?tab=repositories"
+                ></app-button>
+              </div>
+              <div
+                style="
+                  display: grid;
+                  grid-auto-columns: 1fr;
+                  grid-auto-rows: 1fr;
+                  grid-template-columns: repeat(2, 1fr);
+                  grid-template-rows: repeat(2, 1fr);
+                  gap: 2rem;
+                  align-content: space-between;
+                  justify-items: start;
+                  align-items: start;
+                "
+              >
+                <app-card
+                  appearance="primary"
+                  style="height: 100%"
+                  header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='photoml'></app-text>"
+                  body="<div><app-text text='Android Image Gallery app with Machine Learning features such as Facial Recognition, OCR, Barcode and Label Detection. Built in Android Studio using Java, Glide and Firebase ML-Kit.'></app-text></div>"
+                  footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='code' appearance='secondary' icon-right='fa fa-github' type='link' href='https://github.com/baijudodhia/photoml'></app-button></div>"
+                ></app-card>
+                <app-card
+                  appearance="primary"
+                  style="height: 100%"
+                  header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='summarise'></app-text>"
+                  body="<div><app-text text='Gmail Extension which generates a max 3-line summary of a thread.'></app-text></div>"
+                  footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='code' appearance='secondary' icon-right='fa fa-github' type='link' href='https://github.com/baijudodhia/email-summarise'></app-button><app-button label='live' appearance='secondary' icon-right='fas fa-external-link-square-alt' type='link' href='https://baijudodhia.github.io/email-summarise/'></app-button></div>"
+                ></app-card>
+                <app-card
+                  appearance="primary"
+                  style="height: 100%"
+                  header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='img-geometric-transformation'></app-text>"
+                  body="<div><app-text text='A python script to perform Geometric Transformation on Image File such as Perspective change, Zoom In/Out, Translate, Scale, Shear, Rotate and Flip.'></app-text></div>"
+                  footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='code' appearance='secondary' icon-right='fa fa-github' type='link' href='https://github.com/baijudodhia/img-geometric-transformation'></app-button><app-button label='live' appearance='secondary' icon-right='fas fa-external-link-square-alt' type='link' href='https://colab.research.google.com/drive/1xt1oV4b_egSAQjk9HbDGl9bes_j8NR8Z?usp=sharing'></app-button></div>"
+                ></app-card>
+                <app-card
+                  appearance="primary"
+                  style="height: 100%"
+                  header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='designs'></app-text>"
+                  body="<div><app-text text='Multiple frontend website templates such as Blog, Online Store, Travel etc. built using only HTML, CSS and JS.'></app-text></div>"
+                  footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='code' appearance='secondary' icon-right='fa fa-github' type='link' href='https://github.com/baijudodhia/designs'></app-button><app-button label='live' appearance='secondary' icon-right='fas fa-external-link-square-alt' type='link' href='https://baijudodhia.github.io/designs/'></app-button></div>"
+                ></app-card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Certifications Sections -->
+        <section
+          id="section-certifications"
+          class="section"
+        >
+          <app-text
+            style="font-weight: bold; padding: 0.5rem 0px"
+            text="Certifications"
+            size="xl"
+          ></app-text>
+
+          <div class="component-group">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; font-weight: bold; width: 100%">
+              <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%">
+                <app-text
+                  style="font-weight: bold"
+                  text="Certifications"
+                  size="xxl"
+                ></app-text>
+                <app-button
+                  label="view all"
+                  appearance="secondary"
+                  icon-right="fas fa-external-link-square-alt"
+                  type="link"
+                  href="https://github.com/baijudodhia?tab=repositories"
+                ></app-button>
+              </div>
+              <div
+                style="
+                  display: grid;
+                  grid-auto-columns: 1fr;
+                  grid-auto-rows: 1fr;
+                  grid-template-columns: repeat(2, 1fr);
+                  grid-template-rows: repeat(2, 1fr);
+                  gap: 2rem;
+                  align-content: space-between;
+                  justify-items: start;
+                  align-items: start;
+                  width: 100%;
+                "
+              >
+                <app-card
+                  appearance="primary"
+                  style="height: 100%"
+                  header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Microsoft Azure Fundamentals'></app-text>"
+                  body="
+                    <app-text
+                      text='Microsoft'
+                      icon-left='fa fa-building'
+                      size='l'
+                    ></app-text>
+                    <app-text
+                      text='Azure'
+                      icon-left='fa fa-building'
+                      size='l'
+                    ></app-text>
+                    <app-text
+                      text='Sept 2022'
+                      icon-left='fa fa-calendar-check-o'
+                      size='l'
+                    ></app-text>
+                  "
+                  footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='certificate' appearance='secondary' icon-right='fas fa-external-link-square-alt' type='link' href='https://github.com/baijudodhia/photoml'></app-button></div>"
+                ></app-card>
+                <app-card
+                  appearance="primary"
+                  style="height: 100%"
+                  header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Python Specialization'></app-text>"
+                  body="
+                    <app-text
+                      text='University of Michigen'
+                      icon-left='fa fa-building'
+                      size='l'
+                    ></app-text>
+                    <app-text
+                      text='Coursera'
+                      icon-left='fa fa-building'
+                      size='l'
+                    ></app-text>
+                    <app-text
+                      text='Sept 2020'
+                      icon-left='fa fa-calendar-check-o'
+                      size='l'
+                    ></app-text>
+                  "
+                  footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='certificate' appearance='secondary' icon-right='fas fa-external-link-square-alt' type='link' href='https://github.com/baijudodhia/photoml'></app-button></div>"
+                ></app-card>
+                <app-card
+                  appearance="primary"
+                  style="height: 100%"
+                  header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='AWS Fundamentals Specialization'></app-text>"
+                  body="
+                    <app-text
+                      text='Amazon Web Services (AWS)'
+                      icon-left='fa fa-building'
+                      size='l'
+                    ></app-text>
+                    <app-text
+                      text='Coursera'
+                      icon-left='fa fa-building'
+                      size='l'
+                    ></app-text>
+                    <app-text
+                      text='Sept 2020'
+                      icon-left='fa fa-calendar-check-o'
+                      size='l'
+                    ></app-text>
+                  "
+                  footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='certificate' appearance='secondary' icon-right='fas fa-external-link-square-alt' type='link' href='https://github.com/baijudodhia/photoml'></app-button></div>"
+                ></app-card>
+                <app-card
+                  appearance="primary"
+                  style="height: 100%"
+                  header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Introduction to Cloud Computing'></app-text>"
+                  body="
+                    <app-text
+                      text='IBM'
+                      icon-left='fa fa-building'
+                      size='l'
+                    ></app-text>
+                    <app-text
+                      text='Coursera'
+                      icon-left='fa fa-building'
+                      size='l'
+                    ></app-text>
+                    <app-text
+                      text='Sept 2020'
+                      icon-left='fa fa-calendar-check-o'
+                      size='l'
+                    ></app-text>
+                  "
+                  footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='certificate' appearance='secondary' icon-right='fas fa-external-link-square-alt' type='link' href='https://github.com/baijudodhia/photoml'></app-button></div>"
+                ></app-card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Full Portfolio Sections -->
+        <section
+          id="section-full-portfolio"
+          class="section"
+        >
+          <div style="display: inline-flex; flex-direction: column; align-items: stretch; width: 100%; max-width: 991px; gap: 1rem; margin: auto; height: 100%">
+            <div class="component-group">
+              <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; font-weight: bold">
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start">
+                  <app-text
+                    style="font-weight: bold"
+                    text="Baiju Dodhia"
+                    size="xxl"
+                  ></app-text>
+                  <app-button
+                    icon-left="fas fa-search"
+                    appearance="mono"
+                    shape="rounded"
+                    title="Search"
+                    size="xl"
+                    style="color: var(--color-primary); border: none !important"
+                    tooltip-html="
+                <div style='padding: 1rem;'>
+                  <app-text text='Google' style='padding-bottom: 1rem' appearance='link' href='https://www.google.com/search?q=%22Baiju%C2%A0Dodhia%22%C2%A0OR%C2%A0%22baijudodhia%22' variant='link' style='cursor: pointer;'></app-text>
+                  <app-text text='Bing' style='padding-bottom: 1rem' appearance='link' href='https://www.bing.com/search?q=%22Baiju%C2%A0Dodhia%22%C2%A0OR%C2%A0%22baijudodhia%22' variant='link' style='cursor: pointer;'></app-text>
+                  <app-text text='Brave' style='padding-bottom: 1rem' appearance='link' href='https://search.brave.com/search?q=baijudodhia' variant='link' style='cursor: pointer;'></app-text>
+                  <app-text text='DuckDuckGo' appearance='link' href='https://duckduckgo.com/?q=Baiju%C2%A0Dodhia&ia=web' variant='link' style='cursor: pointer;'></app-text>
+                </div>
+                "
+                    tooltip-trigger="focusin"
+                    tooltip-position="bottom"
+                  ></app-button>
+                </div>
+                <app-text
+                  style="font-weight: bold"
+                  text="Software Engineer with entrepreneurial mindset having strong project-based knowledge of various technical skills including programming languages and software tools."
+                  size="l"
+                ></app-text>
+                <div style="display: flex; gap: 0.5rem; font-weight: bold">
+                  <app-text
+                    size="l"
+                    text="Currently working as Senior Software Engineer at"
+                  ></app-text>
+                  <app-text
+                    size="l"
+                    appearance="link"
+                    text="Think360.ai"
+                    variant="link"
+                    href="https://www.think360.ai/"
+                  ></app-text>
+                </div>
+                <app-social-links
+                  linkedin="true"
+                  github="true"
+                  blog="true"
+                  size="m"
+                  shape="rounded"
+                  appearance="primary"
+                ></app-social-links>
+              </div>
+            </div>
+
+            <div class="component-group">
+              <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; font-weight: bold">
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start">
+                  <app-text
+                    style="font-weight: bold"
+                    text="What I Do?"
+                    size="xxl"
+                  ></app-text>
+                </div>
+                <div style="display: flex; flex-direction: row; align-items: flex-start; justify-content: flex-start; gap: 1rem">
+                  <div style="height: 100%; display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; width: 100%; padding-right: 1rem; border-right: 2px dashed var(--color-bw-text)">
+                    <app-text
+                      size="l"
+                      text="I work primarily in JavaScript, Python and Web Development with great flexibility of learning and adapting to any programming language or technology."
+                    ></app-text>
+                    <app-text
+                      size="l"
+                      text="Apart from coding and technology, pretty much involved in exploring and learning about better design techniques, digital marketing, entrepreneurship and startups, business and project management."
+                    ></app-text>
+                  </div>
+                  <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; width: 100%">
+                    <app-text
+                      size="l"
+                      text="I have been a part of a lot of student communities related to tech, startups and entrepreneurship during my undergraduate years such as"
+                    ></app-text>
+                    <div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 0.5rem">
+                      <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 0.5rem">
+                        <app-text
+                          size="l"
+                          appearance="link"
+                          text="BloomBox, E-Cell KJSCE"
+                          variant="link"
+                          href="https://www.think360.ai/"
+                        ></app-text>
+                        <app-text
+                          size="l"
+                          text=", "
+                        ></app-text>
+                      </div>
+                      <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 0.5rem">
+                        <app-text
+                          size="l"
+                          appearance="link"
+                          text="RedShift Racing India"
+                          variant="link"
+                          href="https://www.think360.ai/"
+                        ></app-text>
+                        <app-text
+                          size="l"
+                          text=", "
+                        ></app-text>
+                      </div>
+                      <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 0.5rem">
+                        <app-text
+                          size="l"
+                          appearance="link"
+                          text="CSI KJSCE"
+                          variant="link"
+                          href="https://www.think360.ai/"
+                        ></app-text>
+                        <app-text
+                          size="l"
+                          text=", "
+                        ></app-text>
+                      </div>
+                      <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 0.5rem">
+                        <app-text
+                          size="l"
+                          appearance="link"
+                          text="Hult Prize Somaiya"
+                          variant="link"
+                          href="https://www.think360.ai/"
+                        ></app-text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <hr style="align-self: stretch; margin: 0px; border: none; border-top: 2px dashed var(--color-bw-text); height: 0px; background-color: transparent" />
+
+            <div class="component-group">
+              <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; font-weight: bold">
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start">
+                  <app-text
+                    style="font-weight: bold"
+                    text="Skills"
+                    size="xxl"
+                  ></app-text>
+                </div>
+                <div
+                  style="
+                    display: grid;
+                    grid-auto-columns: 1fr;
+                    grid-auto-rows: 1fr;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                    gap: 2rem;
+                    align-content: space-between;
+                    justify-items: start;
+                    align-items: start;
+                  "
+                >
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Languages'></app-text>"
+                    body="<div><app-text text='JavaScript, Python, Java, HTML/CSS'></app-text></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Frameworks & Libraries'></app-text>"
+                    body="<div><app-text text='Bootstrap, Material, React, Angular, Node.js, Django, Flask'></app-text></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Databases'></app-text>"
+                    body="<div><app-text text='MySQL, PostgreSQL, MongoDB, Firebase'></app-text></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Tools'></app-text>"
+                    body="<div><app-text text='Git, VSCode, Android Studio, Jira, Asana, Github, Bitbucket'></app-text></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Cloud Tech'></app-text>"
+                    body="<div><app-text text='AWS S3, AWS EC2, AWS DynamoDB, AWS RDS, AWS IAM, AWS SQS, AWS CloudWatch'></app-text></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Platforms'></app-text>"
+                    body="<div><app-text text='Web, Mobile'></app-text></div>"
+                  ></app-card>
+                </div>
+              </div>
+            </div>
+
+            <hr style="align-self: stretch; margin: 0px; border: none; border-top: 2px dashed var(--color-bw-text); height: 0px; background-color: transparent" />
+
+            <div class="component-group">
+              <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 2rem; font-weight: bold">
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start">
+                  <app-text
+                    style="font-weight: bold"
+                    text="Work Experience"
+                    size="xxl"
+                  ></app-text>
+                </div>
+                <app-card
+                  appearance="primary"
+                  header="
+                  <div
+                    style='
+                      display: inline-flex;
+                      flex-direction: row;
+                      align-items: stretch;
+                      justify-content: flex-start;
+                      gap: 1rem;
+                      width: 100%;
+                    '
+                  >
+                    <div
+                      style='
+                        object-fit: contain;
+                        width: 100%;
+                        min-width: unset;
+                        max-width: 280px;
+                        max-height: 70px;
+                        min-height: unset;
+                        display: flex;
+                        align-self: stretch;
+                        justify-content: center;
+                        align-content: center;
+                        flex-direction: row;
+                        background-color: #ffffff;
+                        border-radius: 0.5rem;
+                        padding: 1rem;
+                        border-width: 1px;
+                        border-style: solid;
+                        border-color: var(--color-primary);
+                        box-shadow: 0px 2px 10px -3px var(--color-primary);
+                      '
+                    >
+                      <img
+                        style='width: 100%; height: 100%'
+                        src='https://baijudodhia.github.io/portfolio/assets/images/org-logo/think360.svg'
+                        alt=''
+                      />
+                    </div>
+                    <div style='align-self: stretch; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); grid-row-gap: 0.5rem; grid-column-gap: 1rem; width: 100%; padding: 0px 1rem;'>
+                      <app-text
+                        text='Think360.ai'
+                        icon-left='fa fa-building'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Mumbai, MH'
+                        icon-left='fas fa-map-marker-alt'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Web Apps'
+                        icon-left='fas fa-tasks'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Fintech'
+                        icon-left='fas fa-industry'
+                        size='l'
+                      ></app-text>
+                    </div>
+                  </div>
+                "
+                  body="
+                  <app-timeline line-style='dashed' appearance='primary'>
+                    <div>
+                      <app-text size='l' text='Senior Software Engineer'></app-text>
+                      <app-text size='s' text='April 2023 - *' style='font-weight: normal'></app-text>
+                      <ul style='list-style-type:disc;margin-left:.5rem;padding-left:1rem;color:var(--color-bw-text);font-weight: normal'><li>Managed the frontend team for the product development of KwikID, a SaaS product serving the BFSI industry for Video KYC and Customer Onboarding flows.</li><li>Primarily focused on developing new features, re-architecting, and refactoring the existing codebase, setting up new processes and managing the team in designing secure, efficient, and scalable solutions to enhance the end-customer experience.</li><li>Notably, some of my key development contributions, including the creation of new libraries integral to the product, played a crucial role in driving substantial sales growth.</li></ul>
+                    </div>
+                    <div>
+                      <app-text size='l' text='Associate Frontend Engineer'></app-text>
+                      <app-text size='s' text='July 2021 - March 2023' style='font-weight: normal'></app-text>
+                      <ul style='list-style-type:disc;margin-left:.5rem;padding-left:1rem;color:var(--color-bw-text);font-weight: normal'><li>Led the development of frontend web applications, with a key focus on crafting seamless UI/UX for Lending Journeys using React.js. Additionally, contributed to development of backend APIs using Python Flask.</li></ul>
+                    </div>
+                  </app-timeline>
+                  "
+                ></app-card>
+                <app-card
+                  appearance="primary"
+                  header="
+                  <div
+                    style='
+                      display: inline-flex;
+                      flex-direction: row;
+                      align-items: stretch;
+                      justify-content: flex-start;
+                      gap: 1rem;
+                      width: 100%;
+                    '
+                  >
+                    <div
+                      style='
+                        object-fit: contain;
+                        width: 100%;
+                        min-width: unset;
+                        max-width: 280px;
+                        max-height: 70px;
+                        min-height: unset;
+                        display: flex;
+                        align-self: stretch;
+                        justify-content: center;
+                        align-content: center;
+                        flex-direction: row;
+                        background-color: #ffffff;
+                        border-radius: 0.5rem;
+                        padding: 1rem;
+                        border-width: 1px;
+                        border-style: solid;
+                        border-color: var(--color-primary);
+                        box-shadow: 0px 2px 10px -3px var(--color-primary);
+                      '
+                    >
+                      <img
+                        style='width: 100%; height: 100%'
+                        src='https://baijudodhia.github.io/portfolio/assets/images/org-logo/fogr.svg'
+                        alt=''
+                      />
+                    </div>
+                    <div style='align-self: stretch; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); grid-row-gap: 0.5rem; grid-column-gap: 1rem; width: 100%; padding: 0px 1rem;'>
+                      <app-text
+                        text='FoGR Tech'
+                        icon-left='fa fa-building'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Remote, India'
+                        icon-left='fas fa-map-marker-alt'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Web/Mobile Apps'
+                        icon-left='fas fa-tasks'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='E-Commerce'
+                        icon-left='fas fa-industry'
+                        size='l'
+                      ></app-text>
+                    </div>
+                  </div>
+                "
+                  body="
+                  <app-timeline line-style='dashed' appearance='primary'>
+                    <div>
+                      <app-text size='l' text='SDE Intern'></app-text>
+                      <app-text size='s' text='Sept 2020 - Nov 2020' style='font-weight: normal'></app-text>
+                      <div style='color:var(--color-bw-text); font-weight: normal'><div>Worked on 2 applications - </div><ul style='list-style-type: disc; margin-left: 0.5rem; padding-left: 1rem'><li>Food Delivery App: Built backend for Android/iOS application using Angular Ionic Framework for integration with UI, Firebase for Realtime Database and User Authentication.</li><li>Delivery Package Returning App: Developed 3 integrated web applications (customer, admin and delivery agent) using Angular for UI, Node.js for backend and REST API, PubNub for real-time notifications, Stripe for Payments and MongoDB Atlas for Cloud-based Document Database.</li></ul></div>
+                    </div>
+                  </app-timeline>
+                  "
+                ></app-card>
+                <app-card
+                  appearance="primary"
+                  header="
+                  <div
+                    style='
+                      display: inline-flex;
+                      flex-direction: row;
+                      align-items: stretch;
+                      justify-content: flex-start;
+                      gap: 1rem;
+                      width: 100%;
+                    '
+                  >
+                    <div
+                      style='
+                        object-fit: contain;
+                        width: 100%;
+                        min-width: unset;
+                        max-width: 280px;
+                        max-height: 70px;
+                        min-height: unset;
+                        display: flex;
+                        align-self: stretch;
+                        justify-content: center;
+                        align-content: center;
+                        flex-direction: row;
+                        background-color: #ffffff;
+                        border-radius: 0.5rem;
+                        padding: 1rem;
+                        border-width: 1px;
+                        border-style: solid;
+                        border-color: var(--color-primary);
+                        box-shadow: 0px 2px 10px -3px var(--color-primary);
+                      '
+                    >
+                      <img
+                        style='width: 100%; height: 100%'
+                        src='https://baijudodhia.github.io/portfolio/assets/images/org-logo/kjsce.svg'
+                        alt=''
+                      />
+                    </div>
+                    <div style='align-self: stretch; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); grid-row-gap: 0.5rem; grid-column-gap: 1rem; width: 100%; padding: 0px 1rem;'>
+                      <app-text
+                        text='KJSCE'
+                        icon-left='fa fa-building'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Mumbai, MH'
+                        icon-left='fas fa-map-marker-alt'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Browser Extension'
+                        icon-left='fas fa-tasks'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Productivity Tools'
+                        icon-left='fas fa-industry'
+                        size='l'
+                      ></app-text>
+                    </div>
+                  </div>
+                "
+                  body="
+                  <app-timeline line-style='dashed' appearance='primary'>
+                    <div>
+                      <app-text size='l' text='SDE Intern'></app-text>
+                      <app-text size='s' text='April 2020 - June 2020' style='font-weight: normal'></app-text>
+                      <div style='color:var(--color-bw-text);font-weight: normal'><div>Worked on development of Browser Extension -</div><ul style='list-style-type: disc; margin-left: 0.5rem; padding-left: 1rem'><li>Worked on development of Chromium-browser based extension for Gmail for extracting information and generating summary from email threads using Node.js and Gmail.js</li><li>Achieved 100% results for extracting information like email ids and website URLs mentioned in the email thread.</li><li>Generated a 3 point extractive summary of email thread using cosine similarity measures.</li></ul></div>
+                    </div>
+                  </app-timeline>
+                  "
+                ></app-card>
+              </div>
+            </div>
+
+            <hr style="align-self: stretch; margin: 0px; border: none; border-top: 2px dashed var(--color-bw-text); height: 0px; background-color: transparent" />
+
+            <div class="component-group">
+              <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; font-weight: bold">
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%">
+                  <app-text
+                    style="font-weight: bold"
+                    text="Projects"
+                    size="xxl"
+                  ></app-text>
+                  <app-button
+                    label="View all"
+                    appearance="secondary"
+                    icon-right="fas fa-external-link-square-alt"
+                    type="link"
+                    href="https://github.com/baijudodhia?tab=repositories"
+                  ></app-button>
+                </div>
+                <div
+                  style="
+                    display: grid;
+                    grid-auto-columns: 1fr;
+                    grid-auto-rows: 1fr;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                    gap: 2rem;
+                    align-content: space-between;
+                    justify-items: start;
+                    align-items: start;
+                  "
+                >
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='photoml'></app-text>"
+                    body="<div><app-text text='Android Image Gallery app with Machine Learning features such as Facial Recognition, OCR, Barcode and Label Detection. Built in Android Studio using Java, Glide and Firebase ML-Kit.'></app-text></div>"
+                    footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='code' appearance='secondary' icon-right='fa fa-github' type='link' href='https://github.com/baijudodhia/photoml'></app-button></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='summarise'></app-text>"
+                    body="<div><app-text text='Gmail Extension which generates a max 3-line summary of a thread.'></app-text></div>"
+                    footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='code' appearance='secondary' icon-right='fa fa-github' type='link' href='https://github.com/baijudodhia/email-summarise'></app-button><app-button label='live' appearance='secondary' icon-right='fas fa-external-link-square-alt' type='link' href='https://baijudodhia.github.io/email-summarise/'></app-button></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='img-geometric-transformation'></app-text>"
+                    body="<div><app-text text='A python script to perform Geometric Transformation on Image File such as Perspective change, Zoom In/Out, Translate, Scale, Shear, Rotate and Flip.'></app-text></div>"
+                    footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='code' appearance='secondary' icon-right='fa fa-github' type='link' href='https://github.com/baijudodhia/img-geometric-transformation'></app-button><app-button label='live' appearance='secondary' icon-right='fas fa-external-link-square-alt' type='link' href='https://colab.research.google.com/drive/1xt1oV4b_egSAQjk9HbDGl9bes_j8NR8Z?usp=sharing'></app-button></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='designs'></app-text>"
+                    body="<div><app-text text='Multiple frontend website templates such as Blog, Online Store, Travel etc. built using only HTML, CSS and JS.'></app-text></div>"
+                    footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='code' appearance='secondary' icon-right='fa fa-github' type='link' href='https://github.com/baijudodhia/designs'></app-button><app-button label='live' appearance='secondary' icon-right='fas fa-external-link-square-alt' type='link' href='https://baijudodhia.github.io/designs/'></app-button></div>"
+                  ></app-card>
+                </div>
+              </div>
+            </div>
+
+            <hr style="align-self: stretch; margin: 0px; border: none; border-top: 2px dashed var(--color-bw-text); height: 0px; background-color: transparent" />
+
+            <div class="component-group">
+              <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; font-weight: bold; width: 100%">
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%">
+                  <app-text
+                    style="font-weight: bold"
+                    text="Certifications"
+                    size="xxl"
+                  ></app-text>
+                  <app-button
+                    label="view all"
+                    appearance="secondary"
+                    icon-right="fas fa-external-link-square-alt"
+                    type="link"
+                    href="https://github.com/baijudodhia?tab=repositories"
+                  ></app-button>
+                </div>
+                <div
+                  style="
+                    display: grid;
+                    grid-auto-columns: 1fr;
+                    grid-auto-rows: 1fr;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                    gap: 2rem;
+                    align-content: space-between;
+                    justify-items: start;
+                    align-items: start;
+                    width: 100%;
+                  "
+                >
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Microsoft Azure Fundamentals'></app-text>"
+                    body="
+                    <app-text
+                      text='Microsoft'
+                      icon-left='fa fa-building'
+                      size='l'
+                    ></app-text>
+                    <app-text
+                      text='Azure'
+                      icon-left='fa fa-building'
+                      size='l'
+                    ></app-text>
+                    <app-text
+                      text='Sept 2022'
+                      icon-left='fa fa-calendar-check-o'
+                      size='l'
+                    ></app-text>
+                  "
+                    footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='certificate' appearance='secondary' icon-right='fas fa-external-link-square-alt' type='link' href='https://github.com/baijudodhia/photoml'></app-button></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Python Specialization'></app-text>"
+                    body="
+                    <app-text
+                      text='University of Michigen'
+                      icon-left='fa fa-building'
+                      size='l'
+                    ></app-text>
+                    <app-text
+                      text='Coursera'
+                      icon-left='fa fa-building'
+                      size='l'
+                    ></app-text>
+                    <app-text
+                      text='Sept 2020'
+                      icon-left='fa fa-calendar-check-o'
+                      size='l'
+                    ></app-text>
+                  "
+                    footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='certificate' appearance='secondary' icon-right='fas fa-external-link-square-alt' type='link' href='https://github.com/baijudodhia/photoml'></app-button></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='AWS Fundamentals Specialization'></app-text>"
+                    body="
+                    <app-text
+                      text='Amazon Web Services (AWS)'
+                      icon-left='fa fa-building'
+                      size='l'
+                    ></app-text>
+                    <app-text
+                      text='Coursera'
+                      icon-left='fa fa-building'
+                      size='l'
+                    ></app-text>
+                    <app-text
+                      text='Sept 2020'
+                      icon-left='fa fa-calendar-check-o'
+                      size='l'
+                    ></app-text>
+                  "
+                    footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='certificate' appearance='secondary' icon-right='fas fa-external-link-square-alt' type='link' href='https://github.com/baijudodhia/photoml'></app-button></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Introduction to Cloud Computing'></app-text>"
+                    body="
+                    <app-text
+                      text='IBM'
+                      icon-left='fa fa-building'
+                      size='l'
+                    ></app-text>
+                    <app-text
+                      text='Coursera'
+                      icon-left='fa fa-building'
+                      size='l'
+                    ></app-text>
+                    <app-text
+                      text='Sept 2020'
+                      icon-left='fa fa-calendar-check-o'
+                      size='l'
+                    ></app-text>
+                  "
+                    footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='certificate' appearance='secondary' icon-right='fas fa-external-link-square-alt' type='link' href='https://github.com/baijudodhia/photoml'></app-button></div>"
+                  ></app-card>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
