@@ -201,3 +201,7 @@
 #timeline[data-appearance="tertiary"] .timeline-item {
   color: var(--color-tertiary);
 }
+
+#timeline[data-appearance="mono"] .timeline-item {
+  color: var(--color-bw-text);
+}
