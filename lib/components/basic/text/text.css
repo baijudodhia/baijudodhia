@@ -83,3 +83,8 @@
   font-size: var(--font-size-xxl);
   line-height: var(--font-size-xxl);
 }
+
+.text[data-size="xxxl"] {
+  font-size: var(--font-size-xxxl);
+  line-height: var(--font-size-xxxl);
+}
