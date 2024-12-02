@@ -12,43 +12,6 @@
       />
     </noscript>
 
-    <!-- Custom CSS -->
-    <link
-      rel="stylesheet"
-      href="./portfolio/main.css"
-    />
-    <link
-      href="https://baijudodhia.github.io/cdn/font-awesome-5.15.4/icons/all.min.css"
-      rel="stylesheet"
-    />
-
-    <!-- New Styles -->
-    <link
-      rel="stylesheet"
-      href="./lib/styles/reset.css"
-    />
-    <link
-      rel="stylesheet"
-      href="./lib/dist/styles/main.min.css"
-    />
-
-    <!-- New Scripts -->
-    <script src="./lib/dist/index.min.js"></script>
-
-    <!-- Portfolio Components -->
-    <script src="./portfolio/sections/about/about.js"></script>
-    <script src="./portfolio/sections/certifications/certifications.js"></script>
-    <script src="./portfolio/sections/projects/projects.js"></script>
-    <script src="./portfolio/sections/skills/skills.js"></script>
-    <script src="./portfolio/sections/what-i-do/what-i-do.js"></script>
-    <script src="./portfolio/sections/work-experience/work-experience.js"></script>
-    <script src="./portfolio/sections/work-experience/work-experience-header/work-experience-header.js"></script>
-    <script src="./portfolio/sections/blogs/blogs.js"></script>
-
-    <!-- Scripts -->
-    <script src="./portfolio/theme.js"></script>
-    <script src="./portfolio/main.js"></script>
-
     <!-- PWA Support -->
     <!-- Link to Manifest File -->
     <link
@@ -101,10 +64,6 @@
     <meta
       name="robots"
       content="INDEX, FOLLOW"
-    />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <title>Baiju Dodhia | Software Engineer</title>
 
@@ -217,150 +176,971 @@
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
     />
-  </head>
 
-  <body>
-    <!-- Initial Loading Screen -->
+    <link
+      rel="stylesheet"
+      href="./lib/dist/index.min.css"
+    />
+    <script
+      type="module"
+      src="./lib/dist/index.min.js"
+    ></script>
+
+    <style>
+      #loading {
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        top: 0px;
+        left: 0px;
+        z-index: 9999 !important;
+        width: 100%;
+        height: 100vh;
+        background: var(--color-primary);
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        color: var(--color-bw_primary);
+      }
+
+      #loading > .fa-spinner {
+        font-size: 32px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .section-loader {
+        display: block;
+        text-align: center;
+        align-self: center;
+        border-top: 3px solid var(--color-primary-text);
+        border-right: 3px solid var(--color-primary-text);
+        border-bottom: 3px solid var(--color-primary-text);
+        border-left: 3px solid transparent;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .body {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        padding: 0px 1rem;
+        background: var(--color-bw);
+        border-bottom: 2px dashed var(--color-bw-text);
+      }
+      .header-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        max-width: 991px;
+        gap: 0.5rem;
+        margin: auto;
+        justify-content: space-between;
+      }
+      .header-left {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 0.5rem;
+      }
+      .header-right {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 0.5rem;
+      }
+      .header-waving-hand {
+        text-decoration: none !important;
+        border: none !important;
+        background-color: transparent !important;
+        cursor: hidden;
+        padding: 0.5rem;
+      }
+      .header-waving-hand:hover {
+        text-decoration: none !important;
+        border: none !important;
+        background-color: transparent !important;
+        animation: waving-hand 0.5s infinite;
+      }
+      @keyframes waving-hand {
+        0%,
+        100% {
+          transform-origin: bottom right;
+          transform: scale(1.1) rotate(-5deg);
+        }
+        50% {
+          transform-origin: bottom right;
+          transform: rotate(10deg);
+        }
+      }
+
+      .main-content {
+        padding: 1rem 2rem;
+      }
+
+      .section {
+        display: flex;
+        margin-bottom: 2rem;
+      }
+
+      .section-group {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin: 1rem 0;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        padding: 1rem;
+        border-top: 2px dashed var(--color-bw-text);
+      }
+      .footer-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        max-width: 991px;
+        gap: 1rem;
+        margin: auto;
+      }
+      .footer-links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        max-width: 991px;
+        gap: 0.5rem;
+        margin: auto;
+        justify-content: space-between;
+      }
+
+      @media only screen and (max-width: 600px) {
+        body {
+          background-color: lightblue;
+        }
+      }
+    </style>
+
+    <script>
+      function onLoad() {
+        setLanguage(parseInt(localStorage.getItem("lang"), 10));
+
+        setTimeout(() => {
+          document.getElementById("loading").style.display = "none";
+        }, 500);
+      }
+
+      function setLanguage(language = 1) {
+        switch (language) {
+          case 1:
+            document.querySelector("#about-name").setAttribute("text", "Baiju Dodhia");
+            break;
+          case 2:
+            document.querySelector("#about-name").setAttribute("text", "बैजु दोढीया");
+            break;
+          case 3:
+            document.querySelector("#about-name").setAttribute("text", "બૈજુ દોઢીયા");
+            break;
+          default:
+            document.querySelector("#about-name").setAttribute("text", "Baiju Dodhia");
+            break;
+        }
+      }
+
+      function goTop() {
+        const element = document.querySelector(".body");
+
+        element.scrollTop = 0;
+      }
+    </script>
+  </head>
+  <body onload="javascript:onLoad()">
     <div id="loading">
       <div class="section-loader"></div>
     </div>
 
-    <!-- Navigation -->
-    <div id="navbar">
-      <nav id="navbar-container">
-        <div class="navbar-brand">
-          <a
-            rel="noopener"
-            class="navbar-brand-title"
-            href="/"
-            >hey!</a
-          >
-          <div id="waving-hand">👋</div>
-        </div>
-        <div class="navbar-menu">
-          <app-pwa-installer></app-pwa-installer>
-          <app-language-changer></app-language-changer>
-          <app-theme-changer
-            theme
-            value
-          ></app-theme-changer>
-        </div>
-      </nav>
-      <hr class="dashed-divider" />
-    </div>
-    <div class="spacing"></div>
-
-    <main>
-      <!-- About -->
-      <app-about language></app-about>
-
-      <hr class="dashed-divider divider-1" />
-
-      <!-- Skills -->
-      <app-skills language></app-skills>
-
-      <hr class="dashed-divider divider-2" />
-
-      <!-- Work Experience -->
-      <app-work-experience language></app-work-experience>
-
-      <hr class="dashed-divider divider-3" />
-
-      <!-- Projects -->
-      <app-projects language></app-projects>
-
-      <hr class="dashed-divider divider-4" />
-
-      <!-- Certifications -->
-      <app-certifications language></app-certifications>
-
-      <hr class="dashed-divider divider-5" />
-
-      <!-- Recent Blog Posts -->
-      <app-blog-posts
-        language
-        blogs
-      ></app-blog-posts>
-    </main>
-
-    <!-- Connect -->
-    <footer id="footer">
-      <hr class="dashed-divider" />
-      <div class="footer-container">
-        <h3>Get in touch with me.</h3>
-        <div class="footer-links">
-          <app-social-links
-            github
-            linkedin
-            blog
-          ></app-social-links>
-          <div id="gototop">
-            <a
-              rel="noopener"
-              onclick="goTop();"
+    <div class="body">
+      <header class="header">
+        <div class="header-wrapper">
+          <div class="header-left">
+            <app-text
+              text="hey"
+              size="xl"
+              style="font-weight: bold; padding: 0.5rem 0px"
             >
-              <i class="fas fa-arrow-up"></i>
-            </a>
+            </app-text>
+            <div class="header-waving-hand">👋</div>
+          </div>
+          <div class="header-right">
+            <app-button
+              label="Install"
+              appearance="outlined"
+              icon-right="fas fa-download"
+              type="pwa-installer"
+              shape="rounded"
+              size="s"
+            ></app-button>
+            <app-button
+              icon-left="fas fa-language"
+              appearance="mono"
+              shape="rounded"
+              title="Search"
+              size="xl"
+              style="color: var(--color-bw-text); border: none !important; padding: 0.25rem 0.5rem; height: max-content"
+              tooltip-html='
+              <div style="padding: 1rem; display: flex; flex-direction: column; align-items: stretch;">
+                <app-button
+                  label="English"
+                  style="padding-bottom: 0.5rem; cursor: pointer;"
+                  appearance="link"
+                  onclick="javascript:setLanguage(1)">
+                </app-button>
+                <app-button
+                  label="हिंदी"
+                  style="padding-bottom: 0.5rem; cursor: pointer;"
+                  appearance="link"
+                  onclick="javascript:setLanguage(2)">
+                </app-button>
+                <app-button
+                  label="ગુજરાતી"
+                  style="cursor: pointer;"
+                  appearance="link"
+                  onclick="javascript:setLanguage(3)">
+                </app-button>
+              </div>
+              '
+              tooltip-trigger="focusin"
+              tooltip-position="bottom"
+            ></app-button>
+            <app-theme-switcher
+              style="margin-left: auto !important"
+              size="m"
+            ></app-theme-switcher>
           </div>
         </div>
-      </div>
-    </footer>
+      </header>
 
-    <!-- Download and Load Blogger RSS Feed -->
-    <script type="text/javascript">
-      function recentPost(json) {
-        try {
-          let postList = [];
+      <main class="main-content">
+        <!-- Full Portfolio Sections -->
+        <section
+          id="section-full-portfolio"
+          class="section"
+        >
+          <div style="display: inline-flex; flex-direction: column; align-items: stretch; width: 100%; max-width: 991px; gap: 1rem; margin: auto; height: 100%">
+            <div class="section-group">
+              <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; font-weight: bold">
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start">
+                  <app-text
+                    id="about-name"
+                    style="font-weight: bold"
+                    text="Baiju Dodhia"
+                    size="xxl"
+                  ></app-text>
+                  <app-button
+                    icon-left="fas fa-search"
+                    appearance="mono"
+                    shape="rounded"
+                    title="Search"
+                    size="xl"
+                    style="color: var(--color-primary); border: none !important; padding: 0.25rem 0.5rem; height: max-content"
+                    tooltip-html="
+                      <div style='padding: 1rem;'>
+                        <app-text text='Google' style='padding-bottom: 1rem' appearance='link' href='https://www.google.com/search?q=%22Baiju%C2%A0Dodhia%22%C2%A0OR%C2%A0%22baijudodhia%22' variant='link' style='cursor: pointer;'></app-text>
+                        <app-text text='Bing' style='padding-bottom: 1rem' appearance='link' href='https://www.bing.com/search?q=%22Baiju%C2%A0Dodhia%22%C2%A0OR%C2%A0%22baijudodhia%22' variant='link' style='cursor: pointer;'></app-text>
+                        <app-text text='Brave' style='padding-bottom: 1rem' appearance='link' href='https://search.brave.com/search?q=baijudodhia' variant='link' style='cursor: pointer;'></app-text>
+                        <app-text text='DuckDuckGo' appearance='link' href='https://duckduckgo.com/?q=Baiju%C2%A0Dodhia&ia=web' variant='link' style='cursor: pointer;'></app-text>
+                      </div>
+                    "
+                    tooltip-trigger="focusin"
+                    tooltip-position="bottom"
+                  ></app-button>
+                </div>
+                <app-text
+                  style="font-weight: bold"
+                  text="Software Engineer with entrepreneurial mindset having strong project-based knowledge of various technical skills including programming languages and software tools."
+                  size="l"
+                ></app-text>
+                <div style="display: flex; gap: 0.5rem; font-weight: bold">
+                  <app-text
+                    size="l"
+                    text="Currently working as Senior Software Engineer at"
+                  ></app-text>
+                  <app-text
+                    size="l"
+                    appearance="link"
+                    text="Think360.ai"
+                    variant="link"
+                    href="https://www.think360.ai/"
+                  ></app-text>
+                </div>
+                <app-social-links
+                  linkedin="true"
+                  github="true"
+                  blog="true"
+                  size="m"
+                  shape="rounded"
+                  appearance="primary"
+                ></app-social-links>
+              </div>
+            </div>
 
-          for (let i = 0; i < json.feed.entry.length; i++) {
-            const postTitle = json.feed.entry[i].title.$t;
-            const postSummary = json.feed.entry[i].summary.$t;
-            const postThumbnail = json.feed.entry[i].media$thumbnail.url;
+            <div class="section-group">
+              <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; font-weight: bold">
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start">
+                  <app-text
+                    style="font-weight: bold"
+                    text="What I Do?"
+                    size="xxl"
+                  ></app-text>
+                </div>
+                <div style="display: flex; flex-direction: row; align-items: flex-start; justify-content: flex-start; gap: 1rem">
+                  <div style="height: 100%; display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; width: 100%; padding-right: 1rem; border-right: 2px dashed var(--color-bw-text)">
+                    <app-text
+                      size="l"
+                      text="I work primarily in JavaScript, Python and Web Development with great flexibility of learning and adapting to any programming language or technology."
+                    ></app-text>
+                    <app-text
+                      size="l"
+                      text="Apart from coding and technology, pretty much involved in exploring and learning about better design techniques, digital marketing, entrepreneurship and startups, business and project management."
+                    ></app-text>
+                  </div>
+                  <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; width: 100%">
+                    <app-text
+                      size="l"
+                      text="I have been a part of a lot of student communities related to tech, startups and entrepreneurship during my undergraduate years such as"
+                    ></app-text>
+                    <div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 0.5rem">
+                      <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 0.5rem">
+                        <app-text
+                          size="l"
+                          appearance="link"
+                          text="BloomBox, E-Cell KJSCE"
+                          variant="link"
+                          href="https://www.think360.ai/"
+                        ></app-text>
+                        <app-text
+                          size="l"
+                          text=", "
+                        ></app-text>
+                      </div>
+                      <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 0.5rem">
+                        <app-text
+                          size="l"
+                          appearance="link"
+                          text="RedShift Racing India"
+                          variant="link"
+                          href="https://www.think360.ai/"
+                        ></app-text>
+                        <app-text
+                          size="l"
+                          text=", "
+                        ></app-text>
+                      </div>
+                      <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 0.5rem">
+                        <app-text
+                          size="l"
+                          appearance="link"
+                          text="CSI KJSCE"
+                          variant="link"
+                          href="https://www.think360.ai/"
+                        ></app-text>
+                        <app-text
+                          size="l"
+                          text=", "
+                        ></app-text>
+                      </div>
+                      <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 0.5rem">
+                        <app-text
+                          size="l"
+                          appearance="link"
+                          text="Hult Prize Somaiya"
+                          variant="link"
+                          href="https://www.think360.ai/"
+                        ></app-text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            let postUrl = "";
-            for (let j = 0; j < json.feed.entry[i].link.length; j++) {
-              if (json.feed.entry[i].link[j].rel == "alternate") {
-                postUrl = json.feed.entry[i].link[j].href;
+            <hr style="align-self: stretch; margin: 0px; border: none; border-top: 2px dashed var(--color-bw-text); height: 0px; background-color: transparent" />
 
-                break;
-              }
-            }
-            let postTags = [];
-            for (let j = 0; j < json.feed.entry[i].category.length; j++) {
-              postTags.push(json.feed.entry[i].category[j].term);
-            }
+            <div class="section-group">
+              <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; font-weight: bold">
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start">
+                  <app-text
+                    style="font-weight: bold"
+                    text="Skills"
+                    size="xxl"
+                  ></app-text>
+                </div>
+                <div
+                  style="
+                    display: grid;
+                    grid-auto-columns: 1fr;
+                    grid-auto-rows: 1fr;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                    gap: 2rem;
+                    align-content: space-between;
+                    justify-items: start;
+                    align-items: start;
+                  "
+                >
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Languages'></app-text>"
+                    body="<div><app-text text='JavaScript, Python, Java, HTML/CSS'></app-text></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Frameworks & Libraries'></app-text>"
+                    body="<div><app-text text='Bootstrap, Material, React, Angular, Node.js, Django, Flask'></app-text></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Databases'></app-text>"
+                    body="<div><app-text text='MySQL, PostgreSQL, MongoDB, Firebase'></app-text></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Tools'></app-text>"
+                    body="<div><app-text text='Git, VSCode, Android Studio, Jira, Asana, Github, Bitbucket'></app-text></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Cloud Tech'></app-text>"
+                    body="<div><app-text text='AWS S3, AWS EC2, AWS DynamoDB, AWS RDS, AWS IAM, AWS SQS, AWS CloudWatch'></app-text></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Platforms'></app-text>"
+                    body="<div><app-text text='Web, Mobile'></app-text></div>"
+                  ></app-card>
+                </div>
+              </div>
+            </div>
 
-            postList.push({
-              url: postUrl,
-              title: postTitle,
-              summary: postSummary,
-              thumbnail: postThumbnail,
-              tags: postTags,
-            });
-          }
+            <hr style="align-self: stretch; margin: 0px; border: none; border-top: 2px dashed var(--color-bw-text); height: 0px; background-color: transparent" />
 
-          document.querySelector("app-blog-posts").setAttribute("blogs", JSON.stringify(postList));
-        } catch (err) {
-          document.querySelector(".divider-5").remove();
-          document.querySelector("app-blog-posts").remove();
-        }
-      }
-    </script>
-    <script src="https://baijudodhia.blogspot.com/feeds/posts/summary?max-results=4&alt=json-in-script&callback=recentPost"></script>
+            <div class="section-group">
+              <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 2rem; font-weight: bold">
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start">
+                  <app-text
+                    style="font-weight: bold"
+                    text="Work Experience"
+                    size="xxl"
+                  ></app-text>
+                </div>
+                <app-card
+                  appearance="primary"
+                  header="
+                  <div
+                    style='
+                      display: inline-flex;
+                      flex-direction: row;
+                      align-items: stretch;
+                      justify-content: flex-start;
+                      gap: 1rem;
+                      width: 100%;
+                    '
+                  >
+                    <div
+                      style='
+                        object-fit: contain;
+                        width: 100%;
+                        min-width: unset;
+                        max-width: 280px;
+                        max-height: 70px;
+                        min-height: unset;
+                        display: flex;
+                        align-self: stretch;
+                        justify-content: center;
+                        align-content: center;
+                        flex-direction: row;
+                        background-color: #ffffff;
+                        border-radius: 0.5rem;
+                        padding: 1rem;
+                        border-width: 1px;
+                        border-style: solid;
+                        border-color: var(--color-primary);
+                        box-shadow: 0px 2px 10px -3px var(--color-primary);
+                      '
+                    >
+                      <img
+                        style='width: 100%; height: 100%'
+                        src='https://baijudodhia.github.io/portfolio/assets/images/org-logo/think360.svg'
+                        alt=''
+                      />
+                    </div>
+                    <div style='align-self: stretch; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); grid-row-gap: 0.5rem; grid-column-gap: 1rem; width: 100%; padding: 0px 1rem;'>
+                      <app-text
+                        text='Think360.ai'
+                        icon-left='fa fa-building'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Mumbai, MH'
+                        icon-left='fas fa-map-marker-alt'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Web Apps'
+                        icon-left='fas fa-tasks'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Fintech'
+                        icon-left='fas fa-industry'
+                        size='l'
+                      ></app-text>
+                    </div>
+                  </div>
+                "
+                  body="
+                  <app-timeline line-style='dashed' appearance='mono'>
+                    <div>
+                      <app-text size='l' text='Senior Software Engineer'></app-text>
+                      <app-text size='s' text='April 2023 - *' style='font-weight: normal'></app-text>
+                      <ul style='list-style-type:disc;margin-left:.5rem;padding-left:1rem;color:var(--color-bw-text);font-weight: normal'><li>Managed the frontend team for the product development of KwikID, a SaaS product serving the BFSI industry for Video KYC and Customer Onboarding flows.</li><li>Primarily focused on developing new features, re-architecting, and refactoring the existing codebase, setting up new processes and managing the team in designing secure, efficient, and scalable solutions to enhance the end-customer experience.</li><li>Notably, some of my key development contributions, including the creation of new libraries integral to the product, played a crucial role in driving substantial sales growth.</li></ul>
+                    </div>
+                    <div>
+                      <app-text size='l' text='Associate Frontend Engineer'></app-text>
+                      <app-text size='s' text='July 2021 - March 2023' style='font-weight: normal'></app-text>
+                      <ul style='list-style-type:disc;margin-left:.5rem;padding-left:1rem;color:var(--color-bw-text);font-weight: normal'><li>Led the development of frontend web applications, with a key focus on crafting seamless UI/UX for Lending Journeys using React.js. Additionally, contributed to development of backend APIs using Python Flask.</li></ul>
+                    </div>
+                  </app-timeline>
+                  "
+                ></app-card>
+                <app-card
+                  appearance="primary"
+                  header="
+                  <div
+                    style='
+                      display: inline-flex;
+                      flex-direction: row;
+                      align-items: stretch;
+                      justify-content: flex-start;
+                      gap: 1rem;
+                      width: 100%;
+                    '
+                  >
+                    <div
+                      style='
+                        object-fit: contain;
+                        width: 100%;
+                        min-width: unset;
+                        max-width: 280px;
+                        max-height: 70px;
+                        min-height: unset;
+                        display: flex;
+                        align-self: stretch;
+                        justify-content: center;
+                        align-content: center;
+                        flex-direction: row;
+                        background-color: #ffffff;
+                        border-radius: 0.5rem;
+                        padding: 1rem;
+                        border-width: 1px;
+                        border-style: solid;
+                        border-color: var(--color-primary);
+                        box-shadow: 0px 2px 10px -3px var(--color-primary);
+                      '
+                    >
+                      <img
+                        style='width: 100%; height: 100%'
+                        src='https://baijudodhia.github.io/portfolio/assets/images/org-logo/fogr.svg'
+                        alt=''
+                      />
+                    </div>
+                    <div style='align-self: stretch; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); grid-row-gap: 0.5rem; grid-column-gap: 1rem; width: 100%; padding: 0px 1rem;'>
+                      <app-text
+                        text='FoGR Tech'
+                        icon-left='fa fa-building'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Remote, India'
+                        icon-left='fas fa-map-marker-alt'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Web/Mobile Apps'
+                        icon-left='fas fa-tasks'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='E-Commerce'
+                        icon-left='fas fa-industry'
+                        size='l'
+                      ></app-text>
+                    </div>
+                  </div>
+                "
+                  body="
+                  <app-timeline line-style='dashed' appearance='primary'>
+                    <div>
+                      <app-text size='l' text='SDE Intern'></app-text>
+                      <app-text size='s' text='Sept 2020 - Nov 2020' style='font-weight: normal'></app-text>
+                      <div style='color:var(--color-bw-text); font-weight: normal'><div>Worked on 2 applications - </div><ul style='list-style-type: disc; margin-left: 0.5rem; padding-left: 1rem'><li>Food Delivery App: Built backend for Android/iOS application using Angular Ionic Framework for integration with UI, Firebase for Realtime Database and User Authentication.</li><li>Delivery Package Returning App: Developed 3 integrated web applications (customer, admin and delivery agent) using Angular for UI, Node.js for backend and REST API, PubNub for real-time notifications, Stripe for Payments and MongoDB Atlas for Cloud-based Document Database.</li></ul></div>
+                    </div>
+                  </app-timeline>
+                  "
+                ></app-card>
+                <app-card
+                  appearance="primary"
+                  header="
+                  <div
+                    style='
+                      display: inline-flex;
+                      flex-direction: row;
+                      align-items: stretch;
+                      justify-content: flex-start;
+                      gap: 1rem;
+                      width: 100%;
+                    '
+                  >
+                    <div
+                      style='
+                        object-fit: contain;
+                        width: 100%;
+                        min-width: unset;
+                        max-width: 280px;
+                        max-height: 70px;
+                        min-height: unset;
+                        display: flex;
+                        align-self: stretch;
+                        justify-content: center;
+                        align-content: center;
+                        flex-direction: row;
+                        background-color: #ffffff;
+                        border-radius: 0.5rem;
+                        padding: 1rem;
+                        border-width: 1px;
+                        border-style: solid;
+                        border-color: var(--color-primary);
+                        box-shadow: 0px 2px 10px -3px var(--color-primary);
+                      '
+                    >
+                      <img
+                        style='width: 100%; height: 100%'
+                        src='https://baijudodhia.github.io/portfolio/assets/images/org-logo/kjsce.svg'
+                        alt=''
+                      />
+                    </div>
+                    <div style='align-self: stretch; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); grid-row-gap: 0.5rem; grid-column-gap: 1rem; width: 100%; padding: 0px 1rem;'>
+                      <app-text
+                        text='KJSCE'
+                        icon-left='fa fa-building'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Mumbai, MH'
+                        icon-left='fas fa-map-marker-alt'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Browser Extension'
+                        icon-left='fas fa-tasks'
+                        size='l'
+                      ></app-text>
+                      <app-text
+                        text='Productivity Tools'
+                        icon-left='fas fa-industry'
+                        size='l'
+                      ></app-text>
+                    </div>
+                  </div>
+                "
+                  body="
+                  <app-timeline line-style='dashed' appearance='primary'>
+                    <div>
+                      <app-text size='l' text='SDE Intern'></app-text>
+                      <app-text size='s' text='April 2020 - June 2020' style='font-weight: normal'></app-text>
+                      <div style='color:var(--color-bw-text);font-weight: normal'><div>Worked on development of Browser Extension -</div><ul style='list-style-type: disc; margin-left: 0.5rem; padding-left: 1rem'><li>Worked on development of Chromium-browser based extension for Gmail for extracting information and generating summary from email threads using Node.js and Gmail.js</li><li>Achieved 100% results for extracting information like email ids and website URLs mentioned in the email thread.</li><li>Generated a 3 point extractive summary of email thread using cosine similarity measures.</li></ul></div>
+                    </div>
+                  </app-timeline>
+                  "
+                ></app-card>
+              </div>
+            </div>
 
-    <!-- <script src="./portfolio/sections/blogs/blogs.js"></script> -->
+            <hr style="align-self: stretch; margin: 0px; border: none; border-top: 2px dashed var(--color-bw-text); height: 0px; background-color: transparent" />
 
-    <!-- Don't save the website state -->
-    <script>
-      if (window.history.replaceState) {
-        window.history.replaceState(null, null, window.location.href);
-      }
-    </script>
+            <div class="section-group">
+              <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; font-weight: bold">
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%">
+                  <app-text
+                    style="font-weight: bold"
+                    text="Projects"
+                    size="xxl"
+                  ></app-text>
+                  <app-button
+                    label="View all"
+                    appearance="secondary"
+                    icon-right="fas fa-external-link-square-alt"
+                    type="link"
+                    href="https://github.com/baijudodhia?tab=repositories"
+                  ></app-button>
+                </div>
+                <div
+                  style="
+                    display: grid;
+                    grid-auto-columns: 1fr;
+                    grid-auto-rows: 1fr;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                    gap: 2rem;
+                    align-content: space-between;
+                    justify-items: start;
+                    align-items: start;
+                  "
+                >
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='photoml'></app-text>"
+                    body="<div><app-text style='font-weight: normal' text='Android Image Gallery app with Machine Learning features such as Facial Recognition, OCR, Barcode and Label Detection. Built in Android Studio using Java, Glide and Firebase ML-Kit.'></app-text></div>"
+                    footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='code' appearance='secondary' icon-right='fa fa-github' type='link' href='https://github.com/baijudodhia/photoml'></app-button></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='summarise'></app-text>"
+                    body="<div><app-text style='font-weight: normal' text='Gmail Extension which generates a max 3-line summary of a thread.'></app-text></div>"
+                    footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='code' appearance='secondary' icon-right='fa fa-github' type='link' href='https://github.com/baijudodhia/email-summarise'></app-button><app-button label='live' appearance='secondary' icon-right='fas fa-external-link-square-alt' type='link' href='https://baijudodhia.github.io/email-summarise/'></app-button></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='img-geometric-transformation'></app-text>"
+                    body="<div><app-text style='font-weight: normal' text='A python script to perform Geometric Transformation on Image File such as Perspective change, Zoom In/Out, Translate, Scale, Shear, Rotate and Flip.'></app-text></div>"
+                    footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='code' appearance='secondary' icon-right='fa fa-github' type='link' href='https://github.com/baijudodhia/img-geometric-transformation'></app-button><app-button label='live' appearance='secondary' icon-right='fas fa-external-link-square-alt' type='link' href='https://colab.research.google.com/drive/1xt1oV4b_egSAQjk9HbDGl9bes_j8NR8Z?usp=sharing'></app-button></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='designs'></app-text>"
+                    body="<div><app-text style='font-weight: normal' text='Multiple frontend website templates such as Blog, Online Store, Travel etc. built using only HTML, CSS and JS.'></app-text></div>"
+                    footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='code' appearance='secondary' icon-right='fa fa-github' type='link' href='https://github.com/baijudodhia/designs'></app-button><app-button label='live' appearance='secondary' icon-right='fas fa-external-link-square-alt' type='link' href='https://baijudodhia.github.io/designs/'></app-button></div>"
+                  ></app-card>
+                </div>
+              </div>
+            </div>
 
-    <!-- Analytics -->
-    <script
-      async
-      src="https://baijudodhia.github.io/assets/scripts/analytics.js"
-    ></script>
+            <hr style="align-self: stretch; margin: 0px; border: none; border-top: 2px dashed var(--color-bw-text); height: 0px; background-color: transparent" />
+
+            <div class="section-group">
+              <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; font-weight: bold; width: 100%">
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%">
+                  <app-text
+                    style="font-weight: bold"
+                    text="Certifications"
+                    size="xxl"
+                  ></app-text>
+                  <app-button
+                    label="view all"
+                    appearance="secondary"
+                    icon-right="fas fa-external-link-square-alt"
+                    type="link"
+                    href="https://github.com/baijudodhia?tab=repositories"
+                  ></app-button>
+                </div>
+                <div
+                  style="
+                    display: grid;
+                    grid-auto-columns: 1fr;
+                    grid-auto-rows: 1fr;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                    gap: 2rem;
+                    align-content: space-between;
+                    justify-items: start;
+                    align-items: start;
+                    width: 100%;
+                  "
+                >
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Microsoft Azure Fundamentals'></app-text>"
+                    body="
+                    <app-text
+                      text='Microsoft'
+                      icon-left='fa fa-building'
+                      size='l'
+                       style='font-weight: normal'
+                    ></app-text>
+                    <app-text
+                      text='Azure'
+                      icon-left='fa fa-building'
+                      size='l'
+                       style='font-weight: normal'
+                    ></app-text>
+                    <app-text
+                      text='Sept 2022'
+                      icon-left='fa fa-calendar-check-o'
+                      size='l'
+                       style='font-weight: normal'
+                    ></app-text>
+                  "
+                    footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='certificate' appearance='secondary' icon-right='fas fa-external-link-square-alt' type='link' href='https://github.com/baijudodhia/photoml'></app-button></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Python Specialization'></app-text>"
+                    body="
+                    <app-text
+                      text='University of Michigen'
+                      icon-left='fa fa-building'
+                      size='l'
+                       style='font-weight: normal'
+                    ></app-text>
+                    <app-text
+                      text='Coursera'
+                      icon-left='fa fa-building'
+                      size='l'
+                       style='font-weight: normal'
+                    ></app-text>
+                    <app-text
+                      text='Sept 2020'
+                      icon-left='fa fa-calendar-check-o'
+                      size='l'
+                       style='font-weight: normal'
+                    ></app-text>
+                  "
+                    footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='certificate' appearance='secondary' icon-right='fas fa-external-link-square-alt' type='link' href='https://github.com/baijudodhia/photoml'></app-button></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='AWS Fundamentals Specialization'></app-text>"
+                    body="
+                    <app-text
+                      text='Amazon Web Services (AWS)'
+                      icon-left='fa fa-building'
+                      size='l'
+                       style='font-weight: normal'
+                    ></app-text>
+                    <app-text
+                      text='Coursera'
+                      icon-left='fa fa-building'
+                      size='l'
+                       style='font-weight: normal'
+                    ></app-text>
+                    <app-text
+                      text='Sept 2020'
+                      icon-left='fa fa-calendar-check-o'
+                      size='l'
+                       style='font-weight: normal'
+                    ></app-text>
+                  "
+                    footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='certificate' appearance='secondary' icon-right='fas fa-external-link-square-alt' type='link' href='https://github.com/baijudodhia/photoml'></app-button></div>"
+                  ></app-card>
+                  <app-card
+                    appearance="primary"
+                    style="height: 100%"
+                    header="<app-text style='font-weight: bold; padding: 0px; height: auto !important;' size='l' text='Introduction to Cloud Computing'></app-text>"
+                    body="
+                    <app-text
+                      text='IBM'
+                      icon-left='fa fa-building'
+                      size='l'
+                       style='font-weight: normal'
+                    ></app-text>
+                    <app-text
+                      text='Coursera'
+                      icon-left='fa fa-building'
+                      size='l'
+                       style='font-weight: normal'
+                    ></app-text>
+                    <app-text
+                      text='Sept 2020'
+                      icon-left='fa fa-calendar-check-o'
+                      size='l'
+                       style='font-weight: normal'
+                    ></app-text>
+                  "
+                    footer="<div style='display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%'><app-button label='certificate' appearance='secondary' icon-right='fas fa-external-link-square-alt' type='link' href='https://github.com/baijudodhia/photoml'></app-button></div>"
+                  ></app-card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-wrapper">
+          <app-text
+            text="Get in touch with me."
+            size="l"
+            style="font-weight: bold"
+          >
+          </app-text>
+          <div class="footer-links">
+            <app-social-links
+              linkedin="true"
+              github="true"
+              blog="true"
+              shape="rounded"
+              appearance="primary"
+            ></app-social-links>
+            <app-button
+              icon-left="fas fa-arrow-up"
+              onclick="goTop();"
+              shape="rounded"
+            ></app-button>
+          </div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
