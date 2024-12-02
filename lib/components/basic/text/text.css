@@ -1,7 +1,7 @@
 @import url("../../../styles/reset.css");
 @import url("../../../styles/global.css");
 
-#text {
+.text {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -12,27 +12,27 @@
   width: 100%;
 }
 
-#text > *:not(:last-child) {
+.text > *:not(:last-child) {
   margin-right: 0.5rem;
 }
 
 /* Primary Text Styles */
-#text[data-appearance="primary"] {
+.text[data-appearance="primary"] {
   color: var(--color-primary);
 }
 
 /* Secondary Text Styles */
-#text[data-appearance="secondary"] {
+.text[data-appearance="secondary"] {
   color: var(--color-secondary);
 }
 
 /* Tertiary Text Styles */
-#text[data-appearance="tertiary"] {
+.text[data-appearance="tertiary"] {
   color: var(--color-tertiary);
 }
 
 /* Link Text Styles */
-#text[data-appearance="link"] {
+.text[data-appearance="link"] {
   color: var(--color-primary);
   cursor: pointer;
   text-decoration: underline;
@@ -41,45 +41,45 @@
   text-decoration-color: var(--color-primary);
 }
 
-#text[data-appearance="link"]:not([disabled]):hover {
+.text[data-appearance="link"]:not([disabled]):hover {
   color: var(--color-primary-hover);
   text-decoration-style: solid;
   text-decoration-color: var(--color-primary-hover);
 }
 
-#text[data-appearance="link"]:not([disabled]):active {
+.text[data-appearance="link"]:not([disabled]):active {
   color: var(--color-primary-active);
   text-decoration-style: dashed;
   text-decoration-color: var(--color-primary-active);
 }
 
 /* Text Sizes */
-#text[data-size="xs"] {
+.text[data-size="xs"] {
   font-size: var(--font-size-xs);
   line-height: var(--font-size-xs);
 }
 
-#text[data-size="s"] {
+.text[data-size="s"] {
   font-size: var(--font-size-s);
   line-height: var(--font-size-s);
 }
 
-#text[data-size="m"] {
+.text[data-size="m"] {
   font-size: var(--font-size-m);
   line-height: var(--font-size-m);
 }
 
-#text[data-size="l"] {
+.text[data-size="l"] {
   font-size: var(--font-size-l);
   line-height: var(--font-size-l);
 }
 
-#text[data-size="xl"] {
+.text[data-size="xl"] {
   font-size: var(--font-size-xl);
   line-height: var(--font-size-xl);
 }
 
-#text[data-size="xxl"] {
+.text[data-size="xxl"] {
   font-size: var(--font-size-xxl);
   line-height: var(--font-size-xxl);
 }
