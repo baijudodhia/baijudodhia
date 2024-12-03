@@ -1,0 +1,43 @@
+name: Build and Release
+
+on:
+  push:
+    branches: [ "v3" ]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.20.4'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Configure git
+        run: git config user.name github-actions
+
+      - name: Configure git email
+        run: git config user.email github-actions@github.com
+
+      - name: Create release branch
+        run: git checkout -b release
+
+      - name: Add other files
+        run: git add .
+
+      - name: Remove node_modules
+        run: git reset -- node_modules/
+
+      - name: Commit changes
+        run: git commit -m "Release build"
+
+      - name: Push release branch
+        run: git push -f origin release
