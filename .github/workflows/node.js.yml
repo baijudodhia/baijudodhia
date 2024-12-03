@@ -1,8 +1,12 @@
 name: Build and Release
 
 on:
-  push:
-    branches: [ "v3" ]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version'
+        required: true
+        type: string
 
 jobs:
   release:
@@ -40,7 +44,7 @@ jobs:
         run: git reset -- node_modules/
 
       - name: Commit changes
-        run: git commit -m "Release build"
+        run: git commit -m "release@${{ github.event.inputs.version }}"
 
       - name: Push release branch
         run: git push -f origin release
