@@ -21,6 +21,9 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Force add dist files
+        run: git add -f lib/dist/
+
       - name: Configure git
         run: git config user.name github-actions
 
