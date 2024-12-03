@@ -33,7 +33,7 @@
   background-color: currentColor;
   border: 2px solid var(--color-bw);
   box-shadow: 0 0 0 2px currentColor;
-  z-index: 2;
+  z-index: 1;
 }
 
 /* Timeline Cirle Shapes */
@@ -57,7 +57,6 @@
   width: 2px;
   background-color: currentColor;
   opacity: 0.5;
-  z-index: 1;
 }
 
 /* Size Variants */
