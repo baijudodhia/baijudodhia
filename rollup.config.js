@@ -84,14 +84,14 @@ const plugins = [
   html({
     include: "**/*.html",
     minify: {
-      collapseWhitespace: true,
-      removeComments: true,
-      removeRedundantAttributes: true,
-      removeScriptTypeAttributes: true,
-      removeStyleLinkTypeAttributes: true,
-      useShortDoctype: true,
-      minifyCSS: true,
-      minifyJS: true,
+      collapseWhitespace: false,
+      removeComments: false,
+      removeRedundantAttributes: false,
+      removeScriptTypeAttributes: false,
+      removeStyleLinkTypeAttributes: false,
+      useShortDoctype: false,
+      minifyCSS: false,
+      minifyJS: false,
     },
   }),
 
@@ -102,14 +102,14 @@ const plugins = [
       ecma: 2020,
     },
     compress: {
-      drop_console: true,
-      drop_debugger: true,
-      pure_getters: true,
-      unsafe: true,
-      unsafe_comps: true,
+      drop_console: false,
+      drop_debugger: false,
+      pure_getters: false,
+      unsafe: false,
+      unsafe_comps: false,
       passes: 3,
       ecma: 2020,
-      module: true,
+      module: false,
     },
     mangle: {
       properties: {
