@@ -1270,6 +1270,344 @@ ORDER BY name;"
           </div>
         </section>
 
+        <!-- Markdown Renderer -->
+        <section
+          id="section-markdown-renderer"
+          class="section"
+        >
+          <app-text
+            style="font-weight: bold; padding: 0.5rem 0px"
+            text="Markdown Renderer"
+            size="xl"
+          ></app-text>
+
+          <div class="component-demo">
+            <app-text
+              text="Appearances"
+              size="l"
+            ></app-text>
+            <div class="component-group">
+              <!-- Primary Style -->
+              <app-markdown-renderer
+                appearance="primary"
+                size="m"
+                shape="curved"
+                content="# Primary Style
+Regular text with **bold** and *italic*
+### Code - Javasript
+```javascript
+const hello = 'world';
+console.log(hello);
+```
+
+<br />
+
+| Header |
+|--------|
+| Content |
+"
+              ></app-markdown-renderer>
+
+              <!-- Secondary Style -->
+              <app-markdown-renderer
+                appearance="secondary"
+                size="m"
+                shape="curved"
+                content="# Secondary Style
+Regular text with **bold** and *italic*
+### Code - Javasript
+```javascript
+const hello = 'world';
+console.log(hello);
+```
+
+<br />
+
+| Header |
+|--------|
+| Content |
+"
+              ></app-markdown-renderer>
+
+              <!-- Tertiary Style -->
+              <app-markdown-renderer
+                appearance="tertiary"
+                size="m"
+                shape="curved"
+                content="# Tertiary Style
+Regular text with **bold** and *italic*
+
+
+### Code - Javasript
+```javascript
+const hello = 'world';
+console.log(hello);
+```
+
+<br />
+
+| Header |
+|--------|
+| Content |
+"
+              ></app-markdown-renderer>
+            </div>
+          </div>
+
+          <div class="component-demo">
+            <app-text
+              text="Sizes"
+              size="l"
+            ></app-text>
+            <div class="component-group">
+              <!-- Extra Small -->
+              <app-markdown-renderer
+                appearance="primary"
+                size="xs"
+                shape="curved"
+                content="### Extra Small Size
+Compact content display"
+              ></app-markdown-renderer>
+
+              <!-- Small -->
+              <app-markdown-renderer
+                appearance="primary"
+                size="s"
+                shape="curved"
+                content="### Small Size
+Regular sized content"
+              ></app-markdown-renderer>
+
+              <!-- Medium -->
+              <app-markdown-renderer
+                appearance="primary"
+                size="m"
+                shape="curved"
+                content="### Medium Size
+Standard content size"
+              ></app-markdown-renderer>
+
+              <!-- Large -->
+              <app-markdown-renderer
+                appearance="primary"
+                size="l"
+                shape="curved"
+                content="### Large Size
+Larger content display"
+              ></app-markdown-renderer>
+
+              <!-- Extra Large -->
+              <app-markdown-renderer
+                appearance="primary"
+                size="xl"
+                shape="curved"
+                content="### Extra Large Size
+Maximum content size"
+              ></app-markdown-renderer>
+            </div>
+          </div>
+
+          <div class="component-demo">
+            <app-text
+              text="Shapes"
+              size="l"
+            ></app-text>
+            <div class="component-group">
+              <!-- Rounded -->
+              <app-markdown-renderer
+                appearance="primary"
+                shape="rounded"
+                content="# Rounded Shape
+A table example with rounded corners:
+| Header |
+|--------|
+| Content |"
+              ></app-markdown-renderer>
+
+              <app-markdown-renderer
+                appearance="primary"
+                shape="curved"
+                content="# Curved Shape
+A table example with curved corners:
+| Header |
+|--------|
+| Content |"
+              ></app-markdown-renderer>
+
+              <app-markdown-renderer
+                appearance="primary"
+                shape="rectangle"
+                content="# Rectangle Shape
+A table example with rectangle corners:
+| Header |
+|--------|
+| Content |"
+              ></app-markdown-renderer>
+            </div>
+          </div>
+
+          <div class="component-demo">
+            <app-text
+              text="Content Variantions"
+              size="l"
+            ></app-text>
+            <div class="component-group">
+              <!-- Lists -->
+              <app-markdown-renderer
+                appearance="primary"
+                size="m"
+                shape="curved"
+                content="### Lists
+- Unordered list item 1
+- Unordered list item 2
+
+1. Ordered list item 1
+2. Ordered list item 2"
+              ></app-markdown-renderer>
+
+              <!-- Code Blocks -->
+              <app-markdown-renderer
+                appearance="primary"
+                size="m"
+                shape="curved"
+                content="### Code - Javasript
+```javascript
+const hello = 'world';
+console.log(hello);
+```
+"
+              ></app-markdown-renderer>
+
+              <!-- Code Blocks -->
+              <app-markdown-renderer
+                appearance="primary"
+                size="m"
+                shape="curved"
+                content="### Code - Python
+```python
+def example():
+    return 'Hello World'
+```
+"
+              ></app-markdown-renderer>
+
+              <!-- Tables -->
+              <app-markdown-renderer
+                appearance="primary"
+                size="m"
+                shape="rounded"
+                content="### Table
+| Header 1 | Header 2 |
+|----------|----------|
+| Cell 1   | Cell 2   |
+| Cell 3   | Cell 4   |"
+              ></app-markdown-renderer>
+            </div>
+          </div>
+
+          <div class="component-demo">
+            <app-text
+              text="Rich Content"
+              size="l"
+            ></app-text>
+            <div class="component-group">
+              <!-- Rich Content -->
+              <app-markdown-renderer
+                appearance="primary"
+                size="m"
+                shape="rounded"
+                content="# Complex Example
+## Subsection
+Regular paragraph with **bold** and *italic* text.
+
+> Blockquote with important information
+
+> This is a blockquote
+> With multiple lines
+
+### Code Example
+```python
+def greet(name):
+    return f'Hello {name}!'
+```
+
+### List Items
+1. First ordered item
+2. Second ordered item
+   - Nested unordered item
+   - Another nested item
+
+### Table Example
+| Name | Role | Status |
+|------|------|--------|
+| John | Dev  | Active |
+| Jane | PM   | Away   |"
+              ></app-markdown-renderer>
+            </div>
+          </div>
+
+          <div class="component-demo">
+            <app-text
+              text="Rich Content"
+              size="l"
+            ></app-text>
+            <div class="component-group">
+              <!-- Rich Content -->
+              <app-markdown-renderer
+                appearance="primary"
+                size="m"
+                shape="rounded"
+                content="
+# Math in MDX Example
+
+This is an example of how to embed **mathematical equations** using MDX.
+
+## Inline Math
+
+You can write inline equations like this:
+\( E = mc^2 \)
+
+This is the famous equation for **energy-mass equivalence** in Einstein's theory of relativity.
+
+## Block Math
+
+Here is a block-level equation:
+
+$$
+\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+$$
+
+This is the Gaussian integral, which is used in statistics and physics.
+
+## Another Block Equation
+
+Another example of a block equation is:
+
+$$
+\frac{d}{dx}\left( e^x \right) = e^x
+$$
+
+This is the derivative of the exponential function \( e^x \).
+
+## Displaying a Matrix
+
+You can also display matrices like this:
+
+$$
+A = \begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix}
+$$
+
+
+"
+              ></app-markdown-renderer>
+            </div>
+          </div>
+        </section>
+
         <!-- Custom -->
         <!-- Social Links -->
         <section

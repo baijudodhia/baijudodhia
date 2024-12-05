@@ -47,6 +47,11 @@
         "component": "code-block",
         "label": "Code Block",
         "description": "Coding viewer block"
+      },
+      {
+        "component": "markdown-renderer",
+        "label": "Markdown Renderer",
+        "description": "Coding rendering"
       }
     ],
     "portfolio": [

@@ -1,0 +1,322 @@
+@import url("../../../styles/reset.css");
+@import url("../../../styles/global.css");
+
+#markdown-renderer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-width: 0px;
+  border-style: solid;
+  border-color: transparent;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+/* Appearance Variants */
+#markdown-renderer[data-appearance="primary"] {
+  border-color: var(--color-primary);
+}
+
+#markdown-renderer[data-appearance="secondary"] {
+  border-color: var(--color-secondary);
+}
+
+#markdown-renderer[data-appearance="tertiary"] {
+  border-color: var(--color-tertiary);
+}
+
+/* Size Variants */
+#markdown-renderer[data-size="xs"] {
+  font-size: var(--font-size-xs);
+  line-height: var(--font-size-xs);
+}
+
+#markdown-renderer[data-size="s"] {
+  font-size: var(--font-size-s);
+  line-height: var(--font-size-s);
+}
+
+#markdown-renderer[data-size="m"] {
+  font-size: var(--font-size-m);
+  line-height: var(--font-size-m);
+}
+
+#markdown-renderer[data-size="l"] {
+  font-size: var(--font-size-l);
+  line-height: var(--font-size-l);
+}
+
+#markdown-renderer[data-size="xl"] {
+  font-size: var(--font-size-xl);
+  line-height: var(--font-size-xl);
+}
+
+/* Shape Variants */
+#markdown-renderer[data-shape="rounded"] {
+  border-radius: 2rem;
+}
+
+#markdown-renderer[data-shape="curved"] {
+  border-radius: 0.5rem;
+}
+
+#markdown-renderer[data-shape="rectangle"] {
+  border-radius: 0rem;
+}
+
+/* Markdown Content Styles */
+.markdown-content {
+  width: 100%;
+}
+
+.markdown-content a {
+  color: var(--color-primary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.markdown-content a:hover {
+  color: var(--color-primary-hover);
+}
+
+.markdown-content a:active {
+  color: var(--color-primary-active);
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  color: currentColor;
+  font-weight: bold;
+  margin: var(--space-m) 0;
+}
+
+.markdown-content h1 {
+  font-size: 2em;
+}
+.markdown-content h2 {
+  font-size: 1.5em;
+}
+.markdown-content h3 {
+  font-size: 1.17em;
+}
+.markdown-content h4 {
+  font-size: 1em;
+}
+.markdown-content h5 {
+  font-size: 0.83em;
+}
+.markdown-content h6 {
+  font-size: 0.67em;
+}
+
+.markdown-content p {
+  margin: 1em 0;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  margin: 1em 0;
+  padding-left: 40px;
+  list-style: initial;
+}
+
+.markdown-content ul {
+  list-style: disc;
+}
+
+.markdown-content ol {
+  list-style: decimal;
+}
+
+.markdown-content li {
+  margin: 0.5em 0;
+}
+
+/* Table styles */
+#markdown-renderer .markdown-content table {
+  border-collapse: separate;
+  border-left: 0;
+  border-spacing: 0px;
+}
+
+/* Appearance */
+#markdown-renderer[data-appearance="primary"] .markdown-content table {
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 2px 10px -4px var(--color-primary);
+}
+
+#markdown-renderer[data-appearance="secondary"] .markdown-content table {
+  border: 2px solid var(--color-secondary);
+  box-shadow: 0 2px 10px -4px var(--color-secondary);
+}
+
+#markdown-renderer[data-appearance="tertiary"] .markdown-content table {
+  border: 2px solid var(--color-tertiary);
+  box-shadow: 0 2px 10px -4px var(--color-tertiary);
+}
+
+/* Shape Variants */
+#markdown-renderer[data-shape="rounded"] .markdown-content table {
+  border-radius: 2rem;
+}
+#markdown-renderer[data-shape="rounded"] .markdown-content table thead tr th:first-child {
+  border-top-left-radius: calc(2rem - 4px);
+}
+#markdown-renderer[data-shape="rounded"] .markdown-content table thead tr th:last-child {
+  border-top-right-radius: calc(2rem - 4px);
+}
+
+#markdown-renderer[data-shape="curved"] .markdown-content table {
+  border-radius: 0.5rem;
+}
+#markdown-renderer[data-shape="curved"] .markdown-content table thead tr th:first-child {
+  border-top-left-radius: calc(0.5rem - 2px);
+}
+#markdown-renderer[data-shape="curved"] .markdown-content table thead tr th:last-child {
+  border-top-right-radius: calc(0.5rem - 2px);
+}
+
+#markdown-renderer[data-shape="rectangle"] .markdown-content table {
+  border-radius: 0rem;
+}
+#markdown-renderer[data-shape="rectangle"] .markdown-content table thead tr th:first-child {
+  border-top-left-radius: 0rem;
+}
+#markdown-renderer[data-shape="rectangle"] .markdown-content table thead tr th:last-child {
+  border-top-right-radius: 0rem;
+}
+
+.markdown-content table thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+  border-collapse: separate;
+}
+
+.markdown-content table tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+/* Appearance */
+#markdown-renderer[data-appearance="primary"] table thead tr:first-child {
+  color: var(--color-primary-text);
+  background-color: var(--color-primary);
+}
+#markdown-renderer[data-appearance="primary"] table thead tr th {
+  border-top: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+  background-color: var(--color-primary);
+}
+
+#markdown-renderer[data-appearance="secondary"] table thead tr:first-child {
+  color: var(--color-secondary-text);
+  background-color: var(--color-secondary);
+}
+#markdown-renderer[data-appearance="secondary"] table thead tr th {
+  border-top: 2px solid var(--color-secondary);
+  border-bottom: 2px solid var(--color-secondary);
+  background-color: var(--color-secondary);
+}
+
+#markdown-renderer[data-appearance="tertiary"] table thead tr:first-child {
+  color: var(--color-tertiary-text);
+  background-color: var(--color-tertiary);
+}
+#markdown-renderer[data-appearance="tertiary"] table thead tr th {
+  border-top: 2px solid var(--color-tertiary);
+  border-bottom: 2px solid var(--color-tertiary);
+  background-color: var(--color-tertiary);
+}
+
+.markdown-content table th,
+.markdown-content table td {
+  padding: var(--space-s) var(--space-m);
+  text-align: left;
+  vertical-align: middle;
+  border-left: 2px solid var(--color-disabled-text);
+}
+.markdown-content table th:first-child,
+.markdown-content table td:first-child {
+  border-left: 0px;
+}
+
+.markdown-content table td {
+  border-top: 2px solid var(--color-disabled-text);
+}
+
+/* Shape Variants */
+.markdown-content[data-shape="rounded"] thead:first-child tr:first-child th:first-child,
+.markdown-content[data-shape="rounded"] tbody:first-child tr:first-child td:first-child {
+  border-radius: 2rem 0 0 0;
+}
+.markdown-content[data-shape="rounded"] thead:last-child tr:last-child th:first-child,
+.markdown-content[data-shape="rounded"] tbody:last-child tr:last-child td:first-child {
+  border-radius: 0 0 0 2rem;
+}
+.markdown-content[data-shape="curved"] thead:first-child tr:first-child th:first-child,
+.markdown-content[data-shape="curved"] tbody:first-child tr:first-child td:first-child {
+  border-radius: 0.5rem 0 0 0;
+}
+.markdown-content[data-shape="curved"] thead:last-child tr:last-child th:first-child,
+.markdown-content[data-shape="curved"] tbody:last-child tr:last-child td:first-child {
+  border-radius: 0 0 0 0.5rem;
+}
+.markdown-content[data-shape="rectangle"] thead:first-child tr:first-child th:first-child,
+.markdown-content[data-shape="rectangle"] tbody:first-child tr:first-child td:first-child {
+  border-radius: 0 0 0 0;
+}
+.markdown-content[data-shape="rectangle"] thead:last-child tr:last-child th:first-child,
+.markdown-content[data-shape="rectangle"] tbody:last-child tr:last-child td:first-child {
+  border-radius: 0 0 0 0;
+}
+
+.markdown-content pre {
+  background: var(--color-bw);
+  border: 2px solid currentColor;
+  border-radius: inherit;
+  padding: var(--space-m);
+  overflow-x: auto;
+}
+
+.markdown-content code {
+  font-family: monospace;
+  color: currentColor;
+  padding: 0.2em 0.4em;
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 3px;
+}
+
+.markdown-content pre code {
+  padding: 0;
+  background-color: transparent;
+}
+
+.markdown-content blockquote {
+  border-left: 4px solid currentColor;
+  padding-left: var(--space-m);
+  margin: 1em 0;
+  font-style: italic;
+}
+
+.markdown-content hr {
+  border: 0;
+  border-top: 1px solid currentColor;
+  margin: 1em 0;
+}
+
+.markdown-content em {
+  font-style: italic;
+}
+
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid currentColor;
+  border-radius: inherit;
+}
