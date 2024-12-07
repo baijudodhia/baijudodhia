@@ -132,6 +132,12 @@ button[data-appearance="link"]:not([disabled]):active {
 }
 
 /* Button Sizes */
+button[data-size="xxs"] {
+  padding: var(--space-xxxs);
+  font-size: var(--font-size-xxs);
+  line-height: var(--font-size-xxs);
+  height: calc((2 * var(--space-xxxs)) + var(--font-size-xxs));
+}
 button[data-size="xs"] {
   padding: var(--space-xxs);
   font-size: var(--font-size-xs);
@@ -162,6 +168,12 @@ button[data-size="xl"] {
   line-height: var(--font-size-xl);
   height: calc((2 * var(--space-l)) + var(--font-size-xxl));
 }
+button[data-size="xxl"] {
+  padding: var(--space-xl);
+  font-size: var(--font-size-xxl);
+  line-height: var(--font-size-xxl);
+  height: calc((2 * var(--space-l)) + var(--font-size-xxxl));
+}
 
 /* Button Shapes */
 button[data-shape="rounded"] {
@@ -186,6 +198,12 @@ button[data-shape="rectangle"] {
 
 /* Loader Appearance */
 /* Loader Size */
+button > #loader-container[data-size="xxs"] {
+  font-size: var(--font-size-xxs);
+  line-height: var(--font-size-xxs);
+  width: var(--font-size-xxs);
+  height: var(--font-size-xxs);
+}
 button > #loader-container[data-size="xs"] {
   font-size: var(--font-size-xs);
   line-height: var(--font-size-xs);
@@ -215,6 +233,12 @@ button > #loader-container[data-size="xl"] {
   line-height: var(--font-size-xl);
   width: var(--font-size-xl);
   height: var(--font-size-xl);
+}
+button > #loader-container[data-size="xxl"] {
+  font-size: var(--font-size-xxl);
+  line-height: var(--font-size-xxl);
+  width: var(--font-size-xxl);
+  height: var(--font-size-xxl);
 }
 
 button #loader {
@@ -403,34 +427,45 @@ button #loader[data-appearance="link"] {
 }
 
 /* Size Variants */
+.tippy-box[data-size="xxs"] {
+  padding: var(--space-xxxs);
+  font-size: var(--font-size-xxs);
+  line-height: var(--font-size-xxs);
+}
 .tippy-box[data-size="xs"] {
   padding: var(--space-xxs);
   font-size: var(--font-size-xs);
   line-height: var(--font-size-xs);
 }
-
 .tippy-box[data-size="s"] {
   padding: var(--space-xs);
   font-size: var(--font-size-s);
   line-height: var(--font-size-s);
 }
-
 .tippy-box[data-size="m"] {
   padding: var(--space-s);
   font-size: var(--font-size-m);
   line-height: var(--font-size-m);
 }
-
 .tippy-box[data-size="l"] {
   padding: var(--space-m);
   font-size: var(--font-size-l);
   line-height: var(--font-size-l);
 }
-
 .tippy-box[data-size="xl"] {
   padding: var(--space-l);
   font-size: var(--font-size-xl);
   line-height: var(--font-size-xl);
+}
+.tippy-box[data-size="xxl"] {
+  padding: var(--space-xl);
+  font-size: var(--font-size-xxl);
+  line-height: var(--font-size-xxl);
+}
+.tippy-box[data-size="xxxl"] {
+  padding: var(--space-xxl);
+  font-size: var(--font-size-xxxl);
+  line-height: var(--font-size-xxxl);
 }
 
 /* Shape Variants */
