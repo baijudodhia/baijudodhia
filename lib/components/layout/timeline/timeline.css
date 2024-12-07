@@ -5,6 +5,7 @@
 #timeline {
   display: flex;
   flex-direction: column;
+  gap: var(--space-s);
   width: 100%;
   position: relative;
 }
@@ -53,7 +54,7 @@
   position: absolute;
   left: 6px; /* Half of dot size (var(--space-s) = 12px) - half of line width (2px) */
   top: var(--space-m);
-  height: calc(100% + var(--space-s));
+  height: calc(100% + var(--space-xl));
   width: 2px;
   background-color: currentColor;
   opacity: 0.5;
