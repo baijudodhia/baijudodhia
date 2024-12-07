@@ -889,20 +889,20 @@
                   img.src = thumbnail;
                   bodyContainer.appendChild(img);
 
-                  // Create title text
-                  const titleText = document.createElement("app-text");
-                  titleText.setAttribute("style", "font-weight: bold; padding: 0px; height: auto !important;");
-                  titleText.setAttribute("size", "m");
-                  titleText.setAttribute("text", title);
-                  bodyContainer.appendChild(titleText);
-
                   // Create date text
                   const dateText = document.createElement("app-text");
                   dateText.setAttribute("text", publishDate);
                   dateText.setAttribute("icon-left", "fa fa-calendar-check-o");
                   dateText.setAttribute("size", "s");
-                  dateText.setAttribute("style", "font-weight: normal; margin-top: var(--space-xxs)");
+                  dateText.setAttribute("style", "font-weight: normal; padding: var(--space-xs) 0rem; height: auto !important;");
                   bodyContainer.appendChild(dateText);
+
+                  // Create title text
+                  const titleText = document.createElement("app-text");
+                  titleText.setAttribute("style", "font-weight: bold; padding: var(--space-xs) 0rem; height: auto !important;");
+                  titleText.setAttribute("size", "m");
+                  titleText.setAttribute("text", title);
+                  bodyContainer.appendChild(titleText);
 
                   // Create categories
                   if (post.category) {
