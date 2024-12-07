@@ -965,6 +965,142 @@
                 </div>
               </div>
             </div>
+
+            <hr style="align-self: stretch; margin: 0px; border: none; border-top: 2px dashed var(--color-bw-text); height: 0px; background-color: transparent" />
+
+            <div class="section-group">
+              <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; font-weight: bold; width: 100%">
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%">
+                  <app-text
+                    style="font-weight: bold"
+                    text="Blog Posts"
+                    size="xxl"
+                  ></app-text>
+                  <app-button
+                    label="view all"
+                    appearance="secondary"
+                    icon-right="fas fa-external-link-square-alt"
+                    type="link"
+                    href="https://baijudodhia.github.io/blog?utm_source=baijudodhia.github.io&utm_medium=website"
+                  ></app-button>
+                </div>
+                <div
+                  id="blog-posts-container"
+                  class="section-blogs"
+                ></div>
+              </div>
+            </div>
+
+            <script>
+              function generateBlogPostsHTML(data) {
+                const posts = (data.feed.entry || []).slice(0, 4);
+                let html = ``;
+
+                posts.forEach((post) => {
+                  const title = post.title.$t;
+                  const publishDate = new Date(post.published.$t).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  });
+                  const url = `${post.link.find((link) => link.rel === "alternate")?.href}?utm_source=baijudodhia.github.io&utm_medium=website`;
+
+                  // Get full size image URL from content
+                  let thumbnail;
+                  if (post.content?.$t) {
+                    // Try to extract the first img src from the content
+                    const imgMatch = post.content.$t.match(/<img[^>]+src="([^">]+)"/);
+                    thumbnail = imgMatch?.[1];
+                  }
+
+                  // Fallbacks in order:
+                  // 1. Try to get from media:thumbnail but replace /s72-c/ with /s800/
+                  // 2. Try original media:thumbnail
+                  // 3. Default image
+                  if (!thumbnail && post?.media$thumbnail?.url) {
+                    thumbnail = post.media$thumbnail.url.replace("/s72-c/", "/s800/");
+                  } else if (!thumbnail) {
+                    thumbnail = post?.media$thumbnail?.url || "https://baijudodhia.github.io/blog/assets/social-media-preview/social-preview.png";
+                  }
+
+                  // Get categories as simple space-separated list
+                  const categories = post.category?.map((cat) => cat.term);
+
+                  html += `
+                    <app-card
+                      appearance="primary"
+                      shape="curved"
+                      header="
+                        <style>
+                          .image-container {
+                              object-fit: contain;
+                              width: 100%;
+                              height: 100px;
+                              min-width: unset;
+                              max-width: unset;
+                              max-height: unset;
+                              min-height: unset;
+                              display: flex;
+                              align-self: stretch;
+                              justify-content: center;
+                              align-content: center;
+                              flex-direction: row;
+                              background-color: #ffffff;
+                              border-radius: 0.5rem;
+                              padding: 0.25rem;
+                              border-width: 1px;
+                              border-style: solid;
+                              border-color: var(--color-primary);
+                              box-shadow: 0px 2px 10px -3px var(--color-primary);
+                              margin-bottom: var(--space-m);
+                          }
+                        </style>
+                        <img class='image-container' src='${thumbnail}' />
+                        <app-text
+                          style='font-weight: bold; padding: 0px; height: auto !important;'
+                          size='m'
+                          text='${title}'
+                        >
+                        </app-text>
+                        <app-text
+                            text='${publishDate}'
+                            icon-left='fa fa-calendar-check-o'
+                            size='s'
+                            style='font-weight: normal; margin-top: var(--space-xxs)'
+                        ></app-text>
+                      "
+                      footer="
+                        <app-button
+                            label='Read'
+                            appearance='secondary'
+                            icon-right='fas fa-external-link-square-alt'
+                            type='link'
+                            href='${url}'
+                        ></app-button>
+                      "
+                    ></app-card>
+                  `;
+                });
+
+                return html;
+              }
+
+              function handleBloggerData(data) {
+                const blogPostsHTML = generateBlogPostsHTML(data);
+                document.getElementById("blog-posts-container").innerHTML = blogPostsHTML;
+              }
+
+              function fetchBloggerFeed(blogName) {
+                const script = document.createElement("script");
+                script.src = `https://${blogName}.blogspot.com/feeds/posts/default?alt=json-in-script&callback=handleBloggerData`;
+                document.head.appendChild(script);
+                script.onload = function () {
+                  this.remove();
+                };
+              }
+
+              fetchBloggerFeed("baijudodhia");
+            </script>
           </div>
         </section>
       </main>
