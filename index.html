@@ -994,7 +994,7 @@
             <script>
               function generateBlogPostsHTML(data) {
                 const posts = (data.feed.entry || []).slice(0, 3);
-                let html = ``;
+                const container = document.createElement("div");
 
                 posts.forEach((post, index) => {
                   const title = post.title.$t;
@@ -1004,102 +1004,140 @@
                     day: "numeric",
                   });
                   const url = `${post.link.find((link) => link.rel === "alternate")?.href}?utm_source=baijudodhia.github.io&utm_medium=website`;
+                  const summary = post.summary.$t.split("\n\n")[0];
 
                   // Get full size image URL from content
                   let thumbnail;
                   if (post.content?.$t) {
-                    // Try to extract the first img src from the content
                     const imgMatch = post.content.$t.match(/<img[^>]+src="([^">]+)"/);
                     thumbnail = imgMatch?.[1];
                   }
 
-                  // Fallbacks in order:
-                  // 1. Try to get from media:thumbnail but replace /s72-c/ with /s800/
-                  // 2. Try original media:thumbnail
-                  // 3. Default image
+                  // Fallbacks in order
                   if (!thumbnail && post?.media$thumbnail?.url) {
                     thumbnail = post.media$thumbnail.url.replace("/s72-c/", "/s800/");
                   } else if (!thumbnail) {
                     thumbnail = post?.media$thumbnail?.url || "https://baijudodhia.github.io/blog/assets/social-media-preview/social-preview.png";
                   }
 
-                  // Get categories as simple space-separated list
-                  const categories = post.category
-                    ?.map((cat) => {
-                      return `
-                      <app-button
-                        label='${cat.term}'
-                        appearance='tertiary'
-                        size='xs'
-                        type='link'
-                        href='https://baijudodhia.blogspot.com/search/label/${cat.term}?utm_source=baijudodhia.github.io&utm_medium=website'
-                      ></app-button>
-                    `;
-                    })
-                    .join("");
+                  // Create card element
+                  const card = document.createElement("app-card");
+                  card.setAttribute("id", `blog${index + 1}`);
+                  card.setAttribute("appearance", "primary");
+                  card.setAttribute("shape", "curved");
+                  card.setAttribute("style", "height: 100%");
 
-                  console.log(categories);
+                  // Create body content
+                  const bodyContainer = document.createElement("div");
 
-                  html += `
-                    <app-card
-                      id='blog${index + 1}'
-                      appearance="primary"
-                      shape="curved"
-                      style="height: 100%"
-                      body="
-                        <style>
-                          .image-container {
-                              object-fit: contain;
-                              width: 100%;
-                              height: 100px;
-                              min-width: unset;
-                              max-width: unset;
-                              max-height: unset;
-                              min-height: unset;
-                              display: flex;
-                              align-self: stretch;
-                              justify-content: center;
-                              align-content: center;
-                              flex-direction: row;
-                              background-color: #ffffff;
-                              border-radius: 0.5rem;
-                              padding: 0.25rem;
-                              border-width: 1px;
-                              border-style: solid;
-                              border-color: var(--color-primary);
-                              box-shadow: 0px 2px 10px -3px var(--color-primary);
-                              margin-bottom: var(--space-m);
-                          }
-                        </style>
-                        <img class='image-container' src='${thumbnail}' />
-                        <app-text
-                          style='font-weight: bold; padding: 0px; height: auto !important;'
-                          size='m'
-                          text='${title}'
-                        >
-                        </app-text>
-                        <app-text
-                            text='${publishDate}'
-                            icon-left='fa fa-calendar-check-o'
-                            size='s'
-                            style='font-weight: normal; margin-top: var(--space-xxs)'
-                        ></app-text>
-                        ${categories}
-                      "
-                      footer="
-                        <app-button
-                            label='read'
-                            appearance='secondary'
-                            icon-right='fas fa-external-link-square-alt'
-                            type='link'
-                            href='${url}'
-                        ></app-button>
-                      "
-                    ></app-card>
-                  `;
+                  // Create style element
+                  const style = document.createElement("style");
+                  style.textContent = `
+                                            .image-container {
+                                              object-fit: contain;
+                                              width: 100%;
+                                              height: 100px;
+                                              min-width: unset;
+                                              max-width: unset;
+                                              max-height: unset;
+                                              min-height: unset;
+                                              display: flex;
+                                              align-self: stretch;
+                                              justify-content: center;
+                                              align-content: center;
+                                              flex-direction: row;
+                                              background-color: #ffffff;
+                                              border-radius: 0.5rem;
+                                              padding: 0.25rem;
+                                              border-width: 1px;
+                                              border-style: solid;
+                                              border-color: var(--color-primary);
+                                              box-shadow: 0px 2px 10px -3px var(--color-primary);
+                                              margin-bottom: var(--space-m);
+                                            }
+                                          `;
+                  bodyContainer.appendChild(style);
+
+                  // Create thumbnail image
+                  const img = document.createElement("img");
+                  img.className = "image-container";
+                  img.src = thumbnail;
+                  bodyContainer.appendChild(img);
+
+                  // Create title text
+                  const titleText = document.createElement("app-text");
+                  titleText.setAttribute("style", "font-weight: bold; padding: 0px; height: auto !important;");
+                  titleText.setAttribute("size", "m");
+                  titleText.setAttribute("text", title);
+                  bodyContainer.appendChild(titleText);
+
+                  // Create date text
+                  const dateText = document.createElement("app-text");
+                  dateText.setAttribute("text", publishDate);
+                  dateText.setAttribute("icon-left", "fa fa-calendar-check-o");
+                  dateText.setAttribute("size", "s");
+                  dateText.setAttribute("style", "font-weight: normal; margin-top: var(--space-xxs)");
+                  bodyContainer.appendChild(dateText);
+
+                  // Create categories
+                  if (post.category) {
+                    post.category.forEach((cat) => {
+                      const categoryButton = document.createElement("app-button");
+                      categoryButton.setAttribute("label", cat.term);
+                      categoryButton.setAttribute("appearance", "tertiary");
+                      categoryButton.setAttribute("size", "xs");
+                      categoryButton.setAttribute("type", "link");
+                      categoryButton.setAttribute("href", `https://baijudodhia.blogspot.com/search/label/${cat.term}?utm_source=baijudodhia.github.io&utm_medium=website`);
+                      bodyContainer.appendChild(categoryButton);
+                    });
+                  }
+
+                  // Set body content
+                  card.setAttribute("body", bodyContainer.innerHTML);
+
+                  // Create footer content
+                  const footerContainer = document.createElement("div");
+                  const buttonContainer = document.createElement("div");
+                  buttonContainer.setAttribute("style", "display: inline-flex; flex-direction: row; justify-content: space-between; align-items: center; gap: var(--space-xl); width: 100%");
+
+                  // Create read button
+                  const readButton = document.createElement("app-button");
+                  readButton.setAttribute("label", "read full");
+                  readButton.setAttribute("appearance", "secondary");
+                  readButton.setAttribute("icon-right", "fas fa-external-link-square-alt");
+                  readButton.setAttribute("type", "link");
+                  readButton.setAttribute("href", url);
+
+                  // Create preview button
+                  const previewButton = document.createElement("app-button");
+                  previewButton.setAttribute("label", "preview");
+                  previewButton.setAttribute("appearance", "tertiary");
+                  previewButton.setAttribute("icon-right", "fas fa-eye");
+                  previewButton.setAttribute(
+                    "tooltip-html",
+                    `
+                    <div style="background: var(--color-bw);color: var(--color-bw-text);padding: var(--space-s) var(--space-m);box-shadow: inset 0px 0px 10px -2px var(--color-tertiary);">
+                      <app-markdown-renderer
+                        appearance="primary"
+                        size="xs"
+                        shape="curved"
+                        content="${summary}"
+                      ></app-markdown-renderer>
+                    </div>
+                    `,
+                  );
+                  previewButton.setAttribute("tooltip-trigger", "click");
+
+                  buttonContainer.appendChild(previewButton);
+                  buttonContainer.appendChild(readButton);
+
+                  footerContainer.appendChild(buttonContainer);
+                  card.setAttribute("footer", footerContainer.innerHTML);
+
+                  container.appendChild(card);
                 });
 
-                return html;
+                return container.innerHTML;
               }
 
               function handleBloggerData(data) {
