@@ -118,10 +118,14 @@
   margin: 1em 0;
 }
 
-.markdown-content ul,
+.markdown-content ul {
+  margin: 1em 0;
+  padding-left: calc(1em + 10px);
+  list-style: initial;
+}
 .markdown-content ol {
   margin: 1em 0;
-  padding-left: 40px;
+  padding-left: calc(1em + 10px);
   list-style: initial;
 }
 
