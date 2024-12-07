@@ -196,6 +196,14 @@
   align-items: start;
   width: 100%;
 }
+.section-blogs {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  width: 100%;
+}
 
 .footer {
   display: flex;
@@ -261,6 +269,12 @@
     gap: var(--space-m);
   }
   .section-certifications {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-m);
+  }
+  .section-blogs {
     display: flex;
     flex-direction: column;
     align-items: stretch;

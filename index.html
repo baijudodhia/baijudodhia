@@ -965,6 +965,175 @@
                 </div>
               </div>
             </div>
+
+            <hr style="align-self: stretch; margin: 0px; border: none; border-top: 2px dashed var(--color-bw-text); height: 0px; background-color: transparent" />
+
+            <div class="section-group">
+              <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; font-weight: bold; width: 100%">
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%">
+                  <app-text
+                    style="font-weight: bold"
+                    text="Blog Posts"
+                    size="xxl"
+                  ></app-text>
+                  <app-button
+                    label="view all"
+                    appearance="secondary"
+                    icon-right="fas fa-external-link-square-alt"
+                    type="link"
+                    href="https://baijudodhia.github.io/blog?utm_source=baijudodhia.github.io&utm_medium=website"
+                  ></app-button>
+                </div>
+                <div
+                  id="blog-posts-container"
+                  class="section-blogs"
+                ></div>
+              </div>
+            </div>
+
+            <script>
+              function generateBlogPostsHTML(data) {
+                const posts = (data.feed.entry || []).slice(0, 3);
+                const container = document.createElement("div");
+
+                posts.forEach((post, index) => {
+                  const title = post.title.$t;
+                  const publishDate = new Date(post.published.$t).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  });
+                  const url = `${post.link.find((link) => link.rel === "alternate")?.href}?utm_source=baijudodhia.github.io&utm_medium=website`;
+                  const summary = post.summary.$t.split("\n\n")[0];
+
+                  // Get full size image URL from content
+                  let thumbnail;
+                  if (post.content?.$t) {
+                    const imgMatch = post.content.$t.match(/<img[^>]+src="([^">]+)"/);
+                    thumbnail = imgMatch?.[1];
+                  }
+
+                  // Fallbacks in order
+                  if (!thumbnail && post?.media$thumbnail?.url) {
+                    thumbnail = post.media$thumbnail.url.replace("/s72-c/", "/s800/");
+                  } else if (!thumbnail) {
+                    thumbnail = post?.media$thumbnail?.url || "https://baijudodhia.github.io/blog/assets/social-media-preview/social-preview.png";
+                  }
+
+                  // Create card element
+                  const card = document.createElement("app-card");
+                  card.setAttribute("id", `blog${index + 1}`);
+                  card.setAttribute("appearance", "primary");
+                  card.setAttribute("shape", "curved");
+                  card.setAttribute("style", "height: 100%");
+
+                  // Create body content
+                  const bodyContainer = document.createElement("div");
+
+                  // Create style element
+                  const style = document.createElement("style");
+                  style.textContent = `
+                                            .image-container {
+                                              object-fit: contain;
+                                              width: 100%;
+                                              height: 100px;
+                                              min-width: unset;
+                                              max-width: unset;
+                                              max-height: unset;
+                                              min-height: unset;
+                                              display: flex;
+                                              align-self: stretch;
+                                              justify-content: center;
+                                              align-content: center;
+                                              flex-direction: row;
+                                              background-color: #ffffff;
+                                              border-radius: 0.5rem;
+                                              padding: 0.25rem;
+                                              border-width: 1px;
+                                              border-style: solid;
+                                              border-color: var(--color-primary);
+                                              box-shadow: 0px 2px 10px -3px var(--color-primary);
+                                              margin-bottom: var(--space-m);
+                                            }
+                                          `;
+                  bodyContainer.appendChild(style);
+
+                  // Create thumbnail image
+                  const img = document.createElement("img");
+                  img.className = "image-container";
+                  img.src = thumbnail;
+                  bodyContainer.appendChild(img);
+
+                  // Create title text
+                  const titleText = document.createElement("app-text");
+                  titleText.setAttribute("style", "font-weight: bold; padding: 0px; height: auto !important;");
+                  titleText.setAttribute("size", "m");
+                  titleText.setAttribute("text", title);
+                  bodyContainer.appendChild(titleText);
+
+                  // Create date text
+                  const dateText = document.createElement("app-text");
+                  dateText.setAttribute("text", publishDate);
+                  dateText.setAttribute("icon-left", "fa fa-calendar-check-o");
+                  dateText.setAttribute("size", "s");
+                  dateText.setAttribute("style", "font-weight: normal; margin-top: var(--space-xxs)");
+                  bodyContainer.appendChild(dateText);
+
+                  // Create categories
+                  if (post.category) {
+                    post.category.forEach((cat) => {
+                      const categoryButton = document.createElement("app-button");
+                      categoryButton.setAttribute("label", cat.term);
+                      categoryButton.setAttribute("appearance", "tertiary");
+                      categoryButton.setAttribute("size", "xs");
+                      categoryButton.setAttribute("type", "link");
+                      categoryButton.setAttribute("href", `https://baijudodhia.blogspot.com/search/label/${cat.term}?utm_source=baijudodhia.github.io&utm_medium=website`);
+                      bodyContainer.appendChild(categoryButton);
+                    });
+                  }
+
+                  // Set body content
+                  card.setAttribute("body", bodyContainer.innerHTML);
+
+                  // Create footer content
+                  const footerContainer = document.createElement("div");
+                  const buttonContainer = document.createElement("div");
+                  buttonContainer.setAttribute("style", "display: inline-flex; flex-direction: row; justify-content: space-between; align-items: center; gap: var(--space-xl); width: 100%");
+
+                  // Create read button
+                  const readButton = document.createElement("app-button");
+                  readButton.setAttribute("label", "read");
+                  readButton.setAttribute("appearance", "secondary");
+                  readButton.setAttribute("icon-right", "fas fa-external-link-square-alt");
+                  readButton.setAttribute("type", "link");
+                  readButton.setAttribute("href", url);
+                  buttonContainer.appendChild(readButton);
+
+                  footerContainer.appendChild(buttonContainer);
+                  card.setAttribute("footer", footerContainer.innerHTML);
+
+                  container.appendChild(card);
+                });
+
+                return container.innerHTML;
+              }
+
+              function handleBloggerData(data) {
+                const blogPostsHTML = generateBlogPostsHTML(data);
+                document.getElementById("blog-posts-container").innerHTML = blogPostsHTML;
+              }
+
+              function fetchBloggerFeed(blogName) {
+                const script = document.createElement("script");
+                script.src = `https://${blogName}.blogspot.com/feeds/posts/default?alt=json-in-script&callback=handleBloggerData`;
+                document.head.appendChild(script);
+                script.onload = function () {
+                  this.remove();
+                };
+              }
+
+              fetchBloggerFeed("baijudodhia");
+            </script>
           </div>
         </section>
       </main>
