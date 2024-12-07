@@ -1102,33 +1102,11 @@
 
                   // Create read button
                   const readButton = document.createElement("app-button");
-                  readButton.setAttribute("label", "read full");
+                  readButton.setAttribute("label", "read");
                   readButton.setAttribute("appearance", "secondary");
                   readButton.setAttribute("icon-right", "fas fa-external-link-square-alt");
                   readButton.setAttribute("type", "link");
                   readButton.setAttribute("href", url);
-
-                  // Create preview button
-                  const previewButton = document.createElement("app-button");
-                  previewButton.setAttribute("label", "preview");
-                  previewButton.setAttribute("appearance", "tertiary");
-                  previewButton.setAttribute("icon-right", "fas fa-eye");
-                  previewButton.setAttribute(
-                    "tooltip-html",
-                    `
-                    <div style="background: var(--color-bw);color: var(--color-bw-text);padding: var(--space-s) var(--space-m);box-shadow: inset 0px 0px 10px -2px var(--color-tertiary);">
-                      <app-markdown-renderer
-                        appearance="primary"
-                        size="xs"
-                        shape="curved"
-                        content="${summary}"
-                      ></app-markdown-renderer>
-                    </div>
-                    `,
-                  );
-                  previewButton.setAttribute("tooltip-trigger", "click");
-
-                  buttonContainer.appendChild(previewButton);
                   buttonContainer.appendChild(readButton);
 
                   footerContainer.appendChild(buttonContainer);
