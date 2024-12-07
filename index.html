@@ -993,10 +993,10 @@
 
             <script>
               function generateBlogPostsHTML(data) {
-                const posts = (data.feed.entry || []).slice(0, 4);
+                const posts = (data.feed.entry || []).slice(0, 3);
                 let html = ``;
 
-                posts.forEach((post) => {
+                posts.forEach((post, index) => {
                   const title = post.title.$t;
                   const publishDate = new Date(post.published.$t).toLocaleDateString("en-US", {
                     year: "numeric",
@@ -1024,13 +1024,29 @@
                   }
 
                   // Get categories as simple space-separated list
-                  const categories = post.category?.map((cat) => cat.term);
+                  const categories = post.category
+                    ?.map((cat) => {
+                      return `
+                      <app-button
+                        label='${cat.term}'
+                        appearance='tertiary'
+                        size='xs'
+                        type='link'
+                        href='https://baijudodhia.blogspot.com/search/label/${cat.term}?utm_source=baijudodhia.github.io&utm_medium=website'
+                      ></app-button>
+                    `;
+                    })
+                    .join("");
+
+                  console.log(categories);
 
                   html += `
                     <app-card
+                      id='blog${index + 1}'
                       appearance="primary"
                       shape="curved"
-                      header="
+                      style="height: 100%"
+                      body="
                         <style>
                           .image-container {
                               object-fit: contain;
@@ -1068,10 +1084,11 @@
                             size='s'
                             style='font-weight: normal; margin-top: var(--space-xxs)'
                         ></app-text>
+                        ${categories}
                       "
                       footer="
                         <app-button
-                            label='Read'
+                            label='read'
                             appearance='secondary'
                             icon-right='fas fa-external-link-square-alt'
                             type='link'
