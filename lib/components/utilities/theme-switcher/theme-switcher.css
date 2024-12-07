@@ -40,7 +40,7 @@
   background-position: 50% !important;
   background-repeat: no-repeat !important;
   background-size: 65% !important;
-  background: #fff url(/portfolio/assets/images/theme-switcher/light.png);
+  background: #fff url("https://baijudodhia.github.io/portfolio/assets/images/theme-switcher/light.png");
   box-shadow: 0 0 10px -4px #121212;
   border-radius: 50%;
 
@@ -60,7 +60,7 @@
 #theme-switcher-input:checked + .theme-switcher-slider:before {
   left: 95%;
   transition: 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
-  background: #fff url("/portfolio/assets/images/theme-switcher/dark.png");
+  background: #fff url("https://baijudodhia.github.io/portfolio/assets/images/theme-switcher/dark.png");
   box-shadow: 0px 0px 10px -4px #f5f5f5;
 }
 
