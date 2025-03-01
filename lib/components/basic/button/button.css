@@ -480,3 +480,89 @@ button #loader[data-appearance="link"] {
 .tippy-box[data-shape="rectangle"] {
   border-radius: 0rem;
 }
+
+/* PWA Installer style */
+button[data-type="pwa-installer"] {
+  display: none !important;
+}
+
+button.pwa-available[data-type="pwa-installer"] {
+  display: inline-flex !important;
+}
+
+/* Platform-specific styling */
+button.platform-ios .platform-android,
+button.platform-ios .platform-desktop,
+button.platform-android .platform-ios,
+button.platform-android .platform-desktop,
+button.platform-desktop .platform-ios,
+button.platform-desktop .platform-android {
+  display: none;
+}
+
+/* Icon-only button styles */
+button[data-icon-only="true"] {
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  justify-content: center;
+}
+
+button[data-icon-only="true"] #button-label {
+  display: none;
+}
+
+button[data-icon-only="true"][data-size="xs"] {
+  width: calc((2 * var(--space-xxs)) + var(--font-size-xs) * 1.5);
+}
+
+button[data-icon-only="true"][data-size="s"] {
+  width: calc((2 * var(--space-xs)) + var(--font-size-s) * 1.5);
+}
+
+button[data-icon-only="true"][data-size="m"] {
+  width: calc((2 * var(--space-s)) + var(--font-size-m) * 1.5);
+}
+
+button[data-icon-only="true"][data-size="l"] {
+  width: calc((2 * var(--space-m)) + var(--font-size-l) * 1.5);
+}
+
+button[data-icon-only="true"][data-size="xl"] {
+  width: calc((2 * var(--space-l)) + var(--font-size-xl) * 1.5);
+}
+
+/* Improved icon sizing */
+button[data-size="xs"] #button-icon-left,
+button[data-size="xs"] #button-icon-right {
+  font-size: calc(var(--font-size-xs) * 1.2);
+  width: calc(var(--font-size-xs) * 1.2);
+  height: calc(var(--font-size-xs) * 1.2);
+}
+
+button[data-size="s"] #button-icon-left,
+button[data-size="s"] #button-icon-right {
+  font-size: calc(var(--font-size-s) * 1.2);
+  width: calc(var(--font-size-s) * 1.2);
+  height: calc(var(--font-size-s) * 1.2);
+}
+
+button[data-size="m"] #button-icon-left,
+button[data-size="m"] #button-icon-right {
+  font-size: calc(var(--font-size-m) * 1.2);
+  width: calc(var(--font-size-m) * 1.2);
+  height: calc(var(--font-size-m) * 1.2);
+}
+
+button[data-size="l"] #button-icon-left,
+button[data-size="l"] #button-icon-right {
+  font-size: calc(var(--font-size-l) * 1.2);
+  width: calc(var(--font-size-l) * 1.2);
+  height: calc(var(--font-size-l) * 1.2);
+}
+
+button[data-size="xl"] #button-icon-left,
+button[data-size="xl"] #button-icon-right {
+  font-size: calc(var(--font-size-xl) * 1.2);
+  width: calc(var(--font-size-xl) * 1.2);
+  height: calc(var(--font-size-xl) * 1.2);
+}

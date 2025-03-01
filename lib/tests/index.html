@@ -17,6 +17,13 @@
       src="../../lib/dist/index.min.js"
     ></script>
 
+    <script type="module">
+      // Import the enhanced button component
+
+      // It's already registered in the module, no need to define again
+      // Remove the { extends: 'div' } option as it's not an extended element
+    </script>
+
     <!-- PWA Support -->
     <!-- Link to Manifest File -->
     <link
@@ -373,10 +380,6 @@
                 icon-left="fas fa-heart"
                 icon-right="fas fa-arrow-right"
               ></app-button>
-              <app-button
-                label="primary"
-                icon-left="fas fa-heart"
-              ></app-button>
             </div>
           </div>
 
@@ -451,6 +454,20 @@
                 appearance="primary"
                 icon-right="fas fa-download"
                 type="pwa-installer"
+              ></app-button>
+              <app-button
+                label="Install App"
+                appearance="secondary"
+                icon-left="fas fa-mobile-alt"
+                icon-right="fas fa-download"
+                type="pwa-installer"
+              ></app-button>
+              <app-button
+                label="Add to Home Screen"
+                appearance="outlined"
+                icon-right="fas fa-plus-square"
+                type="pwa-installer"
+                install-text="Add to Home"
               ></app-button>
             </div>
           </div>
@@ -1304,8 +1321,7 @@ console.log(hello);
 
 | Header |
 |--------|
-| Content |
-"
+| Content |"
               ></app-markdown-renderer>
 
               <!-- Secondary Style -->
@@ -1325,8 +1341,7 @@ console.log(hello);
 
 | Header |
 |--------|
-| Content |
-"
+| Content |"
               ></app-markdown-renderer>
 
               <!-- Tertiary Style -->
@@ -1348,8 +1363,7 @@ console.log(hello);
 
 | Header |
 |--------|
-| Content |
-"
+| Content |"
               ></app-markdown-renderer>
             </div>
           </div>
@@ -2971,7 +2985,62 @@ $$
             </div>
           </div>
         </section>
+
+        <div class="component-demo">
+          <app-text
+            text="Link Type Buttons"
+            size="l"
+          ></app-text>
+          <div class="component-group">
+            <app-button
+              label="External Link"
+              appearance="primary"
+              icon-right="fas fa-external-link-alt"
+              type="link"
+              href="https://github.com/baijudodhia"
+              tooltip="Opens in a new tab"
+            ></app-button>
+            <app-button
+              label="Download Link"
+              appearance="secondary"
+              icon-left="fas fa-download"
+              type="link"
+              href="https://example.com/sample.pdf"
+              download="sample.pdf"
+            ></app-button>
+            <app-button
+              label="Email Link"
+              appearance="tertiary"
+              icon-left="fas fa-envelope"
+              type="link"
+              href="mailto:example@example.com?subject=Hello"
+            ></app-button>
+            <app-button
+              label="Phone Link"
+              appearance="outlined"
+              icon-left="fas fa-phone"
+              type="link"
+              href="tel:+1234567890"
+            ></app-button>
+            <app-button
+              appearance="mono"
+              icon-left="fas fa-share-alt"
+              icon-only="true"
+              type="link"
+              href="https://twitter.com/intent/tweet"
+              title="Share on Twitter"
+            ></app-button>
+          </div>
+        </div>
       </main>
     </div>
+
+    <script type="module">
+      // Import the button component
+      import { AppButtonComponent } from "../../lib/components/basic/button/button.js";
+
+      // No need for manual button creation since we're using the standard component
+      // and it's properly registered and working
+    </script>
   </body>
 </html>
