@@ -471,6 +471,53 @@
               ></app-button>
             </div>
           </div>
+
+          <div class="component-demo">
+            <app-text
+              text="Link Type Buttons"
+              size="l"
+            ></app-text>
+            <div class="component-group">
+              <app-button
+                label="External Link"
+                appearance="primary"
+                icon-right="fas fa-external-link-alt"
+                type="link"
+                href="https://github.com/baijudodhia"
+                tooltip="Opens in a new tab"
+              ></app-button>
+              <app-button
+                label="Download Link"
+                appearance="secondary"
+                icon-left="fas fa-download"
+                type="link"
+                href="https://example.com/sample.pdf"
+                download="sample.pdf"
+              ></app-button>
+              <app-button
+                label="Email Link"
+                appearance="tertiary"
+                icon-left="fas fa-envelope"
+                type="link"
+                href="mailto:example@example.com?subject=Hello"
+              ></app-button>
+              <app-button
+                label="Phone Link"
+                appearance="outlined"
+                icon-left="fas fa-phone"
+                type="link"
+                href="tel:+1234567890"
+              ></app-button>
+              <app-button
+                appearance="mono"
+                icon-left="fas fa-share-alt"
+                icon-only="true"
+                type="link"
+                href="https://twitter.com/intent/tweet"
+                title="Share on Twitter"
+              ></app-button>
+            </div>
+          </div>
         </section>
 
         <!-- Text -->
@@ -561,6 +608,40 @@
                 variant="link"
                 href="https://baijudodhia.github.io"
               ></app-text>
+            </div>
+          </div>
+
+          <div class="component-demo">
+            <app-text
+              text="With Tooltips"
+              size="m"
+              style="margin-top: 20px"
+            ></app-text>
+            <div class="component-group">
+              <app-button
+                label="Top Tooltip"
+                appearance="primary"
+                tooltip="This is a tooltip at the top"
+                tooltip-position="top"
+              ></app-button>
+              <app-button
+                label="Bottom Tooltip"
+                appearance="primary"
+                tooltip="This is a tooltip at the bottom"
+                tooltip-position="bottom"
+              ></app-button>
+              <app-button
+                label="Left Tooltip"
+                appearance="primary"
+                tooltip="This is a tooltip on the left"
+                tooltip-position="left"
+              ></app-button>
+              <app-button
+                label="Right Tooltip"
+                appearance="primary"
+                tooltip="This is a tooltip on the right"
+                tooltip-position="right"
+              ></app-button>
             </div>
           </div>
         </section>
@@ -2985,62 +3066,7 @@ $$
             </div>
           </div>
         </section>
-
-        <div class="component-demo">
-          <app-text
-            text="Link Type Buttons"
-            size="l"
-          ></app-text>
-          <div class="component-group">
-            <app-button
-              label="External Link"
-              appearance="primary"
-              icon-right="fas fa-external-link-alt"
-              type="link"
-              href="https://github.com/baijudodhia"
-              tooltip="Opens in a new tab"
-            ></app-button>
-            <app-button
-              label="Download Link"
-              appearance="secondary"
-              icon-left="fas fa-download"
-              type="link"
-              href="https://example.com/sample.pdf"
-              download="sample.pdf"
-            ></app-button>
-            <app-button
-              label="Email Link"
-              appearance="tertiary"
-              icon-left="fas fa-envelope"
-              type="link"
-              href="mailto:example@example.com?subject=Hello"
-            ></app-button>
-            <app-button
-              label="Phone Link"
-              appearance="outlined"
-              icon-left="fas fa-phone"
-              type="link"
-              href="tel:+1234567890"
-            ></app-button>
-            <app-button
-              appearance="mono"
-              icon-left="fas fa-share-alt"
-              icon-only="true"
-              type="link"
-              href="https://twitter.com/intent/tweet"
-              title="Share on Twitter"
-            ></app-button>
-          </div>
-        </div>
       </main>
     </div>
-
-    <script type="module">
-      // Import the button component
-      import { AppButtonComponent } from "../../lib/components/basic/button/button.js";
-
-      // No need for manual button creation since we're using the standard component
-      // and it's properly registered and working
-    </script>
   </body>
 </html>
